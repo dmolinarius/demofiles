@@ -1,0 +1,142 @@
+/* **********************************************
+** color stuff
+** *********************************************/
+
+body {
+	background-color: #000050;
+}
+h1, h2, b, hr.top {
+	color: rgb(255,125,0);
+}
+hr.top {
+	background-color: rgb(255,125,0);
+}
+p {
+	color: #F0F0EA;
+}
+i {
+	color: rgb(0,125,255);
+}
+a, em {
+	color: rgb(125,192,255);
+}
+code {
+	color: #AAAAAA;
+}
+code b {
+	color: #FF6666;
+}
+code em.white { color: #DDDDDD; }
+code em.cyan { color: #00DDDD; }
+code em.magenta { color: #DD00DD; }
+code em.blue { color: #0000DD; }
+code em.yellow { color: #DDDD00; }
+code em.green { color: #00DD00; }
+code em.red { color: #DD0000; }
+
+.code {
+	background-color: black;
+	border-color: #F0F0EA;
+}
+
+/* **********************************************
+** fonts
+** *********************************************/
+
+h1 {
+	font-family: Comic Sans MS, fantasy;
+}
+p, h2 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* **********************************************
+** font size
+** *********************************************/
+
+body {
+	font-size: 180%;
+}
+h1, h2 {
+	font-size: 120%;
+}
+table {
+	font-size: 100%;
+}
+i, .code {
+	font-size: 80%;
+}
+sub, sup {
+	font-size: 70%;
+}
+
+
+/* **********************************************
+** layout and style
+** *********************************************/
+
+h1 {
+	text-align: center;
+	font-weight: normal;
+}
+p {
+	margin-top: 0em;
+	margin-left: 1em;
+	margin-right: 1em;
+	text-align: justify;
+}
+table {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+a {
+	text-decoration: none;
+}
+hr.top {
+	margin-bottom: 1em;
+	height: 5px;
+}
+hr.bottom {
+	margin-top: 1em;
+}
+h2 {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	font-weight: normal;
+}
+b {
+	font-weight: normal;
+}
+em {
+	font-style: normal;
+}
+i {
+	font-style: italic;
+}
+.code {
+	margin-left: 1em;
+	border-width: 1px;
+	border-style: solid;
+	margin-bottom: 1em;
+}
+.code td {
+	padding: 0.5em;
+}
+code, code * {
+	font-weight: bold;
+}
+address {
+	text-align: left;
+	font-size: 50%;
+	color: #8080FF;
+	font-style: italic;
+}
+.date {
+	float: right;
+	font-size: 50%;
+	color: #8080FF;
+	font-style: italic;
+}
