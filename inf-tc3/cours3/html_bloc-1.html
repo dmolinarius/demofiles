@@ -7,27 +7,35 @@
   body { padding-left: 1em; }
   pre { background-color: #DDD; padding: 2px 0.5em; }
   div { padding: 1em 1em 0; border: solid 2px #CCC; margin-top: 0.5em; }
-  h2 { font-size: 120%; margin-top: 0; margin-bottom: 0.5em; }
+  h2 { font-size: 120%; margin-top: 0; margin-bottom: 0.5em; color:#444; text-decoration: underline}
   h3 { margin-top: 0; }
   div.p { margin-top: 1em; border: none; padding: 0; }
   div.div { margin-top: 0; border: none; padding: 0; }
   pre.normal { background-color: transparent; padding: 0; }
+  blockquote, p, div.div { text-align: justify; }
  </style>
 
  <h1>Eléments structurels HTML4</h1>
 
  <div>
  <h3>Titres <i>(niveaux 1 à 6)</i></h3>
- <pre>&lt;h1&gt;Titre&lt;/h1&gt;&lt;h2&gt;Sous-Titre&lt;/h2&gt;...</pre>
- <div class="p"><h1>Titre</h1><h2>Sous-Titre</h2></div>
+ <pre>&lt;h1&gt;Titre&lt;/h1&gt;
+&lt;h2&gt;Sous-Titre&lt;/h2&gt;
+&lt;h3&gt;Sous-Sous-Titre&lt;/h3&gt;</pre>
+ <div class="p"><h1>Titre</h1><h2>Sous-Titre</h2><h3>Sous-Sous-Titre</h3></div>
  </div>
 
  <div>
  <h3>Paragraphes</h3>
- <pre>&lt;p&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;</pre>
+ <pre>&lt;p&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;
+&lt;p&gt;Sed eros felis, dignissim ...&lt;/p&gt;
+</pre>
  <div class="p">
  <p>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ </p>
+ <p>
+Sed eros felis, dignissim at dictum suscipit, elementum vel eros. Nullam nec lacus eros. Mauris nec enim at leo venenatis lacinia. Etiam ac molestie orci. Proin semper laoreet nulla vel tincidunt. <span>Pellentesque accumsan est ut nisi semper laoreet.</span> Vestibulum lorem tellus, vulputate id vehicula et, auctor vel ligula. Nam nec mauris eget nulla feugiat volutpat at adipiscing erat. Nunc ornare bibendum congue. Nulla dignissim pellentesque malesuada. Curabitur nulla nunc, egestas in sagittis vitae, venenatis sed turpis.
  </p>
  </div>
  </div>
@@ -42,12 +50,25 @@
   background-color: red;
   color:            white;
 }</pre></div>
-<p><i>N.B. Pas besoin de &lt;br/&gt; pour passer à la ligne dans un "pre". De plus, les espaces consécutifs sont respectés.</i></p>
+<p><i>N.B. Pas besoin de &lt;br/&gt; pour passer à la ligne dans un "pre". Les tabulations, passages à la ligne et
+espaces y compris consécutifs sont respectés.</i></p>
+</div>
+
+ <div>
+ <h3>Elément bloc mis en exergue</h3>
+ <pre>&lt;blockquote&gt;Sed eros felis, ...&lt;/blockquote&gt;
+&lt;p&gt;Sed eros felis, dignissim ...&lt;/p&gt;</pre>
+ <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</blockquote>
+<p>
+Sed eros felis, dignissim at dictum suscipit, elementum vel eros. Nullam nec lacus eros. Mauris nec enim at leo venenatis lacinia. Etiam ac molestie orci. Proin semper laoreet nulla vel tincidunt. <span>Pellentesque accumsan est ut nisi semper laoreet.</span> Vestibulum lorem tellus, vulputate id vehicula et, auctor vel ligula. Nam nec mauris eget nulla feugiat volutpat at adipiscing erat. Nunc ornare bibendum congue. Nulla dignissim pellentesque malesuada. Curabitur nulla nunc, egestas in sagittis vitae, venenatis sed turpis.</p>
+<p><i>N.B. Noter les retraits en marge gauche et droite, qui correspondent à la mise en page par défaut de cet élément.</i></p>
 </div>
 
  <div>
  <h3>Elément bloc générique <i>(non sémantique)</i></h3>
- <pre>&lt;div&gt;Sed eros felis, ...&lt;/div&gt;</pre>
+ <pre>&lt;div&gt;Sed eros felis, ...&lt;/div&gt;
+&lt;div&gt;Sed eros felis, dignissim ...&lt;/div&gt;</pre>
+ <div class="div">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
  <div class="div">Sed eros felis, dignissim at dictum suscipit, elementum vel eros. Nullam nec lacus eros. Mauris nec enim at leo venenatis lacinia. Etiam ac molestie orci. Proin semper laoreet nulla vel tincidunt. <span>Pellentesque accumsan est ut nisi semper laoreet.</span> Vestibulum lorem tellus, vulputate id vehicula et, auctor vel ligula. Nam nec mauris eget nulla feugiat volutpat at adipiscing erat. Nunc ornare bibendum congue. Nulla dignissim pellentesque malesuada. Curabitur nulla nunc, egestas in sagittis vitae, venenatis sed turpis.</div>
 <p><i>N.B. Contrairement à ce qu'il font pour les paragraphes, par défaut les navigateurs n'introduisent pas de ligne vide
 entre deux "div".</i></p>
@@ -55,8 +76,18 @@ entre deux "div".</i></p>
 
  <div>
  <h3>Séparateur horizontal <i>(élément à vocation décorative)</i></h3>
- <pre>&lt;hr/&gt;</pre>
- <div class="p" style="margin: 2em 0;"><hr/></div>
+ <pre>&lt;p&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Sed eros felis, dignissim ...&lt;/p&gt;</pre>
+ <div class="p" style="margin: 2em 0;">
+ <p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ </p>
+<hr/>
+ <p>
+Sed eros felis, dignissim at dictum suscipit, elementum vel eros. Nullam nec lacus eros. Mauris nec enim at leo venenatis lacinia. Etiam ac molestie orci. Proin semper laoreet nulla vel tincidunt. <span>Pellentesque accumsan est ut nisi semper laoreet.</span> Vestibulum lorem tellus, vulputate id vehicula et, auctor vel ligula. Nam nec mauris eget nulla feugiat volutpat at adipiscing erat. Nunc ornare bibendum congue. Nulla dignissim pellentesque malesuada. Curabitur nulla nunc, egestas in sagittis vitae, venenatis sed turpis.
+ </p>
+</div>
  </div>
 
  <p><i>N.B. La présentation exacte des titres, paragraphes et autres éléments est souvent spécifiée grâce à des règles CSS.
