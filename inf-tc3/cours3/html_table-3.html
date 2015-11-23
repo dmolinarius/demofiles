@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<title>Transformateurs triphasés</title>
+<link rel="stylesheet" href="exemple_style.css" type="text/css">
+<meta name="author" content="Daniel Muller">
+<meta charset='utf-8'>
+<style type="text/css">
+ body { padding-left: 1em; }
+ pre { background-color: #DDD; padding: 2px 0.5em; color: black; }
+ h3 { margin-top: 0; }
+ div { padding: 1em 1em 0; border: solid 2px #CCC; margin-top: 0.5em; }
+ div.p { margin-top: 1em; border: none; padding: 0; }
+ table { margin: 1.33em auto; border-collapse: collapse; color: #004; font-family: Georgia, Times New Roman, serif; }
+ caption { font-style: italic; margin-bottom: 0.7em; }
+ th, td { padding: 0 1em; text-align: center; }
+ tr:first-child td:first-child { border-left: 1px solid; }
+ td { border-right: 1px solid; }
+ thead td { border: 1px solid; padding: 5px 1em; }
+ tbody tr:first-child td { padding-top: 5px; }
+ tbody tr:last-child td { padding-bottom: 5px; }
+ tbody { border-bottom: 1px solid; }
+ tbody:last-child { border: none; }
+ tbody:last-child td:first-child {
+  text-align: left;
+  border: none;
+  padding: 0.7em 0 0;
+  font-style: italic;
+ }
+ thead td {
+    background-image: linear-gradient(#88A, #004);
+    color: #CCF;
+    text-shadow: -1px -1px 0 #004;
+ }
+
+</style>
+
+<h1>Eléments bloc</h1>
+<h3>Exemple de table [3/4]</h3>
+
+<div>
+
+<table>
+ <caption>
+  <b>Table 334.1</b> - Rapport du courant à vide au courant en charge<br>
+   pour des transformateurs de divers types et diverses puissances.
+  </caption>
+
+<thead>
+<tr>
+<td rowspan="3"><b>Catégories</b><br>(Transformateurs triphasés)</td>
+<td rowspan="3">k<span style="font-variant: small-caps">va</span></td>
+<td colspan="4">I<sub>v</sub> : I<sub>ch</sub> en %</td>
+</tr>
+<tr>
+<td colspan="2">25 p : s</td>
+<td colspan="2">50 p : s</td>
+</tr>
+<tr>
+<td> 5 000 <span style="font-variant: small-caps">v</span></td>
+<td>30 000 <span style="font-variant: small-caps">v</span></td>
+<td> 5 000 <span style="font-variant: small-caps">v</span></td>
+<td>30 000 <span style="font-variant: small-caps">v</span></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="7">I. - Transformateurs à huile<br>et refroidissement naturel<br>(pertes normales)</td>
+<td>1</td><td>32</td><td>&nbsp;</td><td>28</td><td>&nbsp;</td>
+</tr> 
+<tr><td>5</td><td>25</td><td>&nbsp;</td><td>21,5</td><td>&nbsp;</td></tr> 
+<tr><td>10</td><td>22</td><td>35</td><td>18,5</td><td>28</td></tr> 
+<tr><td>20</td><td>18,3</td><td>25</td><td>15</td><td>20,5</td></tr>
+<tr><td>50</td><td>13,7</td><td>17,2</td><td>10,8</td><td>14</td></tr>
+<tr><td>100</td><td>11,6</td><td>14,0</td><td>9,3</td><td>11</td></tr>
+<tr><td>&ge; 250</td><td>9,5</td><td>11,5</td><td>7,6</td><td>9,3</td></tr>
+</tbody>
+<tbody>
+<tr>
+<td rowspan="3">II. - Transformateurs à huile<br>et circulation d'eau</td>
+<td>300</td><td>&nbsp;</td><td>12,5</td><td>&nbsp;</td><td>10,7</td>
+</tr>
+<tr><td>1000</td><td>&nbsp;</td><td>8,8</td><td>&nbsp;</td><td>7,4</td></tr>
+<tr><td>&ge; 2000</td><td>&nbsp;</td><td>&le; 8,0</td><td>&nbsp;</td><td>6,5</td></tr>
+</tbody>
+<tbody>
+<tr>
+<td rowspan="4">III. - Transformateurs à sec</td>
+<td>1</td><td>28</td><td>&nbsp;</td><td>22</td><td>&nbsp;</td>
+</tr>
+<tr><td>10</td><td>18</td><td>&nbsp;</td><td>14,3</td><td>&nbsp;</td></tr>
+<tr><td>50</td><td>8,5</td><td>&nbsp;</td><td>6,8</td><td>&nbsp;</td></tr>
+<tr><td>100</td><td>7,5</td><td>&nbsp;</td><td>5,8</td><td>&nbsp;</td></tr>
+</tbody>
+<tbody>
+ <tr><td colspan="6">
+  <b>D'après :</b><br>
+   H. Delalande - Essais des machines électriques - p 334<br>
+   Librairie polytechnique Ch. Béranger - 1923
+ </td></tr>
+</table>
+
+<pre>
+&lt;table>
+ &lt;caption>
+  &lt;b>Table 334.1&lt;/b> - Rapport du courant à vide au courant en charge&lt;br>
+   pour des transformateurs de divers types et diverses puissances.
+  &lt;/caption>
+
+&lt;thead>
+&lt;tr>
+&lt;td rowspan="3">&lt;b>Catégories&lt;/b>&lt;br>(Transformateurs triphasés)&lt;/td>
+&lt;td rowspan="3">k&lt;span style="font-variant: small-caps">va&lt;/span>&lt;/td>
+&lt;td colspan="4">I&lt;sub>v&lt;/sub> : I&lt;sub>ch&lt;/sub> en %&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td colspan="2">25 p : s&lt;/td>
+&lt;td colspan="2">50 p : s&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td> 5 000 &lt;span style="font-variant: small-caps">v&lt;/span>&lt;/td>
+&lt;td>30 000 &lt;span style="font-variant: small-caps">v&lt;/span>&lt;/td>
+&lt;td> 5 000 &lt;span style="font-variant: small-caps">v&lt;/span>&lt;/td>
+&lt;td>30 000 &lt;span style="font-variant: small-caps">v&lt;/span>&lt;/td>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td rowspan="7">I. - Transformateurs à huile&lt;br>et refroidissement naturel&lt;br>(pertes normales)&lt;/td>
+&lt;td>1&lt;/td>&lt;td>32&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>28&lt;/td>&lt;td>&nbsp;&lt;/td>
+&lt;/tr> 
+&lt;tr>&lt;td>5&lt;/td>&lt;td>25&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>21,5&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;/tr> 
+&lt;tr>&lt;td>10&lt;/td>&lt;td>22&lt;/td>&lt;td>35&lt;/td>&lt;td>18,5&lt;/td>&lt;td>28&lt;/td>&lt;/tr> 
+&lt;tr>&lt;td>20&lt;/td>&lt;td>18,3&lt;/td>&lt;td>25&lt;/td>&lt;td>15&lt;/td>&lt;td>20,5&lt;/td>&lt;/tr>
+&lt;tr>&lt;td>50&lt;/td>&lt;td>13,7&lt;/td>&lt;td>17,2&lt;/td>&lt;td>10,8&lt;/td>&lt;td>14&lt;/td>&lt;/tr>
+&lt;tr>&lt;td>100&lt;/td>&lt;td>11,6&lt;/td>&lt;td>14,0&lt;/td>&lt;td>9,3&lt;/td>&lt;td>11&lt;/td>&lt;/tr>
+&lt;tr>&lt;td>&ge; 250&lt;/td>&lt;td>9,5&lt;/td>&lt;td>11,5&lt;/td>&lt;td>7,6&lt;/td>&lt;td>9,3&lt;/td>&lt;/tr>
+&lt;/tbody>
+&lt;tbody>
+&lt;tr>
+&lt;td rowspan="3">II. - Transformateurs à huile&lt;br>et circulation d'eau&lt;/td>
+&lt;td>300&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>12,5&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>10,7&lt;/td>
+&lt;/tr>
+&lt;tr>&lt;td>1000&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>8,8&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>7,4&lt;/td>&lt;/tr>
+&lt;tr>&lt;td>&ge; 2000&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>&le; 8,0&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>6,5&lt;/td>&lt;/tr>
+&lt;/tbody>
+&lt;tbody>
+&lt;tr>
+&lt;td rowspan="4">III. - Transformateurs à sec&lt;/td>
+&lt;td>1&lt;/td>&lt;td>28&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>22&lt;/td>&lt;td>&nbsp;&lt;/td>
+&lt;/tr>
+&lt;tr>&lt;td>10&lt;/td>&lt;td>18&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>14,3&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;/tr>
+&lt;tr>&lt;td>50&lt;/td>&lt;td>8,5&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>6,8&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;/tr>
+&lt;tr>&lt;td>100&lt;/td>&lt;td>7,5&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;td>5,8&lt;/td>&lt;td>&nbsp;&lt;/td>&lt;/tr>
+&lt;/tbody>
+&lt;tbody>
+ &lt;tr>&lt;td colspan="6">
+  &lt;b>D'après :&lt;/b>&lt;br>
+   H. Delalande - Essais des machines électriques - p 334&lt;br>
+   Librairie polytechnique Ch. Béranger - 1923
+ &lt;/td>&lt;/tr>
+&lt;/table>
+</pre>
+
+ <p><i>N.B. La présentation de cette table est très largement conditionnée aux règles CSS
+  que l'on peut trouver en consultant le code source de la page.</i></p>
+
+</div>
+
+  <p style="float:right; margin-top:0.5em">
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+  </p>
+ <p><i>
+  <a href="html_table-2.html">Exemple précédent</a> - 
+  <a href="html_table-4.html">Exemple suivant</a>
+ </i></p>
