@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"> 
+ <head>
+  <title>Sélecteurs simples</title>
+  <link rel="stylesheet" href="exemple_style.css" type="text/css"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+   body { padding-left: 1em; }
+   pre { background-color: #DDD; padding: 2px 0.5em; }
+   div { padding: 1em 1em 0; border: solid 2px #CCC; margin-top: 0.5em; }
+   h3 { margin-top: 0; }
+   div.exemple {padding-bottom: 0.5em; margin-bottom: 0.5em; }
+   div.exemple * {color: inherit; border: none; margin: 0; padding: 0;}
+   div.exemple h1 {margin-top: 0; margin-bottom: 0.5em; }
+ 
+   /* exemple 1 : tous les h1, p, div, em, b */
+   #ex1 h1, #ex1 div, #ex1 p { color: red; }
+
+   /* tous les éléments avec class="ok" */
+   #ex2 .ok { color: green; }
+
+   /* l'élément unique avec id="special3" */
+   #ex3 #special3 { color: blue; }
+ 
+   /* toutes les règles ensemble ... */
+   #ex4 h1, #ex4 div, #ex4 p { color: red; }
+   #ex4 .ok { color: green; }
+   #ex4 #special4 { color: blue; }
+
+
+  </style>
+ </head>
+
+ <body>
+
+ <h1>Sélecteurs simples</h1>
+
+ <div>
+ <h3>Code html utilisé pour les exemples :</h3>
+ <pre>
+&lt;h1 id="special">Exemple&lt;/h1>
+&lt;p class="ok">texte &lt;b>spécial&lt;/b>&lt;/p>
+&lt;div>texte banal&lt;/div>
+</pre>
+ <div class="exemple">
+<h1 id="special">Exemple</h1>
+<p class="ok">texte <b>spécial</b></p>
+<div>texte banal</div>
+</div>
+ </div>
+
+ <div>
+ <h3>Sélecteurs par types d'éléments</h3>
+ <pre>/* tous les h1, div, p */
+h1, div, p { color: red; }</pre>
+ <div class="exemple" id="ex1">
+<h1 id="special1">Exemple</h1>
+<p class="ok">texte <b>spécial</b></p>
+<div>texte banal</div>
+</div>
+<p><i>N.B. L'élément "b" (zone en gras) hérite de la couleur du bloc
+   dans lequel il est inclus (i.e. son parent).</i></p>
+ </div>
+
+ <div>
+ <h3>Sélecteurs par valeur de l'attribut class</h3>
+<pre>/* tous les éléments avec class="ok" */
+.ok { color: green; }</pre>
+ <div class="exemple" id="ex2">
+<h1 id="special2">Exemple</h1>
+<p class="ok">texte <b>spécial</b></p>
+<div>texte banal</div>
+</div>
+<p><i>N.B. Même remarque que ci-dessus.</i></p>
+ </div>
+
+ <div>
+ <h3>Sélecteurs par valeur de l'identifiant id</h3>
+<pre>/* l'élément unique avec id="special" */
+#special { color: blue; }</pre>
+ <div class="exemple" id="ex3">
+<h1 id="special3">Exemple</h1>
+<p class="ok">texte <b>spécial</b></p>
+<div>texte banal</div>
+</div>
+ </div>
+
+ <div>
+ <h3>Ensemble des règles ... que se passe-t-il ?</h3>
+ <pre>/* tous les h1, div, p */
+h1, div, p { color: red; }
+
+/* tous les éléments avec class="ok" */
+.ok { color: green; }
+
+/* l'élément unique avec id="special" */
+#special { color: blue; }</pre>
+ <div class="exemple" id="ex4">
+<h1 id="special4">Exemple</h1>
+<p class="ok">texte <b>spécial</b></p>
+<div>texte banal</div>
+</div>
+<p><i>Certaines règles semblent "prioritaires" par rapport à d'autres...</i></p>
+ </div>
+
+</body>
+</html>

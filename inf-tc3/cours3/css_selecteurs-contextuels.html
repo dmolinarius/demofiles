@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"> 
+ <head>
+  <title>Sélecteurs contextuels</title>
+  <link rel="stylesheet" href="exemple_style.css" type="text/css"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+   body { padding-left: 1em; }
+   pre { background-color: #DDD; padding: 2px 0.5em; }
+   div { padding: 1em 1em 0; border: solid 2px #CCC; margin-top: 0.5em; }
+   h3 { margin-top: 0; }
+   div.exemple {padding-bottom: 0.5em; margin-bottom: 0.5em; }
+   div.exemple * {color: inherit; border: none; margin: 0; padding: 0;}
+   div.exemple h1 {margin-top: 0; margin-bottom: 0.5em; }
+
+   /* b descendants de p */
+   #ex1 p b { color: red; }
+ 
+   /* b enfants directs de p */
+   #ex2 p > b { color: green; }
+
+   /* p immédiatement précédés par h1 */
+   #ex3 h1 + p { color: blue; }
+
+   /* toutes les règles ensemble ... */
+   #ex4 p b { color: red; }
+   #ex4 p > b { color: green; }
+   #ex4 h1 + p { color: blue; }
+
+   /* ordre différent */
+   #ex5 p > b { color: green; }
+   #ex5 p b { color: red; }
+   #ex5 h1 + p { color: blue; }
+  </style>
+ </head>
+
+ <body>
+
+ <h1>Sélecteurs contextuels</h1>
+
+ <div>
+ <h3>Code html utilisé pour les exemples :</h3>
+ <pre>
+&lt;h1&gt;Exemple&lt;/h1&gt;
+&lt;p&gt;texte &lt;b&gt;gras&lt;/b&gt;, &lt;i&gt;très &lt;b&gt;gras&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;texte banal&lt;/p&gt;
+</pre>
+ <div class="exemple">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+ </div>
+
+ <div>
+ <h3>Descendant d'un parent</h3>
+ <pre>
+/* b descendants de p */
+p b { color: red; }
+</pre>
+ <div class="exemple" id="ex1">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+<p><i>N.B. L'élément "b" (zone en gras) est désigné par le sélecteur quelle que soit sa "distance"
+dans l'arbre, par rapport à l'ascendant "p" (enfant, petit-enfant, etc...).
+</i></p>
+ </div>
+
+ <div>
+ <h3>Enfant direct</h3>
+<pre>
+/* b enfants directs de p */
+p > b { color: green; }
+</pre>
+ <div class="exemple" id="ex2">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+<p><i>N.B. Contrairement à ci-dessus, le sélecteur désigne uniquement le premier élément en gras.</i></p>
+ </div>
+
+ <div>
+ <h3>Suivant dans l'ordre du document</h3>
+<pre>
+/* p immédiatement précédés par h1 */
+h1 + p { color: blue; }
+</pre>
+ <div class="exemple" id="ex3">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+ </div>
+
+ <div>
+ <h3>Ensemble des règles ... que se passe-t-il ?</h3>
+ <pre>
+/* 1. b descendants de p */
+p b { color: red; }
+ 
+/* 2. b enfants directs de p */
+p &gt; b { color: green; }
+
+/* 3. p immédiatement précédés par h1 */
+h1 + p { color: blue; }
+</pre>
+ <div class="exemple" id="ex4">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+<p><i>Essayons d'inverser l'ordre des règles 1 et 2...</i></p>
+ </div>
+
+ <div>
+ <h3>En inversant les règles 1 et 2</h3>
+ <pre>
+/* 1. b enfants directs de p */
+p &gt; b { color: green; }
+
+/* 2. b descendants de p */
+p b { color: red; }
+ 
+/* 3. p immédiatement précédés par h1 */
+h1 + p { color: blue; }
+</pre>
+ <div class="exemple" id="ex5">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+<p><i>L'ordre des règles 1 et 2 a son importance !</i></p>
+ </div>
+</body>
+</html>
