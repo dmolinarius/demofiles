@@ -19,18 +19,23 @@
    /* b enfants directs de p */
    #ex2 p > b { color: green; }
 
-   /* p immédiatement précédés par h1 */
-   #ex3 h1 + p { color: blue; }
+   /* p précédés par h1 */
+   #ex3 h1 ~ p { color: lightslategrey; }
 
-   /* toutes les règles ensemble ... */
-   #ex4 p b { color: red; }
-   #ex4 p > b { color: green; }
+   /* p immédiatement précédés par h1 */
    #ex4 h1 + p { color: blue; }
 
-   /* ordre différent */
-   #ex5 p > b { color: green; }
+   /* toutes les règles ensemble ... */
    #ex5 p b { color: red; }
+   #ex5 p > b { color: green; }
+   #ex5 h1 ~ p { color: lightslategrey; }
    #ex5 h1 + p { color: blue; }
+
+   /* ordre différent */
+   #ex6 p > b { color: green; }
+   #ex6 p b { color: red; }
+   #ex6 h1 + p { color: blue; }
+   #ex6 h1 ~ p { color: lightslategrey; }
   </style>
  </head>
 
@@ -85,8 +90,8 @@ p > b { color: green; }
  <div>
  <h3>Suivant dans l'ordre du document</h3>
 <pre>
-/* p immédiatement précédés par h1 */
-h1 + p { color: blue; }
+/* p précédés par h1 */
+h1 ~ p { color: lightslategrey; }
 </pre>
  <div class="exemple" id="ex3">
 <h1>Exemple</h1>
@@ -96,7 +101,20 @@ h1 + p { color: blue; }
  </div>
 
  <div>
- <h3>Ensemble des règles ... que se passe-t-il ?</h3>
+ <h3>Suivant immédiat dans l'ordre du document</h3>
+<pre>
+/* p immédiatement précédés par h1 */
+h1 + p { color: blue; }
+</pre>
+ <div class="exemple" id="ex4">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+ </div>
+
+ <div>
+ <h3>Ensemble des règles... que se passe-t-il ?</h3>
  <pre>
 /* 1. b descendants de p */
 p b { color: red; }
@@ -104,10 +122,13 @@ p b { color: red; }
 /* 2. b enfants directs de p */
 p &gt; b { color: green; }
 
-/* 3. p immédiatement précédés par h1 */
+/* 3. p précédés par h1 */
+h1 ~ p { color: lightslategrey; }
+
+/* 4. p immédiatement précédés par h1 */
 h1 + p { color: blue; }
 </pre>
- <div class="exemple" id="ex4">
+ <div class="exemple" id="ex5">
 <h1>Exemple</h1>
 <p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
 <p>texte banal</p>
@@ -116,7 +137,7 @@ h1 + p { color: blue; }
  </div>
 
  <div>
- <h3>En inversant les règles 1 et 2</h3>
+ <h3>En inversant les règles 1 et 2, 3 et 4</h3>
  <pre>
 /* 1. b enfants directs de p */
 p &gt; b { color: green; }
@@ -127,7 +148,7 @@ p b { color: red; }
 /* 3. p immédiatement précédés par h1 */
 h1 + p { color: blue; }
 </pre>
- <div class="exemple" id="ex5">
+ <div class="exemple" id="ex6">
 <h1>Exemple</h1>
 <p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
 <p>texte banal</p>
