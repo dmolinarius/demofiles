@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr"> 
+ <head>
+ <title>Exemples de couleurs HSL</title>
+ <link rel="stylesheet" href="exemple_style.css" type="text/css"></link>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <style type="text/css">
+   body { padding-left: 1em; }
+   pre { background-color: #DDD; padding: 2px 0.5em; }
+   div.p { padding: 0 1em; border: solid 2px #CCC; margin: 0.5em 0; }
+  :focus { outline-style: none; }
+  address { font-size: 80%; margin-top: 0; }
+  #main { margin: auto; }
+ </style>
+ <script type="text/javascript">//<![CDATA[
+  timerID = null;
+  colors = [
+    { name:"rouge", h:0 },
+    { name:"", h:15 },
+    { name:"orange", h:30 },
+    //{ name:"", h:37.5},
+    { name:"", h:45 },
+    //{ name:"", h:57.5 },
+    { name:"jaune", h:60 },
+    //{ name:"", h:75 },
+    { name:"", h:90 },
+    { name:"vert", h:120 },
+    { name:"", h:150 },
+    { name:"cyan", h:180 },
+    { name:"", h:210 },
+    { name:"bleu", h:240 },
+    { name:"", h:270 },
+    { name:"magenta", h:300 },
+    { name:"", h:330 },
+    { name:"", h:345 }
+  ];
+  saturations = [ 100, 75, 50, 25, 0 ];
+  luminances = [ 100, 87.5, 75, 62.5, 50, 37.5, 25, 12.5, 0 ];
+
+// create element tree
+   function init_page() {
+    doc = window.document;
+    maindiv = doc.getElementById("main");
+    maindiv.style.fontSize = "14px";
+
+//  display parameters
+    ncols = 3;
+    cell_border = 0.1;
+    cell_width = 3;
+    cell_height = 1.5;
+    table_margin_h1 = 4;
+    table_margin_h = 6;
+    table_margin_v1 = 4;
+    table_margin_v = 6;
+    main_margin_h = 4;
+    main_margin_v = 4;
+    background = "#808080";
+
+    nc = colors.length;
+    ns = saturations.length;
+    nl = luminances.length;
+
+//  loop through colors
+    for ( n = 0; n < nc; n++ ) {
+      c = n%ncols;
+
+//    create "hue" text box
+      box = doc.createElement("span");
+      s = box.style;
+      s.width = cell_width*ns+"em";
+      s.height = "1em"
+      s.position = "absolute";
+      s.left = (table_margin_h1+(ns*cell_width+table_margin_h)*c)+"em";
+      s.top = (table_margin_v1+(nl*cell_height+table_margin_v)*(n-c)/ncols-3.66)+"em";
+      s.fontFamily = "monospace";
+      s.fontWeight = "bold";
+      s.textAlign = "center";
+      box.appendChild(doc.createTextNode("hue = "+colors[n].h+"°"+(colors[n].name?" ("+colors[n].name+")":"")));
+      maindiv.appendChild(box);
+
+//    create "saturation" text box
+      box = doc.createElement("span");
+      s = box.style;
+      s.width = cell_width*ns+"em";
+      s.height = "1em"
+      s.position = "absolute";
+      s.left = (table_margin_h1+(ns*cell_width+table_margin_h)*c)+"em";
+      s.top = (table_margin_v1+(nl*cell_height+table_margin_v)*(n-c)/ncols-2.33)+"em";
+      s.fontFamily = "monospace";
+      s.fontWeight = "bold";
+      s.textAlign = "center";
+      box.appendChild(doc.createTextNode("saturation"));
+      maindiv.appendChild(box);
+
+//    create "lum" text box
+      box = doc.createElement("span");
+      s = box.style;
+      s.width = cell_width+"em";
+      s.height = "1em"
+      s.position = "absolute";
+      s.left = (table_margin_h1+(ns*cell_width+table_margin_h)*c-cell_width-0.5)+"em";
+      s.top = (table_margin_v1+(nl*cell_height+table_margin_v)*(n-c)/ncols-1)+"em";
+      s.fontFamily = "monospace";
+      s.fontWeight = "bold";
+      s.textAlign = "right";
+      box.appendChild(doc.createTextNode("lum"));
+      maindiv.appendChild(box);
+
+//    loop through saturations
+      for ( sn = 0; sn < ns; sn++ ) {
+        x = (table_margin_h1+(ns*cell_width+table_margin_h)*c+sn*cell_width);
+
+//      create saturation value text box
+        box = doc.createElement("span");
+        s = box.style;
+        s.width = cell_width+"em";
+        s.height = "1em";
+        s.position = "absolute";
+        s.left = x+"em";
+        s.top = (table_margin_v1+(nl*cell_height+table_margin_v)*(n-c)/ncols-1)+"em";
+        s.fontFamily = "monospace";
+        s.textAlign = "center";
+        box.appendChild(doc.createTextNode(saturations[sn]+"%"));
+        maindiv.appendChild(box);
+
+//      loop through lightness
+        for ( ln = 0; ln < nl; ln++ ) {
+          y = (table_margin_v1+(nl*cell_height+table_margin_v)*(n-c)/ncols+ln*cell_height);
+
+//        create lightnes value text box
+          box = doc.createElement("span");
+          s = box.style;
+          s.width = cell_width+"em";
+          s.height = "1em";
+          s.position = "absolute";
+          s.left = (table_margin_h1+(ns*cell_width+table_margin_h)*c-cell_width-0.5)+"em";
+          s.top = (table_margin_v1+(nl*cell_height+table_margin_v)*(n-c)/ncols+ln*cell_height+0.5)+"em";
+          s.fontFamily = "monospace";
+          s.textAlign = "right";
+          box.appendChild(doc.createTextNode(luminances[ln]+"%"));
+          maindiv.appendChild(box);
+
+//        create color box
+          box = doc.createElement("span");
+          s = box.style;
+          s.width = cell_width+"em";
+          s.height = cell_height+"em";
+          s.position = "absolute";
+          s.left = x+"em";
+          s.top = y+"em";
+          try { // IE fails if unknown color name
+            s.backgroundColor = "hsl("+colors[n].h+","+saturations[sn]+"%,"+luminances[ln]+"%)";
+          } catch(e) {
+            s.backgroundColor = "#F0F0EA";
+          }
+          s.borderWidth = cell_border+"em";
+          s.borderStyle = "solid";
+          s.borderColor = background;
+          box.onmouseover = function(x,y,h,s,l){return function(){show_popup(x,y,h,s,l);};}(x,y,colors[n].h,saturations[sn],luminances[ln]);
+          box.onmouseout = hide_popup;
+          maindiv.appendChild(box);
+        }
+      }
+    }
+    s = maindiv.style;
+    s.position = "relative";
+    s.width = (main_margin_h+table_margin_h1+(ns*cell_width+table_margin_h)*(ncols-1)+ns*cell_width)+"em";
+    s.height = (main_margin_v+table_margin_v1+(nl*cell_height+table_margin_v)*((nc-1-(nc-1)%ncols)/ncols)+nl*cell_height)+"em";
+    s.backgroundColor = background;
+    //s.fontSize = "18px";
+
+//  create popup window
+    win = doc.createElement("div");
+    s = win.style;
+    s.visibility = "hidden";
+    s.position = "absolute";
+    s.width = "30px";
+    s.height = "20px";
+    s.backgroundImage = 'url("line.png")';
+    s.backgroundRepeat = "no-repeat";
+    s.backgroundPosition = "0 0";
+    win.onmouseover = enter_popup;
+    win.onmousemove = function(){return function(){over_popup(event);};};
+    maindiv.appendChild(win);
+
+    popbox = doc.createElement("span");
+    s = popbox.style;
+    s.position = "absolute";
+    s.left = "30px";
+    s.top = "-20px";
+    s.width = "8em";
+    s.padding = "7px";
+    s.backgroundColor = "#FFDD88";
+    s.borderColor = "#CC0000";
+    s.borderWidth = "1px";
+    s.borderStyle = "solid";
+    s.fontFamily = "monospace";
+    s.fontWeight = "bold";
+    s.color = "#CC0000";
+    win.appendChild(popbox);
+
+    hsl_text = doc.createTextNode("rgb(xxx,xxx,xxx)");
+    popbox.appendChild(hsl_text);
+  }
+  function show_popup(x,y,h,s,l) {
+    if ( timerID ) {
+      window.clearTimeout(timerID);
+      timerID = null;
+    }
+    str = "hsl("+h+","+s+"%,"+l+"%)";
+    popbox.style.width = (0.6*str.length)+"em";
+    hsl_text.data = str;
+    win.style.left = (x+cell_width)+"em";
+    win.style.marginLeft = "-10px";
+    win.style.top = y+"em";
+    win.style.visibility = "visible";
+  }
+  function enter_popup() {
+    if ( timerID ) {
+      window.clearTimeout(timerID);
+      timerID = null;
+    }
+  }
+  function over_popup(event) {
+    if ( window.event )  { // MSIE
+      event = window.event;
+      x = event.x;
+      y = event.y;
+    }
+    else { // NS
+      x = event.layerX;
+      y = event.layerY;
+    }
+    if ( !(x >= 0) || x > 10 || !(y >= 0) || y > 20 ) {
+      definitely_hide_popup();
+    }
+  }
+  function hide_popup() {
+    timerID = window.setTimeout("definitely_hide_popup()",100);
+  }
+  function definitely_hide_popup() {
+    win.style.visibility = "hidden";
+    timerID = null;
+  }
+
+ //]]></script>
+ </head>
+<body onload="init_page();">
+
+ <h1>Couleurs HSL (CSS3)</h1>
+
+<div class="p">
+ <p><b>Attention :</b> <b>Internet Explorer</b> ne reconnait pas le format <b>HSL</b>.
+Si vous êtes dans ce cas, veuillez utiliser un navigateur comme <b>Chrome</b>, <b>Firefox</b>, <b>Konqueror</b>, <b>Opera</b>, <b>Safari</b>, ou bien d'autres....
+</p>
+
+<p>
+En survolant les cases, une fenêtre popup rappelle le code couleur de la case concernée.
+Si les tableaux ne tiennent pas dans la largeur de la page, vous pouvez diminuer la taille des caractères.
+</p>
+</div>
+
+ <div style="background-color: #808080"><p id="main"> </p></div>
+
+<address>Copyright : Daniel Muller</address>
+</body>
+</html>
