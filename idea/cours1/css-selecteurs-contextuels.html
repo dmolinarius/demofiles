@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<title>Sélecteurs contextuels</title>
+<link rel="stylesheet" href="exemple_style.css">
+<meta charset="utf-8" />
+<style>
+ body { padding-left: 1em; }
+ pre { background-color: #DDD; padding: 2px 0.5em; }
+ div { padding: 1em 1em 0; border: solid 2px #CCC; margin-top: 0.5em; }
+ h3 { margin-top: 0; }
+ div.exemple {padding-bottom: 0.5em; margin-bottom: 0.5em; }
+ div.exemple * {color: inherit; border: none; margin: 0; padding: 0;}
+ div.exemple h1 {margin-top: 0; margin-bottom: 0.5em; }
+
+ /* b descendants de p */
+ #ex1 p b { color: red; }
+ 
+ /* b enfants directs de p */
+ #ex2 p > b { color: green; }
+
+ /* p immédiatement précédés par h1 */
+ #ex3 h1 + p { color: blue; }
+
+ /* toutes les règles ensemble ... */
+ #ex4 p b { color: red; }
+ #ex4 p > b { color: green; }
+ #ex4 h1 + p { color: blue; }
+
+</style>
+
+ <h1>Sélecteurs contextuels</h1>
+
+ <div>
+ <h3>Code html utilisé pour les exemples :</h3>
+ <pre>
+&lt;h1&gt;Exemple&lt;/h1&gt;
+&lt;p&gt;texte &lt;b&gt;gras&lt;/b&gt;, &lt;i&gt;très &lt;b&gt;gras&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;texte banal&lt;/p&gt;
+</pre>
+ <div class="exemple">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+ </div>
+
+ <div>
+ <h3>Descendant d'un parent</h3>
+ <pre>
+/* b descendants de p */
+p b { color: red; }
+</pre>
+ <div class="exemple" id="ex1">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+<p><i>N.B. L'élément "b" (zone en gras) est désigné par le sélecteur quelle que soit sa "distance"
+dans l'arbre, par rapport à l'ascendant "p" (enfant, petit-enfant, etc...).
+</i></p>
+ </div>
+
+ <div>
+ <h3>Enfant direct</h3>
+<pre>
+/* b enfants directs de p */
+p > b { color: green; }
+</pre>
+ <div class="exemple" id="ex2">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+<p><i>N.B. Contrairement à ci-dessus, le sélecteur désigne uniquement le premier élément en gras.</i></p>
+ </div>
+
+ <div>
+ <h3>Suivant dans l'ordre du document</h3>
+<pre>
+/* p immédiatement précédés par h1 */
+h1 + p { color: blue; }
+</pre>
+ <div class="exemple" id="ex3">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+ </div>
+
+ <div>
+ <h3>Ensemble des règles ... que se passe-t-il ?</h3>
+ <pre>
+/* 1. b descendants de p */
+p b { color: red; }
+ 
+/* 2. b enfants directs de p */
+p &gt; b { color: green; }
+
+/* 3. p immédiatement précédés par h1 */
+h1 + p { color: blue; }
+</pre>
+ <div class="exemple" id="ex4">
+<h1>Exemple</h1>
+<p>texte <b>gras</b>, <i>très <b>gras</b></i></p>
+<p>texte banal</p>
+</div>
+<p><i>L'ordre des règles 1 et 2 a son importance. Vérifiez...</i></p>
+ </div>
+
+
+<p>
+  <b>N.B.</b> S'il s'agit de la
+ <a href="http://dmolinarius.github.io/demofiles/idea/cours1/css-selecteurs-contextuels.html">version en ligne</a>,
+  la conformité de ce document aux standards HTML et CSS peut être
+  contrôlée grâce aux liens portés par les icônes ci-dessous.
+<br><br>
+ <a href="http://validator.w3.org/check?uri=referer">
+  <img src="W3C_valid_HTML5.png" alt="Valid HTML5" height="31" /></a>
+
+ <a href="http://jigsaw.w3.org/css-validator/check/referer">
+  <img src="W3C_valid_CSS.png" alt="Valid CSS" height="31" /></a>
