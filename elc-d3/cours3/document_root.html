@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>Interface Node - Document et élément racine</title>
+<meta charset='utf-8'>
+<style>
+body {
+  padding: 0 1em;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #808080;
+  cursor: default;
+}
+pre {
+  padding: 0.5em;
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+}
+.tiny {
+  font-size: 0.7em;
+  color: #404040;
+}
+hr {
+  margin-bottom: 0.2em;
+}
+
+</style>
+<script src="script.js"></script>
+<script>
+  window.onload = function() {
+    init_footer();
+  }
+</script>
+
+<h1>DOM Core - Exemple</h1>
+<h2>Interface Node - Document et élément racine</h2>
+
+<p id="dropzone"></p>
+
+<script>
+  nodeTypes = [ '', 'ELEMENT_NODE', 'ATTRIBUTE_NODE', 'TEXT_NODE', 'CDATA_SECTION_NODE',
+   'ENTITY_REFERENCE_NODE', 'ENTITY_NODE', 'PROCESSING_INSTRUCTION_NODE', 'COMMENT_NODE',
+   'DOCUMENT_NODE', 'DOCUMENT_TYPE_NODE', 'DOCUMENT_FRAGMENT_NODE', 'NOTATION_NODE'
+  ];
+
+  var root = document.documentElement;
+
+  dropzone.appendChild(document.createTextNode(
+    'Type du noeud racine : '+document.nodeType+' \u21d2 '+nodeTypes[document.nodeType])); 
+  dropzone.appendChild(document.createElement('br'));
+  dropzone.appendChild(document.createElement('br'));
+
+  dropzone.appendChild(document.createTextNode('Nom de l\'élément racine : '+root.nodeName));
+  dropzone.appendChild(document.createElement('br'));
+  dropzone.appendChild(document.createElement('br'));
+
+  for ( n=0; n < document.children.length; n++ ) {
+    if ( document.children[n] === root ) {
+      dropzone.appendChild(document.createTextNode(
+        'L\'élément racine est l\'enfant n° '+n+' du document'));
+    }
+  }
+
+</script>
+</pre>
+
+ <p>
+  S'il s'agit de la
+  <a href="http://dmolinarius.github.io/demofiles/elc-d3/cours3/document_root.html">version en ligne</a>,
+  la conformité de ce document au standard HTML peut être
+  contrôlée grâce au lien porté par l'icône ci-dessous.
+<div id="std-footer"></div>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<title>Interface Document - querySelector et al.</title>
+<meta charset='utf-8'>
+<style>
+body {
+  padding: 0 1em;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #808080;
+  cursor: default;
+}
+pre {
+  padding: 0.5em;
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+}
+.tiny {
+  font-size: 0.7em;
+  color: #404040;
+}
+hr {
+  margin-bottom: 0.2em;
+}
+table {
+  float: left;
+}
+td {
+  border: 1px solid #808080;
+  padding: 5px 0.5em;
+  text-align: center;
+}
+#js_drop {
+  clear: left;
+}
+#html_drop {
+  display: inline-block;
+  margin-left: 1.33em;
+  padding: 1.33em 0.5em;
+  margin-top: 0;
+}
+</style>
+<script src="script.js"></script>
+<script>
+  window.onload = function() {
+    init_footer();
+  }
+</script>
+
+<h1>DOM Core - Exemple</h1>
+<h2>Interface Document - querySelector et querySelectorAll</h2>
+
+<p>Le contenu de la table ci-dessous a été généré par programme.
+<p>Voici le code HTML <em>(remarquez que les cellules sont initialement vides)</em> :
+<table class="show">
+ <tr><td colspan="3" class="display"></tr>
+ <tr><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td></tr>
+ <tr><td></td><td></td><td></td></tr>
+</table>
+
+<pre id="html_drop"></pre>
+
+<p>Et le code javascript de cette page :
+
+<pre id="js_drop"></pre> 
+
+<script class="show">
+  // affichage du code html de la table 
+  var table = document.querySelector('table.show');
+  html_drop.textContent = table.outerHTML;
+  
+  // numérotation des cellules
+  var cells = document.querySelectorAll('table td');
+  for ( var n=0; n < cells.length; n++ ) {
+    cells[n].textContent = n;
+  }
+
+  // affichage du code source du script
+  var script = document.querySelector('script.show');
+  js_drop.innerHTML = script.textContent;
+</script>
+
+ <p>
+  S'il s'agit de la
+  <a href="http://dmolinarius.github.io/demofiles/elc-d3/cours3/querySelector.html">version en ligne</a>,
+  la conformité de ce document au standard HTML peut être
+  contrôlée grâce au lien porté par l'icône ci-dessous.
+<div id="std-footer"></div>
