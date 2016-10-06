@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<TITLE>Espaces de noms XML</TITLE>
+<LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css">
+</HEAD>
+<BODY>
+
+<H1>Espaces de noms XML</H1>
+
+<HR>
+<H2>Exemple d'une feuille de style XSLT</H2>
+<P>
+Les feuilles de style XSLT utilisent les espaces de noms, notamment pour différencier
+les éléments de transformation du code destiné au document résultant :
+<PRE CLASS="frame" STYLE="background: #CCCCCC; font-family: Courier; font-weight:normal; ">
+&lt;xsl:stylesheet version="1.0" 
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+&lt;xsl:template match="/">
+ &lt;fo:root>
+  . . .
+ &lt;/fo:root>
+&lt;/xsl:template>
+
+&lt;/xsl:stylesheet>
+</PRE>
+<P><I>(<A HREF="Source of be-papier.html">voir source</A>)</I></P>
+
+<P>
+Une coloration syntaxique ciblée permet de séparer visuellement les éléments
+des divers espaces de noms :
+
+<P><I>(<A HREF="Source of be-papier.xsl.html">voir l'espace xsl</A>)</I>
+&nbsp;
+(<A HREF="Source of be-papier.fo.html">voir l'espace fo</A>)</I>
+
+<P>&nbsp;
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR><TD ALIGN="left"><ADDRESS>Copyright : Daniel Muller
+</ADDRESS></TD>
+<TD ALIGN="right"><DIV CLASS="date">
+<SPAN ID="last_modified">
+161004</SPAN>
+</DIV></TD></TR></TABLE>
+
+</BODY>
+</HTML>
+

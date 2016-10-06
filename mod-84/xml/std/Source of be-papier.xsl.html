@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<!-- ------------------ -->
+<!-- Entête du document -->
+<!-- ------------------ -->
+
+<HEAD>
+<TITLE>Source of : be-papier.xsl</TITLE>
+<LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css">
+<meta charset="utf-8">
+
+<STYLE TYPE="text/css"> <!--
+PRE {
+	background-color: #EAEAEA;
+	overflow: hidden;
+}
+A {
+	text-decoration: none;
+}
+--></STYLE>
+</HEAD>
+
+<!-- ----------------- -->
+<!-- Corps du document -->
+<!-- ----------------- -->
+
+<BODY>
+
+<H1>Document XML </H1>
+<HR>
+
+<H2>Texte source du fichier :
+be-papier.xsl</H2>
+
+<P>
+<PRE CLASS="frame xmlsrc">&lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xalan</font>="<font color="#990000">http://xml.apache.org/xalan</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>" <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">home_dir</font>" <font color="#009900">select</font>="<font color="#990000">'/home/muller/public_html/cours'</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">image_dir</font>" <font color="#009900">select</font>="<font color="#990000">concat($home_dir,'/images')</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">hostname</font>" <font color="#009900">select</font>="<font color="#990000">'http://tic01.tic.ec-lyon.fr'</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">path_base</font>" <font color="#009900">select</font>="<font color="#990000">concat($hostname,'/','~muller/cours')</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">url_base</font>" <font color="#009900">select</font>="<font color="#990000">$path_base</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">rel_base</font>" <font color="#009900">select</font>="<font color="#990000">$url_base</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">svg_base</font>" <font color="#009900">select</font>="<font color="#990000">$rel_base</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">rfc_base</font>" <font color="#009900">select</font>="<font color="#990000">concat($hostname,'/','rfc')</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">raw_base</font>" <font color="#009900">select</font>="<font color="#990000">concat($hostname,'/xmlraw/~muller/cours')</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+ &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">src_base</font>" <font color="#009900">select</font>="<font color="#990000">concat($hostname,'/xmlsrc/~muller/cours')</font>"&gt;&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:output</font> <font color="#009900">method</font>="<font color="#990000">xml</font>"&gt;&lt;/<font color="#0000cc">xsl:output</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * Template principal - Déclaration des formats de page       * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">/</font>"&gt;
+  <b>&lt;fo:root&gt;</b>
+
+   <b><font color="#777777"></font></b>
+
+   <b>&lt;fo:layout-master-set&gt;</b>
+    <b>&lt;fo:simple-page-master master-name="simple" margin-left="1.5cm" margin-right="1.5cm" margin-top="0.5cm" margin-bottom="0.5cm" page-width="21cm" page-height="29.7cm"&gt;</b>
+
+     <b><font color="#777777">&lt;!-- Corps de page --&gt;</font></b>
+     <b>&lt;fo:region-body region-name="xsl-region-body" margin-top="2.0cm" margin-bottom="1.5cm"&gt;</b><b>&lt;/fo:region-body&gt;</b>
+
+     <b><font color="#777777">&lt;!-- Haut de page --&gt;</font></b>
+     <b>&lt;fo:region-before region-name="xsl-region-before" extent="1.5cm"&gt;</b><b>&lt;/fo:region-before&gt;</b>
+
+     <b><font color="#777777">&lt;!-- Bas de page --&gt;</font></b>
+     <b>&lt;fo:region-after region-name="xsl-region-after" display-align="after" extent="1.5cm"&gt;</b><b>&lt;/fo:region-after&gt;</b>
+
+    <b>&lt;/fo:simple-page-master&gt;</b>
+   <b>&lt;/fo:layout-master-set&gt;</b>
+
+   <b><font color="#777777">&lt;!-- Contenu du document --&gt;</font></b>
+   <b>&lt;fo:page-sequence master-reference="simple"&gt;</b>
+    &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+   <b>&lt;/fo:page-sequence&gt;</b>
+
+  <b>&lt;/fo:root&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * COURS - Modèle de contenu                                  * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">be</font>"&gt;
+
+  <b><font color="#777777">&lt;!-- Bas de page - - - - - - - - - - - - - - - - - - - - - - - - - --&gt;</font></b>
+
+  <b>&lt;fo:static-content flow-name="xsl-region-after" font-family="Arial" font-size="8pt"&gt;</b>
+   <b>&lt;fo:block text-align-last="justify" space-before="0.5cm"&gt;</b>
+    <b>&lt;fo:leader leader-pattern="rule" rule-style="dashed"&gt;</b><b>&lt;/fo:leader&gt;</b>
+   <b>&lt;/fo:block&gt;</b>
+   <b>&lt;fo:block text-align-last="justify"&gt;</b>
+
+    <b><font color="#777777">&lt;!-- auteur --&gt;</font></b>
+    &lt;<font color="#0000cc">xsl:text</font>&gt;<b>©</b> &lt;/<font color="#0000cc">xsl:text</font>&gt;
+    &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@auteur</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+
+    <b><font color="#777777">&lt;!-- date d'impression --&gt;</font></b>
+    &lt;<font color="#0000cc">xsl:text</font>&gt;<b> - Mis en page </b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+    &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">$date</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+
+    <b>&lt;fo:leader leader-pattern="space"&gt;</b><b>&lt;/fo:leader&gt;</b>
+
+    <b><font color="#777777"></font></b>
+    &lt;<font color="#0000cc">xsl:text</font>&gt;<b>Page </b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+    <b>&lt;fo:page-number&gt;</b><b>&lt;/fo:page-number&gt;</b>
+    &lt;<font color="#0000cc">xsl:text</font>&gt;<b> sur </b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+    <b>&lt;fo:page-number-citation ref-id="last-page"&gt;</b><b>&lt;/fo:page-number-citation&gt;</b>
+   <b>&lt;/fo:block&gt;</b>
+  <b>&lt;/fo:static-content&gt;</b>
+
+  <b><font color="#777777">&lt;!-- Haut de page  - - - - - - - - - - - - - - - - - - - - - - - - --&gt;</font></b>
+
+  <b>&lt;fo:static-content flow-name="xsl-region-before"&gt;</b>
+   <b>&lt;fo:table table-layout="fixed" width="100%"&gt;</b>
+    <b>&lt;fo:table-column column-number="1" column-width="1.8cm"&gt;</b><b>&lt;/fo:table-column&gt;</b>
+    <b>&lt;fo:table-column column-number="2" column-width="8cm"&gt;</b><b>&lt;/fo:table-column&gt;</b>
+    <b>&lt;fo:table-column column-number="3" column-width="from-parent(width)-10cm"&gt;</b><b>&lt;/fo:table-column&gt;</b>
+
+    <b>&lt;fo:table-body&gt;</b>
+     <b>&lt;fo:table-row&gt;</b>
+
+      <b><font color="#777777">&lt;!-- logo TIC --&gt;</font></b>
+      <b>&lt;fo:table-cell&gt;</b>
+       <b>&lt;fo:block&gt;</b>
+        <b>&lt;fo:external-graphic height="1.5cm" scaling="uniform"&gt;</b>
+         &lt;<font color="#0000cc">xsl:attribute</font> <font color="#009900">name</font>="<font color="#990000">src</font>"&gt;
+          &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">concat('url(',$image_dir,'/logo-tic-papier.gif',')')</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+         &lt;/<font color="#0000cc">xsl:attribute</font>&gt;
+        <b>&lt;/fo:external-graphic&gt;</b>
+       <b>&lt;/fo:block&gt;</b>
+      <b>&lt;/fo:table-cell&gt;</b>
+
+      <b><font color="#777777">&lt;!-- Ecole Centrale Option T.I.C. --&gt;</font></b>
+      <b>&lt;fo:table-cell display-align="center"&gt;</b>
+       <b>&lt;fo:block font-family="Arial" font-size="12pt" font-weight="bold"&gt;</b>
+        &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">$filiere</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+       <b>&lt;/fo:block&gt;</b>
+
+       <b><font color="#777777">&lt;!-- Technologies de l'Information et de la Communication --&gt;</font></b>
+       <b>&lt;fo:block font-family="Arial" font-size="8pt"&gt;</b>
+        &lt;<font color="#0000cc">xsl:copy-of</font> <font color="#009900">select</font>="<font color="#990000">$option</font>"&gt;&lt;/<font color="#0000cc">xsl:copy-of</font>&gt;
+       <b>&lt;/fo:block&gt;</b>
+
+      <b>&lt;/fo:table-cell&gt;</b>
+
+      <b>&lt;fo:table-cell display-align="center" text-align="right"&gt;</b>
+       <b>&lt;fo:block font-family="Arial" font-size="8pt"&gt;</b><b><font color="#777777">&lt;!-- 10pt qd y'a la place --&gt;</font></b>
+        &lt;<font color="#0000cc">xsl:text</font>&gt;<b>Cours : </b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+        <b>&lt;fo:inline font-weight="bold"&gt;</b>
+         &lt;<font color="#0000cc">xsl:choose</font>&gt;
+          &lt;<font color="#0000cc">xsl:when</font> <font color="#009900">test</font>="<font color="#990000">contains(@cours,'.br.')</font>"&gt;
+           &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">substring-before(@cours,'.br.')</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+           <b>&lt;fo:inline linefeed-treatment="preserve" white-space-collapse="false"&gt;</b>
+            &lt;<font color="#0000cc">xsl:text</font>&gt;
+&lt;/<font color="#0000cc">xsl:text</font>&gt;
+           <b>&lt;/fo:inline&gt;</b>
+           &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">substring-after(@cours,'.br.')</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+          &lt;/<font color="#0000cc">xsl:when</font>&gt;
+          &lt;<font color="#0000cc">xsl:otherwise</font>&gt;
+           &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@cours</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+          &lt;/<font color="#0000cc">xsl:otherwise</font>&gt;
+         &lt;/<font color="#0000cc">xsl:choose</font>&gt;
+        <b>&lt;/fo:inline&gt;</b>
+       <b>&lt;/fo:block&gt;</b>
+       <b>&lt;fo:block font-family="Arial" font-size="8pt"&gt;</b>
+        &lt;<font color="#0000cc">xsl:text</font>&gt;<b>Auteur : </b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+        <b>&lt;fo:inline font-weight="bold"&gt;</b>
+         &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@auteur</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+        <b>&lt;/fo:inline&gt;</b>
+       <b>&lt;/fo:block&gt;</b>
+      <b>&lt;/fo:table-cell&gt;</b>
+     <b>&lt;/fo:table-row&gt;</b>
+
+    <b>&lt;/fo:table-body&gt;</b>
+   <b>&lt;/fo:table&gt;</b>
+  <b>&lt;/fo:static-content&gt;</b>
+
+  <b><font color="#777777">&lt;!-- Contenu de page - - - - - - - - - - - - - - - - - - - - - - - --&gt;</font></b>
+
+  <b><font color="#777777">&lt;!-- titre du BE --&gt;</font></b>
+  <b>&lt;fo:flow flow-name="xsl-region-body"&gt;</b>
+   <b>&lt;fo:block text-align="center" space-before="1.0em" space-after="0.5em" border-bottom-style="solid" border-bottom-color="#dde6e6" color="#005050" font-family="Arial" font-weight="bold" font-size="24pt"&gt;</b>
+    &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+   <b>&lt;/fo:block&gt;</b>
+
+   <b><font color="#777777">&lt;!-- texte du BE --&gt;</font></b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+   <b>&lt;fo:block id="last-page"&gt;</b><b>&lt;/fo:block&gt;</b>
+  <b>&lt;/fo:flow&gt;</b>
+
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * CHAPITRE - Modèle de contenu                               * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">chapitre</font>"&gt;
+
+  <b><font color="#777777">&lt;!-- titre du chapitre --&gt;</font></b>
+
+  <b>&lt;fo:block text-align="center" space-before="1.2em" space-after="0.2em" color="#005050" font-family="Arial" font-weight="bold" font-size="16pt"&gt;</b>
+   &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+  <b>&lt;/fo:block&gt;</b>
+
+  <b><font color="#777777"></font></b>
+
+  <b>&lt;fo:block font-family="Arial" font-size="10pt" text-align="justify"&gt;</b> 
+
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * PARAGRAPHE - Modèle de contenu                             * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">paragraphe</font>"&gt;
+  <b>&lt;fo:block space-before="1.0em"&gt;</b>
+   <b>&lt;fo:block font-size="12pt" color="#005050" space-before="0.5em"&gt;</b>
+    &lt;<font color="#0000cc">xsl:if</font> <font color="#009900">test</font>="<font color="#990000">@prefix</font>"&gt;
+     &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@prefix</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+     &lt;<font color="#0000cc">xsl:text</font>&gt; &lt;/<font color="#0000cc">xsl:text</font>&gt;
+    &lt;/<font color="#0000cc">xsl:if</font>&gt;
+    &lt;<font color="#0000cc">xsl:number</font> <font color="#009900">count</font>="<font color="#990000">paragraphe</font>"&gt;&lt;/<font color="#0000cc">xsl:number</font>&gt;
+    &lt;<font color="#0000cc">xsl:text</font>&gt;<b>.</b> &lt;/<font color="#0000cc">xsl:text</font>&gt;
+    &lt;<font color="#0000cc">xsl:if</font> <font color="#009900">test</font>="<font color="#990000">@titre</font>"&gt;
+     &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+     &lt;<font color="#0000cc">xsl:text</font>&gt;<b>.</b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+    &lt;/<font color="#0000cc">xsl:if</font>&gt;
+   <b>&lt;/fo:block&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * BLOC - Modèle de contenu                                   * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">bloc</font>"&gt;
+  &lt;<font color="#0000cc">xsl:call-template</font> <font color="#009900">name</font>="<font color="#990000">end-text</font>"&gt;&lt;/<font color="#0000cc">xsl:call-template</font>&gt;
+  <b>&lt;fo:block space-before="0.5em"&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * QUESTIONS - Modèle de contenu                              * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">question</font>"&gt;
+  <b>&lt;fo:block space-before="0.5em"&gt;</b>
+   <b>&lt;fo:inline font-weight="bold" color="#005050"&gt;</b>
+    &lt;<font color="#0000cc">xsl:number</font> <font color="#009900">count</font>="<font color="#990000">paragraphe</font>"&gt;&lt;/<font color="#0000cc">xsl:number</font>&gt;
+    &lt;<font color="#0000cc">xsl:text</font>&gt;<b>.</b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+    &lt;<font color="#0000cc">xsl:number</font> <font color="#009900">count</font>="<font color="#990000">question</font>"&gt;&lt;/<font color="#0000cc">xsl:number</font>&gt;
+    &lt;<font color="#0000cc">xsl:text</font>&gt; &lt;/<font color="#0000cc">xsl:text</font>&gt;
+   <b>&lt;/fo:inline&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * REPONSES - Modèle de contenu                               * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">reponse</font>"&gt;
+  <b>&lt;fo:block space-before="0.5em"&gt;</b>
+   <b>&lt;fo:inline font-weight="bold" color="#005050"&gt;</b>
+    &lt;<font color="#0000cc">xsl:text</font>&gt;<b>O</b> &lt;/<font color="#0000cc">xsl:text</font>&gt;
+   <b>&lt;/fo:inline&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+ 
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * Eléments à la HTML - Modèle de contenu                     * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">pre</font>"&gt;
+  &lt;<font color="#0000cc">xsl:call-template</font> <font color="#009900">name</font>="<font color="#990000">end-text</font>"&gt;&lt;/<font color="#0000cc">xsl:call-template</font>&gt;
+  <b>&lt;fo:block space-before="1em" text-align="left" font-family="Courier New" background-color="#dde6e6" padding="0.5em" linefeed-treatment="preserve" white-space-collapse="false"&gt;</b>
+   &lt;<font color="#0000cc">xsl:if</font> <font color="#009900">test</font>="<font color="#990000">@paper-font-size</font>"&gt;
+    &lt;<font color="#0000cc">xsl:attribute</font> <font color="#009900">name</font>="<font color="#990000">font-size</font>"&gt;
+     &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@paper-font-size</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+    &lt;/<font color="#0000cc">xsl:attribute</font>&gt;
+   &lt;/<font color="#0000cc">xsl:if</font>&gt;
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">img</font>"&gt;
+  &lt;<font color="#0000cc">xsl:call-template</font> <font color="#009900">name</font>="<font color="#990000">end-text</font>"&gt;&lt;/<font color="#0000cc">xsl:call-template</font>&gt;
+  <b>&lt;fo:block text-align="center"&gt;</b>
+   <b>&lt;fo:external-graphic scaling="uniform" width="{@paper-width}"&gt;</b>
+    &lt;<font color="#0000cc">xsl:attribute</font> <font color="#009900">name</font>="<font color="#990000">src</font>"&gt;
+     &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">concat('url(',$home_dir,'/',$repertoire,'/',@src,')')</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+    &lt;/<font color="#0000cc">xsl:attribute</font>&gt;
+   <b>&lt;/fo:external-graphic&gt;</b>
+  <b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">b</font>"&gt;
+  <b>&lt;fo:inline font-weight="bold" color="#005050"&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:inline&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">i</font>"&gt;
+  <b>&lt;fo:inline font-style="italic"&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:inline&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">br</font>"&gt;
+  <b><font color="#777777">&lt;!-- due to a bug of FOP we need to turn off white-space-collapse to preserve line-feed-treatment --&gt;</font></b>
+  <b>&lt;fo:leader leader-pattern="space"&gt;</b><b>&lt;/fo:leader&gt;</b>
+  <b>&lt;fo:inline linefeed-treatment="preserve" white-space-collapse="false"&gt;</b>
+   &lt;<font color="#0000cc">xsl:text</font>&gt;
+&lt;/<font color="#0000cc">xsl:text</font>&gt;
+  <b>&lt;/fo:inline&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">a</font>"&gt;
+  <b>&lt;fo:inline font-weight="bold" color="#005050"&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:inline&gt;</b>
+  <b><font color="#777777">&lt;!--fo:inline color=&quot;#8888CC&quot; font-size=&quot;8pt&quot;&gt;
+   &lt;xsl:apply-templates select=&quot;@href&quot;/&gt;
+  &lt;/fo:inline--&gt;</font></b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">@href</font>"&gt;
+  &lt;<font color="#0000cc">xsl:text</font>&gt;<b> [</b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+  <b>&lt;fo:basic-link external-destination="{.}"&gt;</b>
+   &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">.</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+  <b>&lt;/fo:basic-link&gt;</b>
+  &lt;<font color="#0000cc">xsl:text</font>&gt;<b>]</b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">saut-de-page</font>"&gt;
+  <b>&lt;fo:block break-after="page"&gt;</b><b>&lt;/fo:block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">liste</font>"&gt;
+  <b>&lt;fo:list-block provisional-distance-between-starts="1.0em" space-after="0.5em"&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/fo:list-block&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">liste/item</font>"&gt;
+  <b>&lt;fo:list-item space-after="0.25em" space-before="0.5em"&gt;</b>
+   <b>&lt;fo:list-item-label end-indent="label-end()"&gt;</b>
+    <b>&lt;fo:block padding-top="0.3em"&gt;</b>
+     <b>&lt;fo:external-graphic height="1.5em" scaling="uniform"&gt;</b>
+      &lt;<font color="#0000cc">xsl:attribute</font> <font color="#009900">name</font>="<font color="#990000">src</font>"&gt;
+       &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">concat('url(',$image_dir,'/green-bullet-papier.gif',')')</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+      &lt;/<font color="#0000cc">xsl:attribute</font>&gt;
+     <b>&lt;/fo:external-graphic&gt;</b>
+    <b>&lt;/fo:block&gt;</b>
+   <b>&lt;/fo:list-item-label&gt;</b>
+   <b>&lt;fo:list-item-body start-indent="body-start()"&gt;</b>
+    <b>&lt;fo:block&gt;</b>
+     &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+    <b>&lt;/fo:block&gt;</b>
+   <b>&lt;/fo:list-item-body&gt;</b>
+  <b>&lt;/fo:list-item&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+<b><font color="#777777"></font></b>
+&lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">font</font>"&gt;
+ <b>&lt;fo:inline font-family="{@name}" font-size="{@size}"&gt;</b>
+  &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+ <b>&lt;/fo:inline&gt;</b>
+&lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- * Quelques utilitaires                                       * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- *                                                            * --&gt;</font></b>
+ <b><font color="#777777">&lt;!-- ************************************************************** --&gt;</font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">name</font>="<font color="#990000">end-text</font>"&gt;
+  &lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">preceding-text</font>"&gt;
+   &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">mode</font>="<font color="#990000">preceding-text</font>" <font color="#009900">select</font>="<font color="#990000">preceding-sibling::node()[1]</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  &lt;/<font color="#0000cc">xsl:variable</font>&gt;
+  &lt;<font color="#0000cc">xsl:if</font> <font color="#009900">test</font>="<font color="#990000">(name(..)='question' or name(..)='bloc') and $preceding-text='yes'</font>"&gt;
+   <b>&lt;fo:leader leader-pattern="space"&gt;</b><b>&lt;/fo:leader&gt;</b>
+   <b>&lt;fo:inline linefeed-treatment="preserve" white-space-collapse="false"&gt;</b>
+    &lt;<font color="#0000cc">xsl:text</font>&gt;
+&lt;/<font color="#0000cc">xsl:text</font>&gt;
+   <b>&lt;/fo:inline&gt;</b>
+  &lt;/<font color="#0000cc">xsl:if</font>&gt;
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ <b><font color="#777777"></font></b>
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">node()</font>" <font color="#009900">mode</font>="<font color="#990000">preceding-text</font>"&gt;
+  &lt;<font color="#0000cc">xsl:choose</font>&gt;
+   &lt;<font color="#0000cc">xsl:when</font> <font color="#009900">test</font>="<font color="#990000">normalize-space(.)=''</font>"&gt;
+    &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">mode</font>="<font color="#990000">preceding-text</font>" <font color="#009900">select</font>="<font color="#990000">preceding-sibling::node()[1]</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+   &lt;/<font color="#0000cc">xsl:when</font>&gt;
+   &lt;<font color="#0000cc">xsl:when</font> <font color="#009900">test</font>="<font color="#990000">self::comment()</font>"&gt;
+    &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">mode</font>="<font color="#990000">preceding-text</font>" <font color="#009900">select</font>="<font color="#990000">preceding-sibling::node()[1]</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+   &lt;/<font color="#0000cc">xsl:when</font>&gt;
+   &lt;<font color="#0000cc">xsl:when</font> <font color="#009900">test</font>="<font color="#990000">self::text()</font>"&gt;
+    &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">'yes'</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+   &lt;/<font color="#0000cc">xsl:when</font>&gt;
+   &lt;<font color="#0000cc">xsl:when</font> <font color="#009900">test</font>="<font color="#990000">name(.)='b' or name(.)='i' or name(.)='a'</font>"&gt;
+    &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">'yes'</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+   &lt;/<font color="#0000cc">xsl:when</font>&gt;
+   &lt;<font color="#0000cc">xsl:otherwise</font>&gt;
+    &lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">'no'</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;
+   &lt;/<font color="#0000cc">xsl:otherwise</font>&gt;
+  &lt;/<font color="#0000cc">xsl:choose</font>&gt;
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+ <b><font color="#777777">&lt;!-- fin de la feuille de style --&gt;</font></b>
+
+&lt;/<font color="#0000cc">xsl:stylesheet</font>&gt;</PRE>
+
+<!-- --------------- -->
+<!-- Fin du document -->
+<!-- --------------- -->
+
+<P>
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR>
+<TD ALIGN="left"><ADDRESS>Copyright : Daniel Muller</ADDRESS></TD>
+<TD ALIGN="right">
+<DIV CLASS="date">070228</DIV>
+</TD></TR></TABLE>
+</BODY>
+
+
