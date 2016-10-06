@@ -1,0 +1,186 @@
+
+/***********************************************************************
+**
+** Color stuff
+**
+***********************************************************************/
+
+BODY {
+	background-color: #F0F0EA;
+	color: black;
+}
+
+H1, ADDRESS, #stylesheet-info, #date {
+	color: rgb(0,100,50);
+}
+HR {
+	background-color: rgb(0,100,50);
+}
+
+H2 {
+	color: rgb(0,63,127);
+}
+
+H3, EM, .quote {
+	color: red;
+}
+
+Q, .quote EM, EM.quote, EM .quote {
+	color: blue;
+}
+Q:before, Q:after {
+	content: "";
+}
+
+.quote #stylesheet-info, #stylesheet-info .quote {
+	background-color: rgb(255,190,127);
+	color: rgb(0,100,50);
+}
+
+A:visited {
+	color: rgb(127,63,0);
+}
+A:link, A:active, A:hover {
+	color: rgb(255,127,0);
+}
+
+PRE {
+	background-color: #CCCCFF;
+}
+P.solid {
+	background-color: rgb(255,190,127);
+}
+
+.alu {
+	background: url(alu.jpg);
+}
+.marble {
+	background: url(marble.jpg);
+}
+
+.frame {
+	border:  3px;
+	border-style: inset;
+	overflow: auto;
+}
+.device {
+	border:  3px;
+	border-style: outset;
+}
+.box {
+	padding: 5px;
+	text-align: center;
+}
+.altback {
+	background-color: rgb(255,190,127);
+}
+.grey {
+	background-color: #CCCCCC;
+}
+
+/***********************************************************************
+**
+** Font stuff
+**
+***********************************************************************/
+
+BODY {
+	font-family: Arial, Helvetica, Sans-serif;
+}
+
+#stylesheet-info {
+	font-style: italic;
+	font-size: 70%;
+}
+
+EM {
+	font-style: normal;
+}
+
+A, Q, #date {
+	font-style: italic;
+}
+
+ADDRESS, #date { 
+	font-size: 70%;
+}
+
+PRE {
+	font-weight: bold;
+}
+
+/***********************************************************************
+**
+** List bullets
+**
+***********************************************************************/
+
+UL {
+	list-style: url(triangle-red.gif);
+}
+
+UL UL {
+	list-style: url(triangle-yellow.gif);
+}
+
+UL UL UL {
+	list-style: url(triangle-green.gif);
+}
+
+/***********************************************************************
+**
+** layout
+**
+***********************************************************************/
+
+H1 {
+	text-align: center;
+	letter-spacing: 0.5em;
+}
+
+P, PRE {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+PRE, P.solid {
+	padding: 10px;
+}
+
+UL {
+	margin-top: 0px;
+}
+
+#stylesheet-info {
+	margin-top: -1em;
+	margin-bottom: 0em;
+	margin-left: 0em;
+}
+
+.justify {
+	text-align: justify;
+}
+
+HR {
+	height: 5px;
+}
+HR.top {
+	margin-bottom: 1em;
+}
+HR.bottom {
+	clear: both;
+	margin-top: 1em;
+}
+
+.w25 {
+	width: 25%;
+}
+.w50 {
+	width: 50%;
+}
+.w75 {
+	width: 75%;
+}
+.w100 {
+	width: 100%;
+}

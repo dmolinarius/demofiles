@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Validation XML</title>
+<link rel="stylesheet" href="dtd-validation_files/s5.css" type="text/css">
+</head>
+<body>
+
+<h1>Exemple de validation</h1>
+
+<p id="stylesheet-info">Ce fichier utilise s5.css</p>
+<hr>
+<h2>Validation d'un document correct</h2>
+
+<pre class="frame" style="background:  black; color: white; font-family: Courier; font-weight:normal; ">xerces/DOMCount.exe dtd-exemple-ok.xml
+
+dtd-exemple-ok.xml: 170 ms (11 elems).
+</pre>
+<p><i>(<a href="dtd-exemple-ok.xml">voir source</a>)</i></p>
+
+<h2>Validation d'un document incorrect</h2>
+<p>
+La DTD de ce second document annonce qu'un étudiant est qualifié par son nom et son prénom, or l'un des
+étudiants possède deux prénoms, ce qui est non conforme à la DTD.
+</p>
+<pre class="frame" style="background:  black; color: white; font-family: Courier; font-weight:normal; ">xerces/DOMCount.exe dtd-exemple-erreur.xml
+
+Error at file dtd-exemple-erreur.xml, line 25, char 14
+  Message: <font color="red">Element 'prenom' is not valid for content model: '(nom,prenom)'</font>
+
+Errors occured, no output available
+</pre>
+<p><i>(<a href="dtd-exemple-erreur.xml">voir source</a>)</i></p>
+<p>Le second document est <b>bien formé</b> au sens de XML, mais <b>non valide</b> car non conforme à sa DTD.</p>
+
+<h2>Validateurs</h2>
+<p> L'exemple ci-dessus illustre une validation en ligne de commande, mais il existe bien d'autres façons de valider un document <i>(validateurs en ligne, extensions de navigateurs, environnements de développement intégrés...)</i>.
+</p>
+<p><a href="https://validator.w3.org/#validate_by_upload">Validateur en ligne du W3C</a></p>
+<p>&nbsp;</p>
+<hr class="bottom">
+
+<table width="100%"><tbody><tr><td align="left"><address>Copyright : Daniel Muller
+</address></td>
+<td align="right"><div id="date">
+<span id="last_modified">
+161004</span>
+</div></td></tr></tbody></table>
+
+
+
+
+
+</body></html>

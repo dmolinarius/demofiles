@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE classe [
+ <!ELEMENT classe (promo,etudiant+)>
+ <!ELEMENT etudiant (nom, prenom)>
+ <!ELEMENT nom (#PCDATA)>
+ <!ELEMENT prenom (#PCDATA)>
+ <!ELEMENT promo (#PCDATA)>
+]>
+
+<classe>
+  <promo>2001</promo>
+  <etudiant>
+    <nom>Raymond</nom>
+    <prenom>Deubaze</prenom>
+  </etudiant>
+  <etudiant>
+    <nom>Ginette</nom>
+    <prenom>Ringard</prenom>
+  </etudiant>
+  <etudiant>
+    <nom>Anselme</nom>
+    <prenom>Pipeau</prenom>
+  </etudiant>
+</classe>
