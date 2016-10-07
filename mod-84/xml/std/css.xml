@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE page>
+
+<page id="xml/std/css.xml"
+ 	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:noNamespaceSchemaLocation = "syntax/cours.xsd">
+
+ <titre>Feuilles de style CSS</titre>
+
+ <bloc>
+  <info-plus href="http://www.w3.org/Style/CSS/">Site de référence</info-plus>
+ </bloc>
+ <bloc>
+  Les navigateurs récents sont compatibles <b>XML</b>.
+  Ceci signifie de prime abord qu'ils sont capables d'afficher un document
+  en visualisant l'<b>arbre XML</b>.
+ </bloc>
+ <bloc>
+  <exemple href="raw:css.xml|github:css.xml">Exemple</exemple>
+ </bloc>
+ <bloc>
+  Toutefois, contrairement au cas de <b>HTML</b>, la signification des éléments et
+  des attributs leur est totalement étrangère.
+ </bloc>
+ <bloc>
+  Pour afficher un tel document de
+  manière plus ergonomique qu'un arbre il est nécessaire de disposer d'une <b>feuille de style</b>
+  indiquant quel doit être le format d'affichage de <b>chacun des éléments</b> du document.
+ </bloc>
+ <bloc>
+  Le langage <b>CSS</b> <i>(Cascading Style Sheets)</i> est un langage de feuilles de style,
+  toujours en évolution à l'heure actuelle <i>(2004)</i>,
+  et qui a fait l'objet de plusieurs recommandations du <b>W3C</b> depuis 1996.
+ </bloc>
+ <bloc>
+  <b>CSS</b> est compatible <b>XML</b> et 
+  correctement reconnu par les navigateurs :
+ </bloc>
+ <code-bloc>
+  <b>classe {</b><br/>
+  <e>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display: block;</e><br/>
+  <e>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;padding: 8px;</e><br/>
+  <e>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;line-height: 1.33;</e><br/>
+  <e>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;background-color: #FFCC66;</e><br/>
+  <e>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;font-family: Arial, Helvetica, Sans-serif;</e><br/>
+  <e>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;color: black;</e><br/>
+  <b>}</b><br/>
+ </code-bloc>
+ <bloc>
+  Si le document <b>XML</b> référence la feuille de style, il est affiché correctement par le navigateur :
+ </bloc>
+ <code-bloc>
+  <e>&lt;?xml version="1.0" ?></e><br/>
+  <b>&lt;?xml-stylesheet href="css-exemple.css" type="text/css"?></b><br/>
+  <e></e><br/>
+  <e>&lt;classe></e><br/>
+  .&#160;.&#160;.<br/>
+  <e>&lt;/classe></e><br/>
+ </code-bloc>
+ <bloc>
+  <exemple href="raw:css-exemple.xml|github:css-exemple.xml">Exemple</exemple>
+ </bloc>
+ <bloc>
+  Toutefois, les feuilles de style à mettre en oeuvre sont bien plus complexes
+  que celles afférentes à un document <b>HTML</b> puisque contrairement à ce qui se passe pour ces dernières
+  on ne peut pas se contenter de donner les écarts par rapport à un comportement par défaut du navigateur.
+ </bloc>
+ <bloc>
+  Les feuilles de style <b>CSS</b> qui s'appliquent à des documents <b>XML</b>, doivent préciser l<b>'</b>ensemble
+  des caractéristiques permettant d'afficher chacun des éléments <i>(type, marges, couleurs, polices ...)</i>. 
+ </bloc>
+ <bloc>
+  A remarquer également que si le style est précisé par la feuille <b>CSS</b>,
+  le contenu de éléments et leur ordre d'apparition à l'écran
+  sont strictement imposés par le <b>document source</b>.
+ </bloc>
+
+</page>
