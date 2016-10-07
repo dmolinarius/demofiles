@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Exemple XML - Modèles de contenu élémentaire</title>
+<link rel="stylesheet" href="../../style/s5.css" type="text/css" />
+</head>
+<body>
+<h1>Exemple XML</h1>
+<hr />
+  <h2>Modèles de contenu élémentaire</h2>
+
+ <p>
+  L'élément <q>étudiant</q> déclaré ci-dessous devra comporter un <q>nom</q> et un ou
+  plusieurs <q>prénom</q>, dans n'importe quel ordre :
+ </p>
+ <pre class="grey frame">
+ &lt;!DOCTYPE classe [
+	&lt;!ELEMENT classe (promo,étudiant+)&gt;
+	<em>&lt;!ELEMENT étudiant ((nom,prénom+)|(prénom+,nom,prénom*))&gt;</em>
+
+	&lt;!ELEMENT promo  (#PCDATA)&gt;
+	&lt;!ELEMENT nom    (#PCDATA)&gt;
+	&lt;!ELEMENT prénom (#PCDATA)&gt;
+ ]&gt;</pre>
+ <p>
+  Le document ci-dessous est conforme à cette DTD :
+ </p>
+ <pre class="grey frame">
+ &lt;classe&gt;
+  &lt;promo&gt;1901&lt;/promo&gt;
+ 
+  &lt;étudiant&gt;
+   &lt;nom&gt;Deubaze&lt;/nom&gt;
+   &lt;prénom&gt;Raymond&lt;/prénom&gt;
+  &lt;/étudiant&gt;
+ 
+  &lt;étudiant&gt;
+   &lt;prénom&gt;Betty&lt;/prénom&gt;
+   &lt;prénom&gt;Barbara&lt;/prénom&gt;
+   &lt;prénom&gt;Noëlle&lt;/prénom&gt;
+   &lt;prénom&gt;Candide&lt;/prénom&gt;
+   &lt;prénom&gt;Sandra&lt;/prénom&gt;
+   &lt;nom&gt;Duciel&lt;/nom&gt;
+  &lt;/étudiant&gt;
+ 
+  &lt;étudiant&gt;
+   &lt;prénom&gt;Artémise&lt;/prénom&gt;
+   &lt;nom&gt;Fenouillard&lt;/nom&gt;
+   &lt;prénom&gt;Cunégonde&lt;/prénom&gt;
+  &lt;/étudiant&gt;
+ 
+ &lt;/classe&gt;</pre>
+ 
+  <p>
+   <a href="elt-elt-content-exemple-1.xml">Voir le document dans un navigateur</a>
+       
+   <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fdmolinarius.github.io%2Fdemofiles%2Fmod-84%2Fxml%2Fxml%2Fexemple_1.xml">Valider le document</a>
+  </p>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div id="date">
+        <span id="last_modified">
+         040923
+        </span></div></td></tr></table></body></html>
