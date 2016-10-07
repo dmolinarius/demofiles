@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta charset="utf-8"/>
+  <title>Section CDATA</title>
+  <link rel="stylesheet" href="../../style/s5.css" type="text/css" />
+  <script src="../../style/s5.js" type="text/javascript"></script>
+  <style type="text/css">
+.special { float: right; }
+img { position: relative; top: -10px; }
+  </style>
+  <script type="text/javascript">
+   function essai() {
+	i = 0;
+	if ( i < 1 ) {
+		alert('Hello');
+	}
+   }
+  </script>
+ </head>
+ <body>
+  <h1>Section CDATA</h1>
+  <hr />
+  <h2>Exemple Javascript</h2>
+
+  <p>
+   Ce document contient le code <b>Javascript</b> suivant :
+  </p>
+  <pre>
+&lt;script type="text/javascript">
+   function essai() {
+	i = 0;
+	if ( i &lt; 1 ) {
+		alert('Hello');
+	}
+   }
+&lt;/script>
+  </pre>
+  <p>
+   qui se déclenche à l'aide de <a href="javascript:essai();">cet hyperlien</a>
+  </p>
+  <p>
+   Malheureusement, ce code contient un caractère <b>&lt;</b> qui est <b>interprété</b> par un parseur XML
+   et de ce fait ce document n'est <b>pas valide</b>, puisqu'il n'est même <b>pas bien formé</b> au sens de XML.
+  </p>
+  <p>
+   Ceci peut se vérifier en tentant de valider ce document par exemple auprès du <b>W3C</b> (cf. logo en bas de page)
+  </p>
+
+  <p>
+   <a class="special" href="https://validator.w3.org/check?uri=referer">
+    <img id="valid-xml" src="valid-xhtml10.png" alt="Valid XHTML 1.0!" height="31" width="88" border="0" />
+   </a>
+   <a href="slide3-exemple2.html">Vers une solution</a>&nbsp;&nbsp;
+  </p>
+  <hr class="bottom" />
+  <table width="100%">
+   <tr>
+    <td align="left">
+     <address>Copyright : Daniel Muller</address>
+    </td>
+    <td align="right">
+     <span class="date">Dernière mise à jour :
+      <script type="text/javascript">
+       document.write(new Date(document.lastModified).hf());
+      </script>
+     </span>
+    </td>
+   </tr>
+  </table>
+ </body>
+</html>
+
