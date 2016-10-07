@@ -8,7 +8,7 @@
 	<!ELEMENT prénom (#PCDATA)>
  ]>
 <classe>
- <promo>1901</promo>
+ <promo>1902</promo>
 
  <étudiant>
   <nom>Deubaze</nom>
@@ -18,16 +18,16 @@
  <étudiant>
   <prénom>Betty</prénom>
   <prénom>Barbara</prénom>
-  <prénom>No</prénom>
+  <prénom>Noël</prénom>
   <prénom>Candide</prénom>
   <prénom>Sandra</prénom>
   <nom>Duciel</nom>
  </étudiant>
 
  <étudiant>
-  <prénom>Art</prénom>
+  <prénom>Artémise</prénom>
   <nom>Fenouillard</nom>
-  <prénom>Cun</prénom>
+  <prénom>Cunégonde</prénom>
  </étudiant>
 
 </classe>
