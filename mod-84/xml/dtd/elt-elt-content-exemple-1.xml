@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8">
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE classe [
 	<!ELEMENT classe (promo,étudiant+)>
 	<!ELEMENT étudiant ((nom,prénom+)|(prénom+,nom,prénom*))>
