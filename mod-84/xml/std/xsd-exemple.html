@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<TITLE>XML Schema</TITLE>
+<LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css">
+</HEAD>
+<BODY>
+
+<H1>Exemple de Schéma XML</H1>
+
+<HR>
+<H2>Exemple de DTD</H2>
+
+<P>Voici une Définition de Type de Document très simple :
+<P>
+<IFRAME WIDTH="100%" HEIGHT="130" SRC="xsd-exemple-dtd.dtd.html"></IFRAME>
+
+<P>
+Le document suivant fait référence à cette DTD à laquelle il se conforme : c'est un document valide.
+<P>
+<IFRAME WIDTH="100%" HEIGHT="305" SRC="xsd-exemple-dtd.xml.html"></IFRAME>
+<H2>Schéma XML équivalent à la DTD</H2>
+<P>
+Le schéma ci-dessous exprime exactement les mêmes contraintes que la DTD présentée plus haut.
+<P>
+<IFRAME WIDTH="100%" HEIGHT="415" SRC="xsd-exemple-xsd1.xsd.html"></IFRAME>
+<P>
+Et voici le document y faisant référence :
+<P>
+<IFRAME WIDTH="100%" HEIGHT="320" SRC="xsd-exemple-xsd1.xml.html"></IFRAME>
+<P>
+Toutefois, contrairement à celle-ci, le schéma pourrait être complété pour, par exemple,
+imposer à la promo d'être un nombre compris entre 1990 et 2000 :
+<P>
+<IFRAME WIDTH="100%" HEIGHT="540" SRC="xsd-exemple-xsd2.xsd.html"></IFRAME>
+<P>
+Avec la promo valant 2001, le document ci-dessous est donc non valide :
+<P>
+<IFRAME WIDTH="100%" HEIGHT="320" SRC="xsd-exemple-xsd2.xml.html"></IFRAME>
+<P>
+Contrairement à celui-ci, dont la valeur de la promo est compatible avec le schéma :
+<P>
+<IFRAME WIDTH="100%" HEIGHT="320" SRC="xsd-exemple-xsd3.xml.html"></IFRAME>
+<P>&nbsp;
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR><TD ALIGN="left"><ADDRESS>Copyright : Daniel Muller
+</ADDRESS></TD>
+<TD ALIGN="right"><DIV ID="date">
+<SPAN ID="last_modified">
+161004</SPAN>
+</DIV></TD></TR></TABLE>
+</BODY>
+</HTML>

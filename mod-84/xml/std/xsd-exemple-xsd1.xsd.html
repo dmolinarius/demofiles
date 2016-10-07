@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<BODY BGCOLOR="#EAEAEA"><PRE>&lt;<font color="#0000cc">xs:schema</font> <font color="#009900">xmlns:xs</font>="<font color="#990000">http://www.w3.org/2001/XMLSchema</font>"&gt;
+
+  &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">classe</font>"&gt;
+    &lt;<font color="#0000cc">xs:complexType</font>&gt;
+      &lt;<font color="#0000cc">xs:sequence</font>&gt;
+	&lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">promo</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+	&lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">etudiant</font>" <font color="#009900">maxOccurs</font>="<font color="#990000">unbounded</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+      &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+    &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+  &lt;/<font color="#0000cc">xs:element</font>&gt;
+
+  &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">etudiant</font>"&gt;
+    &lt;<font color="#0000cc">xs:complexType</font>&gt;
+      &lt;<font color="#0000cc">xs:sequence</font>&gt;
+	&lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">nom</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+	&lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">prenom</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+      &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+    &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+  &lt;/<font color="#0000cc">xs:element</font>&gt;
+
+  &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">nom</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">prenom</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">promo</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+
+&lt;/<font color="#0000cc">xs:schema</font>&gt;</PRE></BODY>

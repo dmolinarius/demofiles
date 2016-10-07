@@ -1,0 +1,30 @@
+classe {
+	display: block;
+	padding: 8px;
+	line-height: 1.33;
+	background-color: #EAEAF0;
+	font-family: Arial, Helvetica, Sans-serif;
+	color: black;
+}
+
+promo {
+	display: block;
+	font-size: 2em;
+	margin: .67em 0;
+	font-weight: bolder;
+        page-break-after: avoid;
+	page-break-inside: avoid;
+	background-color: #000080;
+	color: white;
+	text-align: center;
+	letter-spacing: 0.5 em;
+}
+
+etudiant {
+	display: block;
+	margin: 1.33em 0;
+	margin-left: 20 px;
+	margin-right: 20 px;
+	font-weight: bold;
+}
+
