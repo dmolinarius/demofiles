@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE classe [
 	<!ELEMENT classe (promo,étudiant+)>
@@ -9,7 +9,7 @@
 	<!ELEMENT prénom (#PCDATA)>
 	<!ELEMENT email  (#PCDATA)>
 
-	<!ENTITY filles SYSTEM "https://dmolinarius.github.io/demofiles/mod-84/xml/dtd/ent-parsed-ext-exemple1-1.ent">
+	<!ENTITY filles SYSTEM "ent-parsed-ext-exemple1-1.ent">
 ]>
 
 <classe>

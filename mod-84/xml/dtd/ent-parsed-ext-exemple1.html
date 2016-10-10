@@ -50,14 +50,17 @@ d'un document XML en soi, qui aurait sinon deux éléments racine)</i> :
    <a href="ent-parsed-ext-exemple1-1.xml">Voir le document dans votre navigateur</a> (!)
        
    <a href="ent-parsed-ext-exemple1-1.ent">Tenter de voir l'entité</a>
-       
-   <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fdmolinarius.github.io%2Fdemofiles%2Fmod-84%2Fxml%2Fdtd%2Fent-parsed-ext-exemple1-1.xml">Valider le document</a>
   </p>
  <p>
-  <b>N.B.</b> Pour voir le document, la plupart des navigateurs sont très décevants car ils ne vont pas
-  chercher le contenu de l'entité externe.
+  <b>Quelques remarques:</b>
  </p>
- <p><b>Pourquoi ne peut-on voir l'entité externe seule ?</b></p>
+  <ul>
+   <li>la plupart des navigateurs sont très décevants car ils ne vont pas chercher le contenu de l'entité externe,</li>
+   <li>l'entité externe seule n'est pas un document XML en tant que tel, et ne peut donc pas être lue seule par un parseur,</li>
+   <li>ce document, muni de son entité externe, est un document valide&nbsp;:</li>
+ </ul>
+ <p style="text-align: center"><img src="ent-parsed-ext-exemple1-1-valid.png" alt="valid XML" style="border: 1px solid #ccc; border-radius:5px;box-shadow:2px 2px 2px #ccc"></p>
+
  <p>
  <h2>Test du validateur</h2>
  </p>
@@ -80,9 +83,10 @@ d'un document XML en soi, qui aurait sinon deux éléments racine)</i> :
 
   <p>
    <a href="ent-parsed-ext-exemple1-2.xml">Voir le document dans votre navigateur</a> (!)
-       
-   <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fdmolinarius.github.io%2Fdemofiles%2Fmod-84%2Fxml%2Fdtd%2Fent-parsed-ext-exemple1-2.xml">Tenter de valider le document</a>
   </p>
+<p>Le validateur employé suit bien le lien mis en place par la référence à l'entité externe,
+  puisqu'il détecte l'erreur introduite dans celle-ci :</p>
+ <p style="text-align: center"><img src="ent-parsed-ext-exemple1-2-invalid.png" alt="valid XML" style="border: 1px solid #ccc; border-radius:5px;box-shadow:2px 2px 2px #ccc"></p>
 
 <hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
          161010
