@@ -1,3 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rights  [
+
+	<!ELEMENT rights (role+,login+)>
+
+	<!ELEMENT role (#PCDATA)>
+	<!ATTLIST role id ID #REQUIRED>
+
+	<!ELEMENT login (#PCDATA)>
+	<!ATTLIST login accesslist IDREFS #REQUIRED>
+]>
 <rights>
  <role id="admin">Administrateur Syst</role>
  <role id="webmaster">Administrateur Web</role>
