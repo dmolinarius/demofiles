@@ -9,7 +9,7 @@
 	<!ELEMENT prénom (#PCDATA)>
 	<!ELEMENT email  (#PCDATA)>
 
-	<!ENTITY filles SYSTEM "https://dmolinarius.github.io/demofiles/mod-84/xml/dtd/ent-parsed-ext-exemple1-1.xml/ent-parsed-ext-exemple1-1.ent">
+	<!ENTITY filles SYSTEM "https://dmolinarius.github.io/demofiles/mod-84/xml/dtd/ent-parsed-ext-exemple1-1.ent">
 ]>
 
 <classe>
