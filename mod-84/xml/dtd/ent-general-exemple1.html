@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Exemple XML - Entité Générale</title>
+<link rel="stylesheet" href="../../style/s5.css" type="text/css" />
+</head>
+<body><h1>Exemple XML</h1><hr />
+  <h2>Entité Générale</h2>
+
+  <p>
+   Soit le document <b>XML</b> ci-dessous :
+  </p>
+ <pre class="grey frame">
+  &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+  &lt;!DOCTYPE essai [
+	&lt;!ELEMENT essai (#PCDATA)&gt;
+  ]&gt;
+
+  &lt;essai&gt;
+   Ceci est un essai de caractère accentu<em>&amp;eacute;</em> !
+  &lt;/essai&gt;</pre>
+
+  <p>
+   Voici le résultat d'une tentative de validation :
+  </p>
+  <pre class="altback frame">
+
+Fatal Error at file /~muller/cours/xml/dtd/ent-general-exemple1-1.xml, line 8, char 50
+  Message: Entity 'eacute' was not found
+  </pre>
+  <p>
+   <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fdmolinarius.github.io%2Fdemofiles%2Fmod-84%2Fxml%2Fdtd%2Fent-general-exemple1-1.xml">Valider le document en ligne</a>
+   <a href="ent-general-exemple1-1.xml">Essayer de voir le document dans votre navigateur</a>
+  </p>
+  <p>
+   En déclarant correctement l'entité <b>eacute</b> : 
+  </p>
+ <pre class="grey frame">
+  &lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+  &lt;!DOCTYPE essai [
+	&lt;!ELEMENT essai (#PCDATA)&gt;
+	<em>&lt;!ENTITY eacute "&amp;#233;"&gt;</em>
+  ]&gt;
+
+  &lt;essai&gt;
+   Ceci est un essai de caractère accentu<em>&amp;eacute;</em> !
+  &lt;/essai&gt;</pre>
+
+  <p>
+   le document est valide :
+  </p>
+  <pre class="altback frame">
+ent-general-exemple1-2.xml: 5 ms (1 elems, 0 attrs, 0 spaces, 46 chars)</pre>
+  <p>
+   <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fdmolinarius.github.io%2Fdemofiles%2Fmod-84%2Fxml%2Fdtd%2Fent-general-exemple1-2.xml">Valider le document en ligne</a>
+   <a href="ent-general-exemple1-2.xml">Voir le document dans votre navigateur</a> (?)
+  </p>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161010
+        </span></div></td></tr></table></body></html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE essai [
+	<!ELEMENT essai (#PCDATA)>
+	<!ENTITY eacute "&#233;">
+]>
+
+<essai>
+   Ceci est un essai de caractère accentu&eacute; !
+</essai>
