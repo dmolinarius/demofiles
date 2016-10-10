@@ -1,0 +1,10 @@
+<rights>
+ <role id="admin">Administrateur Syst</role>
+ <role id="webmaster">Administrateur Web</role>
+ <role id="baseroot">Administrateur MySQL</role>
+ <role id="user">Utilisateur sans droits</role>
+
+ <login accesslist="admin webmaster baseroot">root</login>
+ <login accesslist="user webmaster baseroot">muller</login>
+ <login accesslist="user dieu">rdeubaze</login>
+</rights>

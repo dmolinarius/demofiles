@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Exemple XML - Attribut référence d'identifiant unique</title>
+<link rel="stylesheet" href="/~muller/cours/style/s5.css" type="text/css" />
+</head>
+<body>
+<h1>Exemple XML</h1><hr />
+  <h2>Attribut référence d'identifiant unique</h2>
+
+ <p>
+  La définition ci-dessous déclare un élément <q>login</q> dont l'attribut <q>accesslist</q> 
+  doit prendre pour valeur une liste d'identifiants uniques :
+ </p>
+<pre class="grey frame">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+&lt;!DOCTYPE rights  [
+
+	&lt;!ELEMENT rights (role+,login+)&gt;
+
+	&lt;!ELEMENT role (#PCDATA)&gt;
+	&lt;!ATTLIST role id ID #REQUIRED&gt;
+
+	&lt;!ELEMENT login (#PCDATA)&gt;
+	<em>&lt;!ATTLIST login accesslist IDREFS #REQUIRED&gt;</em>
+]&gt;</pre>
+<p>
+ Le document ci-dessous est valide puisqu'il respecte cette DTD :
+</p>
+<pre class="grey frame">
+&lt;rights&gt;
+ &lt;role id="admin"&gt;Administrateur Système&lt;/role&gt;
+ &lt;role id="webmaster"&gt;Administrateur Web&lt;/role&gt;
+ &lt;role id="baseroot"&gt;Administrateur MySQL&lt;/role&gt;
+ &lt;role id="user"&gt;Utilisateur sans droits&lt;/role&gt;
+
+ &lt;login accesslist="admin webmaster baseroot"&gt;root&lt;/login&gt;
+ &lt;login accesslist="user webmaster baseroot"&gt;muller&lt;/login&gt;
+ &lt;login accesslist="user"&gt;rdeubaze&lt;/login&gt;
+&lt;/rights&gt;</pre>
+ 
+  <p>
+   <a href="/xmlraw/~muller/cours/xml/dtd/atr-id-exemple-1.xml">Voir le document dans un navigateur</a>
+       
+   <a href="/xslt/~muller/cours/xml/dtd/tools/validator.xml?FILE=atr-id-exemple-1.xml">Valider le document</a>
+  </p>
+
+ <p>
+  Le document ci-dessous, par contre, n'est <em>pas valide</em> par rapport à cette DTD.
+En effet, la valeur de l'attribut <q>accesslist</q> de l'un des éléments
+  ne fait pas référence à un identifiant unique :
+ </p>
+<pre class="grey frame">
+&lt;rights&gt;
+ &lt;role id="admin"&gt;Administrateur Système&lt;/role&gt;
+ &lt;role id="webmaster"&gt;Administrateur Web&lt;/role&gt;
+ &lt;role id="baseroot"&gt;Administrateur MySQL&lt;/role&gt;
+ &lt;role id="user"&gt;Utilisateur sans droits&lt;/role&gt;
+
+ &lt;login accesslist="admin webmaster baseroot"&gt;root&lt;/login&gt;
+ &lt;login accesslist="user webmaster baseroot"&gt;muller&lt;/login&gt;
+ &lt;login accesslist="user <em>dieu</em>"&gt;rdeubaze&lt;/login&gt;
+&lt;/rights&gt;</pre>
+
+  <p>
+   <a href="atr-id-exemple-2.xml">Voir le document dans un navigateur</a>
+       
+   <a href=""https://validator.w3.org/check?uri=referer">Valider le document</a>
+  </p>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161010
+        </span></div></td></tr></table></body></html>
