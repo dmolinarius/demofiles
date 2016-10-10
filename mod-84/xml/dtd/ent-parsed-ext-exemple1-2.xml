@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE classe [
+	<!ELEMENT classe (promo,étudiant+)>
+	<!ELEMENT étudiant (prénom,nom,email)>
+
+	<!ELEMENT promo  (#PCDATA)>
+	<!ELEMENT nom    (#PCDATA)>
+	<!ELEMENT prénom (#PCDATA)>
+	<!ELEMENT email  (#PCDATA)>
+
+	<!ENTITY filles SYSTEM "ent-parsed-ext-exemple1-2.ent">
+]>
+
+<classe>
+ <promo>2005</promo>
+ <étudiant>
+  <prénom>Raymond</prénom>
+  <nom>Deubaze</nom>
+  <email>Raymond.Deubaze@ec-lyon.fr</email>
+ </étudiant>
+
+ &filles;
+
+</classe>

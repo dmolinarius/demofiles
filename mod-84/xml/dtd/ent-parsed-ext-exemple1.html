@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><title>Exemple XML -
+     Entité Générale Externe Analysée</title><link rel="stylesheet" href="/~muller/cours/style/s5.css" type="text/css" /></head><body><h1>Exemple XML</h1><hr />
+  <h2>Entité Générale Externe Analysée</h2>
+
+  <p>
+   Voici un document <b>XML</b> faisant appel à une entité générale externe :
+  </p>
+ <pre class="grey frame">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+&lt;!DOCTYPE classe [
+	&lt;!ELEMENT classe (promo,étudiant+)&gt;
+	&lt;!ELEMENT étudiant (prénom,nom,email)&gt;
+
+	<em>&lt;!ENTITY filles SYSTEM "ent-parsed-ext-exemple1-1.ent"&gt;</em>
+]&gt;
+
+&lt;classe&gt;
+ &lt;étudiant&gt;
+  &lt;prénom&gt;Raymond&lt;/prénom&gt;
+  &lt;nom&gt;Deubaze&lt;/nom&gt;
+  &lt;email&gt;Raymond.Deubaze@ec-lyon.fr&lt;/email&gt;
+ &lt;/étudiant&gt;
+
+ <em>&amp;filles;</em>
+
+&lt;/classe&gt;
+ </pre>
+ 
+ <p>
+  L'entité externe correspond aux informations suivantes <i>(remarquer qu'il ne s'agit pas
+d'un document XML en soi, qui aurait sinon deux éléments racine)</i> :
+ </p>
+ <pre class="grey frame">
+ &lt;étudiant&gt;
+  &lt;prénom&gt;Ginette&lt;/prénom&gt;
+  &lt;nom&gt;Ringard&lt;/nom&gt;
+  &lt;email&gt;ginette@wanadoo.fr&lt;/email&gt;
+ &lt;/étudiant&gt;
+
+ &lt;étudiant&gt;
+  &lt;prénom&gt;Elsa&lt;/prénom&gt;
+  &lt;nom&gt;Plique&lt;/nom&gt;
+  &lt;email&gt;elsaplik@yahoo.com&lt;/email&gt;
+ &lt;/étudiant&gt;</pre>
+
+  <p>
+   <a href="/xmlraw2/~muller/cours/xml/dtd/ent-parsed-ext-exemple1-1.xml">Voir le document dans votre navigateur</a> (!)
+       
+   <a href="/xmlraw2/~muller/cours/xml/dtd/ent-parsed-ext-exemple1-1.ent">Tenter de voir l'entité</a>
+       
+   <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fdmolinarius.github.io%2Fdemofiles%2Fmod-84%2Fxml%2Fdtd%2Fent-parsed-ext-exemple1-1.xml">Valider le document</a>
+  </p>
+ <p>
+  <b>N.B.</b> Pour voir le document, la plupart des navigateurs sont très décevants car ils ne vont pas
+  chercher le contenu de l'entité externe.
+ </p>
+ <p><b>Pourquoi ne peut-on voir l'entité externe seule ?</b></p>
+ <p>
+ <h2>Test du validateur</h2>
+ </p>
+ <p>
+  Afin de tester le validateur, introduisons une erreur au sein de l'entité externe
+  <i>(mise à part la référence à l'entité externe, le document principal n'est pas modifié)</i>  :
+ </p>
+ <pre class="grey frame">
+ <em>&lt;étudiante&gt;</em>
+  &lt;prénom&gt;Ginette&lt;/prénom&gt;
+  &lt;nom&gt;Ringard&lt;/nom&gt;
+  &lt;email&gt;ginette@wanadoo.fr&lt;/email&gt;
+ <em>&lt;/étudiante&gt;</em>
+
+ <em>&lt;étudiante&gt;</em>
+  &lt;prénom&gt;Elsa&lt;/prénom&gt;
+  &lt;nom&gt;Plique&lt;/nom&gt;
+  &lt;email&gt;elsaplik@yahoo.com&lt;/email&gt;
+ <em>&lt;/étudiante&gt;</em></pre>
+
+  <p>
+   <a href="/xmlraw2/~muller/cours/xml/dtd/ent-parsed-ext-exemple1-2.xml">Voir le document dans votre navigateur</a> (!)
+       
+   <a href="https://validator.w3.org/check?uri=https%3A%2F%2Fdmolinarius.github.io%2Fdemofiles%2Fmod-84%2Fxml%2Fdtd%2Fent-parsed-ext-exemple1-2.xml">Tenter de valider le document</a>
+  </p>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161010
+        </span></div></td></tr></table></body></html>
