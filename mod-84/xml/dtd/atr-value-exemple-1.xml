@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE classe  [
+
+	<!ELEMENT classe (étudiant+)>
+	<!ATTLIST classe option CDATA #FIXED "TIC">
+
+	<!ELEMENT étudiant (prénom,nom)>
+	<!ELEMENT prénom (#PCDATA)>
+	<!ELEMENT nom (#PCDATA)>
+]>
+
+<classe>
+ <étudiant>
+  <prénom>Elsa</prénom>
+  <nom>Plique</nom>
+ </étudiant>
+ <étudiant>
+  <prénom>Jean</prénom>
+  <nom>Aymard</nom>
+ </étudiant>
+ <étudiant>
+  <prénom>Guy</prénom>
+  <nom>Liguili</nom>
+ </étudiant>
+</classe>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Exemple XML - Attribut #FIXED</title><link rel="stylesheet" href="/~muller/cours/style/s5.css" type="text/css" />
+</head>
+<body>
+<h1>Exemple XML</h1>
+<hr />
+  <h2>Attribut #FIXED</h2>
+
+ <p>
+  L'élément <q>classe</q> du document ci-dessous comporte un attribut #FIXED :
+ </p>
+<pre class="grey frame">
+ &lt;!DOCTYPE classe  [
+
+	&lt;!ELEMENT classe (étudiant+)&gt;
+	<em>&lt;!ATTLIST classe option CDATA #FIXED "TIC"&gt;</em>
+
+	&lt;!ELEMENT étudiant (prénom,nom)&gt;
+	&lt;!ELEMENT prénom (#PCDATA)&gt;
+	&lt;!ELEMENT nom (#PCDATA)&gt;
+ ]&gt;
+
+ <em>&lt;classe&gt;</em>
+  &lt;étudiant&gt;
+   &lt;prénom&gt;Elsa&lt;/prénom&gt;
+   &lt;nom&gt;Plique&lt;/nom&gt;
+  &lt;/étudiant&gt;
+  . . .
+ &lt;/classe&gt;
+</pre>
+<p>
+ Vérifier ci-dessous comment l'attribut est automatiquement généré dans l'arbre XML par le parseur,
+ comme s'il avait été spécifié :
+</p>
+  <p>
+   <a href="/xmlraw2/~muller/cours/xml/dtd/atr-value-exemple-1.xml">Voir le document dans votre navigateur</a>
+  </p>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161010
+        </span></div></td></tr></table></body></html>
