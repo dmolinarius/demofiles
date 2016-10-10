@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <!DOCTYPE essai [
 	<!ELEMENT essai (#PCDATA|br|a)*>
@@ -15,10 +15,10 @@
 <essai>
    Ceci est un document XML servant d'exemple.
    <br/>
-   Le lien vers l'auteur est obtenu à l'aide d'une entité dont
-   la déclaration fait référence à une deuxième entité.
+   Le lien vers l'auteur est obtenu Ã  l'aide d'une entitÃ© dont
+   la dÃ©claration fait rÃ©fÃ©rence Ã  une deuxiÃ¨me entitÃ©.
    <br/>
-   (cf. code source pour voir les détails de l'affaire...)
+   (cf. code source pour voir les dÃ©tails de l'affaire...)
    <br/>
    &address;
 
