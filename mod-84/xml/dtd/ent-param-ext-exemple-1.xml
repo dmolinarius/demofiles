@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE classe  [
+
+	<!ELEMENT classe (étudiant+)>
+	<!ATTLIST classe option CDATA #FIXED "TIC">
+
+	<!ELEMENT étudiant (prénom,nom)>
+	<!ELEMENT prénom (#PCDATA)>
+	<!ELEMENT nom (#PCDATA)>
+
+	<!ENTITY % HTMLlat1 PUBLIC
+	    "-//W3C//ENTITIES Latin 1 for XHTML//EN" "xhtml-lat1.ent">
+
+	%HTMLlat1;
+]>
+
+<classe>
+ <étudiant>
+  <prénom>B&eacute;n&eacute;dicte</prénom>
+  <nom>Tinne</nom>
+ </étudiant>
+ <étudiant>
+  <prénom>Jean-Fran&ccedil;ois</prénom>
+  <nom>P&egrave;re-No&euml;l</nom>
+ </étudiant>
+</classe>
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><title>Exemple XML -
+     Entité paramètre externe</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Exemple XML</h1><hr />
+  <h2>Entité paramètre externe</h2>
+
+ <p>
+  La définition ci-dessous déclare et instancie l'entité paramètre <q>xhtml-lat1.ent</q> afin de bénéficier
+  de la déclaration de toutes les entités du type caractères accentués, classiques employés en HTML :
+ </p>
+<pre class="grey frame">
+&lt;!DOCTYPE classe  [
+
+	&lt;!ELEMENT classe (étudiant+)&gt;
+	&lt;!ATTLIST classe option CDATA #FIXED "TIC"&gt;
+
+	&lt;!ELEMENT étudiant (prénom,nom)&gt;
+	&lt;!ELEMENT prénom (#PCDATA)&gt;
+	&lt;!ELEMENT nom (#PCDATA)&gt;
+
+	<em>&lt;!ENTITY % HTMLlat1 PUBLIC
+	    "-//W3C//ENTITIES Latin 1 for XHTML//EN" "xhtml-lat1.ent"&gt;</em>
+
+	<em>%HTMLlat1;</em>
+]&gt; </pre>
+<p>
+ Ces entités peuvent donc être librement employées au sein du document :
+</p>
+<pre class="grey frame">
+ &lt;classe&gt;
+  &lt;étudiant&gt;
+   &lt;prénom&gt;B<em>&amp;eacute;</em>n<em>&amp;eacute;</em>dicte&lt;/prénom&gt;
+   &lt;nom&gt;Tinne&lt;/nom&gt;
+  &lt;/étudiant&gt;
+  &lt;étudiant&gt;
+   &lt;prénom&gt;Jean-Fran<em>&amp;ccedil;</em>ois&lt;/prénom&gt;
+   &lt;nom&gt;P<em>&amp;egrave;</em>re-No<em>&amp;euml;</em>l&lt;/nom&gt;
+  &lt;/étudiant&gt;
+ &lt;/classe&gt;</pre>
+ 
+<p>
+Encore une fois, les navigateurs sont décevants, puisqu'ils ne vont
+pas chercher le contenu de l'entité externe :<br />
+   <a href="ent-param-ext-exemple-1.xml">Voir le document dans votre navigateur</a>
+</p>
+<p>Et pourtant il est valide :</p>
+<p style="text-align: center"><img src="ent-param-ext-exemple-1-valid.png" alt="valid XML" style="border: 1px solid #ccc; border-radius:5px;box-shadow:2px 2px 2px #ccc" /></p>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161010
+        </span></div></td></tr></table></body></html>
