@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Exemple XML -
+     Entité Générale</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Exemple XML</h1><hr />
+  <h2>Entité Générale</h2>
+
+  <p>
+   Exemple de document <b>XML</b> comportant une déclaration d'entité comportant elle-même
+   une référence à une autre entité :
+  </p>
+ <pre class="grey frame">
+ &lt;!DOCTYPE essai [
+	&lt;!ELEMENT essai (#PCDATA|br|a)*&gt;
+	&lt;!ELEMENT br EMPTY&gt;
+
+	&lt;!ENTITY <em>contact</em> "Daniel.Muller"&gt;
+    	&lt;!ENTITY <em class="quote">address </em>
+		'&lt;a href="mailto:<em>&amp;contact;</em>"&gt;<em>&amp;contact;</em>&lt;/a&gt;' &gt;
+ ]&gt;;
+
+   . . .
+   <em class="quote">&amp;address;</em></pre>
+
+  <p>
+   <a href="ent-general-exemple3-1.xml">Voir le document</a>
+  </p>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161010
+        </span></div></td></tr></table></body></html>

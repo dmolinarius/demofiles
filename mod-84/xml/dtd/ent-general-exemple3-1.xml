@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE essai [
+	<!ELEMENT essai (#PCDATA|br|a)*>
+	<!ELEMENT br EMPTY>
+	<!ELEMENT a (#PCDATA)>
+	<!ATTLIST a href CDATA #REQUIRED>
+
+	<!ENTITY contact "Daniel.Muller">
+    	<!ENTITY address 
+		'<a href="mailto:&contact;">&contact;</a>' >
+]>
+
+
+<essai>
+   Ceci est un document XML servant d'exemple.
+   <br/>
+   Le lien vers l'auteur est obtenu à l'aide d'une entité dont
+   la déclaration fait référence à une deuxième entité.
+   <br/>
+   (cf. code source pour voir les détails de l'affaire...)
+   <br/>
+   &address;
+
+</essai>
