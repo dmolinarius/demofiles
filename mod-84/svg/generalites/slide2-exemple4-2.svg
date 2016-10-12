@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+
+  <defs>
+    <filter id="nozeFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".95" 
+                          specularExponent="20" lighting-color="#ffffff"  
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+    <filter id="faceFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="shadow"/>
+      <feOffset in="shadow" dx="6" dy="6" result="offsetBlur"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".65" 
+                          specularExponent="20" lighting-color="#aaaaaa"  
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#faceFilter)" >
+   <circle fill="black" cx="50" cy="50" r="25"/>
+   <circle fill="black" cx="125" cy="50" r="25"/>
+   <circle fill="black" cx="87.5" cy="110" r="50"/>
+  </g>
+  <ellipse fill="white" stroke="black" cx="70" cy="100" rx="7" ry="12"/>
+  <ellipse fill="white" stroke="black" cx="105" cy="100" rx="7" ry="12"/>
+  <circle fill="black" cx="70" cy="108" r="5"/>
+  <circle fill="black" cx="105" cy="108" r="5"/>
+  <path d="M70,125 A35,35 0 0,0 105,125 A35,85 0 0,1 70,125 z" fill="yellow" stroke="black"/>
+  <g filter="url(#nozeFilter)" >
+   <circle fill="red" cx="87.5" cy="115" r="8"/>
+  </g>
+</svg>
+

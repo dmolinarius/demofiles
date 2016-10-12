@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+
+<clipPath id="circle">
+<path d="M0,400 A400,400 0 0 0 0,-400 A400,400 0 0 0 0,400"/>
+</clipPath>
+<g clip-path="url(#circle)" clip-rule="nonzero">
+<path d="M0,400 A400,400 0 0 0 0,-400 A400,400 0 0 0 0,400" fill="#444488"/>
+<path d="M0,400 A400,400 0 0 0 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A300,400 0 0 0 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A200,400 0 0 0 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A100,400 0 0 0 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A000,400 0 0 1 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A100,400 0 0 1 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A200,400 0 0 1 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A300,400 0 0 1 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M0,400 A400,400 0 0 1 0,-400" stroke="#CCCCFF" fill="none"/>
+<path d="M-346.41,-200 A346.41,86.6 0 0 1 346.41,-200" stroke="#CCCCFF" fill="none"/>
+<path d="M-400,0 A400,100 0 0 1 400,0" stroke="#CCCCFF" fill="none"/>
+<path d="M-346.41,200 A346.41,86.6 0 0 1 346.41,200" stroke="#CCCCFF" fill="none"/>
+<path d="M-200,346.41 A200,50 0 0 1 200,346.41" stroke="#CCCCFF" fill="none"/>
+</g>
+
+</svg>

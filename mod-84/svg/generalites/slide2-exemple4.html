@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<title>SVG : Redimensionnement par le navigateur</title>
+<LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css">
+<STYLE>
+
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H1>Scalable Vector Graphics</H1>
+
+<HR>
+
+<H2>Redimensionnement par le navigateur</H2>
+
+<P>
+Cette page affiche deux documents <b>SVG</b>,
+en modifiant le rapport initial hauteur / largeur; à l'aide des attributs <b>WIDTH</b> et <b>HEIGHT</b> de la
+balise <b>OBJECT</b>.
+</P>
+<P>
+Vous devriez voir apparaître deux fois la même image, la première déformée, la seconde non.
+</P>
+
+<table width="100%"><tr><td align="center">
+
+<table bgcolor="#F0F0EA" border="2"style="margin:1em"><tr><td>
+<object type="image/svg+xml" data="slide2-exemple4-1.svg" width="240" height="90" >
+ <font face="Arial, Helvetica, Sans Serif" color="red" size="-1"><b>N.B.</b>
+  Il vous faudrait un navigateur compatible SVG pour visualiser ici le graphique correspondant
+  à la ressource <i>slide2-exemple4-1.svg</i>.
+ </font>
+</object>
+</td></tr></table>
+width="240"<br>height="90"<br>
+
+</td><td align="center">
+
+<table bgcolor="#F0F0EA" border="2"style="margin:1em"><tr><td>
+<object type="image/svg+xml" data="slide2-exemple4-2.svg" width="240" height="90" >
+ <font face="Arial, Helvetica, Sans Serif" color="red" size="-1"><b>N.B.</b>
+  Il vous faudrait un navigateur compatible SVG pour visualiser ici le graphique correspondant
+  à la ressource <i>slide2-exemple4-2.svg</i>.
+ </font>
+</object>
+</td></tr></table>
+width="240"<br>height="90"<br>
+
+</td></tr></table>
+
+<P>
+Le code <b>HTML</b> utilisé pour afficher les deux images <i>(au nom de l'image près)</i> :
+</P>
+
+<PRE CLASS="altback frame">
+ &lt;object type="image/svg+xml" data="slide3-exemple1.svg" width="240" height="90" &gt;
+ &lt;/object&gt;
+</PRE>
+<P>
+Et le code <b>SVG</b> permettant de ne pas redimensionner l'image :
+</p>
+<PRE CLASS="frame">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" <em>preserveAspectRatio="none"</em>&gt;
+ ...
+ &lt;/svg&gt;
+</PRE>
+
+<P>
+<A HREF="javascript:window.history.go(-1);">Retourner au cours</A>
+
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR>
+<TD ALIGN="left">
+<ADDRESS>
+Copyright : Daniel Muller
+</ADDRESS>
+</TD>
+<TD ALIGN="right">
+<SPAN CLASS="date"><SCRIPT>
+    d = new Date(Date.parse(document.lastModified));
+    m = d.getMonth()+1;
+    j = d.getDate();
+    document.write(d.getFullYear()+(m<10?' ':'')+m+(j<10?' ':'')+j);
+</SCRIPT></SPAN>
+</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>

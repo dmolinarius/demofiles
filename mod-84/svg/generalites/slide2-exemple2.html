@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<title>SVG : Dimensions initiales du graphique</title>
+<LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css">
+<STYLE>
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H1>Scalable Vector Graphics</H1>
+
+<HR>
+
+<H2>Dimensions initiales du graphique</H2>
+
+<P>
+Cette page affiche divers documents <b>SVG</b>, chaque fois sans préciser la dimension de l'image.
+Ces documents diffèrent uniquement par la valeur des attributs <b>WIDTH</b> et <b>HEIGHT</b> de
+l'élément principal <b>svg</b>.
+</P>
+<P>
+Vous devriez voir apparaître trois fois la même image, avec à chaque fois une taille différente.
+</P>
+
+<table><tr><td valign="center" align="center">
+
+<table bgcolor="#F0F0EA" border="2" style="margin:1em"><tr><td>
+<object type="image/svg+xml" data="slide2-exemple2-1.svg" >
+</object>
+</td></tr></table>
+width="180"<br>height="180"<br><i>(x1)</i>
+
+</td><td valign="center" align="center">
+
+<table bgcolor="#F0F0EA" border="2" style="margin:1em"><tr><td>
+<object type="image/svg+xml" data="slide2-exemple2-2.svg" >
+</object>
+</td></tr></table>
+width="120"<br>height="120"<br><i>(x2/3)</i>
+
+</td><td valign="center" align="center">
+
+<table bgcolor="#F0F0EA" border="2" style="margin:1em"><tr><td>
+<object type="image/svg+xml" data="slide2-exemple2-3.svg" >
+</object>
+</td></tr></table>
+width="90"<br>height="90"<br><i>(x1/2)</i>
+
+</td></tr></table>
+
+<P>
+L'élément <b>SVG</b> racine de chacun des graphiques est du type :
+</P>
+<PRE CLASS="frame">
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" <em>width="180" height="180"</em>&gt;
+ ...
+ &lt;/svg&gt;
+
+</PRE>
+
+Le code <b>HTML</b> utilisé pour afficher chacune de ces images :
+</P>
+
+<PRE CLASS="altback frame">
+ &lt;object type="image/svg+xml" data="slide2-exemple2-1.svg" &gt;&lt;/object&gt;
+
+ &lt;object type="image/svg+xml" data="slide3-exemple2-2.svg" &gt;&lt;/object&gt;
+
+ &lt;object type="image/svg+xml" data="slide3-exemple2-3.svg" &gt;&lt;/object&gt;
+</PRE>
+
+<P>
+<A HREF="javascript:window.history.go(-1);">Retourner au cours</A>
+
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR>
+<TD ALIGN="left">
+<ADDRESS>
+Copyright : Daniel Muller
+</ADDRESS>
+</TD>
+<TD ALIGN="right">
+<SPAN CLASS="date"><SCRIPT>
+    d = new Date(Date.parse(document.lastModified));
+    m = d.getMonth()+1;
+    j = d.getDate();
+    document.write(d.getFullYear()+(m<10?' ':'')+m+(j<10?' ':'')+j);
+</SCRIPT></SPAN>
+</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>
