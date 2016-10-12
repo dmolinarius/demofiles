@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg	xmlns="http://www.w3.org/2000/svg"
+	width="15cm" height="4cm"
+	viewBox="0 0 1000 280">
+	
+
+ <defs>
+  <style type="text/css"><![CDATA[
+   rect { fill:#FFFFFF; }
+   text.legende { fill:#000088; stroke:none; font-size:30px; font-style:italic; }
+   tspan.exemple { fill:#000000; stroke:none; font-size:30px; font-style:normal; }
+  ]]></style>
+ </defs>
+
+ <!--rect x="-500" y="-150" width="2000" height="600" /-->
+
+ <text x="50" y="30" class="legende">serif :
+  <tspan class="exemple" font-family="serif">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="80" class="legende">sans-serif :
+  <tspan class="exemple" font-family="sans-serif">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="130" class="legende">cursive :
+  <tspan class="exemple" font-family="cursive">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="180" class="legende">fantasy :
+  <tspan class="exemple" font-family="fantasy">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="230" class="legende">monospace :
+  <tspan class="exemple" font-family="monospace">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+
+</svg>

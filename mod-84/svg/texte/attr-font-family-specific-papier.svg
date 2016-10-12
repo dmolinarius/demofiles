@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg	xmlns="http://www.w3.org/2000/svg"
+	width="15cm" height="4cm"
+	viewBox="0 0 1000 280">
+	
+
+ <defs>
+  <style type="text/css"><![CDATA[
+   rect { fill:#FFFFFF; }
+   text.legende { fill:#000088; stroke:none; font-size:30px; font-style:italic; }
+   tspan.exemple { fill:#000000; stroke:none; font-size:30px; font-style:normal; }
+  ]]></style>
+ </defs>
+
+ <!--rect x="-500" y="-150" width="2000" height="600" /-->
+
+ <text x="50" y="30" class="legende">Times New Roman :
+  <tspan class="exemple" font-family="Times New Roman">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="80" class="legende">Arial :
+  <tspan class="exemple" font-family="Arial">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="130" class="legende">Comic Sans MS :
+  <tspan class="exemple" font-family="Comic Sans MS">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="180" class="legende">Haettenschweiler :
+  <tspan class="exemple" font-family="Haettenschweiler">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+ <text x="50" y="230" class="legende">Georgia :
+  <tspan class="exemple" font-family="Georgia">Maître corbeau sur un arbre perché...</tspan>
+ </text>
+
+</svg>
