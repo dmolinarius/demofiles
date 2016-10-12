@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<TITLE>SVG avec OBJECT</TITLE>
+<LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css">
+<STYLE>
+#tiger {
+	text-align: center;
+	margin: 1em;
+}
+</STYLE>
+</HEAD>
+
+<BODY>
+
+<H1>Scalable Vector Graphics</H1>
+
+<HR>
+
+<H2>Balise OBJECT</H2>
+
+<P>
+Cette page affiche un document <b>SVG</b> à l'aide de la balise <b>OBJECT</b>
+et en teste le fonctionnement dans votre navigateur.
+</P>
+<P>
+Vous devriez voir apparaître ci-dessous l'image d'un tigre ...
+</P>
+
+<DIV ID="tiger">
+<object type="image/svg+xml" data="slide2-exemple2.svg" width="360" height="360" >
+</object>
+</DIV>
+
+<P>
+Le code <b>HTML</b> utilisé :
+</P>
+
+<PRE CLASS="altback frame">
+&lt;object type="image/svg+xml" data="slide2-exemple2.svg" width="360" height="360"&gt;
+&lt;/object&gt;
+</PRE>
+
+<P>
+<A HREF="javascript:window.history.go(-1);">Retourner au cours</A>
+
+<HR CLASS="bottom">
+<TABLE WIDTH="100%"><TR>
+<TD ALIGN="left">
+<ADDRESS>
+Copyright : Daniel Muller
+</ADDRESS>
+</TD>
+<TD ALIGN="right">
+<SPAN CLASS="date"><SCRIPT>
+    d = new Date(Date.parse(document.lastModified));
+    m = d.getMonth()+1;
+    j = d.getDate();
+    document.write(d.getFullYear()+(m<10?' ':'')+m+(j<10?' ':'')+j);
+</SCRIPT></SPAN>
+</TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>
