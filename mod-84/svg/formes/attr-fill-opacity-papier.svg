@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="15cm" height="4.5cm"
+	viewBox="0 0 1000 300" >
+
+<defs>
+<style type="text/css"><![CDATA[
+text {font-family:Arial; stroke:none; font-size:15;}
+text.dark { fill:#FFCC00; }
+text.bright { fill:#000088; }
+rect.background { fill:#FFFFFF; }
+rect { fill:#000088; }
+]]></style>
+</defs>
+
+<!--rect class="background" x="-500" y="-150" width="2000" height="600"/-->
+
+<g transform="translate(40,25)">
+<rect x="50" width="300" height="150" fill-opacity="0.1"/>
+<text class="bright" x="60" y="20" >fill-opacity = 0.1</text>
+</g>
+<g transform="translate(145,55)">
+<rect x="50" width="300" height="150" fill-opacity="0.25"/>
+<text class="bright" x="60" y="20" >fill-opacity = 0.25</text>
+</g>
+<g transform="translate(250,85)">
+<rect x="50" width="300" height="150" fill-opacity="0.5"/>
+<text class="bright" x="60" y="20" >fill-opacity = 0.5</text>
+</g>
+<g transform="translate(355,115)">
+<rect x="50" width="300" height="150" fill-opacity="0.75"/>
+<text class="dark" x="60" y="20" >fill-opacity = 0.75</text>
+</g>
+<g transform="translate(460,145)">
+<rect x="50" width="300" height="150" fill-opacity="1.0"/>
+<text class="dark" x="60" y="20" >fill-opacity = 1.0</text>
+</g>
+
+</svg>
