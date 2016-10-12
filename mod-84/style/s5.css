@@ -5,27 +5,27 @@
 **
 ***********************************************************************/
 
-BODY {
+BODY, body {
 	background-color: #F0F0EA;
 	color: black;
 }
 
-H1, HR, ADDRESS, .date, #stylesheet-info {
+H1, h1, HR, hr, ADDRESS, address, .date, #stylesheet-info {
 	color: rgb(0,100,50);
 }
-HR {
+HR, hr {
 	background-color: rgb(0,100,50);
 }
 
-H2 {
+H2, h2 {
 	color: rgb(0,63,127);
 }
 
-H3, EM, .quote {
+H3, h3, EM, em, .quote {
 	color: blue;
 }
 
-Q, .quote EM, EM.quote, EM .quote {
+Q, q, .quote EM, .quote em, EM.quote, em.quote, EM .quote, em .quote {
 	color: blue;
 }
 
@@ -34,17 +34,18 @@ Q, .quote EM, EM.quote, EM .quote {
 	color: rgb(0,100,50);
 }
 
-A:visited {
+A:visited, a:visited {
 	color: rgb(127,63,0);
 }
-A:link, A:active, A:hover {
+A:link, A:active, A:hover,
+a:link, a:active, a:hover {
 	color: rgb(255,127,0);
 }
 
-PRE {
+PRE, pre {
 	background-color: #C0C0C0;
 }
-P.solid {
+P.solid, p.solid {
 	background-color: rgb(255,190,127);
 }
 
@@ -111,9 +112,9 @@ P.solid {
   font-weight: 400;
   src: local('Open Sans'), local('OpenSans'), url(fonts/OpenSans.woff) format('woff');
 }
-PRE {
+PRE, pre {
 }
-BODY {
+BODY, body {
 	font-family: "Open Sans", Arial, Helvetica, Sans-serif;
 }
 
@@ -122,11 +123,11 @@ BODY {
 	font-size: 70%;
 }
 
-EM {
+EM, em {
 	font-style: normal;
 }
 
-A, Q {
+A, Q, a, q {
 	font-style: italic;
 }
 
@@ -135,14 +136,14 @@ A, Q {
 	font-style: italic;
 }
 
-ADDRESS { 
+ADDRESS, address {
 	font-size: 70%;
 }
 
-PRE {
+PRE, pre {
 	font-family: "Droid Sans Mono", monospace;
 }
-PRE.xmlsrc B {
+PRE.xmlsrc B, pre.xmlsrc b {
   font-weight: normal;
 }
 
@@ -158,15 +159,15 @@ PRE.xmlsrc B {
 **
 ***********************************************************************/
 
-UL {
+UL, ul {
 	list-style: url(triangle-red.gif);
 }
 
-UL UL {
+UL UL, ul ul {
 	list-style: url(triangle-yellow.gif);
 }
 
-UL UL UL {
+UL UL UL, ul ul ul {
 	list-style: url(triangle-green.gif);
 }
 
@@ -176,21 +177,21 @@ UL UL UL {
 **
 ***********************************************************************/
 
-H1 {
+H1, h1 {
 	text-align: center;
 	letter-spacing: 0.5em;
 }
 
-P, PRE, FORM {
+P, PRE, FORM, p, pre, form {
 	margin-left: 20px;
 	margin-right: 20px;
 }
 
-PRE, P.solid {
+PRE, P.solid, pre, p.solid {
 	padding: 10px;
 }
 
-UL {
+UL, ul {
 	margin-top: 0px;
 }
 
@@ -211,15 +212,16 @@ UL {
 	padding: 2px 2px 2px 2px;
 }
 
-HR {
+HR, hr {
 	height: 5;
 }
-HR.top {
+HR.top, hr.top {
 	margin-bottom: 1em;
 }
-HR.bottom {
+HR.bottom, hr.bottom {
 	clear: both;
 	margin-top: 1em;
+	margin-bottom: 0;
 }
 
 .w25 {
