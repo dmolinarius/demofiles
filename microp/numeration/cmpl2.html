@@ -1,0 +1,284 @@
+<HTML>
+<HEAD>
+<!-- ---------------------------------------------------------------------- -->
+<!--           This file has been automatically installed by the            -->
+<!--                     WebSuite VIRTUAL FILE MANAGER                      -->
+<!-- ---------------------------------------------------------------------- -->
+
+<TITLE> Daniel Muller : Syst&egrave;mes de num&eacute;ration : Code compl&eacute;ment &agrave; 2</TITLE>
+</HEAD>
+<BODY BGCOLOR="#EAEAF0" TEXT="#000000" >
+<TABLE CELLPADDING=4 WIDTH=100% BORDER=0>
+<TR BGCOLOR="#0011DD" VALIGN=center ALIGN=center><TD>
+<FONT COLOR="#FFBB11" SIZE=+3><B>Syst&egrave;mes de num&eacute;ration</B></FONT>
+</TD></TR></TABLE>
+<P><BR><P>
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+
+<PAGESPACE 1>
+
+<H2><!-- H2 DM VFMGR STAMP --><CENTER><HR WIDTH=50% NOSHADE>Entiers sign&eacute;s<HR WIDTH=50% NOSHADE></CENTER></H2>
+<H2 >1.4 Code compl&eacute;ment &agrave; 2</H2>
+
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Principe</B>
+<P>
+Les nombres positifs sont cod&eacute;s comme d'habitude. Les nombres n&eacute;gatifs sont
+repr&eacute;sent&eacute;s par&nbsp;:
+<CENTER><PRE>
+X &lt; 0   -->   code(x)&nbsp;=&nbsp;2<SUP>n</SUP> - |x|
+</PRE></CENTER>
+En fait, le code compl&eacute;ment &agrave; 2 est obtenu en incr&eacute;mentant le
+<A HREF="cmpl1.html">code compl&eacute;ment &agrave; 1</A>&nbsp;:
+
+<CENTER><PRE>
+Code<SUB>2</SUB>(x&lt;0)&nbsp;=&nbsp;Code<SUB>1</SUB>(x&lt;0) + 1
+</PRE></CENTER>
+On d&eacute;duit des <A HREF="cmpl1.html#proprietes">propri&eacute;t&eacute;s</A> du
+<A HREF="cmpl1.html">code compl&eacute;ment &agrave; 1</A>, que le code d'un n&eacute;gatif
+est simplement obtenu en incr&eacute;mentant le compl&eacute;mentaire de sa valeur absolue&nbsp;:
+<CENTER><PRE>
+            _________    
+Code(x&lt;0)&nbsp;=&nbsp;Code(|x|) + 1
+</PRE></CENTER>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Exemple</B>
+<P>
+La droite de 4 bits montre les codes des nombres -8 &agrave; +7&nbsp;:
+<P>
+<CENTER><PRE>
+    -8                      -1     0    +1                      +7   
+-----+----- - - - - - - -----+-----+-----+----- - - - - - - -----+-->
+   1000                    1111  0000  0001                    0111  
+
+</PRE></CENTER>
+Cette repr&eacute;sentation incr&eacute;mente le code des n&eacute;gatifs, et par l&agrave;-m&ecirc;me d&eacute;cale
+d'une unit&eacute; vers la droite la demi-droite des n&eacute;gatifs par rapport au
+<A HREF="cmpl1.html">code compl&eacute;ment &agrave; 1</A>.
+Le probl&egrave;me de la
+double repr&eacute;sentation de 0 est ainsi r&eacute;solu de mani&egrave;re &eacute;vidente. Il apparait
+&eacute;galement un n&eacute;gatif suppl&eacute;mentaire &agrave; la gauche de l'&eacute;chelle.
+Par suite, 4 bits couvrent l'intervalle de -8 &agrave; +7, 8 bits couvrent
+[-128,+127] et 16 bits [-32768,+32767].
+Plus g&eacute;n&eacute;rallement, n bits permettent de coder de
+<CODE>-2<SUP>n-1</SUP></CODE> &agrave;
+<CODE>+2<SUP>n-1</SUP>-1</CODE>.
+<BR>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Addition</B>
+<P>
+
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+L'addition de deux nombres positifs est classiquement effectu&eacute;e en additionnant
+leurs codes.
+<BR>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+Soient deux nombres de signe diff&eacute;rent tels que&nbsp;:
+<CENTER><PRE>
+x &gt; 0,  y &lt; 0   /   |x| &gt; |y|
+</PRE></CENTER>
+
+</TD></TR></TABLE></TD></TR></TABLE><!--NEWPAGE--><TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square COLOR="#invisible"--><IMG ALIGN=top ALT="o" SRC="square_invisible.gif"></TD><TD ALIGN=left><TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle COLOR="#invisible"--><IMG ALIGN=top ALT="o" SRC="triangle_invisible.gif"></TD><TD ALIGN=left>
+
+En essayant de simplement additionner leurs codes&nbsp;:
+<CENTER><PRE>
+Code(x) + Code(y)&nbsp;=&nbsp;x + 2<SUP>n</SUP> - |y|                   
+                 &nbsp;=&nbsp;2<SUP>n</SUP> + (x+y)         avec x+y &gt; 0
+                 &nbsp;=&nbsp;2<SUP>n</SUP> + Code(x+y)                 
+</PRE></CENTER>
+ce qui conduit finalement &agrave;&nbsp;:
+<CENTER><PRE>
+Code(x+y)&nbsp;=&nbsp;Code(x) + Code(y) - 2<SUP>n</SUP>
+</PRE></CENTER>
+
+
+
+Le dernier terme de cette &eacute;quation ne modifie que le
+(n+1)<SUP>i&egrave;me</SUP> bit du r&eacute;sultat, ce qui permet d'&eacute;crire&nbsp;:
+<CENTER><PRE>
+Code(x+y)&nbsp;=&nbsp;Code(x) + Code(y)
+</PRE></CENTER>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+On laissera le lecteur examiner les 
+deux autres combinaisons de signe pour x et y.
+Toutefois, la conclusion est que <B>quels que soient les signes et les valeurs absolues
+respectives des deux nombres concern&eacute;s, le code compl&eacute;ment &agrave; 2 de la somme de deux nombres
+et obtenu en additionnant les codes compl&eacute;ment &agrave; deux des deux op&eacute;randes.</B>
+<BR>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+La soustraction s'effectue par addition de l'oppos&eacute;, et l'oppos&eacute; est obtenu par&nbsp;:
+<CENTER><PRE>
+            ______     
+Code(-x)&nbsp;=&nbsp; Code(x) + 1
+</PRE></CENTER>
+</TD></TR></TABLE>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>D&eacute;passement de capacit&eacute;</B>
+<P>
+Il a &eacute;t&eacute; vu qu'en arithm&eacute;tique sign&eacute;e le d&eacute;passement de capacit&eacute; ne peut
+plus simplement se g&eacute;rer avec l'indicateur de retenue. Consid&eacute;rons par exemple
+l'addition de deux nombres de n bits
+<B>a</B> et <B>b</B>, dont le r&eacute;sultat est <B>r</B>, le bit de signe
+<B>r<SUB>15</SUB></B> et l'indicateur de retenue <B>C</B>&nbsp;:
+<P>
+</TD></TR></TABLE>
+<!--NEWPAGE-->
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square COLOR="#invisible"--><IMG ALIGN=top ALT="o" SRC="square_invisible.gif"></TD><TD ALIGN=left>
+
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>a &gt; 0, b &gt; 0, r &lt; 2<SUP>n-1</SUP></B></CODE>
+<PRE>
+          -->  C&nbsp;=&nbsp;0, r<SUB>15</SUB>&nbsp;=&nbsp;0
+</PRE>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>a &gt; 0, b &gt; 0, r &gt; 2<SUP>n-1</SUP></B> (D&eacute;passement !)</CODE>
+<PRE>
+          -->  C&nbsp;=&nbsp;0, r<SUB>15</SUB>&nbsp;=&nbsp;1
+</PRE>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>a &gt; 0, b &lt; 0, a &gt; |b|</B></CODE>
+<PRE>
+Code(a) + Code(b)&nbsp;=&nbsp;a + 2<SUP>n</SUP> - |b|&nbsp;=&nbsp;2<SUP>n</SUP> + a-|b|   avec 0 &lt; a-|b| &lt; 2<SUP>n-1</SUP>
+
+          -->  C&nbsp;=&nbsp;1, r<SUB>15</SUB>&nbsp;=&nbsp;0
+</PRE>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>a &gt; 0, b &lt; 0, a &lt; |b|</B></CODE>
+<PRE>
+Code(a) + Code(b)&nbsp;=&nbsp;a + 2<SUP>n</SUP> - |b|&nbsp;=&nbsp;2<SUP>n</SUP> - (|b|-a)   avec 0 &lt; |b|-a < 2<SUP>n-1</SUP>
+
+          -->  C&nbsp;=&nbsp;0, r<SUB>15</SUB>&nbsp;=&nbsp;1
+</PRE>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>a &lt; 0, b &gt; 0, |a| <\ b</B></CODE>
+<PRE>
+Code(a) + Code(b)&nbsp;=&nbsp;2<SUP>n</SUP> - |a| + b&nbsp;=&nbsp;2<SUP>n</SUP> + b-|a|   avec 0 &lt; b-|a| < 2<SUP>n-1</SUP>
+
+          -->  C&nbsp;=&nbsp;1, r<SUB>15</SUB>&nbsp;=&nbsp;0
+</PRE>
+
+</TD></TR></TABLE></TD></TR></TABLE><!--NEWPAGE--><TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square COLOR="#invisible"--><IMG ALIGN=top ALT="o" SRC="square_invisible.gif"></TD><TD ALIGN=left><TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+
+<CODE><B>a &lt; 0, b &gt; 0, |a| &gt; b</B></CODE>
+<PRE>
+Code(a) + Code(b)&nbsp;=&nbsp;2<SUP>n</SUP> - |a| + b&nbsp;=&nbsp;2<SUP>n</SUP> - (|a|-b)   avec 0 &lt; |a|-b < 2<SUP>n-1</SUP>
+
+          -->  C&nbsp;=&nbsp;0, r<SUB>15</SUB>&nbsp;=&nbsp;1
+</PRE>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>a &lt; 0, b &lt; 0, |a|+|b| &gt; 2<SUP>n-1</SUP></B> (D&eacute;passement !)</CODE>
+<PRE>
+Code(a) + Code(b)&nbsp;=&nbsp;2<SUP>n</SUP> - |a| + 2<SUP>n</SUP> - |b|&nbsp;=&nbsp;2<SUP>n</SUP> + 2<SUP>n</SUP> - (|a+b|) avec |a+b| &gt; 2<SUP>n-1</SUP>
+
+          -->  C&nbsp;=&nbsp;1, r<SUB>15</SUB>&nbsp;=&nbsp;0
+</PRE>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>a &lt; 0, b &lt; 0, |a|+|b| &lt; 2<SUP>n-1</SUP></B></CODE>
+<PRE>
+Code(a) + Code(b)&nbsp;=&nbsp;2<SUP>n</SUP> - |a| + 2<SUP>n</SUP> - |b|&nbsp;=&nbsp;2<SUP>n</SUP> + 2<SUP>n</SUP> - (|a+b|) avec 0 &lt; |a+b| < 2<SUP>n-1</SUP>
+
+          -->  C&nbsp;=&nbsp;1, r<SUB>15</SUB>&nbsp;=&nbsp;1
+</PRE>
+</TD></TR></TABLE>
+
+</TD></TR></TABLE>
+<!--NEWPAGE-->
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square COLOR="#invisible"--><IMG ALIGN=top ALT="o" SRC="square_invisible.gif"></TD><TD ALIGN=left>
+
+<CENTER>
+<TABLE BORDER=2>
+<TR><TH COLSPAN=7>&nbsp;&nbsp;R&eacute;capitulatif des conditions de d&eacute;passement&nbsp;&nbsp;</TH></TR>
+<TR><TH>&nbsp;&nbsp;a<SUB>15</SUB> b<SUB>15</SUB> r<SUB>15</SUB>&nbsp;&nbsp;</TH><TH></TH><TH>&nbsp;&nbsp;op&eacute;randes&nbsp;&nbsp;</TH><TH>&nbsp;&nbsp;r&eacute;sultat&nbsp;&nbsp;</TH><TH>&nbsp;&nbsp;retenue&nbsp;&nbsp;</TH><TH></TH><TH>&nbsp;&nbsp;d&eacute;passement&nbsp;&nbsp;</TH></TR>
+<TR></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &gt; 0   b &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;non&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &gt; 0   b &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;<B>OUI</B>&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &gt; 0   b &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;non&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &gt; 0   b &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;non&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &lt; 0   b &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;non&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &lt; 0   b &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;non&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &lt; 0   b &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &gt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;<B>OUI</B>&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;a &lt; 0   b &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;r &lt; 0&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;1&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;non&nbsp;&nbsp;</TD></TR>
+</TABLE>
+</CENTER>
+<P>
+Le r&eacute;capitulatif indique tr&egrave;s clairement que l'indicateur de retenue (carry flag)
+ne peut pas
+&ecirc;tre utilis&eacute; comme indicateur de d&eacute;passement en arithm&eacute;tique sign&eacute;e. Il faut
+utiliser un autre indicateur de d&eacute;passement (overflow flag), qui ob&eacute;it &agrave; l'&eacute;quation&nbsp;:
+<CENTER><PRE>
+     __<SUB>  </SUB>__ <SUB>        </SUB>       __
+OF&nbsp;=&nbsp;a<SUB>15</SUB>.b<SUB>15</SUB>.r<SUB>15</SUB> + a<SUB>15</SUB>.b<SUB>15</SUB>.r<SUB>15</SUB>
+</PRE></CENTER>
+
+En additionnant par exemple deux op&eacute;randes de 16 bits&nbsp;:
+<P>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+si <B>OF</B> est &agrave; 0, le bit de poids fort
+(i.e. r<SUB>15</SUB>) donne le signe du r&eacute;sultat dont la valeur est disponible sur les 15 bits
+de poids faible.
+<P>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+si <B>OF</B> est &agrave; 1, l'indicateur de retenue (<B>C</B>) donne
+le signe du r&eacute;sultat qui est lui-m&ecirc;me sur 16 bits. Dans ce dernier cas, le bit de
+poids fort ne donne pas le signe du r&eacute;sultat !
+</TD></TR></TABLE>
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Conclusion</B>
+<P>
+Le code compl&eacute;ment &agrave; 2 pr&eacute;sente de nombreux avantages&nbsp;: il y a un seul code pour 0,
+l'addition de deux nombres se fait simplement en additionnant leurs codes, et il est
+tr&egrave;s simple d'obtenir l'oppos&eacute; d'un nombre... Ceci explique que
+tous les processeurs actuels utilisent ce code pour effectuer des calculs en
+arithm&eacute;tique sign&eacute;e, et disposent de fonctions sp&eacute;ciales pour l'impl&eacute;menter
+(cf. indicateur de d&eacute;passement).
+
+</TD></TR></TABLE>
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+<P><BR><P>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0>
+<TR>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=left>
+<!--A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Home" SRC="/~muller/icones/navigation/home.gif"></A>
+<A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Up" SRC="/~muller/icones/navigation/back.gif"></A-->
+</TD>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=right style="height:2em"><!--A HREF="http://www.ec-lyon.fr/"><IMG BORDER=0 ALT="Centrale Lyon" SRC="logo_ecl3.gif"></A-->
+</TD>
+</TR>
+</TABLE>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0 ALIGN=center>
+<TR>
+<TD ALIGN=left WIDTH=70><IMG SRC="/~muller/Icons/navigation/gr_flag.gif.fr" BORDER=0></TD>
+<TD ALIGN=center><FONT SIZE=2>Tous droits r&eacute;serv&eacute;s
+<BR>
+Pour tous renseignements, pri&egrave;re de contacter <A HREF="mailto:muller@ec-lyon.fr">Daniel Muller</A></FONT>
+<BR><FONT SIZE=1>Derni&egrave;re mise &agrave; jour le Mercredi 18 mars 1998 16:54:19</FONT>
+</TD>
+<TD ALIGN=right><!--A HREF="cmpl2.html.en" TARGET="_top"><IMG SRC="/~muller/Icons/navigation/flag.gif.en" BORDER=0 ALT="English version"></A--></TD>
+</TR>
+</TABLE>
+
+</BODY>
+

@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<!-- ---------------------------------------------------------------------- -->
+<!--           This file has been automatically installed by the            -->
+<!--                     WebSuite VIRTUAL FILE MANAGER                      -->
+<!-- ---------------------------------------------------------------------- -->
+
+<TITLE> Daniel Muller : Syst&egrave;mes de num&eacute;ration : Code relatif &agrave; 2**(n-1)</TITLE>
+</HEAD>
+<BODY BGCOLOR="#EAEAF0" TEXT="#000000" >
+<TABLE CELLPADDING=4 WIDTH=100% BORDER=0>
+<TR BGCOLOR="#0011DD" VALIGN=center ALIGN=center><TD>
+<FONT COLOR="#FFBB11" SIZE=+3><B>Syst&egrave;mes de num&eacute;ration</B></FONT>
+</TD></TR></TABLE>
+<P><BR><P>
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+
+<!--PAGESPACE 1-->
+
+<H2><!-- H2 DM VFMGR STAMP --><CENTER><HR WIDTH=50% NOSHADE>Entiers sign&eacute;s<HR WIDTH=50% NOSHADE></CENTER></H2>
+<H2 >1.5 Code relatif &agrave; 2<SUP>n-1</SUP></H2>
+
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Principe</B>
+<P>
+En code relatif &agrave;
+2<SUP>n-1</SUP>, <B>tous les nombres</B> (positifs et negatifs),
+sont repr&eacute;sent&eacute;s par&nbsp;:
+<CENTER><PRE>
+Code(x)&nbsp;=&nbsp;2<SUP>n-1</SUP> + x
+</PRE></CENTER>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Exemple</B>
+<P>
+La droite 4 bits donne les codes des nombres -8 &agrave; +7&nbsp;:
+<P>
+<CENTER><PRE>
+    -8                  -1     0    +1                  +7   
+-----+----- - - - - -----+-----+-----+----- - - - - -----+-->
+   0000                0111  1000  1001                1111  
+</PRE></CENTER>
+
+</TD></TR></TABLE>
+<!--NEWPAGE-->
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square COLOR="#invisible"--><IMG ALIGN=top ALT="o" SRC="square_invisible.gif"></TD><TD ALIGN=left>
+
+On peut remarquer que ce code est identique au
+<A HREF="cmpl2.html">code compl&eacute;ment &agrave; 2</A>, avec le bit de signe compl&eacute;ment&eacute;. Ceci
+peut se d&eacute;montrer&nbsp;:
+<P>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>x > 0&nbsp;:</B> Code(x)&nbsp;=&nbsp;2<SUP>n-1</SUP> + x&nbsp;=&nbsp;Code<SUB>2</SUB>(x) + "bit de signe"</CODE>
+<P>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<CODE><B>x < 0&nbsp;:</B> Code(x)&nbsp;=&nbsp;2<SUP>n-1</SUP> + x&nbsp;=&nbsp;2<SUP>n-1</SUP> - |x|&nbsp;=&nbsp;2<SUP>n</SUP> - |x| - 2<SUP>n-1</SUP>&nbsp;=&nbsp;Code<SUB>2</SUB>(x) - "bit de signe"</CODE>
+
+</TD></TR></TABLE>
+<BR>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Addition</B>
+<P>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+L'addition de deux nombres est effectu&eacute;e comme en
+<A HREF="cmpl2.html">code compl&eacute;ment &agrave; 2</A>, en sommant simplement les codes des op&eacute;randes.
+<P>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+La soustraction est obtenue par addition de l'oppos&eacute;.
+<P>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+L'oppos&eacute; d'un nombre se calcule par&nbsp;:
+<CENTER><PRE style="margin-top:0">
+            _________    
+Code(x<0)&nbsp;=&nbsp;Code(|x|) + 1
+</PRE></CENTER>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+Le d&eacute;passement est g&eacute;r&eacute; comme en
+<A HREF="cmpl2.html">code compl&eacute;ment &agrave; 2</A>.
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+<P><BR><P>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0>
+<TR>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=left>
+<!--A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Home" SRC="/~muller/icones/navigation/home.gif"></A>
+<A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Up" SRC="/~muller/icones/navigation/back.gif"></A-->
+</TD>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=right style="height:2em"><!--A HREF="http://www.ec-lyon.fr/"><IMG BORDER=0 ALT="Centrale Lyon" SRC="logo_ecl3.gif"></A-->
+</TD>
+</TR>
+</TABLE>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0 ALIGN=center>
+<TR>
+<TD ALIGN=left WIDTH=70><IMG SRC="/~muller/Icons/navigation/gr_flag.gif.fr" BORDER=0></TD>
+<TD ALIGN=center><FONT SIZE=2>Tous droits r&eacute;serv&eacute;s
+<BR>
+Pour tous renseignements, pri&egrave;re de contacter <A HREF="mailto:muller@ec-lyon.fr">Daniel Muller</A></FONT>
+<BR><FONT SIZE=1>Derni&egrave;re mise &agrave; jour le Lundi 23 f&eacute;vrier 1998 11:30:01</FONT>
+</TD>
+<TD ALIGN=right><!--A HREF="relatif.html.en" TARGET="_top"><IMG SRC="/~muller/Icons/navigation/flag.gif.en" BORDER=0 ALT="English version"></A--></TD>
+</TR>
+</TABLE>
+
+</BODY>
+

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<!-- ---------------------------------------------------------------------- -->
+<!--           This file has been automatically installed by the            -->
+<!--                     WebSuite VIRTUAL FILE MANAGER                      -->
+<!-- ---------------------------------------------------------------------- -->
+
+<TITLE> Daniel Muller : Syst&egrave;mes de num&eacute;ration : Le standard IEEE 754</TITLE>
+<meta charset="utf-8">
+</HEAD>
+<BODY BGCOLOR="#EAEAF0" TEXT="#000000" >
+<TABLE CELLPADDING=4 WIDTH=100% BORDER=0>
+<TR BGCOLOR="#0011DD" VALIGN=center ALIGN=center><TD>
+<FONT COLOR="#FFBB11" SIZE=+3><B>Syst&egrave;mes de num&eacute;ration</B></FONT>
+</TD></TR></TABLE>
+<P><BR><P>
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+
+<H2><!-- H2 DM VFMGR STAMP --><CENTER><HR WIDTH=50% NOSHADE> 4. Nombres &agrave; virgule flottante<HR WIDTH=50% NOSHADE></CENTER></H2>
+
+<H2 >4.2 Le standard IEEE 754</H2>
+
+A la fin des ann&eacute;es 70 chaque ordinateur avait sa propre repr&eacute;sentation interne pour
+les nombres &agrave; virgule flottante. Or, l'arithm&eacute;tique &agrave; virgule flottante poss&egrave;de
+certaines subtilit&eacute;s que le constructeur moyen ne ma&icirc;trisait pas forc&eacute;ment et certaines
+machines effectuaient certaines op&eacute;rations de mani&egrave;re incorrecte.
+Pour rem&eacute;dier &agrave; cette situation, l'IEEE proposa un standard
+non seulement pour permettre les &eacute;changes de donn&eacute;es en virgule flottante
+entre ordinateurs, mais aussi pour fournir un mod&egrave;le rod&eacute; aux constructeurs, dont
+le fonctionnement &eacute;tait correct et ma&icirc;tris&eacute;.
+De nos jours, pratiquement tous les constructeurs ont des processeurs ou des coprocesseurs
+d&eacute;di&eacute;s qui effectuent des calculs en virgule flottante et qui emploient la repr&eacute;sentation
+au standard IEEE 754.
+<P>
+Le standard IEEE 754 d&eacute;finit trois formats&nbsp;:
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD ALIGN=left>
+<DL style="margin-top:0">
+<DT><!-- DT DM VFMGR STAMP --><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif">  simple pr&eacute;cision sur 32 bits
+<DD>
+<DT><!-- DT DM VFMGR STAMP --><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif">  double pr&eacute;cision sur 64 bits
+<DD>
+<DT><!-- DT DM VFMGR STAMP --><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif">  repr&eacute;sentation interm&eacute;diaire sur 80 bits
+<DD>
+</DL>
+</TD></TR></TABLE>
+La repr&eacute;sentation sur 80 bits est principalement utilis&eacute;e en interne par les processeurs
+pour minimiser les erreurs d'arrondi.
+
+<H2 >4.2.1 Simple pr&eacute;cision IEEE 754</H2>
+
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Principe</B>
+<P>
+La repr&eacute;sentation standard IEEE 754 en simple pr&eacute;cision utilise le bit de poids fort
+pour le signe, suivi par un exposant sur 8 bits et 23 bits pour la mantisse&nbsp;:
+<CENTER><PRE>
+ +-----+-----------+------------------+
+ |  1  |     8     |        23        |
+ +-----+-----------+------------------+
+  signe   exposant       mantisse      
+</PRE></CENTER>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+Si le bit de signe est &agrave; z&eacute;ro le nombre est positif, s'il est &agrave; un le nombre est n&eacute;gatif.
+<BR>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+L'exposant est sur 8 bit en
+<A HREF="relatif.html">code relatif &agrave; 127</A>.
+<BR>
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+La mantisse est sur 23 bits et utilise la base 2.
+Une mantisse normalis&eacute;e commence toujours par un bit 1, suivi par la virgule, puis
+par le reste de la mantisse. Le bit initial, toujours pr&eacute;sent et toujours &agrave; 1 dans
+une mantisse normalis&eacute;e est implicite et non repr&eacute;sent&eacute;.
+<P>
+Si les 23 bits qui repr&eacute;sentent la mantisse sont &agrave; 0, la valeur de celle-ci est 1
+(cf. le bit implicite de poids fort &agrave; 1). Si les 23 bits sont &agrave; 1, le valeur
+de la mantisse est presque 2 (en fait 2-2<SUP>-23</SUP>). 
+La valeur de la mantisse est appel&eacute;e
+<B>le significande</B>.
+Tous les nombres normalis&eacute;s IEEE 754 ont un significande compris dans l'intervalle
+[1,2[.
+</TD></TR></TABLE>
+<P>&nbsp;
+
+</TD></TR></TABLE><!--NEWPAGE--><TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+
+<B>Caract&eacute;ristiques</B>
+<P>
+<CENTER>
+<TABLE BORDER=2>
+<TR><TH COLSPAN=2>&nbsp;&nbsp;IEEE 754 simple precision&nbsp;&nbsp;</TH></TR>
+<TR></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;exposant&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;-126 &agrave; +127&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;mantisse&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;1 &agrave; presque 2  (en fait 2-2<SUP>-23</SUP>)&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;plus petit nombre normalis&eacute;&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;2<SUP>-126</SUP>&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;plus grand nombre normalis&eacute;&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;presque 2<SUP>128</SUP>&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;intervalle utile&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;approximativement 10<SUP>-38</SUP> &agrave; 10<SUP>38</SUP>&nbsp;&nbsp;</TD></TR>
+</TABLE>
+</CENTER>
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Exemples</B>
+<P>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<B><CODE>
+1&nbsp;=&nbsp;2<SUP>0</SUP> x (1 + 0)
+</CODE></B>
+<P>
+Le bit de signe sera
+<CODE>0</CODE>, l'exposant, en <A HREF="relatif.html">code relatif &agrave; 127</A> sera
+repr&eacute;sent&eacute; par
+<CODE>127&nbsp;=&nbsp;01111111</CODE>, et le significande vaut <CODE>1</CODE>,
+ce qui r&eacute;sulte en une mantisse dont tous les bits sont &agrave; 
+<CODE>O</CODE>. La repr&eacute;sentation IEEE simple precision IEEE 754 du nombre 1 est donc&nbsp;:
+<CENTER><PRE>
+Code(1)&nbsp;=&nbsp;0011 1111 1000 0...0&nbsp;=&nbsp;3F800000
+          seee eeee emmm mmmmm           
+</PRE></CENTER>
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<B><CODE>
+0.5&nbsp;=&nbsp;2<SUP>-1</SUP> x (1 + 0)
+</CODE></B>
+<P>
+Le bit de signe est
+<CODE>0</CODE>, l'exposant, en <A HREF="relatif.html">code relatif &agrave; 127</A> est
+repr&eacute;sent&eacute; par
+<CODE>127&nbsp;-&nbsp;1&nbsp;=&nbsp;01111110</CODE>, 
+et le significande vaut <CODE>1</CODE>,
+ce qui r&eacute;sulte en une mantisse dont tous les bits sont &agrave; 
+<CODE>0</CODE>. La repr&eacute;sentation IEEE simple precision IEEE 754 du nombre 0.5 est donc&nbsp;:
+<CENTER><PRE>
+Code(0.5)&nbsp;=&nbsp;0011 1111 0000 0...0&nbsp;=&nbsp;3F000000
+            seee eeee emmm mmmmm           
+</PRE></CENTER>
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<B><CODE>
+1.5&nbsp;=&nbsp;2<SUP>0</SUP> x (1 + 2<SUP>-1</SUP>)
+</CODE></B>
+<P>
+Le bit de signe est
+<CODE>0</CODE>, l'exposant, en <A HREF="relatif.html">code relatif &agrave; 127</A> est
+repr&eacute;sent&eacute; par
+<CODE>127&nbsp;=&nbsp;01111111</CODE>, et le significande vaut <CODE>1.1</CODE>,
+ce qui r&eacute;sulte en une mantisse dont le premier bit est &agrave; <CODE>1</CODE> et les
+22 suivants &agrave; <CODE>0</CODE>.
+La repr&eacute;sentation IEEE simple precision IEEE 754 du nombre 1.5 est donc&nbsp;:
+<CENTER><PRE>
+Code(1.5)&nbsp;=&nbsp;0011 1111 1100 0...0&nbsp;=&nbsp;3FC00000
+            seee eeee emmm mmmmm           
+</PRE></CENTER>
+
+</TD></TR></TABLE>
+</TD></TR></TABLE>
+
+<NEWPAGE>
+
+<H2 >4.2.2 Nombres IEEE 754 sp&eacute;ciaux</H2>
+
+En arithm&eacute;tique &agrave; virgule flottante on peut obtenir un r&eacute;sultat valable,
+ou alors rencontrer un probl&egrave;me de d&eacute;passement par valeur sup&eacute;rieure
+(overflow) lorsque le r&eacute;sultat est trop grand pour pouvoir &ecirc;tre repr&eacute;sent&eacute;,
+ou par valeur inf&eacute;rieure (underflow) lorsque le r&eacute;sultat est trop petit.
+<P>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>D&eacute;passement par valeur inf&eacute;rieure</B>
+<P>
+Cette situation arrive lorsqu'un r&eacute;sultat est trop petit pour pouvoir &ecirc;tre
+repr&eacute;sent&eacute;. Le standard IEEE 754 r&eacute;soud partiellement le probl&egrave;me en autorisant
+dans ce cas une repr&eacute;sentation d&eacute;normalis&eacute;e.
+Une repr&eacute;sentation d&eacute;normalis&eacute;e est caract&eacute;ris&eacute;e par le fait d'avoir un code
+d'exposant compl&egrave;tement nul, ce qui est interpr&eacute;t&eacute; comme une indication du fait
+que le bit de poids forst de la mantisse, implicite, est cette fois &agrave;
+<CODE>0</CODE> au lieu d'&ecirc;tre
+&agrave; <CODE>1</CODE>.
+De cette fa&ccedil;on, le plus petit nombre "exprimable" est&nbsp;:
+<CENTER><PRE>
+2<SUP>-127</SUP> x 2<SUP>-23</SUP>&nbsp;=&nbsp;2<SUP>-150</SUP> ~ 10<SUP>-45</SUP>
+</PRE></CENTER>
+Cependant, il faut remarquer que plus le nombre repr&eacute;sent&eacute; est petit, moins sa
+mantisse comportera de bits significatifs.
+Ce sch&eacute;ma permet une approche "douce" du ph&eacute;nom&egrave;ne de d&eacute;passement par
+valeur inf&eacute;rieure, en sacrifiant la pr&eacute;cision lorsqu'un r&eacute;sultat est trop
+petit pour admettre une repr&eacute;sentation normalis&eacute;e.
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Z&eacute;ro</B>
+<P>
+Z&eacute;ro est repr&eacute;sent&eacute; sous la forme d'un nombre d&eacute;normalis&eacute;. Ceci r&eacute;sulte en
+deux repr&eacute;sentations possibles pour z&eacute;ro&nbsp;: l'une pour +0, l'autre pour -0.
+Ces repr&eacute;sentations sont caract&eacute;ris&eacute;es par un bit de signe suivi par
+31 <CODE>0</CODE>.
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>D&eacute;passement par valeurs sup&eacute;rieures</B>
+<P>
+Le d&eacute;passement par valeurs sup&eacute;rieures ne peut pas &ecirc;tre trait&eacute; comme le
+d&eacute;passement par valeurs inf&eacute;rieures, et est indiqu&eacute; par un code d'exposant
+dont tous les bits sont &agrave; 
+<CODE>1</CODE>, suivi par une mantisse dont tous les bits sont &agrave; <CODE>0</CODE>.
+Ceci est interpr&eacute;t&eacute; comme repr&eacute;sentant l'infini. L'infini peut &ecirc;tre positif
+ou n&eacute;gatif, en fonction de la valeur du bit de signe.
+L'infini peut &ecirc;tre utilis&eacute; dans les calculs et les r&eacute;sultats correspondent
+au sens commun&nbsp;:
+<CENTER><PRE>
+inf + inf&nbsp;=&nbsp;inf      x / inf&nbsp;=&nbsp;0       x / 0&nbsp;=&nbsp;inf
+</PRE></CENTER>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Not a Number</B>
+<P>
+Cependant, certaines op&eacute;rations peuvent ne conduire &agrave; aucun r&eacute;sultat exprimable,
+comme
+<CENTER><PRE>
+inf / inf&nbsp;=&nbsp;?       0 x inf&nbsp;=&nbsp;?
+</PRE></CENTER>
+Le r&eacute;sultat de telles op&eacute;ration est alors indiqu&eacute; par un autre code sp&eacute;cial&nbsp;:
+le code d'exposant a tous les bits &agrave;
+<CODE>1</CODE>, suivi par une mantisse non nulle. Le "nombre" correspondant est
+appel&eacute; <B>NaN</B> (Not a Number)&nbsp;: c'est un non-nombre.
+<BR>&nbsp;
+</TD></TR></TABLE>
+
+<NEWPAGE>
+
+<H2 >4.2.3 R&eacute;capitulatif du standard IEEE 754</H2>
+
+<CENTER>
+<TABLE BORDER=2>
+<TR><TH>&nbsp;&nbsp;Nombre&nbsp;&nbsp;</TH><TH></TH><TH>&nbsp;&nbsp;signe&nbsp;&nbsp;</TH><TH>&nbsp;&nbsp;exposant&nbsp;&nbsp;</TH><TH>&nbsp;&nbsp;mantisse&nbsp;&nbsp;</TH></TR>
+<TR></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;nombre normalis&eacute;&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;0/1&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;01 &agrave; FE&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;quelconque&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;nombre d&eacute;normalis&eacute;&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;0/1&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;00&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;quelconque&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;z&eacute;ro&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;0/1&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;00&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;infini&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;0/1&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;FF&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;0&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;NaN&nbsp;&nbsp;</TD><TD ALIGN=center></TD><TD ALIGN=center>&nbsp;&nbsp;0/1&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;FF&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;tout sauf 0&nbsp;&nbsp;</TD></TR>
+</TABLE>
+</CENTER>
+
+<H2 >4.2.4 IEEE 754 double pr&eacute;cision</H2>
+
+Toutes les conventions utilis&eacute;es en simple pr&eacute;cision sont &eacute;galement valables
+pour la double pr&eacute;cision. Les seules diff&eacute;rences proviennent du fait que
+la double pr&eacute;cision utilise un exposant sur 11 bits en
+<A HREF="relatif.html">code relatif &agrave; 1023</A>, et une mantisse sur 52 bits.
+Ceci conduit aux caract&eacute;ristiques suivantes&nbsp;:
+<P>
+<CENTER>
+<TABLE BORDER=2>
+<TR><TH COLSPAN=2>&nbsp;&nbsp;IEEE 754 double pr&eacute;cision&nbsp;&nbsp;</TH></TR>
+<TR></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;exposant&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;-1022 &agrave; +1023&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;mantisse&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;1 &agrave; presque 2 (2-2<SUP>-52</SUP>)&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;plus petit nombre normalis&eacute;&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;2<SUP>-1022</SUP>&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;plus grand nombre normalis&eacute;&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;presque 2<SUP>1024</SUP>&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;intervalle utile&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;approximativement 10<SUP>-308</SUP> &agrave; 10<SUP>308</SUP>&nbsp;&nbsp;</TD></TR>
+<TR><TD ALIGN=center>&nbsp;&nbsp;plus petit nombre d&eacute;normalis&eacute;&nbsp;&nbsp;</TD><TD ALIGN=center>&nbsp;&nbsp;2<SUP>-1074</SUP> ~ 10<SUP>-324</SUP>&nbsp;&nbsp;</TD></TR>
+</TABLE>
+</CENTER>
+<P>
+<!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"> Quelle est la valeur du nombre repr&eacute;sent&eacute; par le code hexad&eacute;cimal
+<CODE>40490FD8</CODE> ?
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+
+<!--PAGESPACE 12-->
+
+<P><BR><P>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0>
+<TR>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=left>
+<!--A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Home" SRC="/~muller/icones/navigation/home.gif"></A>
+<A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Up" SRC="/~muller/icones/navigation/back.gif"></A-->
+</TD>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=right style="height:2em"><!--A HREF="http://www.ec-lyon.fr/"><IMG BORDER=0 ALT="Centrale Lyon" SRC="logo_ecl3.gif"></A-->
+</TD>
+</TR>
+</TABLE>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0 ALIGN=center>
+<TR>
+<TD ALIGN=left WIDTH=70><IMG SRC="/~muller/Icons/navigation/gr_flag.gif.fr" BORDER=0></TD>
+<TD ALIGN=center><FONT SIZE=2>Tous droits r&eacute;serv&eacute;s
+<BR>
+Pour tous renseignements, pri&egrave;re de contacter <A HREF="mailto:muller@ec-lyon.fr">Daniel Muller</A></FONT>
+<BR><FONT SIZE=1>Derni&egrave;re mise &agrave; jour le Mercredi 18 mars 1998 17:35:38</FONT>
+</TD>
+<!--TD ALIGN=right><A HREF="flp_ieee.html.en" TARGET="_top"><IMG SRC="/~muller/Icons/navigation/flag.gif.en" BORDER=0 ALT="English version"></A></TD-->
+</TR>
+</TABLE>
+
+</BODY>
+
+</HTML>

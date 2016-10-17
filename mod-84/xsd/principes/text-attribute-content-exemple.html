@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Schémas XML -
+     Schéma</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Schémas XML</h1><hr />
+  <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: orange; float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    .hidden { display: none }
+  </style>
+
+  <h2>Schéma</h2>
+  <div id="toggle_xsd" class="toggle">[fermer]</div>
+
+  <pre id="xsd" class="grey frame visible">&lt;<font color="#0000cc">xs:schema</font> <font color="#009900">xmlns:xs</font>="<font color="#990000">http://www.w3.org/2001/XMLSchema</font>"&gt;
+
+ &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">classe</font>" <font color="#009900">type</font>="<font color="#990000">type-classe</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+ &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">promo</font>" <font color="#009900">type</font>="<font color="#990000">xs:string</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+ &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">étudiant</font>" <font color="#009900">type</font>="<font color="#990000">type-etudiant</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+ &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">prénom</font>" <font color="#009900">type</font>="<font color="#990000">type-prénom</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+ &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">nom</font>" <font color="#009900">type</font>="<font color="#990000">xs:string</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">type-etudiant</font>"&gt;
+  &lt;<font color="#0000cc">xs:sequence</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">prénom</font>" <font color="#009900">maxOccurs</font>="<font color="#990000">unbounded</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">nom</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">type-classe</font>"&gt;
+  &lt;<font color="#0000cc">xs:sequence</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">promo</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">ref</font>="<font color="#990000">étudiant</font>" <font color="#009900">maxOccurs</font>="<font color="#990000">unbounded</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">type-prénom</font>"&gt;
+  &lt;<font color="#0000cc">xs:simpleContent</font>&gt;
+   &lt;<font color="#0000cc">xs:extension</font> <font color="#009900">base</font>="<font color="#990000">xs:string</font>"&gt;
+    &lt;<font color="#0000cc">xs:attribute</font> <font color="#009900">name</font>="<font color="#990000">usuel</font>" <font color="#009900">type</font>="<font color="#990000">xs:string</font>"&gt;&lt;/<font color="#0000cc">xs:attribute</font>&gt;
+   &lt;/<font color="#0000cc">xs:extension</font>&gt;
+  &lt;/<font color="#0000cc">xs:simpleContent</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+&lt;/<font color="#0000cc">xs:schema</font>&gt;</pre>
+
+  <h2>Document XML</h2>
+  <div id="toggle_xml" class="toggle">[fermer]</div>
+
+  <pre id="xml" class="grey frame visible">&lt;<font color="#0000cc">classe</font> <font color="#009900">xmlns:xsi</font>="<font color="#990000">http://www.w3.org/2001/XMLSchema-instance</font>" <font color="#009900">xsi:noNamespaceSchemaLocation</font>="<font color="#990000">text-attribute-content-exemple.xsd</font>"&gt;
+
+ &lt;<font color="#0000cc">promo</font>&gt;<b>2004</b>&lt;/<font color="#0000cc">promo</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font> <font color="#009900">usuel</font>="<font color="#990000">oui</font>"&gt;<b>Raymond</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>G</b><b>érard</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Deubaze</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font> <font color="#009900">usuel</font>="<font color="#990000">oui</font>"&gt;<b>Ginette</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Annette</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Ringard</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font> <font color="#009900">unique</font>="<font color="#990000">oui</font>"&gt;<b>Elsa</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Plique</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+
+&lt;/<font color="#0000cc">classe</font>&gt;</pre>
+
+  <h2>Résultat de validation</h2>
+
+  <pre class="grey frame"><b>Error 1866</b>: Element 'prénom', attribute 'unique': The attribute 'unique' is not allowed. in <b>text-attribute-content-exemple.xml</b> on line <b>18</b>
+</pre>
+
+  <script type="text/javascript">
+   function toggle_visibility(e) {
+     var target = e.target
+       , pre = document.getElementById(target.id.substring(7))
+       , state = pre.getAttribute('class').indexOf('visible') == -1 ? 'hidden' : 'visible'
+     ;
+     if ( state === 'visible' ) {
+       pre.setAttribute('class','grey frame hidden');
+       target.textContent = '[ouvrir]';
+     }
+     else {
+       pre.setAttribute('class','grey frame visible');
+       target.textContent = '[fermer]';
+     }
+   }
+   document.getElementById("toggle_xml").addEventListener('click',toggle_visibility);
+   document.getElementById("toggle_xsd").addEventListener('click',toggle_visibility);
+  </script>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161017
+        </span></div></td></tr></table></body></html>

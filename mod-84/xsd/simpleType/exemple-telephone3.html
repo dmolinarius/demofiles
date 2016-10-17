@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Schémas XML -
+     Schéma</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Schémas XML</h1><hr />
+  <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: orange; float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    .hidden { display: none }
+  </style>
+
+  <h2>Schéma</h2>
+  <div id="toggle_xsd" class="toggle">[fermer]</div>
+
+  <pre id="xsd" class="grey frame visible">&lt;<font color="#0000cc">xs:schema</font> <font color="#009900">xmlns:xs</font>="<font color="#990000">http://www.w3.org/2001/XMLSchema</font>"&gt;
+
+&lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">exemple</font>"&gt;
+ &lt;<font color="#0000cc">xs:complexType</font>&gt;
+  &lt;<font color="#0000cc">xs:sequence</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">téléphone</font>" <font color="#009900">maxOccurs</font>="<font color="#990000">unbounded</font>"&gt;
+    &lt;<font color="#0000cc">xs:complexType</font>&gt;
+     &lt;<font color="#0000cc">xs:sequence</font>&gt;&lt;/<font color="#0000cc">xs:sequence</font>&gt;
+     &lt;<font color="#0000cc">xs:attribute</font> <font color="#009900">name</font>="<font color="#990000">numéro</font>" <font color="#009900">type</font>="<font color="#990000">T_NUMERO_TELEPHONE</font>"&gt;&lt;/<font color="#0000cc">xs:attribute</font>&gt;
+    &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+   &lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+&lt;/<font color="#0000cc">xs:element</font>&gt;
+
+&lt;<font color="#0000cc">xs:simpleType</font> <font color="#009900">name</font>="<font color="#990000">T_NUMERO_TELEPHONE</font>"&gt;
+ &lt;<font color="#0000cc">xs:restriction</font> <font color="#009900">base</font>="<font color="#990000">xs:token</font>"&gt;
+  &lt;<font color="#0000cc">xs:pattern</font> <font color="#009900">value</font>="<font color="#990000">(0|(\+33 (0|\(0\))?))[1-9]( [0-9]{2}){4}</font>"&gt;&lt;/<font color="#0000cc">xs:pattern</font>&gt;
+ &lt;/<font color="#0000cc">xs:restriction</font>&gt;
+&lt;/<font color="#0000cc">xs:simpleType</font>&gt;
+
+&lt;/<font color="#0000cc">xs:schema</font>&gt;</pre>
+
+  <h2>Document XML</h2>
+  <div id="toggle_xml" class="toggle">[fermer]</div>
+
+  <pre id="xml" class="grey frame visible">&lt;<font color="#0000cc">exemple</font> <font color="#009900">xmlns:xsi</font>="<font color="#990000">http://www.w3.org/2001/XMLSchema-instance</font>" <font color="#009900">xsi:noNamespaceSchemaLocation</font>="<font color="#990000">exemple-telephone3.xsd</font>"&gt;
+
+ &lt;<font color="#0000cc">téléphone</font> <font color="#009900">numéro</font>="<font color="#990000">06 54 32 20 98</font>"&gt;&lt;/<font color="#0000cc">téléphone</font>&gt;
+ &lt;<font color="#0000cc">téléphone</font> <font color="#009900">numéro</font>="<font color="#990000">+33 04 72 18 60 00</font>"&gt;&lt;/<font color="#0000cc">téléphone</font>&gt;
+ &lt;<font color="#0000cc">téléphone</font> <font color="#009900">numéro</font>="<font color="#990000">+33 4 72 18 60 00</font>"&gt;&lt;/<font color="#0000cc">téléphone</font>&gt;
+ &lt;<font color="#0000cc">téléphone</font> <font color="#009900">numéro</font>="<font color="#990000">+33 (0)4 72 18 60 00</font>"&gt;&lt;/<font color="#0000cc">téléphone</font>&gt;
+
+&lt;/<font color="#0000cc">exemple</font>&gt;</pre>
+
+  <h2>Résultat de validation</h2>
+
+  <pre class="grey frame">OK</pre>
+
+  <script type="text/javascript">
+   function toggle_visibility(e) {
+     var target = e.target
+       , pre = document.getElementById(target.id.substring(7))
+       , state = pre.getAttribute('class').indexOf('visible') == -1 ? 'hidden' : 'visible'
+     ;
+     if ( state === 'visible' ) {
+       pre.setAttribute('class','grey frame hidden');
+       target.textContent = '[ouvrir]';
+     }
+     else {
+       pre.setAttribute('class','grey frame visible');
+       target.textContent = '[fermer]';
+     }
+   }
+   document.getElementById("toggle_xml").addEventListener('click',toggle_visibility);
+   document.getElementById("toggle_xsd").addEventListener('click',toggle_visibility);
+  </script>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161017
+        </span></div></td></tr></table></body></html>

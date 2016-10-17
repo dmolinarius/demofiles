@@ -1,0 +1,223 @@
+<HTML>
+<HEAD>
+<!-- ---------------------------------------------------------------------- -->
+<!--           This file has been automatically installed by the            -->
+<!--                     WebSuite VIRTUAL FILE MANAGER                      -->
+<!-- ---------------------------------------------------------------------- -->
+
+<TITLE> Daniel Muller : Syst&egrave;mes de num&eacute;ration : Code compl&eacute;ment &agrave; 1</TITLE>
+</HEAD>
+<BODY BGCOLOR="#EAEAF0" TEXT="#000000" >
+<TABLE CELLPADDING=4 WIDTH=100% BORDER=0>
+<TR BGCOLOR="#0011DD" VALIGN=center ALIGN=center><TD>
+<FONT COLOR="#FFBB11" SIZE=+3><B>Syst&egrave;mes de num&eacute;ration</B></FONT>
+</TD></TR></TABLE>
+<P><BR><P>
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+
+<PAGESPACE 5>
+
+<H2><!-- H2 DM VFMGR STAMP --><CENTER><HR WIDTH=50% NOSHADE>Entiers sign&eacute;s<HR WIDTH=50% NOSHADE></CENTER></H2>
+<H2 >1.3 Code compl&eacute;ment &agrave; 1</H2>
+
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Principe</B>
+<P>
+Ce syst&egrave;me est utilis&eacute; pour repr&eacute;senter des nombres positifs ou n&eacute;gatifs.
+En supposant que l'on dispose de n bits, les nombres
+positifs de <CODE>0</CODE> &agrave;
+<CODE>2<SUP>n-1</SUP>-1</CODE>
+sont repr&eacute;sent&eacute;s en code binaire naturel&nbsp;:
+<P>
+<CENTER><PRE>
+X > 0   -->   code(x)&nbsp;=&nbsp;x
+</PRE></CENTER>
+<P>
+Les nombres n&eacute;gatifs de valeur absolue inf&eacute;rieure &agrave;
+<CODE>2<SUP>n-1</SUP></CODE>
+sont repr&eacute;sent&eacute;s par&nbsp;:
+<P>
+<CENTER><PRE>
+X < 0   -->   code(x)&nbsp;=&nbsp;2<SUP>n</SUP> - 1 - |x|
+</PRE></CENTER>
+On peut remarquer que la condition
+<CODE>|x| < 2<SUP>n-1</SUP></CODE> r&eacute;sulte en un code toujours sup&eacute;rieur au plus
+grand positif&nbsp;:
+<CENTER><PRE>
+|x| < 2<SUP>n-1</SUP>   -->   code(x)&nbsp;=&nbsp;2<SUP>n</SUP> - 1 - |x|  >  2<SUP>n</SUP> - 1 - 2<SUP>n-1</SUP>&nbsp;=&nbsp;2<SUP>n-1</SUP> - 1
+</PRE></CENTER>
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Exemple</B>
+<P>
+La droite de 4 bits donne les codes des nombres -7 &agrave; +7&nbsp;:
+<P>
+<CENTER><PRE>
+     -7                  -1    -0    +0    +1                  +7  
+-----+----- - - - - -----+-----+-----+-----+----- - - - - -----+-->
+   1000                1110  1111  0000  0001                0111  
+
+</PRE></CENTER>
+<P>
+8 bits couvrent l'intervalle [-127,+127], 16 bits couvrent [-32767,+32767].
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<A NAME="proprietes"><B>Propri&eacute;t&eacute;s</B></A>
+<P>
+
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+La somme des codes d'un nombre et de son oppos&eacute; donne un mot binaire dont tous les
+bits sont &agrave; 1&nbsp;:
+<CENTER><PRE>
+Code(x) + Code(-x)&nbsp;=&nbsp;x + 2<SUP>n</SUP> - 1 - x&nbsp;=&nbsp;2<SUP>n</SUP> - 1
+</PRE></CENTER>
+Or, <CODE>2<SUP>n</SUP>-1</CODE> est le plus grand nombre qui puisse &ecirc;tre repr&eacute;sent&eacute;
+avec n bits, dont tous ses bits sont &agrave; 1. Voici un exemple&nbsp;:
+<CENTER><PRE>
+Code(5) + Code(-5)&nbsp;=&nbsp;0101 + 1010&nbsp;=&nbsp;1111
+</PRE></CENTER>
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+<B>Corollaire&nbsp;:</B> De la propri&eacute;te pr&eacute;c&eacute;dente il d&eacute;coule que&nbsp;:
+<CENTER><PRE>
+           _______                   ______ 
+Code(x)&nbsp;=&nbsp; Code(-x)   and Code(-x)&nbsp;=&nbsp;Code(x)
+</PRE></CENTER>
+Pour obtenir le code d'un nombre n&eacute;gatif, il suffit de compl&eacute;menter le code de
+sa valeur absolue.
+
+</TD></TR></TABLE>
+<P>&nbsp;
+
+</TD></TR></TABLE>
+<!--NEWPAGE-->
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+<B>Addition</B>
+<P>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+L'addition de deux nombres positifs ne pose pas de probl&egrave;me car il suffit d'additionner
+leurs codes&nbsp;: le code du r&eacute;sultat est la somme des codes des op&eacute;randes.
+<BR>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+Soient deux nombres de signe oppos&eacute; tels que&nbsp;:
+<CENTER><PRE>
+x > 0,  y < 0   /   |x| > |y|
+</PRE></CENTER>
+En essayant d'additionner leurs codes, on obtient&nbsp;:
+<CENTER><PRE>
+Code(x) + Code(y)&nbsp;=&nbsp;x + 2<SUP>n</SUP> - 1 - |y|                   
+                 &nbsp;=&nbsp;2<SUP>n</SUP> - 1 + (x+y)         avec x+y > 0
+                 &nbsp;=&nbsp;2<SUP>n</SUP> - 1 + Code(x+y)                 
+</PRE></CENTER>
+Soit encore&nbsp;:
+<CENTER><PRE>
+Code(x+y)&nbsp;=&nbsp;Code(x) + Code(y) + 1 - 2<SUP>n</SUP>
+</PRE></CENTER>
+Le dernier terme de cette &eacute;quation ne modifie que le (n+1)<SUP>i&egrave;me</SUP> bit du r&eacute;sultat
+(en fait cod&eacute; sur n bits), ce qui permet d'&eacute;crire&nbsp;:
+<CENTER><PRE>
+Code(x+y)&nbsp;=&nbsp;Code(x) + Code(y) + 1
+</PRE></CENTER>
+Le code de la somme de deux nombres de signe diff&eacute;rent est obtenu en incr&eacute;mentant
+la somme des codes des deux op&eacute;randes. <B>(S)</B>.
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+
+Par souci de rigueur, essayons deux nombres tels que&nbsp;:
+<CENTER><PRE>
+x > 0,  y < 0   /   |x| < |y|
+</PRE></CENTER>
+En additionnant leurs codes on obtient&nbsp;:
+<CENTER><PRE>
+Code(x) + Code(y)&nbsp;=&nbsp;x + 2<SUP>n</SUP> - 1 - |y|                   
+                 &nbsp;=&nbsp;x + 2<SUP>n</SUP> - 1 + (x+y)     avec x+y < 0
+                 &nbsp;=&nbsp;x + 2<SUP>n</SUP> - 1 - |x+y|                 
+                 &nbsp;=&nbsp;Code(x+y)                          
+</PRE></CENTER>
+Cette derni&egrave;re &eacute;quation montre que la proposition <B>(S)</B> est tout simplement fausse.
+Dans certains cas le code de la somme est simplement obtenu par addition des codes des
+op&eacute;randes, dans d'autres cas il faut y ajouter 1.
+<P>&nbsp;
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+N'oublions pas le cas de l'addition de deux n&eacute;gatifs&nbsp;:
+<CENTER><PRE>
+Code(x) + Code(y)&nbsp;=&nbsp;2<SUP>n</SUP> - 1 - |x| + 2<SUP>n</SUP> - 1 - |y|                           
+                 &nbsp;=&nbsp;2<SUP>n</SUP> - 1 + 2<SUP>n</SUP> - 1 + (x+y)                               
+                 &nbsp;=&nbsp;2<SUP>n</SUP> - 1 + 2<SUP>n</SUP> - 1 - |x+y|       car x+y < 0             
+                 &nbsp;=&nbsp;2<SUP>n</SUP> - 1 + Code(x+y)            |x+y| <= 2<SUP>n</SUP>-1           
+</PRE></CENTER>
+On en d&eacute;duit&nbsp;:
+<CENTER><PRE>
+Code(x+y)&nbsp;=&nbsp;Code(x) + Code(y) + 1 - 2<SUP>n</SUP>
+</PRE></CENTER>
+Comme le dernier terme de cette &eacute;quation modifie uniquement le
+(n+1)<SUP>i&egrave;me</SUP> bit du r&eacute;sultat, nous pouvons &agrave; nouveau &eacute;crire&nbsp;:
+<CENTER><PRE>
+Code(x+y)&nbsp;=&nbsp;Code(x) + Code(y) + 1
+</PRE></CENTER>
+</TD></TR></TABLE>
+
+</TD></TR></TABLE>
+<!--NEWPAGE-->
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=square--><IMG ALIGN=top ALT="o" SRC="square_ffbb11.gif"></TD><TD ALIGN=left>
+
+<B>Avantages et inconv&eacute;nients</B>
+<P>
+<TABLE BORDER=0 CELLPADDING=0>
+<TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+Il y a toujours deux codes diff&eacute;rents pour le nombre 0.
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+L'addition est assez compliqu&eacute;e &agrave; mettre en oeuvre puisqu'il faut &eacute;ventuellement incr&eacute;menter
+le code obtenu en fonction du signe du r&eacute;sultat.
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+La gestion des d&eacute;passements n'est pas &eacute;vidente (cf. les facteurs 2<SUP>n</SUP> ci-dessus).
+
+</TD></TR><TR><TD VALIGN=top><!--BULLET=triangle--><IMG ALIGN=top ALT="o" SRC="triangle_0011dd.gif"></TD><TD ALIGN=left>
+Un avantage de ce code est que la soustraction peut &ecirc;tre effectu&eacute;e par addition de l'oppos&eacute;,
+qui est simplement obtenu par compl&eacute;mentation du code du nombre consid&eacute;r&eacute;.
+</TD></TR></TABLE>
+
+</TD></TR></TABLE>
+
+<!-- --------------------------- VFMGR CUT HERE --------------------------- -->
+
+<P><BR><P>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0>
+<TR>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=left>
+<!--A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Home" SRC="/~muller/icones/navigation/home.gif"></A>
+<A HREF="/~muller/trotek/cours/numeration/index.html"><IMG BORDER=0 ALT="Up" SRC="/~muller/icones/navigation/back.gif"></A-->
+</TD>
+<TD BGCOLOR="#0011DD" VALIGN=center ALIGN=right style="height:2em"><!--A HREF="http://www.ec-lyon.fr/"><IMG BORDER=0 ALT="Centrale Lyon" SRC="logo_ecl3.gif"--></A>
+</TD>
+</TR>
+</TABLE>
+<TABLE CELLPADDING=3 CELLSPACING=0 WIDTH=100% BORDER=0 ALIGN=center>
+<TR>
+<TD ALIGN=left WIDTH=70><IMG SRC="/~muller/Icons/navigation/gr_flag.gif.fr" BORDER=0></TD>
+<TD ALIGN=center><FONT SIZE=2>Tous droits r&eacute;serv&eacute;s
+<BR>
+Pour tous renseignements, pri&egrave;re de contacter <A HREF="mailto:muller@ec-lyon.fr">Daniel Muller</A></FONT>
+<BR><FONT SIZE=1>Derni&egrave;re mise &agrave; jour le Mercredi 18 mars 1998 16:52:35</FONT>
+</TD>
+<TD ALIGN=right><!--A HREF="cmpl1.html.en" TARGET="_top"><IMG SRC="/~muller/Icons/navigation/flag.gif.en" BORDER=0 ALT="English version"></A--></TD>
+</TR>
+</TABLE>
+
+</BODY>
+
+</HTML>
