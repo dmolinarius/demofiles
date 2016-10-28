@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Expressions XPath -
+     Document XML</title><link rel="stylesheet" href="../style/s5.css" type="text/css" /></head><body><h1>Expressions XPath</h1><hr />
+  <h2>Document XML</h2>
+
+  <pre class="grey frame">&lt;!DOCTYPE option  [
+	&lt;!ENTITY personnes SYSTEM "syntax-ex-personnes.xml"&gt;
+	&lt;!ENTITY cours-tv SYSTEM "syntax-ex-cours-tv.xml"&gt;
+	&lt;!ENTITY cours-xs SYSTEM "syntax-ex-cours-xs.xml"&gt;
+]&gt;
+&lt;<font color="#0000cc">option</font>&gt;
+ <a href="http://localhost/xmlsrc/~muller/cours/xpath/syntax-ex-personnes.xml" style="color: #990099">&amp;personnes;</a>
+ <a href="http://localhost/xmlsrc/~muller/cours/xpath/syntax-ex-cours-tv.xml" style="color: #990099">&amp;cours-tv;</a>
+ <a href="http://localhost/xmlsrc/~muller/cours/xpath/syntax-ex-cours-xs.xml" style="color: #990099">&amp;cours-xs;</a>
+&lt;/<font color="#0000cc">option</font>&gt;</pre>
+
+  <h2>Expression XPath</h2>
+  
+  <pre class="grey frame">//personne[@id=//etudiant[note&lt;10]/@id]</pre>
+
+  <h2>Sérialisation du résultat de l'expression XPath</h2>
+
+  <pre class="grey frame">&lt;<font color="#0000cc">personne</font> <font color="#009900">id</font>="<font color="#990000">P5</font>" <font color="#009900">civilite</font>="<font color="#990000">M.</font>"&gt;
+ &lt;<font color="#0000cc">prenom</font>&gt;<b>Jean</b>&lt;/<font color="#0000cc">prenom</font>&gt;
+ &lt;<font color="#0000cc">nom</font>&gt;<b>Aymard</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;<font color="#0000cc">phone</font>&gt;<b>09 64 32 11 08</b>&lt;/<font color="#0000cc">phone</font>&gt;
+ &lt;<font color="#0000cc">email</font>&gt;<b>Jeannot@patro.net</b>&lt;/<font color="#0000cc">email</font>&gt;
+ &lt;<font color="#0000cc">adresse</font>&gt;<b>2, place du puits</b>&lt;/<font color="#0000cc">adresse</font>&gt;
+ &lt;<font color="#0000cc">ville</font>&gt;<b>Villeneuve d'Asq</b>&lt;/<font color="#0000cc">ville</font>&gt;
+&lt;/<font color="#0000cc">personne</font>&gt; </pre>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161028
+        </span></div></td></tr></table></body></html>

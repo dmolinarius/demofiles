@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Expressions XPath -
+     Document XML</title><link rel="stylesheet" href="../style/s5.css" type="text/css" /></head><body><h1>Expressions XPath</h1><hr />
+  <h2>Document XML</h2>
+
+  <pre class="grey frame">&lt;<font color="#0000cc">etudiants</font>&gt;
+ &lt;<font color="#0000cc">etudiant</font> <font color="#009900">id</font>="<font color="#990000">E111</font>"&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Deubaze</b>&lt;/<font color="#0000cc">nom</font>&gt;
+  &lt;<font color="#0000cc">prenom</font>&gt;<b>Raymond</b>&lt;/<font color="#0000cc">prenom</font>&gt;
+ &lt;/<font color="#0000cc">etudiant</font>&gt;
+ &lt;<font color="#0000cc">etudiant</font> <font color="#009900">id</font>="<font color="#990000">E314</font>"&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Ringard</b>&lt;/<font color="#0000cc">nom</font>&gt;
+  &lt;<font color="#0000cc">prenom</font> <font color="#009900">type</font>="<font color="#990000">usuel</font>"&gt;<b>Ginette</b>&lt;/<font color="#0000cc">prenom</font>&gt;
+  &lt;<font color="#0000cc">prenom</font>&gt;<b>Marl</b><b>ène</b>&lt;/<font color="#0000cc">prenom</font>&gt;
+ &lt;/<font color="#0000cc">etudiant</font>&gt;
+&lt;/<font color="#0000cc">etudiants</font>&gt;</pre>
+
+  <h2>Expression XPath</h2>
+  
+  <pre class="grey frame">//etudiant[nom='Deubaze']/prenom</pre>
+
+  <h2>Sérialisation du résultat de l'expression XPath</h2>
+
+  <pre class="grey frame">&lt;<font color="#0000cc">prenom</font>&gt;<b>Raymond</b>&lt;/<font color="#0000cc">prenom</font>&gt; </pre>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161028
+        </span></div></td></tr></table></body></html>

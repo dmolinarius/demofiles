@@ -213,7 +213,7 @@ UL, ul {
 }
 
 HR, hr {
-	height: 5;
+	border: 1px inset;
 }
 HR.top, hr.top {
 	margin-bottom: 1em;

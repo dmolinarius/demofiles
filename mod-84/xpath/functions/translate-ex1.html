@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Expressions XPath -
+     Document XML</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Expressions XPath</h1><hr />
+  <h2>Document XML</h2>
+
+  <pre class="grey frame">&lt;!DOCTYPE option  [
+	&lt;!ENTITY personnes SYSTEM "exemple-option-personnes.xml"&gt;
+	&lt;!ENTITY cours-tv SYSTEM "exemple-option-cours-tv.xml"&gt;
+	&lt;!ENTITY cours-xs SYSTEM "exemple-option-cours-xs.xml"&gt;
+]&gt;
+&lt;<font color="#0000cc">option</font>&gt;
+ <a href="exemple-option-personnes.html" style="color: #990099">&amp;personnes;</a>
+ <a href="exemple-option-cours-tv.html" style="color: #990099">&amp;cours-tv;</a>
+ <a href="exemple-option-cours-xs.html" style="color: #990099">&amp;cours-xs;</a>
+&lt;/<font color="#0000cc">option</font>&gt;</pre>
+
+  <h2>Expression XPath</h2>
+  <p>Elément courant : <b>//personne</b></p>
+  <pre class="grey frame">concat(
+    substring(prénom,1,1),
+    substring(nom,1,1),
+    translate(
+        substring(nom,string-length(nom)),
+        'abcdefghijklmnopqrstuvwxyz',
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    )
+) </pre>
+
+  <h2>Sérialisation du résultat de l'expression XPath</h2>
+
+  <pre class="grey frame"><b>JAD</b><b> JDZ RDE JDE SDL JGN GLI ANE EPE GRD JTU </b> </pre>
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161028
+        </span></div></td></tr></table></body></html>
