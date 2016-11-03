@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg viewBox="0 0 250 70"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	font-size="80%">
+
+ <defs>
+  <g id="leftBracket" stroke-width="1" stroke="black">
+   <line x1="0" y1="0" x2="5" y2="0"/>
+   <line x1="0" y1="0" x2="0" y2="50"/>
+   <line x1="0" y1="50" x2="5" y2="50"/>
+  </g>
+
+  <g id="rightBracket" stroke-width="1" stroke="black">
+   <line x1="5" y1="0" x2="10" y2="0"/>
+   <line x1="10" y1="0" x2="10" y2="50"/>
+   <line x1="5" y1="50" x2="10" y2="50"/>
+  </g>
+ </defs>
+
+ <rect x="0" y="0" width="250" height="70" stroke-width="0" fill="#F0F0EA"/>
+
+ <g transform="translate(10,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="10" y="10">X<tspan dy="2">nouveau</tspan></text>
+  <text x="10" y="28">Y<tspan dy="2">nouveau</tspan></text>
+  <text x="10" y="45">1</text>
+ </g>
+ <g transform="translate(72,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+ <text x="90" y="45" font-size="20">=</text>
+ <g transform="translate(110,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="10" y="10">a</text>
+  <text x="10" y="28">b</text>
+  <text x="10" y="45">0</text>
+  <text x="22" y="10">c</text>
+  <text x="22" y="28">d</text>
+  <text x="22" y="45">0</text>
+  <text x="34" y="10">e</text>
+  <text x="34" y="28">f</text>
+  <text x="34" y="45">1</text>
+ </g>
+ <g transform="translate(150,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+ <text x="168" y="45" font-size="20">x</text>
+ <g transform="translate(188,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="10" y="10">X<tspan dy="2">objet</tspan></text>
+  <text x="10" y="28">Y<tspan dy="2">objet</tspan></text>
+  <text x="10" y="45">1</text>
+ </g>
+ <g transform="translate(230,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+
+</svg>

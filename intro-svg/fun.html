@@ -1,0 +1,149 @@
+
+<!-- ------------------ -->
+<!-- Entête du document -->
+<!-- ------------------ -->
+
+<HEAD>
+<TITLE>Source of : fun.svg</TITLE>
+<LINK REL="stylesheet" HREF="s5.css" TYPE="text/css">
+
+<STYLE TYPE="text/css"> <!--
+PRE {
+	background-color: #EAEAEA;
+	overflow: hidden;
+}
+A {
+	text-decoration: none;
+}
+--></STYLE>
+</HEAD>
+
+<!-- ----------------- -->
+<!-- Corps du document -->
+<!-- ----------------- -->
+
+<BODY>
+
+<H1>Document XML </H1>
+<!--P ID="stylesheet-info">Cette vue utilise s5.css</P-->
+<HR>
+
+<H2>Texte source du fichier :
+fun.svg</H2>
+
+<P>
+<PRE CLASS="frame xmlsrc">&lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
+&lt;<font color="#0000cc">svg</font> <font color="#009900">xmlns</font>="<font color="#990000">http://www.w3.org/2000/svg</font>" <font color="#009900">viewBox</font>="<font color="#990000">0 0 1200 200</font>" <font color="#009900">preserveAspectRatio</font>="<font color="#990000">none</font>"&gt;
+
+ &lt;<font color="#0000cc">script</font> <font color="#009900">type</font>="<font color="#990000">text/javascript</font>"&gt;<b>
+    var timevalue = 0;
+    var timer_increment = 50;
+    var max_time = 3000;
+    var text_element;
+
+    function ButtonDown(evt,bname) {
+	var button;
+	button=evt.target.ownerDocument.getElementById(bname);
+      	button.setAttribute("filter", "url(#ButtonIn)");
+    }
+
+    function ButtonUp(evt,bname) {
+	var button;
+	button=evt.target.ownerDocument.getElementById(bname);
+      	button.setAttribute("filter", "url(#ButtonOut)");
+    }
+
+    function StartAnimation(evt,elt) {
+      text_element = evt.target.ownerDocument.getElementById(elt);
+      text_element.setAttribute("visibility", "visible");
+      timevalue = 0;
+      ShowAndGrowElement();
+    }
+
+    function ShowAndGrowElement() {
+      timevalue = timevalue + timer_increment;
+      if (timevalue > max_time)
+        return;
+
+      // Scale the text string gradually until it is 20 times larger
+      scalefactor = (timevalue * 20.) / max_time;
+      scale = "scale(" + scalefactor + ")";
+      transx = 700. - 450. * timevalue / max_time;
+      transy = 80. + 70. * timevalue / max_time;
+
+      text_element.setAttribute("transform", "translate(" + transx + " " + transy + ") scale(" + scalefactor + ")");
+
+      // Call ShowAndGrowElement again timer_increment milliseconds later.
+      setTimeout("ShowAndGrowElement()", timer_increment)
+    }
+
+ </b>&lt;/<font color="#0000cc">script</font>&gt;
+
+ &lt;<font color="#0000cc">defs</font>&gt;
+
+  &lt;<font color="#0000cc">filter</font> <font color="#009900">id</font>="<font color="#990000">ButtonOut</font>"&gt;
+   &lt;<font color="#0000cc">feGaussianBlur</font> <font color="#009900">in</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">stdDeviation</font>="<font color="#990000">4</font>" <font color="#009900">result</font>="<font color="#990000">blur</font>"&gt;&lt;/<font color="#0000cc">feGaussianBlur</font>&gt;
+   &lt;<font color="#0000cc">feOffset</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">dx</font>="<font color="#990000">4</font>" <font color="#009900">dy</font>="<font color="#990000">4</font>" <font color="#009900">result</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feOffset</font>&gt;
+   &lt;<font color="#0000cc">feSpecularLighting</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">surfaceScale</font>="<font color="#990000">5</font>" <font color="#009900">specularConstant</font>="<font color="#990000">.55</font>" <font color="#009900">specularExponent</font>="<font color="#990000">20</font>" <font color="#009900">lighting-color</font>="<font color="#990000">#bbbbbb</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;
+    &lt;<font color="#0000cc">fePointLight</font> <font color="#009900">x</font>="<font color="#990000">-5000</font>" <font color="#009900">y</font>="<font color="#990000">-10000</font>" <font color="#009900">z</font>="<font color="#990000">20000</font>"&gt;&lt;/<font color="#0000cc">fePointLight</font>&gt;
+   &lt;/<font color="#0000cc">feSpecularLighting</font>&gt;
+   &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">specOut</font>" <font color="#009900">in2</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">operator</font>="<font color="#990000">in</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+   &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">SourceGraphic</font>" <font color="#009900">in2</font>="<font color="#990000">specOut</font>" <font color="#009900">operator</font>="<font color="#990000">arithmetic</font>" <font color="#009900">k1</font>="<font color="#990000">0</font>" <font color="#009900">k2</font>="<font color="#990000">1</font>" <font color="#009900">k3</font>="<font color="#990000">1</font>" <font color="#009900">k4</font>="<font color="#990000">0</font>" <font color="#009900">result</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+   &lt;<font color="#0000cc">feMerge</font>&gt;
+    &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+    &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+   &lt;/<font color="#0000cc">feMerge</font>&gt;
+  &lt;/<font color="#0000cc">filter</font>&gt;
+
+  &lt;<font color="#0000cc">filter</font> <font color="#009900">id</font>="<font color="#990000">ButtonIn</font>"&gt;
+   &lt;<font color="#0000cc">feGaussianBlur</font> <font color="#009900">in</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">stdDeviation</font>="<font color="#990000">4</font>" <font color="#009900">result</font>="<font color="#990000">blur</font>"&gt;&lt;/<font color="#0000cc">feGaussianBlur</font>&gt;
+   &lt;<font color="#0000cc">feOffset</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">dx</font>="<font color="#990000">4</font>" <font color="#009900">dy</font>="<font color="#990000">4</font>" <font color="#009900">result</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feOffset</font>&gt;
+   &lt;<font color="#0000cc">feSpecularLighting</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">surfaceScale</font>="<font color="#990000">5</font>" <font color="#009900">specularConstant</font>="<font color="#990000">.75</font>" <font color="#009900">specularExponent</font>="<font color="#990000">20</font>" <font color="#009900">lighting-color</font>="<font color="#990000">#bbbbbb</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;
+    &lt;<font color="#0000cc">fePointLight</font> <font color="#009900">x</font>="<font color="#990000">5000</font>" <font color="#009900">y</font>="<font color="#990000">10000</font>" <font color="#009900">z</font>="<font color="#990000">20000</font>"&gt;&lt;/<font color="#0000cc">fePointLight</font>&gt;
+   &lt;/<font color="#0000cc">feSpecularLighting</font>&gt;
+   &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">specOut</font>" <font color="#009900">in2</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">operator</font>="<font color="#990000">in</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+   &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">SourceGraphic</font>" <font color="#009900">in2</font>="<font color="#990000">specOut</font>" <font color="#009900">operator</font>="<font color="#990000">arithmetic</font>" <font color="#009900">k1</font>="<font color="#990000">0</font>" <font color="#009900">k2</font>="<font color="#990000">1</font>" <font color="#009900">k3</font>="<font color="#990000">1</font>" <font color="#009900">k4</font>="<font color="#990000">0</font>" <font color="#009900">result</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+   &lt;<font color="#0000cc">feMerge</font>&gt;
+    &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+    &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+   &lt;/<font color="#0000cc">feMerge</font>&gt;
+  &lt;/<font color="#0000cc">filter</font>&gt;
+
+ &lt;/<font color="#0000cc">defs</font>&gt;
+
+ &lt;<font color="#0000cc">rect</font> <font color="#009900">x</font>="<font color="#990000">0</font>" <font color="#009900">y</font>="<font color="#990000">0</font>" <font color="#009900">width</font>="<font color="#990000">1200</font>" <font color="#009900">height</font>="<font color="#990000">200</font>" <font color="#009900">fill</font>="<font color="#990000">#F0F0EA</font>" <font color="#009900">stroke</font>="<font color="#990000">none</font>"&gt;&lt;/<font color="#0000cc">rect</font>&gt;
+
+ &lt;<font color="#0000cc">g</font> <font color="#009900">id</font>="<font color="#990000">button</font>" <font color="#009900">filter</font>="<font color="#990000">url(#ButtonOut)</font>" <font color="#009900">onmousedown</font>="<font color="#990000">ButtonDown(evt,'button')</font>" <font color="#009900">onmouseup</font>="<font color="#990000">ButtonUp(evt,'button')</font>" <font color="#009900">onmouseout</font>="<font color="#990000">ButtonUp(evt,'button')</font>" <font color="#009900">onclick</font>="<font color="#990000">StartAnimation(evt,'FunSVG')</font>"&gt;
+
+  &lt;<font color="#0000cc">rect</font> <font color="#009900">x</font>="<font color="#990000">10</font>" <font color="#009900">y</font>="<font color="#990000">45</font>" <font color="#009900">width</font>="<font color="#990000">152</font>" <font color="#009900">height</font>="<font color="#990000">109</font>" <font color="#009900">fill</font>="<font color="#990000">#CC0000</font>"&gt;&lt;/<font color="#0000cc">rect</font>&gt;
+
+  &lt;<font color="#0000cc">g</font> <font color="#009900">fill</font>="<font color="#990000">white</font>" <font color="#009900">font-size</font>="<font color="#990000">35</font>" <font color="#009900">font-family</font>="<font color="#990000">Verdana</font>"&gt;
+   &lt;<font color="#0000cc">text</font> <font color="#009900">x</font>="<font color="#990000">22</font>" <font color="#009900">y</font>="<font color="#990000">90</font>"&gt;
+    &lt;<font color="#0000cc">tspan</font>&gt;<b>Cliquez</b>&lt;/<font color="#0000cc">tspan</font>&gt;
+    &lt;<font color="#0000cc">tspan</font> <font color="#009900">x</font>="<font color="#990000">28</font>" <font color="#009900">dx</font>="<font color="#990000">30</font>" <font color="#009900">dy</font>="<font color="#990000">45</font>"&gt;<b>Moi</b>&lt;/<font color="#0000cc">tspan</font>&gt;
+   &lt;/<font color="#0000cc">text</font>&gt;
+  &lt;/<font color="#0000cc">g</font>&gt;
+ &lt;/<font color="#0000cc">g</font>&gt;
+
+ &lt;<font color="#0000cc">g</font> <font color="#009900">fill</font>="<font color="#990000">orange</font>" <font color="#009900">font-size</font>="<font color="#990000">7</font>" <font color="#009900">filter</font>="<font color="#990000">url(#ButtonOut)</font>"&gt;
+  &lt;<font color="#0000cc">text</font> <font color="#009900">id</font>="<font color="#990000">FunSVG</font>" <font color="#009900">visibility</font>="<font color="#990000">hidden</font>"&gt;<b>
+   SVG est Cool !</b>
+  &lt;/<font color="#0000cc">text</font>&gt;
+ &lt;/<font color="#0000cc">g</font>&gt;
+&lt;/<font color="#0000cc">svg</font>&gt;</PRE>
+
+<!-- --------------- -->
+<!-- Fin du document -->
+<!-- --------------- -->
+
+<P>
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR>
+<TD ALIGN="left"><ADDRESS>Copyright : Daniel Muller</ADDRESS></TD>
+<TD ALIGN="right">
+<DIV CLASS="date">030226</DIV>
+</TD></TR></TABLE>
+</BODY>
+
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg	width="180" height="180" viewBox="0 0 180 180"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" >
+
+ <defs>
+
+  <!-- define model of ear -->
+  <symbol id="eye" viewBox="-7 -12 14 24" preserveAspectRatio="xMidYMid">
+   <ellipse fill="white" cx="0" cy="0" rx="7" ry="12"/>
+   <circle fill="black" cx="0" cy="8" r="5"/>
+  </symbol>
+
+  <!-- define model of eye -->
+  <symbol id="ear" viewBox="-25 -25 50 50" preserveAspectRatio="xMidYMid">
+   <circle fill="black" cx="0" cy="0" r="25"/>
+  </symbol>
+
+ </defs>
+
+ <!-- instantiate two ears -->
+ <use x="25" y="25" width="50" height="50" xlink:href="#ear" />
+ <use x="100" y="25" width="50" height="50" xlink:href="#ear" />
+
+ <!-- instantiate face using a resized ear -->
+ <use x="37.5" y="60" width="100" height="100" xlink:href="#ear" />
+
+  <!-- instantiate two eyes -->
+ <use x="63" y="88" width="14" height="24" xlink:href="#eye" />
+ <use x="98" y="88" width="14" height="24" xlink:href="#eye" />
+
+ <!-- nose -->
+ <circle fill="red" cx="87.5" cy="115" r="8"/>
+
+ <!-- smile -->
+ <path d="M70,125 A35,35 0 0,0 105,125 A35,85 0 0,1 70,125 z" fill="yellow" />
+</svg>
+

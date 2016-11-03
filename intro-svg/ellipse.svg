@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150">
+ <ellipse stroke-width="2" stroke="blue" fill="#CCCCFF" cx="75" cy="95" rx="50" ry="30"/>
+ <ellipse stroke-width="2" stroke="red" fill="#FFCCCC" cx="40" cy="65" rx="25" ry="35"/>
+ <ellipse stroke-width="2" stroke="orange" fill="#FFFFCC" cx="110" cy="65" rx="25" ry="35"/>
+</svg>

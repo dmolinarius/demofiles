@@ -1,0 +1,114 @@
+<?xml version="1.0" standalone="no"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 1200 200"
+	preserveAspectRatio="none" >
+
+ <script type="text/javascript"><![CDATA[
+    var timevalue = 0;
+    var timer_increment = 50;
+    var max_time = 3000;
+    var text_element;
+
+    function ButtonDown(evt,bname) {
+	var button;
+	button=evt.target.ownerDocument.getElementById(bname);
+      	button.setAttribute("filter", "url(#ButtonIn)");
+    }
+
+    function ButtonUp(evt,bname) {
+	var button;
+	button=evt.target.ownerDocument.getElementById(bname);
+      	button.setAttribute("filter", "url(#ButtonOut)");
+    }
+
+    function StartAnimation(evt,elt) {
+      text_element = evt.target.ownerDocument.getElementById(elt);
+      text_element.setAttribute("visibility", "visible");
+      timevalue = 0;
+      ShowAndGrowElement();
+    }
+
+    function ShowAndGrowElement() {
+      timevalue = timevalue + timer_increment;
+      if (timevalue > max_time)
+        return;
+
+      // Scale the text string gradually until it is 20 times larger
+      scalefactor = (timevalue * 20.) / max_time;
+      scale = "scale(" + scalefactor + ")";
+      transx = 700. - 450. * timevalue / max_time;
+      transy = 80. + 70. * timevalue / max_time;
+
+      text_element.setAttribute("transform", "translate(" + transx + " " + transy + ") scale(" + scalefactor + ")");
+
+      // Call ShowAndGrowElement again timer_increment milliseconds later.
+      setTimeout("ShowAndGrowElement()", timer_increment)
+    }
+
+ ]]></script>
+
+ <defs>
+
+  <filter id="ButtonOut">
+   <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+   <feOffset in="blur" dx="5" dy="5" result="offsetBlur"/>
+   <feSpecularLighting in="blur" surfaceScale="2" specularConstant=".70" 
+	specularExponent="20" lighting-color="white"  
+        result="specOut">
+    <fePointLight x="-5000" y="-7000" z="22000"/>
+   </feSpecularLighting>
+   <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+   <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+        k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+   <feMerge>
+    <feMergeNode in="offsetBlur"/>
+    <feMergeNode in="litPaint"/>
+   </feMerge>
+  </filter>
+
+  <filter id="ButtonIn" >
+   <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+   <feOffset in="blur" dx="5" dy="5" result="offsetBlur"/>
+   <feSpecularLighting in="blur" surfaceScale="2" specularConstant=".70" 
+	specularExponent="20" lighting-color="#bbb"  
+        result="specOut">
+    <fePointLight x="5000" y="7000" z="22000"/>
+   </feSpecularLighting>
+   <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+   <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+        k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+   <feMerge>
+    <feMergeNode in="offsetBlur"/>
+    <feMergeNode in="litPaint"/>
+   </feMerge>
+  </filter>
+
+ </defs>
+
+ <rect x="0" y="0" width="1200" height="200" fill="#F0F0EA" stroke="none"/>
+
+ <g id="button" filter="url(#ButtonOut)"
+	onmousedown="ButtonDown(evt,'button')"
+	onmouseup="ButtonUp(evt,'button')"
+	onmouseout="ButtonUp(evt,'button')"
+	onclick="StartAnimation(evt,'FunSVG')">
+
+  <rect x="10" y="45" width="152" height="109" fill="#CC0000" />
+
+  <g fill="white" font-size="35" font-family="Verdana" >
+   <text x="22" y="90">
+    <tspan>Cliquez</tspan>
+    <tspan x="28" dx="30" dy="45">Moi</tspan>
+   </text>
+  </g>
+ </g>
+
+ <g fill="#C80" font-size="7" font-weight="bold" filter="url(#ButtonOut)">
+  <text id="FunSVG" visibility="hidden">
+   SVG est Cool !
+  </text>
+ </g>
+</svg>

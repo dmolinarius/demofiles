@@ -1,0 +1,238 @@
+
+/***********************************************************************
+**
+** Color stuff
+**
+***********************************************************************/
+
+BODY, body {
+	background-color: #F0F0EA;
+	color: black;
+}
+
+H1, h1, HR, hr, ADDRESS, address, .date, #stylesheet-info {
+	color: rgb(0,100,50);
+}
+HR, hr {
+	background-color: rgb(0,100,50);
+}
+
+H2, h2 {
+	color: rgb(0,63,127);
+}
+
+H3, h3, EM, em, .quote {
+	color: blue;
+}
+
+Q, q, .quote EM, .quote em, EM.quote, em.quote, EM .quote, em .quote {
+	color: blue;
+}
+
+.quote #stylesheet-info, #stylesheet-info .quote {
+	background-color: rgb(255,190,127);
+	color: rgb(0,100,50);
+}
+
+A:visited, a:visited {
+	color: rgb(127,63,0);
+}
+A:link, A:active, A:hover,
+a:link, a:active, a:hover {
+	color: rgb(255,127,0);
+}
+
+PRE, pre {
+	background-color: #C0C0C0;
+}
+P.solid, p.solid {
+	background-color: rgb(255,190,127);
+}
+
+.lettrine {
+	color: rgb(0,100,50);
+	background-color: rgb(255,190,127);
+}
+
+.alu {
+	background: url(alu.jpg);
+}
+.marble {
+	background: url(marble.jpg);
+}
+
+.frame {
+	border:  3px;
+	border-style: inset;
+}
+.device {
+	border:  3px;
+	border-style: outset;
+}
+.box {
+	padding: 5px;
+	text-align: center;
+}
+.altback {
+	background-color: rgb(255,190,127);
+}
+
+/***********************************************************************
+**
+** Font stuff
+**
+***********************************************************************/
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(fonts/OpenSans-SemiboldItalic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(fonts/OpenSans-Semibold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans Mono'), local('DroidSansMono'), url(fonts/DroidSansMono.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(fonts/OpenSans-Italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(fonts/OpenSans.woff) format('woff');
+}
+PRE, pre {
+}
+BODY, body {
+	font-family: "Open Sans", Arial, Helvetica, Sans-serif;
+}
+
+#stylesheet-info {
+	font-style: italic;
+	font-size: 70%;
+}
+
+EM, em {
+	font-style: normal;
+}
+
+A, Q, a, q {
+	font-style: italic;
+}
+
+.date {
+	font-size: 70%;
+	font-style: italic;
+}
+
+ADDRESS, address {
+	font-size: 70%;
+}
+
+PRE, pre {
+	font-family: "Droid Sans Mono", monospace;
+}
+PRE.xmlsrc B, pre.xmlsrc b {
+  font-weight: normal;
+}
+
+.lettrine {
+	font-size: 280%;
+	font-family: Times New Roman, Serif;
+	font-weight: bold;
+}
+
+/***********************************************************************
+**
+** List bullets
+**
+***********************************************************************/
+
+UL, ul {
+	list-style: url(triangle-red.gif);
+}
+
+UL UL, ul ul {
+	list-style: url(triangle-yellow.gif);
+}
+
+UL UL UL, ul ul ul {
+	list-style: url(triangle-green.gif);
+}
+
+/***********************************************************************
+**
+** layout
+**
+***********************************************************************/
+
+H1, h1 {
+	text-align: center;
+	letter-spacing: 0.5em;
+}
+
+P, PRE, FORM, p, pre, form {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+PRE, P.solid, pre, p.solid {
+	padding: 10px;
+}
+
+UL, ul {
+	margin-top: 0px;
+}
+
+#stylesheet-info {
+	margin-top: -1em;
+	margin-bottom: 0em;
+	margin-left: 0em;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.lettrine {
+	float: left;
+	clear: left;
+	margin: -0.5ex 5px 0px 0px;
+	padding: 2px 2px 2px 2px;
+}
+
+HR, hr {
+	border: 1px inset;
+}
+HR.top, hr.top {
+	margin-bottom: 1em;
+}
+HR.bottom, hr.bottom {
+	clear: both;
+	margin-top: 1em;
+	margin-bottom: 0;
+}
+
+.w25 {
+	width=25%;
+}
+.w50 {
+	width=50%;
+}
+.w75 {
+	width=75%;
+}
+.w100 {
+	width=100%;
+}

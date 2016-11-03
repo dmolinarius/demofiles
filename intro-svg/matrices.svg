@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg viewBox="0 0 440 95" preserveAspectRatio="none"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	font-size="80%">
+
+ <defs>
+  <g id="leftBracket" stroke-width="1" stroke="black">
+   <line x1="0" y1="0" x2="5" y2="0"/>
+   <line x1="0" y1="0" x2="0" y2="50"/>
+   <line x1="0" y1="50" x2="5" y2="50"/>
+  </g>
+
+  <g id="rightBracket" stroke-width="1" stroke="black">
+   <line x1="5" y1="0" x2="10" y2="0"/>
+   <line x1="10" y1="0" x2="10" y2="50"/>
+   <line x1="5" y1="50" x2="10" y2="50"/>
+  </g>
+ </defs>
+
+ <rect x="0" y="0" width="440" height="95" stroke-width="0" fill="#F0F0EA"/>
+
+ <g transform="translate(10,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="8" y="10">1</text>
+  <text x="8" y="28">0</text>
+  <text x="8" y="45">0</text>
+  <text x="22" y="10">0</text>
+  <text x="22" y="28">1</text>
+  <text x="22" y="45">0</text>
+  <text x="36" y="10">t<tspan dy="2">x</tspan></text>
+  <text x="36" y="28">t<tspan dy="2">y</tspan></text>
+  <text x="36" y="45">1</text>
+ </g>
+ <g transform="translate(55,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+ <text x="15" y="75" font-size="10">translation</text>
+
+ <g transform="translate(75,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="8" y="10">s<tspan dy="2">x</tspan></text>
+  <text x="8" y="28">0</text>
+  <text x="8" y="45">0</text>
+  <text x="22" y="10">0</text>
+  <text x="22" y="28">s<tspan dy="2">y</tspan></text>
+  <text x="22" y="45">0</text>
+  <text x="36" y="10">0</text>
+  <text x="36" y="28">0</text>
+  <text x="36" y="45">1</text>
+ </g>
+ <g transform="translate(120,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+ <text x="75" y="75" font-size="10">changement<tspan x="82" dy="15">d'échelle</tspan></text>
+
+ <g transform="translate(140,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="8" y="10">cos(a)</text>
+  <text x="8" y="28">sin(a)</text>
+  <text x="8" y="45">0</text>
+  <text x="50" y="10">-sin(a)</text>
+  <text x="50" y="28">cos(a)</text>
+  <text x="50" y="45">0</text>
+  <text x="92" y="10">0</text>
+  <text x="92" y="28">0</text>
+  <text x="92" y="45">1</text>
+ </g>
+ <g transform="translate(240,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+ <text x="175" y="75" font-size="10">rotation</text>
+
+ <g transform="translate(260,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="8" y="10">1</text>
+  <text x="8" y="28">0</text>
+  <text x="8" y="45">0</text>
+  <text x="22" y="10">tan(a)</text>
+  <text x="22" y="28">1</text>
+  <text x="22" y="45">0</text>
+  <text x="64" y="10">0</text>
+  <text x="64" y="28">0</text>
+  <text x="64" y="45">1</text>
+ </g>
+ <g transform="translate(330,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+ <text x="275" y="75" font-size="10">déformation<tspan x="280" dy="15">suivant X</tspan></text>
+
+ <g transform="translate(350,10)">
+  <use xlink:href="#leftBracket" />
+  <text x="8" y="10">1</text>
+  <text x="8" y="28">tan(a)</text>
+  <text x="8" y="45">0</text>
+  <text x="50" y="10">0</text>
+  <text x="50" y="28">1</text>
+  <text x="50" y="45">0</text>
+  <text x="64" y="10">0</text>
+  <text x="64" y="28">0</text>
+  <text x="64" y="45">1</text>
+ </g>
+ <g transform="translate(420,10)">
+  <use xlink:href="#rightBracket" />
+ </g>
+ <text x="365" y="75" font-size="10">déformation<tspan x="370" dy="15">suivant Y</tspan></text>
+
+</svg>

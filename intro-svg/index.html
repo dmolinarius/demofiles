@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Introduction à SVG</title>
+<style>
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(fonts/OpenSans-SemiboldItalic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(fonts/OpenSans-Semibold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans Mono'), local('DroidSansMono'), url(fonts/DroidSansMono.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(fonts/OpenSans-Italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(fonts/OpenSans.woff) format('woff');
+}
+
+body { color: #000000; background-color: #F0F0EA; font-family: Open Sans;}
+a:link { color: #0000EE; }
+a:visited { color: #000088; }
+a:active { color: #FF0000; }
+h1 { text-align: center; margin: 0; }
+h2 { color: #800; }
+h3 { color: #008; }
+pre { background-color: #ddd; border: 2px inset; padding: 0.33em 0.5em; font-family: Droid Sans Mono; }
+.framed { border: 3px inset #888; background-color: white;}
+div.caption { font-size: 80%; }
+</style>
+
+<hr width="50%">
+<h1>Introduction à SVG</h1>
+<hr width="50%">
+
+<h2>1. Introduction</h2>
+<p>
+ Il existe plusieurs méthodes permettant d'utiliser des graphiques SVG 
+ au sein d'un site Web.
+</p>
+<h3>1.1 - Hyperliens</h3>
+    La première est la plus simple, puisqu'elle  consiste à visualiser les documents SVG
+    tels quels dans un navigateur. Pour les intégrer au sein d'un site il suffit alors de
+    faire figurer dans les pages HTML
+    des hyperliens vers des fichiers svg externes 
+    <i>(<a href="smile.svg">voir exemple</a>)</i>.
+   </p><p>
+    Voici le code source du document SVG correspondant au lien ci-dessus&#160;:
+   </p>
+   <pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"&gt;
+
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"&gt;
+ &lt;circle fill="black" cx="50" cy="50" r="25"/&gt;
+ &lt;circle fill="black" cx="125" cy="50" r="25"/&gt;
+ &lt;circle fill="black" cx="87.5" cy="110" r="50"/&gt;
+ &lt;ellipse fill="white" cx="70" cy="100" rx="7" ry="12"/&gt;
+ &lt;ellipse fill="white" cx="105" cy="100" rx="7" ry="12"/&gt;
+ &lt;circle fill="black" cx="70" cy="108" r="5"/&gt;
+ &lt;circle fill="black" cx="105" cy="108" r="5"/&gt;
+ &lt;circle fill="red" cx="87.5" cy="115" r="8"/&gt;
+ &lt;path d="M70,125 A35,35 0 0,0 105,125 A35,85 0 0,1 70,125 z" fill="yellow"&gt;
+ &lt;/path&gt;
+&lt;/svg&gt;</pre>
+<p>
+    Ce code permet en particulier de noter l'URI PUBLIC et l'URL SYSTEM correspondant
+    à la DTD de SVG 1.0, ainsi que l'URI de l'espace de noms réservé à SVG.
+
+<h3>1.2 - La balise IMG</h3>
+<p>
+    L'inclusion d'un document SVG dans une page HTML se fait à l'aide de la balise 'img',
+    comme ci-dessous&#160;:
+<p><img src="smile.svg" class="framed">
+<pre>
+&lt;img src="smile.svg" class="framed">
+</pre>
+
+<h3>1.3 - Autres méthodes</h3>
+<p>Historiquement on a pu faire appel aux balises EMBED et OBJECT pour le même résultat que celui
+actuellement obtenu avec la balise IMG.</p>
+<p>Beaucoup plus récemment, le vocabulaire SVG a été nativement intégré à HTML 5, ce qui permet d'utiliser
+directement les balises SVG dans un document HTML.
+
+<h2>2. Coordonnées utilisateur</h2>
+<h3>2.1 - ViewBox</h3>
+<p>
+    Les coordonnées utilisateur de la zone graphique doivent être spécifiées au sein du document SVG grâce à
+    l'élément 'viewBox':
+<pre>
+&lt;svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180"&gt;
+</pre>
+
+<p>
+Ces coordonnées donnent l'emplacement et les dimensions de la fenêtre permetttant d'observer le graphique.
+<br>
+Par exemple, pour un graphique par ailleurs identique&#160;:
+
+<table border="0" cellspacing="20"><tbody><tr>
+ <td valign="center" align="center">
+  <img src="smile2.svg" width="180" height="180" class="framed">
+  <div class="caption">
+      width = "180" height="180" <br>
+      viewBox="0 0 180 180" <br>
+      <a href="smile2.svg">voir SVG</a> <br>
+      <a href="smile2.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="smile3.svg" width="180" height="180" class="framed">
+  <div class="caption">
+      width = "180" height="180" <br>
+      viewBox="0 0 90 90" <br>
+      <a href="smile3.svg">voir SVG</a> <br>
+      <a href="smile3.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="smile4.svg" width="180" height="180" class="framed">
+  <div class="caption">
+      width = "180" height="180" <br>
+      viewBox="90 90 90 90" <br>
+      <a href="smile4.svg">voir SVG</a> <br>
+      <a href="smile4.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="smile5.svg" width="180" height="180" class="framed">
+  <div class="caption">
+      width = "180" height="180" <br>
+      viewBox="45 45 90 90" <br>
+      <a href="smile5.svg">voir SVG</a> <br>
+      <a href="smile5.html"><i>source</i></a>
+  </div>
+ </td>
+</tr></tbody></table>
+
+<p>
+    La valeur de l'attribut 'viewBox' comporte, dans l'ordre, les coordonnées 'x' et 'y' de l'origine
+    <i>(coin haut gauche)</i>,
+    suivies par la largeur et la hauteur de la zone graphique en coordonnées utilisateur.
+
+<h3>Dimensions de l'image</h3>
+<p>
+Les dimensions de l'image sont spécifiés au navigateur grâce aux mécanismes classiques, propriétés 
+'width' et 'height' de l'élément, ou  attributs éponymes de la balise 'img'&#160;:
+
+<table border="0" cellspacing="20"><tbody><tr>
+ <td valign="center" align="center">
+  <img src="smile5.svg" style="width: 180px; height: 180px" class="framed">
+  <div class="caption">
+      width:180px; height:180px
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="smile5.svg" style="width: 90px; height: 90px" class="framed">
+  <div class="caption">
+      width:90px;<br>height:90px
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="smile5.svg" style="width: 45px; height: 45px" class="framed">
+  <div class="caption">
+      width:45px;<br>height:45px
+  </div>
+ </td>
+</tr></tbody></table>
+
+<p>
+Notez comment le navigateur redimensionne l'image pour mapper correctement
+la zone utilisateur, spécifiée via l'attribut 'viewBox' dans le document SVG,
+sur la zone réservée à l'image, positionnée et dimensionnée depuis le
+document contenant.
+
+<h2>3. Graphiques</h2>
+<h3>3.1 - Formes de base</h3>
+<p>
+  Les formes de base disponibles en SVG sont le rectangle, le cercle, l'ellipse,
+  la ligne simple ou multipoints, et le polygone,
+  auxquelles on peut ajouter le texte&#160;:
+
+<table border="0" cellspacing="20"><tbody><tr>
+
+ <td valign="center" align="center">
+  <img src="rect.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="rect.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="circle.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="circle.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="ellipse.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="ellipse.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="line.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="line.html"><i>source</i></a>
+  </div>
+ </td>
+
+</tr><tr>
+
+ <td valign="center" align="center">
+  <img src="polyline.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="polyline.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="polygon.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="polygon.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="text.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="text.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="tspan.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="tspan.html"><i>source</i></a>
+  </div>
+ </td>
+
+</tr></tbody></table>
+
+<h3>3.2 - Autres possibilités</h3>
+<p>
+   SVG offre de nombreuses autres possibilités &dash; courbes de Bézier, gradients, masques ou filtres,
+   dont voici quelques aperçus&#160;:
+
+<table border="0" cellspacing="20"><tbody><tr>
+ <td valign="center" align="center">
+  <img src="bezier.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="bezier.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="gradient.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="gradient.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="clip.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="clip.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="filter2.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="filter2.html"><i>source</i></a>
+  </div>
+ </td>
+</tr></tbody></table>
+
+<h2>4. Transformations</h2>
+<h3>4.1 - &Eacute;léments de syntaxe</h3>
+<p>
+    SVG dispose également d'éléments permettant de grouper des formes afin de leur
+    affecter communément une liste d'attributs (élément 'g') ou afin de capitaliser
+    la description d'éléments complexes instanciés en plusieurs exemplaires au sein
+    d'un document (éléments 'symbol' et 'use'). La définition d'éléments réutilisables
+    se fait en général au sein d'une section spéciale (élément 'defs') se trouvant
+    en tête du document.
+   </p><p>
+    Le premier document ci-dessous a par exemple été construit à l'aide de trois instances d'oreilles
+    (dont une redimensionnée pour le visage), et de deux instances d'un élément unique
+    pour les yeux. Le second quant à lui réinstancie ailleurs des éléments 'g' nommés à l'aide de l'attribut 'id'.
+    (Voir ci-dessous pour les transformations prédéfinies).
+   </p><p>
+
+<table border="0" cellspacing="20"><tbody><tr>
+ <td valign="center" align="center">
+  <img src="reuse.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="reuse.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="use.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="use.html"><i>source</i></a>
+  </div>
+ </td>
+</tr></tbody></table>
+
+<h3>4.2 - Transformations prédéfinies</h3>
+<p>
+    SVG dispose d'un jeu de tranformations géométriques prédéfinies correspondant à des changements de repères
+    (translation, modification d'échelle, rotation, repère non orthogonal) pouvant être appliquées à un
+    élément graphique, ou plus généralement à un élément 'g' regroupant plusieurs éléments graphiques.
+<p>
+    Voici quelques exemples&#160;:
+
+<table border="0" cellspacing="20"><tbody><tr>
+ <td valign="center" align="center">
+  <img src="translate.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="translate.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="scale.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="scale.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="rotate.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="rotate.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="skew.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="skew.html"><i>source</i></a>
+  </div>
+ </td>
+</tr></tbody></table>
+
+<h3>4.3 - Autres transformations</h3>
+<p>
+    Mathématiquement les transformations peuvent être représentées sous la forme d'un produit matriciel
+    permettant de passer du système de coordonnées de l'objet inséré au système de coordonnées
+    dans lequel il s'inscrit (objet parent)&#160;:
+
+<p style="text-align:center"><img src="matrix.svg" style="width:25em">
+
+<p>
+ Les matrices correspondant aux transformations prédéfinies sont données ci-dessous&#160;:
+
+<p style="text-align:center"><img src="matrices.svg" style="width:50em">
+
+<p>
+    On peut observer que parmi les 9 termes de la matrice de passage 3x3, seuls sont modifiables
+    les 6 termes baptisés de 'a' à 'f'. Outre la possibilité d'enchaîner les transformations prédéfinies
+    dans n'importe quel ordre, il est possible en SVG de spécifier directement une
+    matrice de transformation par l'intermédiaire de ces 6 termes.
+   </p><p>
+    Le dernier exemple ci-dessous est obtenu à l'aide de la transformation
+    'matrix(0.707 0.707 0 1.414 40 40)'. Cette matrice est le résultat du produit matriciel
+    des matrices correspondant à une translation(40,40) suivie par une rotation(45) 
+    puis par une déformation skewX(45)&#160;:
+   </p>
+
+<table border="0" cellspacing="20"><tbody><tr>
+ <td valign="center" align="center">
+  <img src="matrix1.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   matrix(1 0 0 1 40 40)<br>
+   <a href="matrix1.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="matrix2.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   matrix(0.707 0.707 -0.707 0.707 40 40)<br>
+   <a href="matrix2.html"><i>source</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="matrix3.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   matrix(0.707 0.707 0 1.414 40 40)<br>
+   <a href="matrix3.html"><i>source</i></a>
+  </div>
+ </td>
+</tr></tbody></table>
+
+<h2>5. Style</h2>
+<h3>5.1 - Principe</h3>
+<p>
+    SVG est compatible avec CSS, ce qui signifie que la valeur des attributs des éléments SVG peut
+    être spécifiée depuis une feuille de style externe, interne ou locale. Les trois images
+    ci-dessous correspondent à un même document SVG simplement affiché à l'aide de trois feuilles
+    de style différentes&#160;:
+
+<table border="0" cellspacing="20"><tbody><tr>
+ <td valign="center" align="center">
+  <img src="style1.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="style1.html"><i>source</i></a><br>
+   <a href="smile1.css"><i>CSS</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="style2.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="style2.html"><i>source</i></a><br>
+   <a href="smile2.css"><i>CSS</i></a>
+  </div>
+ </td>
+
+ <td valign="center" align="center">
+  <img src="style3.svg" width="150" height="150" class="framed">
+  <div class="caption">
+   <a href="style3.html"><i>source</i></a><br>
+   <a href="smile3.css"><i>CSS</i></a>
+  </div>
+ </td>
+</tr></tbody></table>
+
+<h3>5.2 - Feuille de style externe</h3>
+<p>
+    Une feuille de style externe s'appelle classiquement depuis un document SVG à l'aide d'une
+    balise 'xml-stylesheet'&#160;:
+<pre>
+&lt;?xml-stylesheet href="smile1.css" type="text/css"?&gt;    
+</pre>
+
+<h3>5.3 - Feuille de style interne</h3>
+<p>
+    Une feuille de style interne est spécifiée au sein de l'élément 'defs' à l'aide d'une balise 'style'.
+    Il est éventuellement possible de protéger le contenu d'une feuille de style interne à l'aide d'une section CDATA&#160;:
+<pre>
+&lt;defs&gt;
+ &lt;style type="text/css"&gt;&lt;![CDATA[          
+
+  #eyes ellipse {
+   fill: white;
+   stroke: black;
+  }
+
+ ]]&gt;&lt;/style&gt;
+&lt;/defs&gt;
+</pre>
+
+<h2>6. SVG dynamique</h2>
+<h3>6.1 - Animations</h3>
+<p>
+    SVG permet d'animer le contenu d'un document. De nombreuses propriétés des divers éléments 
+    SVG sont 'animables'. Voir ci-dessous deux exemples d'animation SVG. Les exemples n'ont pas
+    été insérés directement dans ce document pour ne pas inutilement charger le CPU.
+<p>
+ <b>Exemple 1</b> - 
+ <a href="animate.svg">voir SVG</a> -
+ <a href="animate.html"><i>source</i></a>
+<p>
+ <b>Exemple 2</b> - 
+ <a href="animate2.svg">voir SVG</a>
+ <a href="animate2.html"><i>source</i></a>
+
+<h3>6.2 - Javascript</h3>
+<p>
+    SVG est compatible Javascript. Ce langage permet de manipuler directement l'arborescence
+    des éléments d'un document SVG par l'intermédiaire de l'API DOM <i>(Document Object Model)</i>.
+    Au-delà de la modification dynamique du contenu d'un document, Javascript permet également
+    de construire des documents interactifs réagissant à diverses actions de l'utilisateur
+    <i>(événements souris ou clavier)</i>&#160;:
+ 
+<p style="text-align:center">
+ <object data="fun.svg" type="image/svg+xml" style="width:50em"></object><br>
+ <a href="fun.html"><i>source</i></a>
+
+</p>
+<b>N.B.</b> Pour que le code Javascript fonctionne, il est nécessaire d'inclure le document SVG à l'aide 
+d'une balise 'OBJECT' et non pas 'IMG'&#160;:
+<pre>
+&lt;object data="fun.svg" type="image/svg+xml" style="width:50em">&lt;/object>
+</pre>
+<p>
+Côté SVG, la balise 'script' encapsulée dans une section CDATA est insérée 
+avant la section 'defs'.
+    Comme dans le cas des documents HTML, les événements concernant certains éléments SVG sont
+    liés aux actions grâce à des attributs dédiés aux interactions&#160;:
+<pre>
+&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 200"&gt;     
+
+ &lt;script type="text/javascript"&gt;&lt;![CDATA[
+
+  function ButtonDown(evt,bname) {
+    var button;
+    button=evt.target.ownerDocument.getElementById(bname);
+    button.setAttribute("filter", "url(#ButtonIn)");
+  }
+  ...
+
+  ]]&gt;&lt;/script&gt;
+
+&lt;defs&gt; ... &lt;/defs&gt;
+
+ &lt;g id="button" onmousedown="ButtonDown(evt,'button')"&gt;
+  &lt;rect x="20" y="35" width="122" height="109" fill="maroon" /&gt;
+ &lt;/g&gt;
+ ...
+
+&lt;/svg&gt;
+</pre>
+
+<h3>6.3 - Simulations</h3>
+<p>
+    La possibilité d'animer les éléments SVG et d'interagir avec l'utilisateur tout en contrôlant
+    l'animation et les interactions à partir d'un langage de programmation comme Javascript,
+    capable également d'accéder au contenu HTML du navigateur et  à l'envoi d'informations vers
+    un serveur (cf. formulaires), ouvre
+    la porte à la réalisation d'interfaces graphiques destinées à des applications en ligne,
+    qu'elles soient ludiques, pédagogiques ou professionnelles.

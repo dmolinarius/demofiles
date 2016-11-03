@@ -1,0 +1,108 @@
+
+<!-- ------------------ -->
+<!-- Entête du document -->
+<!-- ------------------ -->
+
+<HEAD>
+<TITLE>Source of : style1.svg</TITLE>
+<LINK REL="stylesheet" HREF="s5.css" TYPE="text/css">
+
+<STYLE TYPE="text/css"> <!--
+PRE {
+	background-color: #EAEAEA;
+	overflow: hidden;
+}
+A {
+	text-decoration: none;
+}
+--></STYLE>
+</HEAD>
+
+<!-- ----------------- -->
+<!-- Corps du document -->
+<!-- ----------------- -->
+
+<BODY>
+
+<H1>Document XML </H1>
+<!--P ID="stylesheet-info">Cette vue utilise s5.css</P-->
+<HR>
+
+<H2>Texte source du fichier :
+style1.svg</H2>
+
+<P>
+<PRE CLASS="frame xmlsrc">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+
+<b><font color="#777777">&lt;!--
+     Warning : browsers don't look for an external stylesheet
+     if the SVG file is embedded within an html document
+     which is loaded as local file (e.g. file: protocol)
+--&gt;</font></b>
+
+<font color="#FF0000">&lt;?xml-stylesheet href="smile1.css" type="text/css"?&gt;</font>
+
+&lt;<font color="#0000cc">svg</font> <font color="#009900">xmlns</font>="<font color="#990000">http://www.w3.org/2000/svg</font>" <font color="#009900">viewBox</font>="<font color="#990000">0 0 180 180</font>"&gt;
+
+  &lt;<font color="#0000cc">defs</font>&gt;
+    &lt;<font color="#0000cc">filter</font> <font color="#009900">id</font>="<font color="#990000">noseFilter</font>" <font color="#009900">filterUnits</font>="<font color="#990000">userSpaceOnUse</font>" <font color="#009900">x</font>="<font color="#990000">0</font>" <font color="#009900">y</font>="<font color="#990000">0</font>" <font color="#009900">width</font>="<font color="#990000">180</font>" <font color="#009900">height</font>="<font color="#990000">180</font>"&gt;
+      &lt;<font color="#0000cc">feGaussianBlur</font> <font color="#009900">in</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">stdDeviation</font>="<font color="#990000">2</font>" <font color="#009900">result</font>="<font color="#990000">blur</font>"&gt;&lt;/<font color="#0000cc">feGaussianBlur</font>&gt;
+      &lt;<font color="#0000cc">feOffset</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">dx</font>="<font color="#990000">4</font>" <font color="#009900">dy</font>="<font color="#990000">4</font>" <font color="#009900">result</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feOffset</font>&gt;
+      &lt;<font color="#0000cc">feSpecularLighting</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">surfaceScale</font>="<font color="#990000">5</font>" <font color="#009900">specularConstant</font>="<font color="#990000">.95</font>" <font color="#009900">specularExponent</font>="<font color="#990000">20</font>" <font color="#009900">lighting-color</font>="<font color="#990000">#ffffff</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;
+        &lt;<font color="#0000cc">fePointLight</font> <font color="#009900">x</font>="<font color="#990000">-5000</font>" <font color="#009900">y</font>="<font color="#990000">-10000</font>" <font color="#009900">z</font>="<font color="#990000">20000</font>"&gt;&lt;/<font color="#0000cc">fePointLight</font>&gt;
+      &lt;/<font color="#0000cc">feSpecularLighting</font>&gt;
+      &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">specOut</font>" <font color="#009900">in2</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">operator</font>="<font color="#990000">in</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+      &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">SourceGraphic</font>" <font color="#009900">in2</font>="<font color="#990000">specOut</font>" <font color="#009900">operator</font>="<font color="#990000">arithmetic</font>" <font color="#009900">k1</font>="<font color="#990000">0</font>" <font color="#009900">k2</font>="<font color="#990000">1</font>" <font color="#009900">k3</font>="<font color="#990000">1</font>" <font color="#009900">k4</font>="<font color="#990000">0</font>" <font color="#009900">result</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+     &lt;<font color="#0000cc">feMerge</font>&gt;
+        &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+        &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+     &lt;/<font color="#0000cc">feMerge</font>&gt;
+    &lt;/<font color="#0000cc">filter</font>&gt;
+    &lt;<font color="#0000cc">filter</font> <font color="#009900">id</font>="<font color="#990000">faceFilter</font>" <font color="#009900">filterUnits</font>="<font color="#990000">userSpaceOnUse</font>" <font color="#009900">x</font>="<font color="#990000">0</font>" <font color="#009900">y</font>="<font color="#990000">0</font>" <font color="#009900">width</font>="<font color="#990000">180</font>" <font color="#009900">height</font>="<font color="#990000">180</font>"&gt;
+      &lt;<font color="#0000cc">feGaussianBlur</font> <font color="#009900">in</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">stdDeviation</font>="<font color="#990000">8</font>" <font color="#009900">result</font>="<font color="#990000">shadow</font>"&gt;&lt;/<font color="#0000cc">feGaussianBlur</font>&gt;
+      &lt;<font color="#0000cc">feOffset</font> <font color="#009900">in</font>="<font color="#990000">shadow</font>" <font color="#009900">dx</font>="<font color="#990000">6</font>" <font color="#009900">dy</font>="<font color="#990000">6</font>" <font color="#009900">result</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feOffset</font>&gt;
+      &lt;<font color="#0000cc">feGaussianBlur</font> <font color="#009900">in</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">stdDeviation</font>="<font color="#990000">12</font>" <font color="#009900">result</font>="<font color="#990000">blur</font>"&gt;&lt;/<font color="#0000cc">feGaussianBlur</font>&gt;
+      &lt;<font color="#0000cc">feSpecularLighting</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">surfaceScale</font>="<font color="#990000">5</font>" <font color="#009900">specularConstant</font>="<font color="#990000">.65</font>" <font color="#009900">specularExponent</font>="<font color="#990000">20</font>" <font color="#009900">lighting-color</font>="<font color="#990000">#aaaaaa</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;
+        &lt;<font color="#0000cc">fePointLight</font> <font color="#009900">x</font>="<font color="#990000">-5000</font>" <font color="#009900">y</font>="<font color="#990000">-10000</font>" <font color="#009900">z</font>="<font color="#990000">20000</font>"&gt;&lt;/<font color="#0000cc">fePointLight</font>&gt;
+      &lt;/<font color="#0000cc">feSpecularLighting</font>&gt;
+      &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">specOut</font>" <font color="#009900">in2</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">operator</font>="<font color="#990000">in</font>" <font color="#009900">result</font>="<font color="#990000">specOut</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+      &lt;<font color="#0000cc">feComposite</font> <font color="#009900">in</font>="<font color="#990000">SourceGraphic</font>" <font color="#009900">in2</font>="<font color="#990000">specOut</font>" <font color="#009900">operator</font>="<font color="#990000">arithmetic</font>" <font color="#009900">k1</font>="<font color="#990000">0</font>" <font color="#009900">k2</font>="<font color="#990000">1</font>" <font color="#009900">k3</font>="<font color="#990000">1</font>" <font color="#009900">k4</font>="<font color="#990000">0</font>" <font color="#009900">result</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feComposite</font>&gt;
+      &lt;<font color="#0000cc">feMerge</font>&gt;
+        &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+        &lt;<font color="#0000cc">feMergeNode</font> <font color="#009900">in</font>="<font color="#990000">litPaint</font>"&gt;&lt;/<font color="#0000cc">feMergeNode</font>&gt;
+      &lt;/<font color="#0000cc">feMerge</font>&gt;
+    &lt;/<font color="#0000cc">filter</font>&gt;
+  &lt;/<font color="#0000cc">defs</font>&gt;
+
+  &lt;<font color="#0000cc">g</font> <font color="#009900">id</font>="<font color="#990000">face</font>" <font color="#009900">filter</font>="<font color="#990000">url(#faceFilter)</font>"&gt;
+   &lt;<font color="#0000cc">circle</font> <font color="#009900">cx</font>="<font color="#990000">50</font>" <font color="#009900">cy</font>="<font color="#990000">50</font>" <font color="#009900">r</font>="<font color="#990000">25</font>"&gt;&lt;/<font color="#0000cc">circle</font>&gt;
+   &lt;<font color="#0000cc">circle</font> <font color="#009900">cx</font>="<font color="#990000">125</font>" <font color="#009900">cy</font>="<font color="#990000">50</font>" <font color="#009900">r</font>="<font color="#990000">25</font>"&gt;&lt;/<font color="#0000cc">circle</font>&gt;
+   &lt;<font color="#0000cc">circle</font> <font color="#009900">cx</font>="<font color="#990000">87.5</font>" <font color="#009900">cy</font>="<font color="#990000">110</font>" <font color="#009900">r</font>="<font color="#990000">50</font>"&gt;&lt;/<font color="#0000cc">circle</font>&gt;
+  &lt;/<font color="#0000cc">g</font>&gt;
+  &lt;<font color="#0000cc">g</font> <font color="#009900">id</font>="<font color="#990000">eyes</font>"&gt;
+   &lt;<font color="#0000cc">ellipse</font> <font color="#009900">cx</font>="<font color="#990000">70</font>" <font color="#009900">cy</font>="<font color="#990000">100</font>" <font color="#009900">rx</font>="<font color="#990000">7</font>" <font color="#009900">ry</font>="<font color="#990000">12</font>"&gt;&lt;/<font color="#0000cc">ellipse</font>&gt;
+   &lt;<font color="#0000cc">ellipse</font> <font color="#009900">cx</font>="<font color="#990000">105</font>" <font color="#009900">cy</font>="<font color="#990000">100</font>" <font color="#009900">rx</font>="<font color="#990000">7</font>" <font color="#009900">ry</font>="<font color="#990000">12</font>"&gt;&lt;/<font color="#0000cc">ellipse</font>&gt;
+   &lt;<font color="#0000cc">circle</font> <font color="#009900">cx</font>="<font color="#990000">70</font>" <font color="#009900">cy</font>="<font color="#990000">108</font>" <font color="#009900">r</font>="<font color="#990000">5</font>"&gt;&lt;/<font color="#0000cc">circle</font>&gt;
+   &lt;<font color="#0000cc">circle</font> <font color="#009900">cx</font>="<font color="#990000">105</font>" <font color="#009900">cy</font>="<font color="#990000">108</font>" <font color="#009900">r</font>="<font color="#990000">5</font>"&gt;&lt;/<font color="#0000cc">circle</font>&gt;
+  &lt;/<font color="#0000cc">g</font>&gt;
+  &lt;<font color="#0000cc">path</font> <font color="#009900">id</font>="<font color="#990000">smile</font>" <font color="#009900">transform</font>="<font color="#990000">translate(0,5)</font>" <font color="#009900">d</font>="<font color="#990000">M70,125 A35,35 0 0,0 105,125 A35,85 0 0,1 70,125 z</font>"&gt;&lt;/<font color="#0000cc">path</font>&gt;
+  &lt;<font color="#0000cc">g</font> <font color="#009900">id</font>="<font color="#990000">nose</font>" <font color="#009900">filter</font>="<font color="#990000">url(#noseFilter)</font>"&gt;
+   &lt;<font color="#0000cc">circle</font> <font color="#009900">cx</font>="<font color="#990000">87.5</font>" <font color="#009900">cy</font>="<font color="#990000">115</font>" <font color="#009900">r</font>="<font color="#990000">8</font>"&gt;&lt;/<font color="#0000cc">circle</font>&gt;
+  &lt;/<font color="#0000cc">g</font>&gt;
+&lt;/<font color="#0000cc">svg</font>&gt;</PRE>
+
+<!-- --------------- -->
+<!-- Fin du document -->
+<!-- --------------- -->
+
+<P>
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR>
+<TD ALIGN="left"><ADDRESS>Copyright : Daniel Muller</ADDRESS></TD>
+<TD ALIGN="right">
+<DIV CLASS="date">161103</DIV>
+</TD></TR></TABLE>
+</BODY>
+
+

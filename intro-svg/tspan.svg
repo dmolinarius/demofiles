@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+ <text x="10" y="35" font-family="Arial" font-size="10" fill="#008800">
+  Avec
+  <tspan fill="#880000">tspan</tspan>
+  on peut
+  <tspan x="10" dy="15">
+   facilement gérer du
+  </tspan>
+  <tspan x="10" dy="15">
+   texte multiligne...
+  </tspan>
+ </text>
+</svg>
+

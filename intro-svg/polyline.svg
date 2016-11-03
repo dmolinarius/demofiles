@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 -3 6 6">
+ <polyline stroke-width="0.2" stroke="orange" fill="#FFFFCC"
+	points="2,0 0.866,0.5 1,1.732 0,1 -1,1.732 -0.866,0.5 -2,0
+	        -0.866,-0.5 -1,-1.732 0,-1 1,-1.732 0.866,-0.5 2,0" />
+ <circle stroke-width="0.05" stroke="black" cx="2" cy="0" r="0.5" fill="none"/>
+</svg>

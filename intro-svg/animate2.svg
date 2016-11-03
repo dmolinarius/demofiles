@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
+                         "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+
+ <defs>
+
+  <style type="text/css"><![CDATA[
+
+    #face {
+	fill: #663333;
+    }
+
+    #eyes ellipse {
+	fill: white;
+	stroke: black;
+    }
+
+    #eyes circle {
+	fill: black;
+    }
+
+    #smile {
+	fill: orange;
+	stroke: black;
+    }
+
+    #nose {
+	fill: #00CCCC
+    }
+
+   ]]></style>
+
+    <filter id="noseFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".95" 
+                          specularExponent="20" lighting-color="#ffffff"  
+                          result="specOut">
+        <fePointLight x="-5000" y="-10000" z="20000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" 
+                   k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="litPaint"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g id="face">
+   <circle cx="50" cy="50" r="25">
+    <animateMotion dur="5s" repeatCount="indefinite"
+                   path="M 0,0 l 5,-5 l -10,10 l 5,-5 " rotate="0" />
+   </circle>
+   <circle cx="125" cy="50" r="25">
+    <animateMotion dur="5s" repeatCount="indefinite"
+                   path="M 0,0 l -5,-5 l 10,10 l -5,-5 " rotate="0" />
+   </circle>
+   <circle cx="87.5" cy="110" r="50"/>
+  </g>
+  <g id="eyes">
+   <ellipse cx="70" cy="100" rx="7" ry="12"/>
+   <ellipse cx="105" cy="100" rx="7" ry="12"/>
+   <circle cx="70" cy="108" r="5"/>
+   <circle cx="105" cy="108" r="5"/>
+  </g>
+  <path id="smile" transform="translate(0,5)" d="M70,125 A35,35 0 0,0 105,125 A35,85 0 0,1 70,125 z" />
+  <g id="nose" filter="url(#noseFilter)" >
+   <circle cx="87.5" cy="115" r="8"/>
+  </g>
+</svg>
+

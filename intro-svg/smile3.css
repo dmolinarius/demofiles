@@ -1,0 +1,21 @@
+#face {
+	fill: #663333;
+}
+
+#eyes ellipse {
+	fill: white;
+	stroke: black;
+}
+
+#eyes circle {
+	fill: black;
+}
+
+#smile {
+	fill: orange;
+	stroke: black;
+}
+
+#nose {
+	fill: #00CCCC
+}
