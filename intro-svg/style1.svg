@@ -3,17 +3,32 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" 
                          "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 
-<!--
-     Warning : browsers don't look for an external stylesheet
-     if the SVG file is embedded within an html document
-     which is loaded as local file (e.g. file: protocol)
--->
-
-<?xml-stylesheet href="smile1.css" type="text/css"?>
-
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
 
   <defs>
+   <style>
+#face {
+	fill: black;
+}
+
+#eyes ellipse {
+	fill: white;
+	stroke: black;
+}
+
+#eyes circle {
+	fill: black;
+}
+
+#smile {
+	fill: yellow;
+	stroke: black;
+}
+
+#nose {
+	fill: red
+}
+    </style>
     <filter id="noseFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
       <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
       <feOffset in="blur" dx="4" dy="4" result="offsetBlur"/>

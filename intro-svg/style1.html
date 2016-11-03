@@ -10,7 +10,7 @@
 <STYLE TYPE="text/css"> <!--
 PRE {
 	background-color: #EAEAEA;
-	overflow: hidden;
+	overflow: auto;
 }
 A {
 	text-decoration: none;
@@ -34,17 +34,32 @@ style1.svg</H2>
 <P>
 <PRE CLASS="frame xmlsrc">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 
-<b><font color="#777777">&lt;!--
-     Warning : browsers don't look for an external stylesheet
-     if the SVG file is embedded within an html document
-     which is loaded as local file (e.g. file: protocol)
---&gt;</font></b>
-
-<font color="#FF0000">&lt;?xml-stylesheet href="smile1.css" type="text/css"?&gt;</font>
-
 &lt;<font color="#0000cc">svg</font> <font color="#009900">xmlns</font>="<font color="#990000">http://www.w3.org/2000/svg</font>" <font color="#009900">viewBox</font>="<font color="#990000">0 0 180 180</font>"&gt;
 
   &lt;<font color="#0000cc">defs</font>&gt;
+   &lt;<font color="#0000cc">style</font> <font color="#009900">type</font>="<font color="#990000">text/css</font>"&gt;<b>
+    #face {
+	fill: black;
+    }
+
+    #eyes ellipse {
+	fill: white;
+	stroke: black;
+    }
+
+    #eyes circle {
+	fill: black;
+    }
+
+    #smile {
+	fill: yellow;
+	stroke: black;
+    }
+
+    #nose {
+	fill: red
+    }
+   </b>&lt;/<font color="#0000cc">style</font>&gt;
     &lt;<font color="#0000cc">filter</font> <font color="#009900">id</font>="<font color="#990000">noseFilter</font>" <font color="#009900">filterUnits</font>="<font color="#990000">userSpaceOnUse</font>" <font color="#009900">x</font>="<font color="#990000">0</font>" <font color="#009900">y</font>="<font color="#990000">0</font>" <font color="#009900">width</font>="<font color="#990000">180</font>" <font color="#009900">height</font>="<font color="#990000">180</font>"&gt;
       &lt;<font color="#0000cc">feGaussianBlur</font> <font color="#009900">in</font>="<font color="#990000">SourceAlpha</font>" <font color="#009900">stdDeviation</font>="<font color="#990000">2</font>" <font color="#009900">result</font>="<font color="#990000">blur</font>"&gt;&lt;/<font color="#0000cc">feGaussianBlur</font>&gt;
       &lt;<font color="#0000cc">feOffset</font> <font color="#009900">in</font>="<font color="#990000">blur</font>" <font color="#009900">dx</font>="<font color="#990000">4</font>" <font color="#009900">dy</font>="<font color="#990000">4</font>" <font color="#009900">result</font>="<font color="#990000">offsetBlur</font>"&gt;&lt;/<font color="#0000cc">feOffset</font>&gt;
