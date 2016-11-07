@@ -1,0 +1,9 @@
+  BODY { background-color: #EAEAF0; color: #000080; }
+  TABLE { width: 100%; border: 2px outset; }
+  TD, TH { padding-left: 0.5em; padding-right: 0.5em; border: 1px inset; }
+  TH { background-color: #000080; color: yellow; text-align: left; }
+  TABLE.flat { border: none; }
+  .flat TD, .flat TH { border: none; }
+  ADDRESS, #date { font-style: italic; font-size: 70%; }
+  HR.top { margin-bottom: 1em;  margin-top: -15px; }
+  HR.bottom { margin-top: 1em;  margin-bottom: 0px; }
