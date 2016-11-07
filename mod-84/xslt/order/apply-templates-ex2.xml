@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<?xml-stylesheet type="text/xsl" href="apply-templates-ex2.xsl"?>
+
+<classe>
+<étudiants>
+ <étudiant>
+  <prénom>Jean</prénom>
+  <nom>Aymard</nom>
+ </étudiant>
+ <étudiant>
+  <prénom>Jules</prénom>
+  <nom>Dechez</nom>
+ </étudiant>
+ <étudiant>
+  <nom>Deubaze</nom>
+  <prénom>Raymond</prénom>
+ </étudiant>
+ <étudiant>
+  <prénom>Jeanne</prénom>
+  <nom>Doe</nom>
+ </étudiant>
+ <étudiant>
+  <nom>Duciel</nom>
+  <prénom>Sandra</prénom>
+ </étudiant>
+ <étudiant>
+  <prénom>Jérôme</prénom>
+  <nom>Gourdin</nom>
+ </étudiant>
+ <étudiant>
+  <nom>Liguili</nom>
+  <prénom>Guy</prénom>
+ </étudiant>
+ <étudiant>
+  <prénom>Antoine</prénom>
+  <nom>Nette</nom>
+ </étudiant>
+ <étudiant>
+  <nom>Plique</nom>
+  <prénom>Elsa</prénom>
+ </étudiant>
+ <étudiant>
+  <prénom>Ginette</prénom>
+  <nom>Ringard</nom>
+ </étudiant>
+ <étudiant>
+  <nom>Trau</nom>
+  <prénom>Julie</prénom>
+ </étudiant>
+</étudiants>
+</classe>
