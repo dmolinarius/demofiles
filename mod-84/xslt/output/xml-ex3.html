@@ -15,9 +15,9 @@
 
   
   <div id="toggle_xml" class="toggle">[fermer]</div>
-  <div class="toggle">[<a href="xml-ex2.xml">visualiser</a>]</div>
+  <div class="toggle">[<a href="xml-ex3.xml">visualiser</a>]</div>
   <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
-<font color="#FF0000">&lt;?xml-stylesheet href="xml-ex2.xsl" type="text/xsl"?&gt;</font>
+<font color="#FF0000">&lt;?xml-stylesheet href="xml-ex3.xsl" type="text/xsl"?&gt;</font>
 &lt;<font color="#0000cc">classe</font>&gt;
 &lt;<font color="#0000cc">étudiants</font>&gt;
  &lt;<font color="#0000cc">étudiant</font>&gt;
@@ -72,13 +72,11 @@
   <pre class="grey frame visible" id="xsl">&lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>" <font color="#009900">xmlns</font>="<font color="#990000">http://www.w3.org/2000/svg</font>"&gt;
 
+ &lt;<font color="#0000cc">xsl:output</font> <font color="#009900">method</font>="<font color="#990000">xml</font>" <font color="#009900">encoding</font>="<font color="#990000">utf-8</font>" <font color="#009900">doctype-public</font>="<font color="#990000">-//W3C//DTD SVG 20010904//EN</font>" <font color="#009900">doctype-system</font>="<font color="#990000">http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd</font>"&gt;&lt;/<font color="#0000cc">xsl:output</font>&gt;
+
  &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">/classe</font>"&gt;
   <b>&lt;svg viewBox="0 0 1000 500" preserveAspectRatio="none"&gt;</b>
-   &lt;<font color="#0000cc">xsl:text</font>&gt;
-&lt;/<font color="#0000cc">xsl:text</font>&gt;
    <b>&lt;rect width="1000" height="500" rx="0" ry="0" fill="#000050" stroke="none"&gt;</b><b>&lt;/rect&gt;</b>
-    &lt;<font color="#0000cc">xsl:text</font>&gt;
-&lt;/<font color="#0000cc">xsl:text</font>&gt;
     <b>&lt;text y="6" stroke="none" font-family="Arial" font-size="20" fill="#F0F0EA"&gt;</b>
      &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
     <b>&lt;/text&gt;</b>
@@ -86,7 +84,7 @@
  &lt;/<font color="#0000cc">xsl:template</font>&gt;
 
  &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">étudiant</font>"&gt;
-   &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
  &lt;/<font color="#0000cc">xsl:template</font>&gt;
 
  &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">prénom</font>"&gt;
@@ -104,11 +102,10 @@
 &lt;/<font color="#0000cc">xsl:stylesheet</font>&gt;</pre>
 
   <h2>Résultat de la transformation</h2>
-  <div class="toggle">[<a href="xml-ex2-result.xml">visualiser</a>]</div>
-  <pre class="grey frame">&lt;?xml version="1.0"?&gt;
-&lt;<font color="#0000cc">svg</font> <font color="#009900">xmlns</font>="<font color="#990000">http://www.w3.org/2000/svg</font>" <font color="#009900">viewBox</font>="<font color="#990000">0 0 1000 500</font>" <font color="#009900">preserveAspectRatio</font>="<font color="#990000">none</font>"&gt;
-&lt;<font color="#0000cc">rect</font> <font color="#009900">width</font>="<font color="#990000">1000</font>" <font color="#009900">height</font>="<font color="#990000">500</font>" <font color="#009900">rx</font>="<font color="#990000">0</font>" <font color="#009900">ry</font>="<font color="#990000">0</font>" <font color="#009900">fill</font>="<font color="#990000">#000050</font>" <font color="#009900">stroke</font>="<font color="#990000">none</font>"&gt;&lt;/<font color="#0000cc">rect</font>&gt;
-&lt;<font color="#0000cc">text</font> <font color="#009900">y</font>="<font color="#990000">6</font>" <font color="#009900">stroke</font>="<font color="#990000">none</font>" <font color="#009900">font-family</font>="<font color="#990000">Arial</font>" <font color="#009900">font-size</font>="<font color="#990000">20</font>" <font color="#009900">fill</font>="<font color="#990000">#F0F0EA</font>"&gt;
+  <div class="toggle">[<a href="xml-ex3-result.xml">visualiser</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"&gt;
+&lt;<font color="#0000cc">svg</font> <font color="#009900">xmlns</font>="<font color="#990000">http://www.w3.org/2000/svg</font>" <font color="#009900">viewBox</font>="<font color="#990000">0 0 1000 500</font>" <font color="#009900">preserveAspectRatio</font>="<font color="#990000">none</font>"&gt;&lt;<font color="#0000cc">rect</font> <font color="#009900">width</font>="<font color="#990000">1000</font>" <font color="#009900">height</font>="<font color="#990000">500</font>" <font color="#009900">rx</font>="<font color="#990000">0</font>" <font color="#009900">ry</font>="<font color="#990000">0</font>" <font color="#009900">fill</font>="<font color="#990000">#000050</font>" <font color="#009900">stroke</font>="<font color="#990000">none</font>"&gt;&lt;/<font color="#0000cc">rect</font>&gt;&lt;<font color="#0000cc">text</font> <font color="#009900">y</font>="<font color="#990000">6</font>" <font color="#009900">stroke</font>="<font color="#990000">none</font>" <font color="#009900">font-family</font>="<font color="#990000">Arial</font>" <font color="#009900">font-size</font>="<font color="#990000">20</font>" <font color="#009900">fill</font>="<font color="#990000">#F0F0EA</font>"&gt;
 
  
   &lt;<font color="#0000cc">tspan</font> <font color="#009900">x</font>="<font color="#990000">50</font>" <font color="#009900">dy</font>="<font color="#990000">30</font>"&gt;<b>Jean</b>&lt;/<font color="#0000cc">tspan</font>&gt;
