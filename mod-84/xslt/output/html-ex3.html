@@ -8,6 +8,7 @@
     .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
     .hidden { display: none }
     a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+    h1 { margin-bottom: 0; }
   </style>
 
   <h2>Document XML</h2>
@@ -16,7 +17,7 @@
   <div id="toggle_xml" class="toggle">[fermer]</div>
   <div class="toggle">[<a href="html-ex3.xml">visualiser</a>]</div>
   <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
-<font color="#FF0000">&lt;?xml-stylesheet type="text/xsl" href="html5-ex.xsl"?&gt;</font>
+<font color="#FF0000">&lt;?xml-stylesheet type="text/xsl" href="html-ex3.xsl"?&gt;</font>
 &lt;<font color="#0000cc">classe</font>&gt;
  &lt;<font color="#0000cc">étudiants</font>&gt;
   &lt;<font color="#0000cc">étudiant</font>&gt;
@@ -106,8 +107,7 @@
 
   <h2>Résultat de la transformation</h2>
   <div class="toggle">[<a href="html-ex3-result.html">visualiser</a>]</div>
-  <pre class="grey frame">&lt;xslt-result&gt;
-&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+  <pre class="grey frame">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
@@ -166,8 +166,7 @@
  
 &lt;/table&gt;&lt;/body&gt;
 &lt;/html&gt;
-
-&lt;/xslt-result&gt; </pre>
+ </pre>
 
   <script type="text/javascript">
    function toggle_visibility(e) {
