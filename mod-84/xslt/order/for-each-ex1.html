@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSLT -
+     Document XML</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSLT</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    .hidden { display: none }
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+    h1 { margin-bottom: 0; }
+  </style>
+
+  <h2>Document XML</h2>
+
+  
+  <div id="toggle_xml" class="toggle">[fermer]</div>
+  <div class="toggle">[<a href="for-each-ex1.xml">visualiser</a>]</div>
+  <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+<font color="#FF0000">&lt;?xml-stylesheet type="text/xsl" href="for-each-ex1.xsl"?&gt;</font>
+&lt;<font color="#0000cc">classe</font>&gt;
+&lt;<font color="#0000cc">étudiants</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Jean</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Aymard</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Jules</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Dechez</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Raymond</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Deubaze</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Jeanne</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Doe</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Sandra</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Duciel</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>J</b><b></b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Gourdin</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Guy</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Liguili</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Antoine</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Nette</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Elsa</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Plique</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Ginette</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Ringard</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+ &lt;<font color="#0000cc">étudiant</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>Julie</b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">nom</font>&gt;<b>Trau</b>&lt;/<font color="#0000cc">nom</font>&gt;
+ &lt;/<font color="#0000cc">étudiant</font>&gt;
+&lt;/<font color="#0000cc">étudiants</font>&gt;
+&lt;/<font color="#0000cc">classe</font>&gt;</pre>
+
+  <h2>Feuille de style XSLT</h2>
+  <div id="toggle_xsl" class="toggle">[fermer]</div>
+  <pre class="grey frame visible" id="xsl">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>"&gt; 
+
+ &lt;<font color="#0000cc">xsl:output</font> <font color="#009900">method</font>="<font color="#990000">html</font>" <font color="#009900">encoding</font>="<font color="#990000">utf-8</font>" <font color="#009900">doctype-public</font>="<font color="#990000">-//W3C//DTD XHTML 1.0 Transitional//EN</font>" <font color="#009900">doctype-system</font>="<font color="#990000">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</font>"&gt;&lt;/<font color="#0000cc">xsl:output</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">/classe</font>"&gt;
+  <b>&lt;html&gt;</b>
+   <b>&lt;head&gt;</b>
+    <b>&lt;link rel="stylesheet" href="exemple.css" type="text/css"&gt;</b><b>&lt;/link&gt;</b>
+   <b>&lt;/head&gt;</b>
+   <b>&lt;body&gt;</b>
+    <b>&lt;h2&gt;</b><b>Mod</b><b></b><b>&lt;/h2&gt;</b>
+    <b>&lt;p&gt;</b><b>
+     Le contenu de la table ci-dessous est obtenu </b><b></b><b>&lt;br&gt;</b><b>&lt;/br&gt;</b>
+    <b>&lt;/p&gt;</b>
+    <b>&lt;h2&gt;</b><b>R</b><b></b><b>&lt;/h2&gt;</b>
+    <b>&lt;table border="2" style="width:50%" align="center"&gt;</b>
+     <b>&lt;tr&gt;</b>
+      <b>&lt;th&gt;</b><b>Pr</b><b></b><b>&lt;/th&gt;</b>
+      <b>&lt;th&gt;</b><b>Nom</b><b>&lt;/th&gt;</b>
+     <b>&lt;/tr&gt;</b>
+     &lt;<font color="#0000cc">xsl:for-each</font> <font color="#009900">select</font>="<font color="#990000">//étudiant</font>"&gt;
+      <b>&lt;tr&gt;</b>
+       <b>&lt;td&gt;</b>&lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">select</font>="<font color="#990000">prénom</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;<b>&lt;/td&gt;</b> 
+       <b>&lt;td&gt;</b>&lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">select</font>="<font color="#990000">nom</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;<b>&lt;/td&gt;</b>
+      <b>&lt;/tr&gt;</b>
+     &lt;/<font color="#0000cc">xsl:for-each</font>&gt;
+    <b>&lt;/table&gt;</b>
+   <b>&lt;/body&gt;</b>
+  <b>&lt;/html&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+&lt;/<font color="#0000cc">xsl:stylesheet</font>&gt;</pre>
+
+  <h2>Résultat de la transformation</h2>
+  <div class="toggle">[<a href="for-each-ex1-result.html">visualiser</a>]</div>
+  <pre class="grey frame">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+&lt;link rel="stylesheet" href="exemple.css" type="text/css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Modèle procédural&lt;/h2&gt;
+&lt;p&gt;
+     Le contenu de la table ci-dessous est obtenu à l'aide d'un modèle procédural unique.&lt;br&gt;&lt;/p&gt;
+&lt;h2&gt;Résultat&lt;/h2&gt;
+&lt;table border="2" style="width:50%" align="center"&gt;
+&lt;tr&gt;
+&lt;th&gt;Prénom&lt;/th&gt;
+&lt;th&gt;Nom&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jean&lt;/td&gt;
+&lt;td&gt;Aymard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jules&lt;/td&gt;
+&lt;td&gt;Dechez&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Raymond&lt;/td&gt;
+&lt;td&gt;Deubaze&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jeanne&lt;/td&gt;
+&lt;td&gt;Doe&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sandra&lt;/td&gt;
+&lt;td&gt;Duciel&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jérôme&lt;/td&gt;
+&lt;td&gt;Gourdin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Guy&lt;/td&gt;
+&lt;td&gt;Liguili&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Antoine&lt;/td&gt;
+&lt;td&gt;Nette&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Elsa&lt;/td&gt;
+&lt;td&gt;Plique&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ginette&lt;/td&gt;
+&lt;td&gt;Ringard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Julie&lt;/td&gt;
+&lt;td&gt;Trau&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+  <script type="text/javascript">
+   function toggle_visibility(e) {
+     var target = e.target
+       , pre = document.getElementById(target.id.substring(7))
+       , state = pre.getAttribute('class').indexOf('visible') == -1 ? 'hidden' : 'visible'
+     ;
+     if ( state === 'visible' ) {
+       pre.setAttribute('class','grey frame hidden');
+       target.textContent = '[ouvrir]';
+     }
+     else {
+       pre.setAttribute('class','grey frame visible');
+       target.textContent = '[fermer]';
+     }
+   }
+   document.getElementById("toggle_xml").addEventListener('click',toggle_visibility);
+   document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
+  </script>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161107
+        </span></div></td></tr></table></body></html>
