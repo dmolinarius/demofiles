@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body { font-family: sans-serif; }
+h1,h2 { margin-bottom: 0; border-bottom: 1px solid #888; font-family: serif;}
+h3 { margin-bottom: 0; }
+.sommaire { background-color: #ddd; display: inline-block; padding: 1em; border: 1px solid #888; line-height: 1.5em;}
+.blocs { margin-left: 2em; }
+    </style>
+</head>
+<body>
+<h1>XML</h1>
+<div><em>From Wikipedia, the free encyclopedia</em></div>
+<p>
+In computing, Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. The W3C's XML 1.0 Specification and several other related specifications, —all of them free open standards— define XML.
+ </p>
+<p>
+The design goals of XML emphasize simplicity, generality, and usability across the Internet. It is a textual data format with strong support via Unicode for different human languages. Although the design of XML focuses on documents, the language is widely used for the representation of arbitrary data structures such as those used in web services.
+ </p>
+<p>
+Several schema systems exist to aid in the definition of XML-based languages, while programmers have developed many application programming interfaces (APIs) to aid the processing of XML data.
+ </p>
+<div class="sommaire">
+<div>1 
+   Applications of XML</div>
+<div class="blocs"></div>
+<div>2 
+   Key terminology</div>
+<div class="blocs">
+<div>2.2 
+    Character</div>
+<div>2.3 
+    Processor and application</div>
+<div>2.4 
+    Markup and content</div>
+<div>2.5 
+    Tag</div>
+<div>2.6 
+    Element</div>
+<div>2.7 
+    Attribute</div>
+<div>2.8 
+    XML declaration</div>
+</div>
+<div>3 
+   Characters and escaping</div>
+<div class="blocs"></div>
+</div>
+<h2>Applications of XML</h2>
+ <p>
+As of 2009, 100 document formats using XML syntax had been developed, including RSS, Atom, SOAP, and XHTML. XML-based formats became the default for many office-productivity tools, including Microsoft Office (Office Open XML), OpenOffice.org and LibreOffice (OpenDocument), and Apple's iWork. XML has also provided the base language for communication protocols such as XMPP. Applications for the Microsoft .NET Framework use XML files for configuration. Apple has an implementation of a registry based on XML.
+ </p>
+ <p>
+XML has come into common use for the interchange of data over the Internet. IETF RFC 7303 gives rules for the construction of Internet Media Types for use when sending XML. It also defines the media types application/xml and text/xml, which say only that the data is in XML, and nothing about its semantics. The use of text/xml has been criticized as a potential source of encoding problems and it has been suggested that it should be deprecated.
+ </p>
+ <p>
+RFC 7303 also recommends that XML-based languages be given media types ending in +xml; for example image/svg+xml for SVG.
+ </p>
+ <p>
+Further guidelines for the use of XML in a networked context appear in RFC 3470, also known as IETF BCP 70, a document covering many aspects of designing and deploying an XML-based language.
+ </p>
+ <h2>Key terminology</h2>
+ <p>
+The material in this section is based on the XML Specification. This is not an exhaustive list of all the constructs that appear in XML; it provides an introduction to the key constructs most often encountered in day-to-day use.
+ </p>
+ <h3>Character</h3>
+<p style="margin-top:0; margin-left: 1.5em;">
+    An XML document is a string of characters. Almost every legal Unicode character may appear in an XML document.
+ </p>
+ <h3>Processor and application</h3>
+<p style="margin-top:0; margin-left: 1.5em;">
+    The processor analyzes the markup and passes structured information to an application. The specification places requirements on what an XML processor must do and not do, but the application is outside its scope. The processor (as the specification calls it) is often referred to colloquially as an XML parser.
+ </p>
+<h3>Markup and content</h3>
+<p style="margin-top:0; margin-left: 1.5em;">
+    The characters making up an XML document are divided into markup and content, which may be distinguished by the application of simple syntactic rules. Generally, strings that constitute markup either begin with the character &lt; and end with a &gt;, or they begin with the character &amp; and end with a ;. Strings of characters that are not markup are content. However, in a CDATA section, the delimiters &lt;![CDATA[ and ]]&gt; are classified as markup, while the text between them is classified as content. In addition, whitespace before and after the outermost element is classified as markup.
+</p>
+<h3>Tag</h3>
+<p style="margin-top:0; margin-left: 1.5em;">
+    A tag is a markup construct that begins with &lt; and ends with &gt;. Tags come in three flavors:
+        start-tag, such as &lt;section&gt;;
+        end-tag, such as &lt;/section&gt;;
+        empty-element tag, such as &lt;line-break /&gt;.
+</p>
+<h3>Element</h3>
+<p style="margin-top:0; margin-left: 1.5em;">
+    An element is a logical document component that either begins with a start-tag and ends with a matching end-tag or consists only of an empty-element tag. The characters between the start-tag and end-tag, if any, are the element's content, and may contain markup, including other elements, which are called child elements. An example is &lt;greeting&gt;Hello, world!&lt;/greeting&gt;. Another is &lt;line-break /&gt;.
+</p>
+<h3>Attribute</h3>
+<p style="margin-top:0; margin-left: 1.5em;">
+    An attribute is a markup construct consisting of a name–value pair that exists within a start-tag or empty-element tag. An example is &lt;img src="madonna.jpg" alt="Madonna" /&gt;, where the name of the attributes are "src" and "alt" and their values are "madonna.jpg" and "Madonna" respectively. Another example is &lt;step number="3"&gt;Connect A to B.&lt;/step&gt;, where the name of the attribute is "number" and its value is "3". An XML attribute can only have a single value and each attribute can appear at most once on each element. In the common situation where a list of multiple values is desired, this must be done by encoding the list into a well-formed XML attribute with some format beyond what XML defines itself. Usually this is either a comma or semi-colon delimited list or, if the individual values are known not to contain spaces, a space-delimited list can be used. &lt;div class="inner greeting-box"&gt;Welcome!&lt;/div&gt;, where the attribute "class" has both the value "inner greeting-box" and also indicates the two CSS class names "inner" and "greeting-box".
+</p>
+<h3>XML declaration</h3>
+<p style="margin-top:0; margin-left: 1.5em;">
+    XML documents may begin with an XML declaration that describes some information about themselves. An example is &lt;?xml version="1.0" encoding="UTF-8"?&gt;. 
+</p>
+<h2>Characters and escaping</h2>
+<p>
+XML documents consist entirely of characters from the Unicode repertoire. Except for a small number of specifically excluded control characters, any character defined by Unicode may appear within the content of an XML document.
+</p>
+<p>
+XML includes facilities for identifying the encoding of the Unicode characters that make up the document, and for expressing characters that, for one reason or another, cannot be used directly.
+</p>
+</body>
+</html>
