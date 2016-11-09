@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSLT -
+     Document XML</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSLT</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    .hidden { display: none }
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+
+  <h2>Document XML</h2>
+
+  
+  <div id="toggle_xml" class="toggle">[fermer]</div>
+  <div class="toggle">[<a href="exemple-4.xml">visualiser</a>]</div>
+  <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+<font color="#FF0000">&lt;?xml-stylesheet type="text/xsl" href="exemple-4.xsl"?&gt;</font>
+&lt;<font color="#0000cc">page</font>&gt;
+ &lt;<font color="#0000cc">titre</font>&gt;<b>XML</b>&lt;/<font color="#0000cc">titre</font>&gt;
+ &lt;<font color="#0000cc">sous-titre</font>&gt;<b>From Wikipedia, the free encyclopedia</b>&lt;/<font color="#0000cc">sous-titre</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+In computing, Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. The W3C's XML 1.0 Specification and several other related specifications, </b><b>?all of them free open standards? define XML.
+ </b>&lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+The design goals of XML emphasize simplicity, generality, and usability across the Internet. It is a textual data format with strong support via Unicode for different human languages. Although the design of XML focuses on documents, the language is widely used for the representation of arbitrary data structures such as those used in web services.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+Several schema systems exist to aid in the definition of XML-based languages, while programmers have developed many application programming interfaces (APIs) to aid the processing of XML data.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+
+ &lt;<font color="#0000cc">paragraphe</font> <font color="#009900">titre</font>="<font color="#990000">Applications of XML</font>"&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+As of 2009, 100 document formats using XML syntax had been developed, including RSS, Atom, SOAP, and XHTML. XML-based formats became the default for many office-productivity tools, including Microsoft Office (Office Open XML), OpenOffice.org and LibreOffice (OpenDocument), and Apple's iWork. XML has also provided the base language for communication protocols such as XMPP. Applications for the Microsoft .NET Framework use XML files for configuration. Apple has an implementation of a registry based on XML.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+XML has come into common use for the interchange of data over the Internet. IETF RFC 7303 gives rules for the construction of Internet Media Types for use when sending XML. It also defines the media types application/xml and text/xml, which say only that the data is in XML, and nothing about its semantics. The use of text/xml has been criticized as a potential source of encoding problems and it has been suggested that it should be deprecated.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+RFC 7303 also recommends that XML-based languages be given media types ending in +xml; for example image/svg+xml for SVG.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+Further guidelines for the use of XML in a networked context appear in RFC 3470, also known as IETF BCP 70, a document covering many aspects of designing and deploying an XML-based language.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;/<font color="#0000cc">paragraphe</font>&gt;
+
+ &lt;<font color="#0000cc">paragraphe</font> <font color="#009900">titre</font>="<font color="#990000">Key terminology</font>"&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+The material in this section is based on the XML Specification. This is not an exhaustive list of all the constructs that appear in XML; it provides an introduction to the key constructs most often encountered in day-to-day use.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font> <font color="#009900">titre</font>="<font color="#990000">Character</font>"&gt;<b>
+    An XML document is a string of characters. Almost every legal Unicode character may appear in an XML document.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font> <font color="#009900">titre</font>="<font color="#990000">Processor and application</font>"&gt;<b>
+    The processor analyzes the markup and passes structured information to an application. The specification places requirements on what an XML processor must do and not do, but the application is outside its scope. The processor (as the specification calls it) is often referred to colloquially as an XML parser.</b>
+ &lt;/<font color="#0000cc">bloc</font>&gt;
+&lt;<font color="#0000cc">bloc</font> <font color="#009900">titre</font>="<font color="#990000">Markup and content</font>"&gt;<b>
+    The characters making up an XML document are divided into markup and content, which may be distinguished by the application of simple syntactic rules. Generally, strings that constitute markup either begin with the character </b><b>&amp;lt;</b><b> and end with a </b><b>&gt;</b><b>, or they begin with the character </b><b>&amp;amp;</b><b> and end with a ;. Strings of characters that are not markup are content. However, in a CDATA section, the delimiters </b><b>&amp;lt;</b><b>![CDATA[ and ]]</b><b>&gt;</b><b> are classified as markup, while the text between them is classified as content. In addition, whitespace before and after the outermost element is classified as markup.</b>
+&lt;/<font color="#0000cc">bloc</font>&gt;
+&lt;<font color="#0000cc">bloc</font> <font color="#009900">titre</font>="<font color="#990000">Tag</font>"&gt;<b>
+    A tag is a markup construct that begins with </b><b>&amp;lt;</b><b> and ends with &gt;. Tags come in three flavors:</b><b>
+        start-tag, such as </b><b>&amp;lt;</b><b>section&gt;;</b><b>
+        end-tag, such as </b><b>&amp;lt;</b><b>/section&gt;;</b><b>
+        empty-element tag, such as </b><b>&amp;lt;</b><b>line-break /&gt;.</b>
+&lt;/<font color="#0000cc">bloc</font>&gt;
+&lt;<font color="#0000cc">bloc</font> <font color="#009900">titre</font>="<font color="#990000">Element</font>"&gt;<b>
+    An element is a logical document component that either begins with a start-tag and ends with a matching end-tag or consists only of an empty-element tag. The characters between the start-tag and end-tag, if any, are the element's content, and may contain markup, including other elements, which are called child elements. An example is </b><b>&amp;lt;</b><b>greeting&gt;Hello, world!</b><b>&amp;lt;</b><b>/greeting&gt;. Another is </b><b>&amp;lt;</b><b>line-break /&gt;.</b>
+&lt;/<font color="#0000cc">bloc</font>&gt;
+&lt;<font color="#0000cc">bloc</font> <font color="#009900">titre</font>="<font color="#990000">Attribute</font>"&gt;<b>
+    An attribute is a markup construct consisting of a name</b><b>?value pair that exists within a start-tag or empty-element tag. An example is </b><b>&amp;lt;</b><b>img src="madonna.jpg" alt="Madonna" /&gt;, where the name of the attributes are "src" and "alt" and their values are "madonna.jpg" and "Madonna" respectively. Another example is </b><b>&amp;lt;</b><b>step number="3"&gt;Connect A to B.</b><b>&amp;lt;</b><b>/step&gt;, where the name of the attribute is "number" and its value is "3". An XML attribute can only have a single value and each attribute can appear at most once on each element. In the common situation where a list of multiple values is desired, this must be done by encoding the list into a well-formed XML attribute with some format beyond what XML defines itself. Usually this is either a comma or semi-colon delimited list or, if the individual values are known not to contain spaces, a space-delimited list can be used. </b><b>&amp;lt;</b><b>div class="inner greeting-box"&gt;Welcome!</b><b>&amp;lt;</b><b>/div&gt;, where the attribute "class" has both the value "inner greeting-box" and also indicates the two CSS class names "inner" and "greeting-box".</b>
+&lt;/<font color="#0000cc">bloc</font>&gt;
+&lt;<font color="#0000cc">bloc</font> <font color="#009900">titre</font>="<font color="#990000">XML declaration</font>"&gt;<b>
+    XML documents may begin with an XML declaration that describes some information about themselves. An example is </b><b>&amp;lt;</b><b>?xml version="1.0" encoding="UTF-8"?&gt;. </b>
+&lt;/<font color="#0000cc">bloc</font>&gt;
+&lt;/<font color="#0000cc">paragraphe</font>&gt;
+&lt;/<font color="#0000cc">page</font>&gt;</pre>
+
+  <h2>Feuille de style XSLT</h2>
+  <div id="toggle_xsl" class="toggle">[fermer]</div>
+  <pre class="grey frame visible" id="xsl">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>"&gt;
+
+ &lt;<font color="#0000cc">xsl:output</font> <font color="#009900">method</font>="<font color="#990000">html</font>" <font color="#009900">encoding</font>="<font color="#990000">utf-8</font>" <font color="#009900">doctype-public</font>="<font color="#990000">-//W3C//DTD XHTML 1.0 Strict//EN</font>" <font color="#009900">doctype-system</font>="<font color="#990000">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd</font>"&gt;&lt;/<font color="#0000cc">xsl:output</font>&gt;
+ 
+ <b><font color="#777777"></font></b>
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">page</font>"&gt;
+  <b>&lt;html&gt;</b>
+   <b>&lt;head&gt;</b>
+    <b>&lt;style type="text/css"&gt;</b><b>
+body { font-family: sans-serif; }
+h1,h2 { margin-bottom: 0; border-bottom: 1px solid #888; font-family: serif;}
+h3 { margin-bottom: 0; }
+.sommaire { background-color: #ddd; display: inline-block; padding: 1em; border: 1px solid #888; }
+.blocs { margin-left: 1em; }
+    </b><b>&lt;/style&gt;</b>
+   <b>&lt;/head&gt;</b>
+   <b>&lt;body&gt;</b>
+    <b>&lt;h1&gt;</b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;<b>&lt;/h1&gt;</b>
+    <b>&lt;div&gt;</b><b>&lt;em&gt;</b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">sous-titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;<b>&lt;/em&gt;</b><b>&lt;/div&gt;</b>
+    &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">select</font>="<font color="#990000">bloc</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+    <b>&lt;div class="sommaire"&gt;</b>
+     &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">mode</font>="<font color="#990000">sommaire</font>" <font color="#009900">select</font>="<font color="#990000">paragraphe</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+    <b>&lt;/div&gt;</b>
+    &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">select</font>="<font color="#990000">paragraphe</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+   <b>&lt;/body&gt;</b>
+  <b>&lt;/html&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+
+ <b><font color="#777777"></font></b>
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">paragraphe</font>"&gt;
+  <b>&lt;h2&gt;</b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;<b>&lt;/h2&gt;</b>
+  &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ <b><font color="#777777"></font></b>
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">bloc</font>"&gt;
+  &lt;<font color="#0000cc">xsl:choose</font>&gt;
+   &lt;<font color="#0000cc">xsl:when</font> <font color="#009900">test</font>="<font color="#990000">@titre</font>"&gt;
+    <b>&lt;h3&gt;</b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;<b>&lt;/h3&gt;</b>
+    <b>&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;</b>&lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;<b>&lt;/p&gt;</b>
+   &lt;/<font color="#0000cc">xsl:when</font>&gt;
+   &lt;<font color="#0000cc">xsl:otherwise</font>&gt;
+    <b>&lt;p&gt;</b>&lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;<b>&lt;/p&gt;</b>
+   &lt;/<font color="#0000cc">xsl:otherwise</font>&gt;
+  &lt;/<font color="#0000cc">xsl:choose</font>&gt;
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ <b><font color="#777777"></font></b>
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">paragraphe</font>" <font color="#009900">mode</font>="<font color="#990000">sommaire</font>"&gt;
+  <b>&lt;div&gt;</b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;<b>&lt;/div&gt;</b>
+  <b>&lt;div class="blocs"&gt;</b>
+   &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">mode</font>="<font color="#990000">sommaire</font>" <font color="#009900">select</font>="<font color="#990000">bloc</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+  <b>&lt;/div&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+ <b><font color="#777777"></font></b>
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">bloc</font>" <font color="#009900">mode</font>="<font color="#990000">sommaire</font>"&gt;
+  &lt;<font color="#0000cc">xsl:if</font> <font color="#009900">test</font>="<font color="#990000">@titre</font>"&gt;
+   <b>&lt;div&gt;</b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">@titre</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;<b>&lt;/div&gt;</b>
+  &lt;/<font color="#0000cc">xsl:if</font>&gt;
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+&lt;/<font color="#0000cc">xsl:stylesheet</font>&gt;</pre>
+
+  <h2>Résultat de la transformation</h2>
+  <div class="toggle">[<a href="exemple-4-rfesult.html">visualiser</a>]</div>
+  <pre class="grey frame">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+&lt;style type="text/css"&gt;
+body { font-family: sans-serif; }
+h1,h2 { margin-bottom: 0; border-bottom: 1px solid #888; font-family: serif;}
+h3 { margin-bottom: 0; }
+.sommaire { background-color: #ddd; display: inline-block; padding: 1em; border: 1px solid #888; }
+.blocs { margin-left: 1em; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;XML&lt;/h1&gt;
+&lt;div&gt;&lt;em&gt;From Wikipedia, the free encyclopedia&lt;/em&gt;&lt;/div&gt;
+&lt;p&gt;
+In computing, Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. The W3C's XML 1.0 Specification and several other related specifications, —all of them free open standards— define XML.
+ &lt;/p&gt;
+&lt;p&gt;
+The design goals of XML emphasize simplicity, generality, and usability across the Internet. It is a textual data format with strong support via Unicode for different human languages. Although the design of XML focuses on documents, the language is widely used for the representation of arbitrary data structures such as those used in web services.
+ &lt;/p&gt;
+&lt;p&gt;
+Several schema systems exist to aid in the definition of XML-based languages, while programmers have developed many application programming interfaces (APIs) to aid the processing of XML data.
+ &lt;/p&gt;
+&lt;div class="sommaire"&gt;
+&lt;div&gt;Applications of XML&lt;/div&gt;
+&lt;div class="blocs"&gt;&lt;/div&gt;
+&lt;div&gt;Key terminology&lt;/div&gt;
+&lt;div class="blocs"&gt;
+&lt;div&gt;Character&lt;/div&gt;
+&lt;div&gt;Processor and application&lt;/div&gt;
+&lt;div&gt;Markup and content&lt;/div&gt;
+&lt;div&gt;Tag&lt;/div&gt;
+&lt;div&gt;Element&lt;/div&gt;
+&lt;div&gt;Attribute&lt;/div&gt;
+&lt;div&gt;XML declaration&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2&gt;Applications of XML&lt;/h2&gt;
+ &lt;p&gt;
+As of 2009, 100 document formats using XML syntax had been developed, including RSS, Atom, SOAP, and XHTML. XML-based formats became the default for many office-productivity tools, including Microsoft Office (Office Open XML), OpenOffice.org and LibreOffice (OpenDocument), and Apple's iWork. XML has also provided the base language for communication protocols such as XMPP. Applications for the Microsoft .NET Framework use XML files for configuration. Apple has an implementation of a registry based on XML.
+ &lt;/p&gt;
+ &lt;p&gt;
+XML has come into common use for the interchange of data over the Internet. IETF RFC 7303 gives rules for the construction of Internet Media Types for use when sending XML. It also defines the media types application/xml and text/xml, which say only that the data is in XML, and nothing about its semantics. The use of text/xml has been criticized as a potential source of encoding problems and it has been suggested that it should be deprecated.
+ &lt;/p&gt;
+ &lt;p&gt;
+RFC 7303 also recommends that XML-based languages be given media types ending in +xml; for example image/svg+xml for SVG.
+ &lt;/p&gt;
+ &lt;p&gt;
+Further guidelines for the use of XML in a networked context appear in RFC 3470, also known as IETF BCP 70, a document covering many aspects of designing and deploying an XML-based language.
+ &lt;/p&gt;
+ &lt;h2&gt;Key terminology&lt;/h2&gt;
+ &lt;p&gt;
+The material in this section is based on the XML Specification. This is not an exhaustive list of all the constructs that appear in XML; it provides an introduction to the key constructs most often encountered in day-to-day use.
+ &lt;/p&gt;
+ &lt;h3&gt;Character&lt;/h3&gt;
+&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+    An XML document is a string of characters. Almost every legal Unicode character may appear in an XML document.
+ &lt;/p&gt;
+ &lt;h3&gt;Processor and application&lt;/h3&gt;
+&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+    The processor analyzes the markup and passes structured information to an application. The specification places requirements on what an XML processor must do and not do, but the application is outside its scope. The processor (as the specification calls it) is often referred to colloquially as an XML parser.
+ &lt;/p&gt;
+&lt;h3&gt;Markup and content&lt;/h3&gt;
+&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+    The characters making up an XML document are divided into markup and content, which may be distinguished by the application of simple syntactic rules. Generally, strings that constitute markup either begin with the character &amp;lt; and end with a &amp;gt;, or they begin with the character &amp;amp; and end with a ;. Strings of characters that are not markup are content. However, in a CDATA section, the delimiters &amp;lt;![CDATA[ and ]]&amp;gt; are classified as markup, while the text between them is classified as content. In addition, whitespace before and after the outermost element is classified as markup.
+&lt;/p&gt;
+&lt;h3&gt;Tag&lt;/h3&gt;
+&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+    A tag is a markup construct that begins with &amp;lt; and ends with &amp;gt;. Tags come in three flavors:
+        start-tag, such as &amp;lt;section&amp;gt;;
+        end-tag, such as &amp;lt;/section&amp;gt;;
+        empty-element tag, such as &amp;lt;line-break /&amp;gt;.
+&lt;/p&gt;
+&lt;h3&gt;Element&lt;/h3&gt;
+&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+    An element is a logical document component that either begins with a start-tag and ends with a matching end-tag or consists only of an empty-element tag. The characters between the start-tag and end-tag, if any, are the element's content, and may contain markup, including other elements, which are called child elements. An example is &amp;lt;greeting&amp;gt;Hello, world!&amp;lt;/greeting&amp;gt;. Another is &amp;lt;line-break /&amp;gt;.
+&lt;/p&gt;
+&lt;h3&gt;Attribute&lt;/h3&gt;
+&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+    An attribute is a markup construct consisting of a name–value pair that exists within a start-tag or empty-element tag. An example is &amp;lt;img src="madonna.jpg" alt="Madonna" /&amp;gt;, where the name of the attributes are "src" and "alt" and their values are "madonna.jpg" and "Madonna" respectively. Another example is &amp;lt;step number="3"&amp;gt;Connect A to B.&amp;lt;/step&amp;gt;, where the name of the attribute is "number" and its value is "3". An XML attribute can only have a single value and each attribute can appear at most once on each element. In the common situation where a list of multiple values is desired, this must be done by encoding the list into a well-formed XML attribute with some format beyond what XML defines itself. Usually this is either a comma or semi-colon delimited list or, if the individual values are known not to contain spaces, a space-delimited list can be used. &amp;lt;div class="inner greeting-box"&amp;gt;Welcome!&amp;lt;/div&amp;gt;, where the attribute "class" has both the value "inner greeting-box" and also indicates the two CSS class names "inner" and "greeting-box".
+&lt;/p&gt;
+&lt;h3&gt;XML declaration&lt;/h3&gt;
+&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+    XML documents may begin with an XML declaration that describes some information about themselves. An example is &amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;. 
+&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+  <script type="text/javascript">
+   function toggle_visibility(e) {
+     var target = e.target
+       , pre = document.getElementById(target.id.substring(7))
+       , state = pre.getAttribute('class').indexOf('visible') == -1 ? 'hidden' : 'visible'
+     ;
+     if ( state === 'visible' ) {
+       pre.setAttribute('class','grey frame hidden');
+       target.textContent = '[ouvrir]';
+     }
+     else {
+       pre.setAttribute('class','grey frame visible');
+       target.textContent = '[fermer]';
+     }
+   }
+   document.getElementById("toggle_xml").addEventListener('click',toggle_visibility);
+   document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
+  </script>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161109
+        </span></div></td></tr></table></body></html>
