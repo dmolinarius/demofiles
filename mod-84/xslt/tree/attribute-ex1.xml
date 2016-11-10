@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<?xml-stylesheet type="text/xsl" href="attribute-ex1.xsl"?>
+
+<HTML>
+ <HEAD>
+  <TITLE>Un bon vieux document HTML</TITLE>
+  <LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css" />
+ </HEAD>
+ <BODY>
+  <H1>Exemple de document source</H1>
+  <HR/>
+  <H2>L'enfance de Zéphyrin.</H2>
+  <P>
+   C'est le 1er janvier, à minuit une seconde sexagésimale de temps moyen,
+   que le jeune Brioché poussa ses premiers vagissements. A son baptême,
+   il reçut les prénoms harmonieux, poétiques et distingués de Pancrace,
+   Eusèbe, Zéphyrin, ce dont il parut se soucier comme un cloporte d'un ophicléide.
+  </P>
+  <P>
+   Consultée à son sujet, une somnambule extralucide, phrénologue distinguée,
+   pédicure de nombreuses têtes couronnées, lui découvrit la bosse du mouvement
+   perpétuel. D'où elle conclut logiquement qu'il serait un grand voyageur ou un
+   grand mathématicien, à moins qu'il ne fût affligé de la danse de Saint-Guy.
+  </P>
+  <P>
+   Conformément à la prédiction de la somnambule, Zéphyrin montra, dès sa plus
+   tendre enfance, des dispositions étonnantes pour les sciences expérimentales.
+   Livré à lui-même, il s'ingéniait avec beaucoup de persévérance à résoudre
+   les problèmes les plus compliqués.
+  </P>
+  <P><B>Extrait de : </B><I>l'idée fixe du Savant Cosinus.</I></P>
+ </BODY>
+</HTML>

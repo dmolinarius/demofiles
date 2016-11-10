@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSLT -
+     Document XML</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSLT</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    .hidden { display: none }
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+
+  <h2>Document XML</h2>
+
+  
+  <div id="toggle_xml" class="toggle">[fermer]</div>
+  <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+<font color="#FF0000">&lt;?xml-stylesheet type="text/xsl" href="pi-ex1.xsl"?&gt;</font>
+&lt;<font color="#0000cc">exemple</font>&gt;&lt;/<font color="#0000cc">exemple</font>&gt;</pre>
+
+  <h2>Feuille de style XSLT</h2>
+  <div id="toggle_xsl" class="toggle">[fermer]</div>
+  <pre class="grey frame visible" id="xsl">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>"&gt;
+
+ &lt;<font color="#0000cc">xsl:output</font> <font color="#009900">method</font>="<font color="#990000">xml</font>" <font color="#009900">encoding</font>="<font color="#990000">utf-8</font>"&gt;&lt;/<font color="#0000cc">xsl:output</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">/</font>"&gt;
+  &lt;<font color="#0000cc">xsl:processing-instruction</font> <font color="#009900">name</font>="<font color="#990000">xml-stylesheet</font>"&gt;
+   &lt;<font color="#0000cc">xsl:text</font>&gt;<b>href="pi-ex1-xsl.xsl" type="text/xsl"</b>&lt;/<font color="#0000cc">xsl:text</font>&gt;
+  &lt;/<font color="#0000cc">xsl:processing-instruction</font>&gt;
+  <b>&lt;exemple&gt;</b><b>&lt;/exemple&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+&lt;/<font color="#0000cc">xsl:stylesheet</font>&gt;</pre>
+
+  <h2>Résultat de la transformation</h2>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+<font color="#FF0000">&lt;?xml-stylesheet href="pi-ex1-xsl.xsl" type="text/xsl"?&gt;</font>
+&lt;<font color="#0000cc">exemple</font>&gt;&lt;/<font color="#0000cc">exemple</font>&gt; </pre>
+
+  <script type="text/javascript">
+   function toggle_visibility(e) {
+     var target = e.target
+       , pre = document.getElementById(target.id.substring(7))
+       , state = pre.getAttribute('class').indexOf('visible') == -1 ? 'hidden' : 'visible'
+     ;
+     if ( state === 'visible' ) {
+       pre.setAttribute('class','grey frame hidden');
+       target.textContent = '[ouvrir]';
+     }
+     else {
+       pre.setAttribute('class','grey frame visible');
+       target.textContent = '[fermer]';
+     }
+   }
+   document.getElementById("toggle_xml").addEventListener('click',toggle_visibility);
+   document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
+  </script>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161110
+        </span></div></td></tr></table></body></html>
