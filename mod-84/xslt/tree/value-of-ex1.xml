@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<?xml-stylesheet type="text/xsl" href="value-of-ex1.xsl"?>
+
+<exemple>
+ Ceci est du texte avec deux mots <b>en gras</b> !
+</exemple>
