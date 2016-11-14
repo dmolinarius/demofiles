@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<?xml-stylesheet type="text/xsl" href="copy-of-ex1.xsl"?>
+
+<exemple>
+ Ceci est du texte avec deux mots <b>en gras</b>, et <i>d'autres en italiques</i>. 
+ Il contient également une table compatible HTML :
+ <table align="center" width="80%" border="2">
+  <tr><th>Prénom</th><th>Nom</th></tr>
+  <tr align="center"><td>Raymond</td><td>Deubaze</td></tr>
+  <tr align="center"><td>Ginette</td><td>Ringard</td></tr>
+  <tr align="center"><td>Elsa</td><td>Plique</td></tr>
+ </table>
+</exemple>

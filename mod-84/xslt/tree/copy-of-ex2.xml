@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<?xml-stylesheet type="text/xsl" href="copy-of-ex2.xsl"?>
+
+<exemple>
+ <bloc>
+ Ceci est du texte <b>séparé en blocs</b>.
+ </bloc>
+ <bloc>
+  Par souci pédagogique plus qu'esthétique, les blocs seront séparés par un motif répétitif généré par la feuille de style.
+ </bloc>
+ <bloc>
+  Voici le mot de la fin.
+ </bloc>
+</exemple>

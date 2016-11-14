@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSLT -
+     Document XML</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSLT</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    .hidden { display: none }
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+
+  <h2>Document XML</h2>
+
+  
+  <div id="toggle_xml" class="toggle">[fermer]</div>
+  <div class="toggle">[<a href="copy-of-ex2.xml">visualiser</a>]</div>
+  <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+<font color="#FF0000">&lt;?xml-stylesheet type="text/xsl" href="copy-of-ex2.xsl"?&gt;</font>
+&lt;<font color="#0000cc">exemple</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+ Ceci est du texte </b>&lt;<font color="#0000cc">b</font>&gt;<b>s</b><b>éparé en blocs</b>&lt;/<font color="#0000cc">b</font>&gt;<b>.
+ </b>&lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+  Par souci p</b><b>édagogique plus qu'esthétique, les blocs seront séparés par un motif répétitif généré par la feuille de style.
+ </b>&lt;/<font color="#0000cc">bloc</font>&gt;
+ &lt;<font color="#0000cc">bloc</font>&gt;<b>
+  Voici le mot de la fin.
+ </b>&lt;/<font color="#0000cc">bloc</font>&gt;
+&lt;/<font color="#0000cc">exemple</font>&gt;</pre>
+
+  <h2>Feuille de style XSLT</h2>
+  <div id="toggle_xsl" class="toggle">[fermer]</div>
+  <pre class="grey frame visible" id="xsl">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>"&gt;
+
+ &lt;<font color="#0000cc">xsl:output</font> <font color="#009900">method</font>="<font color="#990000">html</font>" <font color="#009900">encoding</font>="<font color="#990000">utf-8</font>" <font color="#009900">doctype-public</font>="<font color="#990000">-//W3C//DTD HTML 4.01//EN</font>" <font color="#009900">doctype-system</font>="<font color="#990000">http://www.w3.org/TR/html4/strict.dtd</font>"&gt;&lt;/<font color="#0000cc">xsl:output</font>&gt;
+
+ &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">/</font>"&gt;
+  <b>&lt;html&gt;</b>
+   <b>&lt;head&gt;</b>
+    <b>&lt;title&gt;</b><b>Les paragraphes se s</b><b>éparent</b><b>&lt;/title&gt;</b>
+    <b>&lt;link rel="stylesheet" href="../../style/s5.css" type="text/css"&gt;</b><b>&lt;/link&gt;</b>
+   <b>&lt;/head&gt;</b>
+   <b>&lt;body&gt;</b>
+    <b>&lt;h1&gt;</b><b>Exercice de style</b><b>&lt;/h1&gt;</b>
+    <b>&lt;hr&gt;</b><b>&lt;/hr&gt;</b>
+
+    <b>&lt;p&gt;</b><b>Le texte ci-dessous provient du document source :</b><b>&lt;/p&gt;</b>
+
+    &lt;<font color="#0000cc">xsl:apply-templates</font> <font color="#009900">select</font>="<font color="#990000">//bloc</font>"&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+
+
+    <b>&lt;hr class="bottom"&gt;</b><b>&lt;/hr&gt;</b>
+    <b>&lt;table width="100%"&gt;</b>
+     <b>&lt;tr&gt;</b>
+      <b>&lt;td align="left"&gt;</b>
+       <b>&lt;address&gt;</b><b>Copyright : Daniel Muller</b><b>&lt;/address&gt;</b>
+      <b>&lt;/td&gt;</b>
+      <b>&lt;td align="right"&gt;</b>
+       <b>&lt;div class="date"&gt;</b><b>161113</b><b>&lt;/div&gt;</b>
+      <b>&lt;/td&gt;</b>
+     <b>&lt;/tr&gt;</b>
+    <b>&lt;/table&gt;</b>
+   <b>&lt;/body&gt;</b>
+  <b>&lt;/html&gt;</b>
+ &lt;/<font color="#0000cc">xsl:template</font>&gt;
+ 
+&lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">b|i|tt|code</font>"&gt;
+ &lt;<font color="#0000cc">xsl:copy</font>&gt;
+  &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+ &lt;/<font color="#0000cc">xsl:copy</font>&gt;
+&lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+&lt;<font color="#0000cc">xsl:variable</font> <font color="#009900">name</font>="<font color="#990000">separ</font>"&gt;
+ <b>&lt;hr align="center" width="25%"&gt;</b><b>&lt;/hr&gt;</b>
+ <b>&lt;hr align="center" width="50%"&gt;</b><b>&lt;/hr&gt;</b>
+ <b>&lt;div align="center"&gt;</b>
+  <b>&lt;font family="fixed" color="#006600"&gt;</b>
+   <b>&lt;b&gt;</b><b>- - - + + + 0 0 0 | 0 0 0+ + + - - -</b><b>&lt;/b&gt;</b>
+  <b>&lt;/font&gt;</b>
+ <b>&lt;/div&gt;</b>
+ <b>&lt;hr align="center" width="50%"&gt;</b><b>&lt;/hr&gt;</b>
+ <b>&lt;hr align="center" width="25%" style="margin-bottom:2.66em"&gt;</b><b>&lt;/hr&gt;</b>
+&lt;/<font color="#0000cc">xsl:variable</font>&gt;
+
+&lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">bloc[1]</font>"&gt;
+ <b>&lt;p&gt;</b>
+  &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+ <b>&lt;/p&gt;</b>
+&lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+&lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">bloc[position()&gt;1]</font>"&gt;
+ &lt;<font color="#0000cc">xsl:copy-of</font> <font color="#009900">select</font>="<font color="#990000">$separ</font>"&gt;&lt;/<font color="#0000cc">xsl:copy-of</font>&gt;
+ <b>&lt;p&gt;</b>
+  &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
+ <b>&lt;/p&gt;</b>
+&lt;/<font color="#0000cc">xsl:template</font>&gt;
+
+&lt;/<font color="#0000cc">xsl:stylesheet</font>&gt;</pre>
+
+  <h2>Résultat de la transformation</h2>
+  <div class="toggle">[<a href="copy-of-ex2-result.html">visualiser</a>]</div>
+  <pre class="grey frame">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+&lt;title&gt;Les paragraphes se séparent&lt;/title&gt;
+&lt;link rel="stylesheet" href="../../style/s5.css" type="text/css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Exercice de style&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;Le texte ci-dessous provient du document source :&lt;/p&gt;
+&lt;p&gt;
+ Ceci est du texte &lt;b&gt;séparé en blocs&lt;/b&gt;.
+ &lt;/p&gt;
+&lt;hr align="center" width="25%"&gt;
+&lt;hr align="center" width="50%"&gt;
+&lt;div align="center"&gt;&lt;font family="fixed" color="#006600"&gt;&lt;b&gt;- - - + + + 0 0 0 | 0 0 0+ + + - - -&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+&lt;hr align="center" width="50%"&gt;
+&lt;hr align="center" width="25%" style="margin-bottom:2.66em"&gt;
+&lt;p&gt;
+  Par souci pédagogique plus qu'esthétique, les blocs seront séparés par un motif répétitif généré par la feuille de style.
+ &lt;/p&gt;
+&lt;hr align="center" width="25%"&gt;
+&lt;hr align="center" width="50%"&gt;
+&lt;div align="center"&gt;&lt;font family="fixed" color="#006600"&gt;&lt;b&gt;- - - + + + 0 0 0 | 0 0 0+ + + - - -&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;
+&lt;hr align="center" width="50%"&gt;
+&lt;hr align="center" width="25%" style="margin-bottom:2.66em"&gt;
+&lt;p&gt;
+  Voici le mot de la fin.
+ &lt;/p&gt;
+&lt;hr class="bottom"&gt;
+&lt;table width="100%"&gt;&lt;tr&gt;
+&lt;td align="left"&gt;&lt;address&gt;Copyright : Daniel Muller&lt;/address&gt;&lt;/td&gt;
+&lt;td align="right"&gt;&lt;div class="date"&gt;161113&lt;/div&gt;&lt;/td&gt;
+&lt;/tr&gt;&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+
+  <script type="text/javascript">
+   function toggle_visibility(e) {
+     var target = e.target
+       , pre = document.getElementById(target.id.substring(7))
+       , state = pre.getAttribute('class').indexOf('visible') == -1 ? 'hidden' : 'visible'
+     ;
+     if ( state === 'visible' ) {
+       pre.setAttribute('class','grey frame hidden');
+       target.textContent = '[ouvrir]';
+     }
+     else {
+       pre.setAttribute('class','grey frame visible');
+       target.textContent = '[fermer]';
+     }
+   }
+   document.getElementById("toggle_xml").addEventListener('click',toggle_visibility);
+   document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
+  </script>
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161110
+        </span></div></td></tr></table></body></html>
