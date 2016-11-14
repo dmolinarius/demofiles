@@ -1,0 +1,13 @@
+  body { background-color: #EAF0EA; color: #006000; font-family: sans-serif; }
+
+  table { width: 100%; border: none; }
+  td, th { padding: 0.5em; text-align: center; border: 1px solid; box-shadow: 1px 1px 3px #040; }
+  th { background-color: #006000; color: #EAF0EA; border: none; }
+  address, #date { font-style: italic; font-size: 70%; }
+
+h2 {
+ text-shadow: 1px 1px 1px #050, -2px -2px 0px white;
+ letter-spacing: 0.1em;
+ border-bottom: 1px solid #080;
+ display: inline-block;
+}
