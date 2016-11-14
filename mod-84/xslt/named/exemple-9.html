@@ -148,7 +148,7 @@ h3 { margin-bottom: 0; }
  <b><font color="#777777">&lt;!-- traitement des éléments paragraphe en mode sommaire --&gt;</font></b>
  &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">paragraphe</font>" <font color="#009900">mode</font>="<font color="#990000">sommaire</font>"&gt;
   <b>&lt;div&gt;</b>
-   &lt;<font color="#0000cc">xsl:number</font>&gt;&lt;/<font color="#0000cc">xsl:number</font>&gt; 
+   &lt;<font color="#0000cc">xsl:number</font>&gt;&lt;/<font color="#0000cc">xsl:number</font>&gt;<b> </b>
    &lt;<font color="#0000cc">xsl:call-template</font> <font color="#009900">name</font>="<font color="#990000">lien</font>"&gt;
     &lt;<font color="#0000cc">xsl:with-param</font> <font color="#009900">name</font>="<font color="#990000">nom</font>" <font color="#009900">select</font>="<font color="#990000">concat('paragraphe-',count(preceding::paragraphe[@titre])+1)</font>"&gt;&lt;/<font color="#0000cc">xsl:with-param</font>&gt;
    &lt;/<font color="#0000cc">xsl:call-template</font>&gt;
@@ -163,7 +163,7 @@ h3 { margin-bottom: 0; }
   &lt;<font color="#0000cc">xsl:if</font> <font color="#009900">test</font>="<font color="#990000">@titre</font>"&gt;
    <b>&lt;div&gt;</b>
     &lt;<font color="#0000cc">xsl:number</font> <font color="#009900">count</font>="<font color="#990000">paragraphe</font>"&gt;&lt;/<font color="#0000cc">xsl:number</font>&gt;<b>.
-    </b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">count(preceding-sibling::bloc[@titre])+1</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt; 
+    </b>&lt;<font color="#0000cc">xsl:value-of</font> <font color="#009900">select</font>="<font color="#990000">count(preceding-sibling::bloc[@titre])+1</font>"&gt;&lt;/<font color="#0000cc">xsl:value-of</font>&gt;<b> </b>
     &lt;<font color="#0000cc">xsl:call-template</font> <font color="#009900">name</font>="<font color="#990000">lien</font>"&gt;
      &lt;<font color="#0000cc">xsl:with-param</font> <font color="#009900">name</font>="<font color="#990000">nom</font>" <font color="#009900">select</font>="<font color="#990000">concat('bloc-',count(preceding::bloc[@titre])+1)</font>"&gt;&lt;/<font color="#0000cc">xsl:with-param</font>&gt;
     &lt;/<font color="#0000cc">xsl:call-template</font>&gt;
@@ -187,138 +187,138 @@ h3 { margin-bottom: 0; }
 
   <h2>Résultat de la transformation</h2>
   <div class="toggle">[<a href="exemple-9-result.html">visualiser</a>]</div>
-  <pre class="grey frame">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
-&lt;style type="text/css"&gt;
+  <pre class="grey frame"><b></b>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;<b>
+</b>&lt;<span style="color:#00c">html</span>&gt;<b>
+</b>&lt;<span style="color:#00c">head</span>&gt;<b>
+</b>&lt;<span style="color:#00c">meta </span><span style="color:#090">http-equiv</span>="<span style="color:#900">Content-Type</span>"<span style="color:#090"> content</span>="<span style="color:#900">text/html; charset=utf-8</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">style </span><span style="color:#090">type</span>="<span style="color:#900">text/css</span>"&gt;<b>
 body { font-family: sans-serif; }
 h1,h2 { margin-bottom: 0; border-bottom: 1px solid #888; font-family: serif;}
 h3 { margin-bottom: 0; }
 .sommaire { background-color: #ddd; display: inline-block; padding: 1em; border: 1px solid #888; line-height: 1.5em;}
 .blocs { margin-left: 2em; }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h1&gt;XML&lt;/h1&gt;
-&lt;div&gt;&lt;em&gt;From Wikipedia, the free encyclopedia&lt;/em&gt;&lt;/div&gt;
-&lt;p&gt;
+    </b>&lt;/<span style="color:#00c">style&gt;</span><b>
+</b>&lt;/<span style="color:#00c">head&gt;</span><b>
+</b>&lt;<span style="color:#00c">body</span>&gt;<b>
+</b>&lt;<span style="color:#00c">h1</span>&gt;<b>XML</b>&lt;/<span style="color:#00c">h1&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b></b>&lt;<span style="color:#00c">em</span>&gt;<b>From Wikipedia, the free encyclopedia</b>&lt;/<span style="color:#00c">em&gt;</span><b></b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
 In computing, Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. The W3C's XML 1.0 Specification and several other related specifications, —all of them free open standards— define XML.
- &lt;/p&gt;
-&lt;p&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
 The design goals of XML emphasize simplicity, generality, and usability across the Internet. It is a textual data format with strong support via Unicode for different human languages. Although the design of XML focuses on documents, the language is widely used for the representation of arbitrary data structures such as those used in web services.
- &lt;/p&gt;
-&lt;p&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
 Several schema systems exist to aid in the definition of XML-based languages, while programmers have developed many application programming interfaces (APIs) to aid the processing of XML data.
- &lt;/p&gt;
-&lt;div class="sommaire"&gt;
-&lt;div&gt;1 
-   &lt;a href="#paragraphe-1"&gt;Applications of XML&lt;/a&gt;
-&lt;/div&gt;
-&lt;div class="blocs"&gt;&lt;/div&gt;
-&lt;div&gt;2 
-   &lt;a href="#paragraphe-2"&gt;Key terminology&lt;/a&gt;
-&lt;/div&gt;
-&lt;div class="blocs"&gt;
-&lt;div&gt;2.
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">div </span><span style="color:#090">class</span>="<span style="color:#900">sommaire</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>1 
+   </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#paragraphe-1</span>"&gt;<b>Applications of XML</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div </span><span style="color:#090">class</span>="<span style="color:#900">blocs</span>"&gt;<b></b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2 
+   </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#paragraphe-2</span>"&gt;<b>Key terminology</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div </span><span style="color:#090">class</span>="<span style="color:#900">blocs</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2.
     1 
-    &lt;a href="#bloc-1"&gt;Character&lt;/a&gt;
-&lt;/div&gt;
-&lt;div&gt;2.
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-1</span>"&gt;<b>Character</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2.
     2 
-    &lt;a href="#bloc-2"&gt;Processor and application&lt;/a&gt;
-&lt;/div&gt;
-&lt;div&gt;2.
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-2</span>"&gt;<b>Processor and application</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2.
     3 
-    &lt;a href="#bloc-3"&gt;Markup and content&lt;/a&gt;
-&lt;/div&gt;
-&lt;div&gt;2.
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-3</span>"&gt;<b>Markup and content</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2.
     4 
-    &lt;a href="#bloc-4"&gt;Tag&lt;/a&gt;
-&lt;/div&gt;
-&lt;div&gt;2.
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-4</span>"&gt;<b>Tag</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2.
     5 
-    &lt;a href="#bloc-5"&gt;Element&lt;/a&gt;
-&lt;/div&gt;
-&lt;div&gt;2.
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-5</span>"&gt;<b>Element</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2.
     6 
-    &lt;a href="#bloc-6"&gt;Attribute&lt;/a&gt;
-&lt;/div&gt;
-&lt;div&gt;2.
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-6</span>"&gt;<b>Attribute</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>2.
     7 
-    &lt;a href="#bloc-7"&gt;XML declaration&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;3 
-   &lt;a href="#paragraphe-3"&gt;Characters and escaping&lt;/a&gt;
-&lt;/div&gt;
-&lt;div class="blocs"&gt;&lt;div&gt;3.
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-7</span>"&gt;<b>XML declaration</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div</span>&gt;<b>3 
+   </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#paragraphe-3</span>"&gt;<b>Characters and escaping</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">div </span><span style="color:#090">class</span>="<span style="color:#900">blocs</span>"&gt;<b></b>&lt;<span style="color:#00c">div</span>&gt;<b>3.
     1 
-    &lt;a href="#bloc-8"&gt;Encoding detection&lt;/a&gt;
-&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2&gt;&lt;span id="paragraphe-1"&gt;Applications of XML&lt;/span&gt;&lt;/h2&gt;
- &lt;p&gt;
+    </b>&lt;<span style="color:#00c">a </span><span style="color:#090">href</span>="<span style="color:#900">#bloc-8</span>"&gt;<b>Encoding detection</b>&lt;/<span style="color:#00c">a&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b></b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;/<span style="color:#00c">div&gt;</span><b>
+</b>&lt;<span style="color:#00c">h2</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">paragraphe-1</span>"&gt;<b>Applications of XML</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h2&gt;</span><b>
+ </b>&lt;<span style="color:#00c">p</span>&gt;<b>
 As of 2009, 100 document formats using XML syntax had been developed, including RSS, Atom, SOAP, and XHTML. XML-based formats became the default for many office-productivity tools, including Microsoft Office (Office Open XML), OpenOffice.org and LibreOffice (OpenDocument), and Apple's iWork. XML has also provided the base language for communication protocols such as XMPP. Applications for the Microsoft .NET Framework use XML files for configuration. Apple has an implementation of a registry based on XML.
- &lt;/p&gt;
- &lt;p&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+ </b>&lt;<span style="color:#00c">p</span>&gt;<b>
 XML has come into common use for the interchange of data over the Internet. IETF RFC 7303 gives rules for the construction of Internet Media Types for use when sending XML. It also defines the media types application/xml and text/xml, which say only that the data is in XML, and nothing about its semantics. The use of text/xml has been criticized as a potential source of encoding problems and it has been suggested that it should be deprecated.
- &lt;/p&gt;
- &lt;p&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+ </b>&lt;<span style="color:#00c">p</span>&gt;<b>
 RFC 7303 also recommends that XML-based languages be given media types ending in +xml; for example image/svg+xml for SVG.
- &lt;/p&gt;
- &lt;p&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+ </b>&lt;<span style="color:#00c">p</span>&gt;<b>
 Further guidelines for the use of XML in a networked context appear in RFC 3470, also known as IETF BCP 70, a document covering many aspects of designing and deploying an XML-based language.
- &lt;/p&gt;
- &lt;h2&gt;&lt;span id="paragraphe-2"&gt;Key terminology&lt;/span&gt;&lt;/h2&gt;
- &lt;p&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+ </b>&lt;<span style="color:#00c">h2</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">paragraphe-2</span>"&gt;<b>Key terminology</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h2&gt;</span><b>
+ </b>&lt;<span style="color:#00c">p</span>&gt;<b>
 The material in this section is based on the XML Specification. This is not an exhaustive list of all the constructs that appear in XML; it provides an introduction to the key constructs most often encountered in day-to-day use.
- &lt;/p&gt;
- &lt;h3&gt;&lt;span id="bloc-1"&gt;Character&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+ </b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-1</span>"&gt;<b>Character</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
     An XML document is a string of characters. Almost every legal Unicode character may appear in an XML document.
- &lt;/p&gt;
- &lt;h3&gt;&lt;span id="bloc-2"&gt;Processor and application&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+ </b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-2</span>"&gt;<b>Processor and application</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
     The processor analyzes the markup and passes structured information to an application. The specification places requirements on what an XML processor must do and not do, but the application is outside its scope. The processor (as the specification calls it) is often referred to colloquially as an XML parser.
- &lt;/p&gt;
-&lt;h3&gt;&lt;span id="bloc-3"&gt;Markup and content&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
-    The characters making up an XML document are divided into markup and content, which may be distinguished by the application of simple syntactic rules. Generally, strings that constitute markup either begin with the character &amp;lt; and end with a &amp;gt;, or they begin with the character &amp;amp; and end with a ;. Strings of characters that are not markup are content. However, in a CDATA section, the delimiters &amp;lt;![CDATA[ and ]]&amp;gt; are classified as markup, while the text between them is classified as content. In addition, whitespace before and after the outermost element is classified as markup.
-&lt;/p&gt;
-&lt;h3&gt;&lt;span id="bloc-4"&gt;Tag&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
-    A tag is a markup construct that begins with &amp;lt; and ends with &amp;gt;. Tags come in three flavors:
-        start-tag, such as &amp;lt;section&amp;gt;;
-        end-tag, such as &amp;lt;/section&amp;gt;;
-        empty-element tag, such as &amp;lt;line-break /&amp;gt;.
-&lt;/p&gt;
-&lt;h3&gt;&lt;span id="bloc-5"&gt;Element&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
-    An element is a logical document component that either begins with a start-tag and ends with a matching end-tag or consists only of an empty-element tag. The characters between the start-tag and end-tag, if any, are the element's content, and may contain markup, including other elements, which are called child elements. An example is &amp;lt;greeting&amp;gt;Hello, world!&amp;lt;/greeting&amp;gt;. Another is &amp;lt;line-break /&amp;gt;.
-&lt;/p&gt;
-&lt;h3&gt;&lt;span id="bloc-6"&gt;Attribute&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
-    An attribute is a markup construct consisting of a name–value pair that exists within a start-tag or empty-element tag. An example is &amp;lt;img src="madonna.jpg" alt="Madonna" /&amp;gt;, where the name of the attributes are "src" and "alt" and their values are "madonna.jpg" and "Madonna" respectively. Another example is &amp;lt;step number="3"&amp;gt;Connect A to B.&amp;lt;/step&amp;gt;, where the name of the attribute is "number" and its value is "3". An XML attribute can only have a single value and each attribute can appear at most once on each element. In the common situation where a list of multiple values is desired, this must be done by encoding the list into a well-formed XML attribute with some format beyond what XML defines itself. Usually this is either a comma or semi-colon delimited list or, if the individual values are known not to contain spaces, a space-delimited list can be used. &amp;lt;div class="inner greeting-box"&amp;gt;Welcome!&amp;lt;/div&amp;gt;, where the attribute "class" has both the value "inner greeting-box" and also indicates the two CSS class names "inner" and "greeting-box".
-&lt;/p&gt;
-&lt;h3&gt;&lt;span id="bloc-7"&gt;XML declaration&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
-    XML documents may begin with an XML declaration that describes some information about themselves. An example is &amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;. 
-&lt;/p&gt;
-&lt;h2&gt;&lt;span id="paragraphe-3"&gt;Characters and escaping&lt;/span&gt;&lt;/h2&gt;
-&lt;p&gt;
+ </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-3</span>"&gt;<b>Markup and content</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
+    The characters making up an XML document are divided into markup and content, which may be distinguished by the application of simple syntactic rules. Generally, strings that constitute markup either begin with the character <span style="color:#909; font-weight:normal;">&amp;lt;</span> and end with a <span style="color:#909; font-weight:normal;">&amp;gt;</span>, or they begin with the character <span style="color:#909; font-weight:normal;">&amp;amp;</span> and end with a ;. Strings of characters that are not markup are content. However, in a CDATA section, the delimiters <span style="color:#909; font-weight:normal;">&amp;lt;</span>![CDATA[ and ]]<span style="color:#909; font-weight:normal;">&amp;gt;</span> are classified as markup, while the text between them is classified as content. In addition, whitespace before and after the outermost element is classified as markup.
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-4</span>"&gt;<b>Tag</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
+    A tag is a markup construct that begins with <span style="color:#909; font-weight:normal;">&amp;lt;</span> and ends with <span style="color:#909; font-weight:normal;">&amp;gt;</span>. Tags come in three flavors:
+        start-tag, such as <span style="color:#909; font-weight:normal;">&amp;lt;</span>section<span style="color:#909; font-weight:normal;">&amp;gt;</span>;
+        end-tag, such as <span style="color:#909; font-weight:normal;">&amp;lt;</span>/section<span style="color:#909; font-weight:normal;">&amp;gt;</span>;
+        empty-element tag, such as <span style="color:#909; font-weight:normal;">&amp;lt;</span>line-break /<span style="color:#909; font-weight:normal;">&amp;gt;</span>.
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-5</span>"&gt;<b>Element</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
+    An element is a logical document component that either begins with a start-tag and ends with a matching end-tag or consists only of an empty-element tag. The characters between the start-tag and end-tag, if any, are the element's content, and may contain markup, including other elements, which are called child elements. An example is <span style="color:#909; font-weight:normal;">&amp;lt;</span>greeting<span style="color:#909; font-weight:normal;">&amp;gt;</span>Hello, world!<span style="color:#909; font-weight:normal;">&amp;lt;</span>/greeting<span style="color:#909; font-weight:normal;">&amp;gt;</span>. Another is <span style="color:#909; font-weight:normal;">&amp;lt;</span>line-break /<span style="color:#909; font-weight:normal;">&amp;gt;</span>.
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-6</span>"&gt;<b>Attribute</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
+    An attribute is a markup construct consisting of a name–value pair that exists within a start-tag or empty-element tag. An example is <span style="color:#909; font-weight:normal;">&amp;lt;</span>img src="madonna.jpg" alt="Madonna" /<span style="color:#909; font-weight:normal;">&amp;gt;</span>, where the name of the attributes are "src" and "alt" and their values are "madonna.jpg" and "Madonna" respectively. Another example is <span style="color:#909; font-weight:normal;">&amp;lt;</span>step number="3"<span style="color:#909; font-weight:normal;">&amp;gt;</span>Connect A to B.<span style="color:#909; font-weight:normal;">&amp;lt;</span>/step<span style="color:#909; font-weight:normal;">&amp;gt;</span>, where the name of the attribute is "number" and its value is "3". An XML attribute can only have a single value and each attribute can appear at most once on each element. In the common situation where a list of multiple values is desired, this must be done by encoding the list into a well-formed XML attribute with some format beyond what XML defines itself. Usually this is either a comma or semi-colon delimited list or, if the individual values are known not to contain spaces, a space-delimited list can be used. <span style="color:#909; font-weight:normal;">&amp;lt;</span>div class="inner greeting-box"<span style="color:#909; font-weight:normal;">&amp;gt;</span>Welcome!<span style="color:#909; font-weight:normal;">&amp;lt;</span>/div<span style="color:#909; font-weight:normal;">&amp;gt;</span>, where the attribute "class" has both the value "inner greeting-box" and also indicates the two CSS class names "inner" and "greeting-box".
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-7</span>"&gt;<b>XML declaration</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
+    XML documents may begin with an XML declaration that describes some information about themselves. An example is <span style="color:#909; font-weight:normal;">&amp;lt;</span>?xml version="1.0" encoding="UTF-8"?<span style="color:#909; font-weight:normal;">&amp;gt;</span>. 
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h2</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">paragraphe-3</span>"&gt;<b>Characters and escaping</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h2&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
 XML documents consist entirely of characters from the Unicode repertoire. Except for a small number of specifically excluded control characters, any character defined by Unicode may appear within the content of an XML document.
-&lt;/p&gt;
-&lt;p&gt;
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
 XML includes facilities for identifying the encoding of the Unicode characters that make up the document, and for expressing characters that, for one reason or another, cannot be used directly.
-&lt;/p&gt;
-&lt;h3&gt;&lt;span id="bloc-8"&gt;Encoding detection&lt;/span&gt;&lt;/h3&gt;
-&lt;p style="margin-top:0; margin-left: 1.5em;"&gt;
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h3</span>&gt;<b></b>&lt;<span style="color:#00c">span </span><span style="color:#090">id</span>="<span style="color:#900">bloc-8</span>"&gt;<b>Encoding detection</b>&lt;/<span style="color:#00c">span&gt;</span><b></b>&lt;/<span style="color:#00c">h3&gt;</span><b>
+</b>&lt;<span style="color:#00c">p </span><span style="color:#090">style</span>="<span style="color:#900">margin-top:0; margin-left: 1.5em;</span>"&gt;<b>
 The Unicode character set can be encoded into bytes for storage or transmission in a variety of different ways, called "encodings". Unicode itself defines encodings that cover the entire repertoire; well-known ones include UTF-8 and UTF-16.[12] There are many other text encodings that predate Unicode, such as ASCII and ISO/IEC 8859; their character repertoires in almost every case are subsets of the Unicode character set.
-&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
- </pre>
+</b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;/<span style="color:#00c">body&gt;</span><b>
+</b>&lt;/<span style="color:#00c">html&gt;</span><b>
+</b> </pre>
 
   <script type="text/javascript">
    function toggle_visibility(e) {
@@ -339,5 +339,5 @@ The Unicode character set can be encoded into bytes for storage or transmission 
    document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
   </script>
 <hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
-         161110
+         161114
         </span></div></td></tr></table></body></html>

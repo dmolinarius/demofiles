@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSLT -
-     Document XML</title><link rel="stylesheet" href="/~muller/cours/style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSLT</h1><hr />
+     Document XML</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSLT</h1><hr />
  <style scoped="scoped">
     h2 { float: left; clear: left; }
     pre { clear: left; overflow:auto}
@@ -14,7 +14,7 @@
 
   
   <div id="toggle_xml" class="toggle">[fermer]</div>
-  <div class="toggle">[<a href="http://localhost/~muller/cours/xslt/tree/comment-ex1.xml">visualiser</a>]</div>
+  <div class="toggle">[<a href="comment-ex1.xml">visualiser</a>]</div>
   <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
 <font color="#FF0000">&lt;?xml-stylesheet type="text/xsl" href="comment-ex1.xsl"?&gt;</font>
 &lt;<font color="#0000cc">exemple</font>&gt;&lt;/<font color="#0000cc">exemple</font>&gt;</pre>
@@ -35,7 +35,7 @@
    <b>&lt;body&gt;</b>
 
     <b><font color="#777777">&lt;!-- Voici comment inclure un commentaire dans le document généré --&gt;</font></b>
-    &lt;<font color="#0000cc">xsl:comment</font>&gt;<b> Ce document a </b><b>été généré par la feuille de style comment-ex1.xsl </b>&lt;/<font color="#0000cc">xsl:comment</font>&gt; 
+    &lt;<font color="#0000cc">xsl:comment</font>&gt;<b> Ce document a </b><b>été généré par la feuille de style comment-ex1.xsl </b>&lt;/<font color="#0000cc">xsl:comment</font>&gt;<b> </b>
 
     <b>&lt;h1&gt;</b><b>Exercice de style</b><b>&lt;/h1&gt;</b>
     <b>&lt;hr&gt;</b><b>&lt;/hr&gt;</b>
@@ -64,34 +64,34 @@
 &lt;/<font color="#0000cc">xsl:stylesheet</font>&gt;</pre>
 
   <h2>Résultat de la transformation</h2>
-  <div class="toggle">[<a href="http://localhost/xslt/~muller/cours/xslt/tree/comment-ex1.xml?XSL=/~muller/cours/xslt/tree/comment-ex1.xsl">visualiser</a>]</div>
-  <pre class="grey frame">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
-&lt;title&gt;Une feuille de style mono-maniaque&lt;/title&gt;
-&lt;link rel="stylesheet" href="../../style/s5.css" type="text/css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;!-- Ce document a été généré par la feuille de style comment-ex1.xsl --&gt; 
+  <div class="toggle">[<a href="comment-ex1-result.html">visualiser</a>]</div>
+  <pre class="grey frame"><b></b>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;<b>
+</b>&lt;<span style="color:#00c">html</span>&gt;<b>
+</b>&lt;<span style="color:#00c">head</span>&gt;<b>
+</b>&lt;<span style="color:#00c">meta </span><span style="color:#090">http-equiv</span>="<span style="color:#900">Content-Type</span>"<span style="color:#090"> content</span>="<span style="color:#900">text/html; charset=utf-8</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">title</span>&gt;<b>Une feuille de style mono-maniaque</b>&lt;/<span style="color:#00c">title&gt;</span><b>
+</b>&lt;<span style="color:#00c">link </span><span style="color:#090">rel</span>="<span style="color:#900">stylesheet</span>"<span style="color:#090"> href</span>="<span style="color:#900">../../style/s5.css</span>"<span style="color:#090"> type</span>="<span style="color:#900">text/css</span>"&gt;<b>
+</b>&lt;/<span style="color:#00c">head&gt;</span><b>
+</b>&lt;<span style="color:#00c">body</span>&gt;<b>
+</b><b style="color:#777">&lt;!-- Ce document a été généré par la feuille de style comment-ex1.xsl --&gt;</b><b> 
 
-    &lt;h1&gt;Exercice de style&lt;/h1&gt;
-&lt;hr&gt;
-&lt;p&gt;
+    </b>&lt;<span style="color:#00c">h1</span>&gt;<b>Exercice de style</b>&lt;/<span style="color:#00c">h1&gt;</span><b>
+</b>&lt;<span style="color:#00c">hr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
      Ce document a été généré par une feuille de style mono-maniaque.
-    &lt;/p&gt;
-&lt;p&gt;
+    </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
      En effet, le résultat observé sera le même quel que soit le document
      auquel elle aura été appliquée...
-    &lt;/p&gt;
-&lt;hr class="bottom"&gt;
-&lt;table width="100%"&gt;&lt;tr&gt;
-&lt;td align="left"&gt;&lt;address&gt;Copyright : Daniel Muller&lt;/address&gt;&lt;/td&gt;
-&lt;td align="right"&gt;&lt;div class="date"&gt;20161110&lt;/div&gt;&lt;/td&gt;
-&lt;/tr&gt;&lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
- </pre>
+    </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">hr </span><span style="color:#090">class</span>="<span style="color:#900">bottom</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">table </span><span style="color:#090">width</span>="<span style="color:#900">100%</span>"&gt;<b></b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td </span><span style="color:#090">align</span>="<span style="color:#900">left</span>"&gt;<b></b>&lt;<span style="color:#00c">address</span>&gt;<b>Copyright : Daniel Muller</b>&lt;/<span style="color:#00c">address&gt;</span><b></b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td </span><span style="color:#090">align</span>="<span style="color:#900">right</span>"&gt;<b></b>&lt;<span style="color:#00c">div </span><span style="color:#090">class</span>="<span style="color:#900">date</span>"&gt;<b>20161110</b>&lt;/<span style="color:#00c">div&gt;</span><b></b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b></b>&lt;/<span style="color:#00c">table&gt;</span><b>
+</b>&lt;/<span style="color:#00c">body&gt;</span><b>
+</b>&lt;/<span style="color:#00c">html&gt;</span><b>
+</b> </pre>
 
   <script type="text/javascript">
    function toggle_visibility(e) {
@@ -112,5 +112,5 @@
    document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
   </script>
 <hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
-         161110
+         161114
         </span></div></td></tr></table></body></html>

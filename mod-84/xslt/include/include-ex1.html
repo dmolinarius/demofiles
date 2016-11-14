@@ -12,7 +12,7 @@
 
   <h2>Document XML</h2>
 
-
+  
   <div id="toggle_xml" class="toggle">[fermer]</div>
   <div class="toggle">[<a href="include-ex1.xml">visualiser</a>]</div>
   <pre class="grey frame visible" id="xml">&lt;?xml version="1.0" encoding="utf-8"?&gt;
@@ -69,7 +69,7 @@
   <h2>Feuille de style XSLT</h2>
   <div id="toggle_xsl" class="toggle">[fermer]</div>
   <pre class="grey frame visible" id="xsl">&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>"&gt;
+&lt;<font color="#0000cc">xsl:stylesheet</font> <font color="#009900">version</font>="<font color="#990000">1.0</font>" <font color="#009900">xmlns:xsl</font>="<font color="#990000">http://www.w3.org/1999/XSL/Transform</font>"&gt; 
 
  &lt;<font color="#0000cc">xsl:output</font> <font color="#009900">method</font>="<font color="#990000">html</font>" <font color="#009900">encoding</font>="<font color="#990000">utf-8</font>" <font color="#009900">doctype-public</font>="<font color="#990000">-//W3C//DTD XHTML 1.0 Transitional//EN</font>" <font color="#009900">doctype-system</font>="<font color="#990000">http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd</font>"&gt;&lt;/<font color="#0000cc">xsl:output</font>&gt;
 
@@ -82,7 +82,7 @@
  &lt;/<font color="#0000cc">xsl:template</font>&gt;
 
  &lt;<font color="#0000cc">xsl:template</font> <font color="#009900">match</font>="<font color="#990000">nom | prénom</font>"&gt;
-  <b>&lt;td&gt;</b>
+  <b>&lt;td nowrap="nowrap"&gt;</b>
    &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
   <b>&lt;/td&gt;</b>
  &lt;/<font color="#0000cc">xsl:template</font>&gt;
@@ -91,73 +91,73 @@
 
   <h2>Résultat de la transformation</h2>
   <div class="toggle">[<a href="include-ex1-result.html">visualiser</a>]</div>
-  <pre class="grey frame">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
-&lt;link rel="stylesheet" href="exemple.css" type="text/css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;h2&gt;Feuilles de style multiples&lt;/h2&gt;
-&lt;p&gt;
+  <pre class="grey frame"><b></b>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;<b>
+</b>&lt;<span style="color:#00c">html</span>&gt;<b>
+</b>&lt;<span style="color:#00c">head</span>&gt;<b>
+</b>&lt;<span style="color:#00c">meta </span><span style="color:#090">http-equiv</span>="<span style="color:#900">Content-Type</span>"<span style="color:#090"> content</span>="<span style="color:#900">text/html; charset=utf-8</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">link </span><span style="color:#090">rel</span>="<span style="color:#900">stylesheet</span>"<span style="color:#090"> href</span>="<span style="color:#900">exemple.css</span>"<span style="color:#090"> type</span>="<span style="color:#900">text/css</span>"&gt;<b>
+</b>&lt;/<span style="color:#00c">head&gt;</span><b>
+</b>&lt;<span style="color:#00c">body</span>&gt;<b>
+</b>&lt;<span style="color:#00c">h2</span>&gt;<b>Feuilles de style multiples</b>&lt;/<span style="color:#00c">h2&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
      Le contenu du document ci-dessous est obtenu à l'aide d'une feuille de style constituée à partir
-     de plusieurs documents.&lt;br&gt;&lt;/p&gt;
-&lt;h2&gt;Résultat&lt;/h2&gt;
-&lt;table border="2" style="width:50%" align="center"&gt;
-&lt;tr&gt;
-&lt;th&gt;Prénom&lt;/th&gt;
-&lt;th&gt;Nom&lt;/th&gt;
-&lt;/tr&gt;
+     de plusieurs documents.</b>&lt;<span style="color:#00c">br</span>&gt;<b></b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h2</span>&gt;<b>Résultat</b>&lt;/<span style="color:#00c">h2&gt;</span><b>
+</b>&lt;<span style="color:#00c">table </span><span style="color:#090">border</span>="<span style="color:#900">2</span>"<span style="color:#090"> style</span>="<span style="color:#900">width:50%</span>"<span style="color:#090"> align</span>="<span style="color:#900">center</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">th</span>&gt;<b>Prénom</b>&lt;/<span style="color:#00c">th&gt;</span><b>
+</b>&lt;<span style="color:#00c">th</span>&gt;<b>Nom</b>&lt;/<span style="color:#00c">th&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
 
- &lt;tr&gt;
-  &lt;td&gt;Jean&lt;/td&gt;
-  &lt;td&gt;Aymard&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Jules&lt;/td&gt;
-  &lt;td&gt;Dechez&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Raymond&lt;/td&gt;
-  &lt;td&gt;Deubaze&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Jeanne&lt;/td&gt;
-  &lt;td&gt;Doe&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Sandra&lt;/td&gt;
-  &lt;td&gt;Duciel&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Jérôme&lt;/td&gt;
-  &lt;td&gt;Gourdin&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Guy&lt;/td&gt;
-  &lt;td&gt;Liguili&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Antoine&lt;/td&gt;
-  &lt;td&gt;Nette&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Elsa&lt;/td&gt;
-  &lt;td&gt;Plique&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Ginette&lt;/td&gt;
-  &lt;td&gt;Ringard&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
-  &lt;td&gt;Julie&lt;/td&gt;
-  &lt;td&gt;Trau&lt;/td&gt;
- &lt;/tr&gt;
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Jean</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Aymard</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Jules</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Dechez</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Raymond</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Deubaze</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Jeanne</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Doe</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Sandra</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Duciel</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Jérôme</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Gourdin</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Guy</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Liguili</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Antoine</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Nette</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Elsa</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Plique</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Ginette</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Ringard</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Julie</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+  </b>&lt;<span style="color:#00c">td </span><span style="color:#090">nowrap</span><span style="color:#900"></span>&gt;<b>Trau</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+ </b>&lt;/<span style="color:#00c">tr&gt;</span><b>
 
-&lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
- </pre>
+</b>&lt;/<span style="color:#00c">table&gt;</span><b>
+</b>&lt;/<span style="color:#00c">body&gt;</span><b>
+</b>&lt;/<span style="color:#00c">html&gt;</span><b>
+</b> </pre>
 
   <script type="text/javascript">
    function toggle_visibility(e) {
@@ -178,5 +178,5 @@
    document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
   </script>
 <hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
-         161110
+         161114
         </span></div></td></tr></table></body></html>

@@ -7,7 +7,7 @@
  	encoding="utf-8" />
 
  <xsl:template match="/classe">
-  <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;</xsl:text>
+  <xsl:text disable-output-escaping='yes'>&lt;!DOCTYPE html&gt;&#x0a;</xsl:text>
   <html>
    <head>
     <link rel="stylesheet" href="exemple.css" type="text/css" />

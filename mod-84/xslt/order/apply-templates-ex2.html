@@ -8,7 +8,6 @@
     .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
     .hidden { display: none }
     a, a:visited { text-decoration: none; color: rgb(255,127,0); }
-    h1 { margin-bottom: 0; }
   </style>
 
   <h2>Document XML</h2>
@@ -41,7 +40,7 @@
   &lt;<font color="#0000cc">prénom</font>&gt;<b>Sandra</b>&lt;/<font color="#0000cc">prénom</font>&gt;
  &lt;/<font color="#0000cc">étudiant</font>&gt;
  &lt;<font color="#0000cc">étudiant</font>&gt;
-  &lt;<font color="#0000cc">prénom</font>&gt;<b>J</b><b></b>&lt;/<font color="#0000cc">prénom</font>&gt;
+  &lt;<font color="#0000cc">prénom</font>&gt;<b>J</b><b>érôme</b>&lt;/<font color="#0000cc">prénom</font>&gt;
   &lt;<font color="#0000cc">nom</font>&gt;<b>Gourdin</b>&lt;/<font color="#0000cc">nom</font>&gt;
  &lt;/<font color="#0000cc">étudiant</font>&gt;
  &lt;<font color="#0000cc">étudiant</font>&gt;
@@ -80,14 +79,16 @@
     <b>&lt;link rel="stylesheet" href="exemple.css" type="text/css"&gt;</b><b>&lt;/link&gt;</b>
    <b>&lt;/head&gt;</b>
    <b>&lt;body&gt;</b>
-    <b>&lt;h2&gt;</b><b>Mod</b><b></b><b>&lt;/h2&gt;</b>
+    <b>&lt;h2&gt;</b><b>Mod</b><b>èle procédural</b><b>&lt;/h2&gt;</b>
     <b>&lt;p&gt;</b><b>
-     Le contenu de la table ci-dessous est obtenu </b><b></b><b>&lt;br&gt;</b><b>&lt;/br&gt;</b><b>
-     Les pr</b><b></b><b>&lt;/p&gt;</b>
-    <b>&lt;h2&gt;</b><b>R</b><b></b><b>&lt;/h2&gt;</b>
+     Le contenu de la table ci-dessous est obtenu </b><b>à l'aide d'un modèle procédural.</b><b>&lt;br&gt;</b><b>&lt;/br&gt;</b><b>
+     Les pr</b><b>énoms précèdent les noms quel que soit l'ordre dans lequel ceux-ci
+     apparaissent au sein du document source.
+    </b><b>&lt;/p&gt;</b>
+    <b>&lt;h2&gt;</b><b>R</b><b>ésultat</b><b>&lt;/h2&gt;</b>
     <b>&lt;table border="2" style="width:50%" align="center"&gt;</b>
      <b>&lt;tr&gt;</b>
-      <b>&lt;th&gt;</b><b>Pr</b><b></b><b>&lt;/th&gt;</b>
+      <b>&lt;th&gt;</b><b>Pr</b><b>énom</b><b>&lt;/th&gt;</b>
       <b>&lt;th&gt;</b><b>Nom</b><b>&lt;/th&gt;</b>
      <b>&lt;/tr&gt;</b>
      &lt;<font color="#0000cc">xsl:apply-templates</font>&gt;&lt;/<font color="#0000cc">xsl:apply-templates</font>&gt;
@@ -107,25 +108,75 @@
 
   <h2>Résultat de la transformation</h2>
   <div class="toggle">[<a href="apply-templates-ex2-result.html">visualiser</a>]</div>
-  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
-&lt;<font color="#0000cc">html</font> <font color="#009900">xmlns</font>="<font color="#990000">http://www.w3.org/1999/xhtml</font>"&gt;&lt;<font color="#0000cc">head</font>&gt;&lt;<font color="#0000cc">meta</font> <font color="#009900">http-equiv</font>="<font color="#990000">Content-Type</font>" <font color="#009900">content</font>="<font color="#990000">text/html; charset=utf-8</font>"&gt;&lt;/<font color="#0000cc">meta</font>&gt;&lt;<font color="#0000cc">link</font> <font color="#009900">rel</font>="<font color="#990000">stylesheet</font>" <font color="#009900">href</font>="<font color="#990000">exemple.css</font>" <font color="#009900">type</font>="<font color="#990000">text/css</font>"&gt;&lt;/<font color="#0000cc">link</font>&gt;&lt;/<font color="#0000cc">head</font>&gt;&lt;<font color="#0000cc">body</font>&gt;&lt;<font color="#0000cc">h2</font>&gt;<b>Mod</b><b></b>&lt;/<font color="#0000cc">h2</font>&gt;&lt;<font color="#0000cc">p</font>&gt;<b>
-     Le contenu de la table ci-dessous est obtenu </b><b></b>&lt;<font color="#0000cc">br</font>&gt;&lt;/<font color="#0000cc">br</font>&gt;<b>
-     Les pr</b><b></b>&lt;/<font color="#0000cc">p</font>&gt;&lt;<font color="#0000cc">h2</font>&gt;<b>R</b><b></b>&lt;/<font color="#0000cc">h2</font>&gt;&lt;<font color="#0000cc">table</font> <font color="#009900">border</font>="<font color="#990000">2</font>" <font color="#009900">style</font>="<font color="#990000">width:50%</font>" <font color="#009900">align</font>="<font color="#990000">center</font>"&gt;&lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">th</font>&gt;<b>Pr</b><b></b>&lt;/<font color="#0000cc">th</font>&gt;&lt;<font color="#0000cc">th</font>&gt;<b>Nom</b>&lt;/<font color="#0000cc">th</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
+  <pre class="grey frame"><b></b>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;<b>
+</b>&lt;<span style="color:#00c">html</span>&gt;<b>
+</b>&lt;<span style="color:#00c">head</span>&gt;<b>
+</b>&lt;<span style="color:#00c">meta </span><span style="color:#090">http-equiv</span>="<span style="color:#900">Content-Type</span>"<span style="color:#090"> content</span>="<span style="color:#900">text/html; charset=utf-8</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">link </span><span style="color:#090">rel</span>="<span style="color:#900">stylesheet</span>"<span style="color:#090"> href</span>="<span style="color:#900">exemple.css</span>"<span style="color:#090"> type</span>="<span style="color:#900">text/css</span>"&gt;<b>
+</b>&lt;/<span style="color:#00c">head&gt;</span><b>
+</b>&lt;<span style="color:#00c">body</span>&gt;<b>
+</b>&lt;<span style="color:#00c">h2</span>&gt;<b>Modèle procédural</b>&lt;/<span style="color:#00c">h2&gt;</span><b>
+</b>&lt;<span style="color:#00c">p</span>&gt;<b>
+     Le contenu de la table ci-dessous est obtenu à l'aide d'un modèle procédural.</b>&lt;<span style="color:#00c">br</span>&gt;<b>
+     Les prénoms précèdent les noms quel que soit l'ordre dans lequel ceux-ci
+     apparaissent au sein du document source.
+    </b>&lt;/<span style="color:#00c">p&gt;</span><b>
+</b>&lt;<span style="color:#00c">h2</span>&gt;<b>Résultat</b>&lt;/<span style="color:#00c">h2&gt;</span><b>
+</b>&lt;<span style="color:#00c">table </span><span style="color:#090">border</span>="<span style="color:#900">2</span>"<span style="color:#090"> style</span>="<span style="color:#900">width:50%</span>"<span style="color:#090"> align</span>="<span style="color:#900">center</span>"&gt;<b>
+</b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">th</span>&gt;<b>Prénom</b>&lt;/<span style="color:#00c">th&gt;</span><b>
+</b>&lt;<span style="color:#00c">th</span>&gt;<b>Nom</b>&lt;/<span style="color:#00c">th&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
 
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Jean</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Aymard</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Jules</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Dechez</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Raymond</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Deubaze</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Jeanne</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Doe</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Sandra</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Duciel</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>J</b><b></b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Gourdin</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Guy</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Liguili</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Antoine</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Nette</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Elsa</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Plique</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Ginette</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Ringard</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
- &lt;<font color="#0000cc">tr</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Julie</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;<font color="#0000cc">td</font>&gt;<b>Trau</b>&lt;/<font color="#0000cc">td</font>&gt;&lt;/<font color="#0000cc">tr</font>&gt;
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Jean</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Aymard</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Jules</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Dechez</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Raymond</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Deubaze</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Jeanne</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Doe</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Sandra</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Duciel</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Jérôme</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Gourdin</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Guy</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Liguili</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Antoine</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Nette</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Elsa</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Plique</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Ginette</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Ringard</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
+ </b>&lt;<span style="color:#00c">tr</span>&gt;<b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Julie</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;<span style="color:#00c">td</span>&gt;<b>Trau</b>&lt;/<span style="color:#00c">td&gt;</span><b>
+</b>&lt;/<span style="color:#00c">tr&gt;</span><b>
 
-&lt;/<font color="#0000cc">table</font>&gt;&lt;/<font color="#0000cc">body</font>&gt;&lt;/<font color="#0000cc">html</font>&gt; </pre>
+</b>&lt;/<span style="color:#00c">table&gt;</span><b>
+</b>&lt;/<span style="color:#00c">body&gt;</span><b>
+</b>&lt;/<span style="color:#00c">html&gt;</span><b>
+</b> </pre>
 
   <script type="text/javascript">
    function toggle_visibility(e) {
@@ -146,5 +197,5 @@
    document.getElementById("toggle_xsl").addEventListener('click',toggle_visibility);
   </script>
 <hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
-         161107
+         161114
         </span></div></td></tr></table></body></html>
