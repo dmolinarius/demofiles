@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<!-- ------------------ -->
+<!-- Entête du document -->
+<!-- ------------------ -->
+
+<HEAD>
+<TITLE>Source of : value.xsd</TITLE>
+<LINK REL="stylesheet" HREF="../../style/s5.css" TYPE="text/css">
+<meta charset="utf-8">
+
+<STYLE TYPE="text/css">
+PRE {
+	background-color: #EAEAEA;
+	overflow: auto;
+}
+A {
+	text-decoration: none;
+}
+h1 { margin-bottom:0 }
+</STYLE>
+</HEAD>
+
+<!-- ----------------- -->
+<!-- Corps du document -->
+<!-- ----------------- -->
+
+<BODY>
+
+<H1>Document XML </H1>
+<!--P ID="stylesheet-info">Cette vue utilise s5.css</P-->
+<HR>
+
+<H2>Texte source du fichier :
+value.xsd</H2>
+
+<P>
+<PRE CLASS="frame xmlsrc">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;<font color="#0000cc">xs:schema</font> <font color="#009900">xmlns:xs</font>="<font color="#990000">http://www.w3.org/2001/XMLSchema</font>"&gt;
+
+ <b><font color="#777777">&lt;!-- Valeurs XML-RPC --></font></b>
+
+ <b><font color="#777777">&lt;!-- N.B. Pour autoriser une valeur chaîne sans la balise "string" --></font></b>
+ <b><font color="#777777">&lt;!--      il faut que ce type soit à contenu mixte (mixed="true")  --></font></b>
+ <b><font color="#777777">&lt;!--      ce qui a l'inconvénient de valider des docs non valides  --></font></b>
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">T_VALUE</font>" <font color="#009900">mixed</font>="<font color="#990000">true</font>"&gt;
+  &lt;<font color="#0000cc">xs:choice</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">int</font>" <font color="#009900">type</font>="<font color="#990000">T_INT</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">i4</font>" <font color="#009900">type</font>="<font color="#990000">T_INT</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">boolean</font>" <font color="#009900">type</font>="<font color="#990000">T_BOOLEAN</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">double</font>" <font color="#009900">type</font>="<font color="#990000">T_DOUBLE</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">dateTime.iso8601</font>" <font color="#009900">type</font>="<font color="#990000">T_DATE</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">string</font>" <font color="#009900">type</font>="<font color="#990000">T_STRING</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">base64</font>" <font color="#009900">type</font>="<font color="#990000">T_BASE64</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">array</font>" <font color="#009900">type</font>="<font color="#990000">T_ARRAY</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">struct</font>" <font color="#009900">type</font>="<font color="#990000">T_STRUCT</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:choice</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur Booléenne --></font></b>
+
+ &lt;<font color="#0000cc">xs:simpleType</font> <font color="#009900">name</font>="<font color="#990000">T_BOOLEAN</font>"&gt;
+  &lt;<font color="#0000cc">xs:restriction</font> <font color="#009900">base</font>="<font color="#990000">xs:string</font>"&gt;
+   &lt;<font color="#0000cc">xs:pattern</font> <font color="#009900">value</font>="<font color="#990000">0|1</font>"&gt;&lt;/<font color="#0000cc">xs:pattern</font>&gt;
+  &lt;/<font color="#0000cc">xs:restriction</font>&gt;
+ &lt;/<font color="#0000cc">xs:simpleType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur Entière --></font></b>
+
+ &lt;<font color="#0000cc">xs:simpleType</font> <font color="#009900">name</font>="<font color="#990000">T_INT</font>"&gt;
+  &lt;<font color="#0000cc">xs:restriction</font> <font color="#009900">base</font>="<font color="#990000">xs:string</font>"&gt;
+   &lt;<font color="#0000cc">xs:pattern</font> <font color="#009900">value</font>="<font color="#990000">[+\-]?(0+|0*([1-9][0-9]{0,8}|1[0-9]{9}|2(0[0-9]{8}|1([0-3][0-9]{7}|4([0-6][0-9]{6}|7([0-3][0-9]{5}|4([0-7][0-9]{4}|8([0-2][0-9]{3}|3([0-5][0-9]{2}|6([0-3][0-9]|4[0-7]))))))))))|-0*2147483648</font>"&gt;&lt;/<font color="#0000cc">xs:pattern</font>&gt;
+  &lt;/<font color="#0000cc">xs:restriction</font>&gt;
+ &lt;/<font color="#0000cc">xs:simpleType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur Décimale --></font></b>
+
+ &lt;<font color="#0000cc">xs:simpleType</font> <font color="#009900">name</font>="<font color="#990000">T_DOUBLE</font>"&gt;
+  &lt;<font color="#0000cc">xs:restriction</font> <font color="#009900">base</font>="<font color="#990000">xs:string</font>"&gt;
+   &lt;<font color="#0000cc">xs:pattern</font> <font color="#009900">value</font>="<font color="#990000">[+\-]?[0-9]+\.[0-9]+</font>"&gt;&lt;/<font color="#0000cc">xs:pattern</font>&gt;
+  &lt;/<font color="#0000cc">xs:restriction</font>&gt;
+ &lt;/<font color="#0000cc">xs:simpleType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur Date --></font></b>
+
+ &lt;<font color="#0000cc">xs:simpleType</font> <font color="#009900">name</font>="<font color="#990000">T_DATE</font>"&gt;
+  &lt;<font color="#0000cc">xs:restriction</font> <font color="#009900">base</font>="<font color="#990000">xs:string</font>"&gt;
+   &lt;<font color="#0000cc">xs:pattern</font> <font color="#009900">value</font>="<font color="#990000">([0-9]{4}((0(1|3|5|7|8)|1(0|2))(0[1-9]|[1-2][0-9]|3[0-1])|(0(4|6|8)|10)(0[1-9]|[1-2][0-9]|30)|02(0[1-9]|1[0-9]|2[0-8]))|(([0-9]{2}(0(4|8)|(1|3|5|7|9)(2|4|6)|(2|4|6|8)(0|4|8))|[0-9]000)0229))T(((0|1)[0-9])|(2[0-3])):[0-5][0-9]:[0-5][0-9]</font>"&gt;&lt;/<font color="#0000cc">xs:pattern</font>&gt;
+  &lt;/<font color="#0000cc">xs:restriction</font>&gt;
+ &lt;/<font color="#0000cc">xs:simpleType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur Chaîne de caractères --></font></b>
+
+ &lt;<font color="#0000cc">xs:simpleType</font> <font color="#009900">name</font>="<font color="#990000">T_STRING</font>"&gt;
+  &lt;<font color="#0000cc">xs:restriction</font> <font color="#009900">base</font>="<font color="#990000">xs:string</font>"&gt;
+   &lt;<font color="#0000cc">xs:pattern</font> <font color="#009900">value</font>="<font color="#990000">(&amp;#x9;|&amp;#xD;|&amp;#xA;|[&amp;#x20;-&amp;#x7F;])*</font>"&gt;&lt;/<font color="#0000cc">xs:pattern</font>&gt;
+  &lt;/<font color="#0000cc">xs:restriction</font>&gt;
+ &lt;/<font color="#0000cc">xs:simpleType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur codée base 64 --></font></b>
+
+ &lt;<font color="#0000cc">xs:simpleType</font> <font color="#009900">name</font>="<font color="#990000">T_BASE64</font>"&gt;
+  &lt;<font color="#0000cc">xs:restriction</font> <font color="#009900">base</font>="<font color="#990000">xs:base64Binary</font>"&gt;&lt;/<font color="#0000cc">xs:restriction</font>&gt;
+ &lt;/<font color="#0000cc">xs:simpleType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur Tableau --></font></b>
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">T_ARRAY</font>"&gt;
+  &lt;<font color="#0000cc">xs:sequence</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">data</font>" <font color="#009900">type</font>="<font color="#990000">T_ARRAY_DATA</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">T_ARRAY_DATA</font>"&gt;
+  &lt;<font color="#0000cc">xs:sequence</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">value</font>" <font color="#009900">type</font>="<font color="#990000">T_VALUE</font>" <font color="#009900">minOccurs</font>="<font color="#990000">0</font>" <font color="#009900">maxOccurs</font>="<font color="#990000">unbounded</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+
+ <b><font color="#777777">&lt;!-- Valeur Structure --></font></b>
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">T_STRUCT</font>"&gt;
+  &lt;<font color="#0000cc">xs:sequence</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">member</font>" <font color="#009900">maxOccurs</font>="<font color="#990000">unbounded</font>" <font color="#009900">type</font>="<font color="#990000">T_STRUCT_MEMBER</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+ &lt;<font color="#0000cc">xs:complexType</font> <font color="#009900">name</font>="<font color="#990000">T_STRUCT_MEMBER</font>"&gt;
+  &lt;<font color="#0000cc">xs:sequence</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">name</font>" <font color="#009900">type</font>="<font color="#990000">T_NAME</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+   &lt;<font color="#0000cc">xs:element</font> <font color="#009900">name</font>="<font color="#990000">value</font>" <font color="#009900">type</font>="<font color="#990000">T_VALUE</font>"&gt;&lt;/<font color="#0000cc">xs:element</font>&gt;
+  &lt;/<font color="#0000cc">xs:sequence</font>&gt;
+ &lt;/<font color="#0000cc">xs:complexType</font>&gt;
+
+
+&lt;/<font color="#0000cc">xs:schema</font>&gt;</PRE>
+
+<!-- --------------- -->
+<!-- Fin du document -->
+<!-- --------------- -->
+
+<P>
+<HR CLASS="bottom">
+
+<TABLE WIDTH="100%"><TR>
+<TD ALIGN="left"><ADDRESS>Copyright : Daniel Muller</ADDRESS></TD>
+<TD ALIGN="right">
+<DIV CLASS="date">050117</DIV>
+</TD></TR></TABLE>
+</BODY>
+
+
