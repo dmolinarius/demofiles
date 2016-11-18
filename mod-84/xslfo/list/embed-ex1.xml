@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia" background-color="#FFFFCC" color="#000088">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-weight="bold" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document source XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 19:01
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
+
+   <fo:block font-weight="bold" font-size="14pt" space-after="2em">
+    Soupe aux truffes V.G.E
+    <fo:inline font-weight="bold">*</fo:inline>
+   </fo:block>
+
+   <!-- liste principale -->
+   <fo:list-block space-before="0.5em" provisional-distance-between-starts="2em" provisional-label-separation="5pt">
+
+    <!-- A. Lexique -->
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block font-weight="bold">A.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+
+      <fo:block font-weight="bold">
+       Définitions :
+      </fo:block>
+      <!-- liste descriptive -->
+      <fo:list-block space-before="0.5em" provisional-distance-between-starts="1em" provisional-label-separation="5pt">
+       <fo:list-item>
+        <fo:list-item-label>
+         <fo:block font-weight="bold">
+          Matignon
+        </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block margin-top="1.2em">
+          Fondue de légumes utilisée dans un grand nombre de préparations.
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item space-before="0.5em">
+        <fo:list-item-label>
+         <fo:block font-weight="bold">
+          Gratinée lyonnaise
+        </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block margin-top="1.2em">
+          Bol à soupe allant au four.
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+      </fo:list-block>
+
+     </fo:list-item-body>
+    </fo:list-item>
+    <!-- B. Ingrédients -->
+    <fo:list-item space-before="2em">
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block font-weight="bold">B.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+
+      <fo:block font-weight="bold">
+       Ingrédients :
+      </fo:block>
+      <!-- liste à puces -->
+      <fo:list-block space-before="0.5em" provisional-distance-between-starts="12pt" provisional-label-separation="2pt">
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()">
+         <fo:block font-size="300%" line-height="12pt">
+          <fo:inline>·</fo:inline>
+         </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          2 cuillères à soupe de matignon
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()">
+         <fo:block font-size="300%" line-height="12pt">
+          <fo:inline>·</fo:inline>
+         </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          30 g de truffes fraîches
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()">
+         <fo:block font-size="300%" line-height="12pt">
+          <fo:inline>·</fo:inline>
+         </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          20 g de foie gras frais
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()">
+         <fo:block font-size="300%" line-height="12pt">
+          <fo:inline>·</fo:inline>
+         </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          25 cl de consommé de boeuf concentré
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()">
+         <fo:block font-size="300%" line-height="12pt">
+          <fo:inline>·</fo:inline>
+         </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          60 g de pâte feuilletée
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()">
+         <fo:block font-size="300%" line-height="12pt">
+          <fo:inline>·</fo:inline>
+         </fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          1 jaune d'oeuf battu
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+      </fo:list-block>
+
+     </fo:list-item-body>
+    </fo:list-item>
+    <!-- C. Méthode -->
+    <fo:list-item space-before="2em">
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block font-weight="bold">C.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+
+      <fo:block font-weight="bold">
+       Méthode :
+      </fo:block>
+      <fo:list-block space-before="0.5em" provisional-distance-between-starts="1.5em" provisional-label-separation="5pt" start-indent="inherited-property-value('start-indent')-0.5em">
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()" text-align="end">
+         <fo:block>1.</fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          Dans chaque "gratinée lyonnaise" (bol à soupe allant au four) mettre le matignon,
+          les truffes coupées en lamelles irrégulières, le foie gras coupé en dés et le consommé de boeuf.
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()" text-align="end">
+         <fo:block>2.</fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          Dorer avec le jaune d'oeuf la pâte abaissée finement et en recouvrir les bols en faisant bien adhérer.
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()" text-align="end">
+         <fo:block>3.</fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          Placer les bols dans un four préalablement chauffé à 200°C. La cuisson est très rapide.
+          La pâte feuilletée, en gonflant, prend une belle couleur dorée.
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+       <fo:list-item>
+        <fo:list-item-label end-indent="label-end()" text-align="end">
+         <fo:block>4.</fo:block>
+        </fo:list-item-label>
+        <fo:list-item-body start-indent="body-start()">
+         <fo:block>
+          Utiliser une cuillère à soupe pour rompre la pâte qui tombe dans la soupe.
+         </fo:block>
+        </fo:list-item-body>
+       </fo:list-item>
+      </fo:list-block>
+
+     </fo:list-item-body>
+    </fo:list-item>
+   </fo:list-block>
+
+   <fo:block space-before="3em" font-size="9pt">
+    <fo:inline font-weight="bold">*</fo:inline>
+    Plat créé en 1975 par Paul Bocuse
+    à l'occasion de la remise de la légion d'honneur par Valéry Giscard d'Estaing.
+   </fo:block>
+
+   <fo:block text-align-last="justify" start-indent="-1em" space-after="0" space-before="-0.5em">
+    <fo:leader leader-pattern="rule" rule-style="solid" rule-thickness="1pt" color="#AAAACC"></fo:leader>
+   </fo:block>
+
+   <fo:block font-style="italic" font-size="8pt">
+    Editions Flammarion - Paul Bocuse à la carte
+   </fo:block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>

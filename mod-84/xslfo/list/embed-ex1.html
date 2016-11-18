@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="embed-ex1.xml">source</a>]</div>
+  <div class="toggle">[<a href="embed-ex1.pdf">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+ &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                         <font color="#009900">page-height</font>="<font color="#990000">29.7cm</font>"
+                         <font color="#009900">page-width</font>="<font color="#990000">21cm</font>"
+                         <font color="#009900">margin-top</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-bottom</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-left</font>="<font color="#990000">2.5cm</font>"
+                         <font color="#009900">margin-right</font>="<font color="#990000">1cm</font>"&gt;
+   &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">1.6cm</font>"
+                   <font color="#009900">margin-bottom</font>="<font color="#990000">1.6cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-body</font>&gt;
+   &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-before</font>&gt;
+   &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-after</font>&gt;
+ &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+ &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+ &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"
+                   <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+                   <font color="#009900">background-color</font>="<font color="#990000">#FFFFCC</font>"
+                   <font color="#009900">color</font>="<font color="#990000">#000088</font>"&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"&gt; 
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"&gt;<b>
+    Exemple de document XSL-FO
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">1em</font>"&gt;<b>
+    Document source XSL-FO </b><b>©</b><b> Daniel Muller
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Derni</b><b>ère modification le </b><font color="#FF0000">18/11/2016 19:01</font>
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+           <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"
+           <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+           <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+           <font color="#009900">text-align</font>="<font color="#990000">justify</font>"&gt;
+
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">14pt</font>"
+             <font color="#009900">space-after</font>="<font color="#990000">2em</font>"&gt;<b>
+    Soupe aux truffes V.G.E
+    </b>&lt;<font color="#0000cc">fo:inline</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>*</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+   <b><font color="#777777">&lt;!-- liste principale --&gt;</font></b>
+   &lt;<font color="#0000cc">fo:list-block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+                  <font color="#009900">provisional-distance-between-starts</font>="<font color="#990000">2em</font>"
+                  <font color="#009900">provisional-label-separation</font>="<font color="#990000">5pt</font>"&gt;
+
+    <b><font color="#777777">&lt;!-- A. Lexique --&gt;</font></b>
+    &lt;<font color="#0000cc">fo:list-item</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"
+                         <font color="#009900">text-align</font>="<font color="#990000">end</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>A.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+       D</b><b>éfinitions :
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+      <b><font color="#777777">&lt;!-- liste descriptive --&gt;</font></b>
+      &lt;<font color="#0000cc">fo:list-block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+                     <font color="#009900">provisional-distance-between-starts</font>="<font color="#990000">1em</font>"
+                     <font color="#009900">provisional-label-separation</font>="<font color="#990000">5pt</font>"&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font>&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+          Matignon
+        </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">margin-top</font>="<font color="#990000">1.2em</font>"&gt;<b>
+          Fondue de l</b><b>égumes utilisée dans un grand nombre de préparations.
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font>&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+          Gratin</b><b>ée lyonnaise
+        </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">margin-top</font>="<font color="#990000">1.2em</font>"&gt;<b>
+          Bol </b><b>à soupe allant au four.
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+      &lt;/<font color="#0000cc">fo:list-block</font>&gt;
+
+     &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+    &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+    <b><font color="#777777">&lt;!-- B. Ingrédients --&gt;</font></b>
+    &lt;<font color="#0000cc">fo:list-item</font> <font color="#009900">space-before</font>="<font color="#990000">2em</font>"&gt;
+     &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"
+                         <font color="#009900">text-align</font>="<font color="#990000">end</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>B.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+       Ingr</b><b>édients :
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+      <b><font color="#777777">&lt;!-- liste à puces --&gt;</font></b>
+      &lt;<font color="#0000cc">fo:list-block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+                     <font color="#009900">provisional-distance-between-starts</font>="<font color="#990000">12pt</font>"
+                     <font color="#009900">provisional-label-separation</font>="<font color="#990000">2pt</font>"&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                   <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+          &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+         &lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          2 cuill</b><b>ères à soupe de matignon
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                   <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+          &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+         &lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          30 g de truffes fra</b><b>îches
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                   <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+          &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+         &lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          20 g de foie gras frais
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                   <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+          &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+         &lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          25 cl de consomm</b><b>é de boeuf concentré
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                   <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+          &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+         &lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          60 g de p</b><b>âte feuilletée
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                   <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+          &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+         &lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          1 jaune d'oeuf battu
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+      &lt;/<font color="#0000cc">fo:list-block</font>&gt;
+
+     &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+    &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+    <b><font color="#777777">&lt;!-- C. Méthode --&gt;</font></b>
+    &lt;<font color="#0000cc">fo:list-item</font> <font color="#009900">space-before</font>="<font color="#990000">2em</font>"&gt;
+     &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"
+                         <font color="#009900">text-align</font>="<font color="#990000">end</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>C.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+       M</b><b>éthode :
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+      &lt;<font color="#0000cc">fo:list-block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+                     <font color="#009900">provisional-distance-between-starts</font>="<font color="#990000">1.5em</font>"
+                     <font color="#009900">provisional-label-separation</font>="<font color="#990000">5pt</font>"
+                     <font color="#009900">start-indent</font>="<font color="#990000">inherited-property-value('start-indent')-0.5em</font>"&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"
+                            <font color="#009900">text-align</font>="<font color="#990000">end</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>1.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          Dans chaque "gratin</b><b>ée lyonnaise" (bol à soupe allant au four) mettre le matignon,
+          les truffes coupées en lamelles irrégulières, le foie gras coupé en dés et le consommé de boeuf.
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"
+                            <font color="#009900">text-align</font>="<font color="#990000">end</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>2.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          Dorer avec le jaune d'oeuf la p</b><b>âte abaissée finement et en recouvrir les bols en faisant bien adhérer.
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"
+                            <font color="#009900">text-align</font>="<font color="#990000">end</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>3.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          Placer les bols dans un four pr</b><b>éalablement chauffé à 200°C. La cuisson est très rapide.
+          La pâte feuilletée, en gonflant, prend une belle couleur dorée.
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+       &lt;<font color="#0000cc">fo:list-item</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"
+                            <font color="#009900">text-align</font>="<font color="#990000">end</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>4.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+        &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+         &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+          Utiliser une cuill</b><b>ère à soupe pour rompre la pâte qui tombe dans la soupe.
+         </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+        &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+      &lt;/<font color="#0000cc">fo:list-block</font>&gt;
+
+     &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+    &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+   &lt;/<font color="#0000cc">fo:list-block</font>&gt;
+
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">3em</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">9pt</font>"&gt;
+    &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>*</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;<b>
+    Plat cr</b><b>éé en 1975 par Paul Bocuse
+    à l'occasion de la remise de la légion d'honneur par Valéry Giscard d'Estaing.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align-last</font>="<font color="#990000">justify</font>"
+             <font color="#009900">start-indent</font>="<font color="#990000">-1em</font>"
+             <font color="#009900">space-after</font>="<font color="#990000">0</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">-0.5em</font>"&gt;
+    &lt;<font color="#0000cc">fo:leader</font> <font color="#009900">leader-pattern</font>="<font color="#990000">rule</font>"
+               <font color="#009900">rule-style</font>="<font color="#990000">solid</font>"
+               <font color="#009900">rule-thickness</font>="<font color="#990000">1pt</font>"
+               <font color="#009900">color</font>="<font color="#990000">#AAAACC</font>"&gt;&lt;/<font color="#0000cc">fo:leader</font>&gt;
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;<b>
+    Editions Flammarion - Paul Bocuse </b><b>à la carte
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+
+  &lt;/<font color="#0000cc">fo:flow</font>&gt;
+ &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161118
+        </span></div></td></tr></table></body></html>

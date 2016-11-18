@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia" background-color="#FFFFCC" color="#000088">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-weight="bold" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 18:44
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
+   <fo:block>
+    La <fo:inline font-weight="bold">soupe aux truffes V.G.E.</fo:inline> est un plat créé par Paul Bocuse
+    à l'occasion de la remise de la légion d'honneur par Valéry Giscard d'Estaing en 1975.
+   </fo:block>
+   <fo:block font-weight="bold" space-before="0.5em">
+    Méthode :
+   </fo:block>
+   <fo:list-block space-before="0.5em" provisional-distance-between-starts="3em" provisional-label-separation="5pt">
+
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block>1.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       Dans chaque "gratinée lyonnaise" (bol à soupe allant au four) mettre le matignon,
+       les truffes coupées en lamelles irrégulières, le foie gras coupé en dés et le consommé de boeuf.
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block>2.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       Dorer avec le jaune d'oeuf la pâte abaissée finement et en recouvrir les bols en faisant bien adhérer.
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block>3.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       Placer les bols dans un four préalablement chauffé à 200°C. La cuisson est très rapide.
+       La pâte feuilletée, en gonflant, prend une belle couleur dorée.
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block>4.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       Utiliser une cuillère à soupe pour rompre la pâte qui tombe dans la soupe.
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+
+    <fo:list-item space-before="1em">
+     <fo:list-item-label end-indent="label-end()" text-align="end">
+      <fo:block>1234.</fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       Penser à prévoir suffisamment de place pour les numéros des opérations à plusieurs chiffres ...
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+
+   </fo:list-block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>
