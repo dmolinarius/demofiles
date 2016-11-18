@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-weight="bold" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 17:39
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
+
+   <fo:block space-before="0.5em" font-weight="bold">
+    rule-thickness = 1pt
+   </fo:block>
+   <fo:block linefeed-treatment="preserve" text-align-last="justify" space-before="-1.2em" background-color="#CCCCCC"> 
+    rule-style = "dotted" <fo:leader leader-pattern="rule" rule-style="dotted" rule-thickness="1pt"></fo:leader> p. 2
+    rule-style = "dashed" <fo:leader leader-pattern="rule" rule-style="dashed" rule-thickness="1pt"></fo:leader> p. 3
+    rule-style = "solid" <fo:leader leader-pattern="rule" rule-style="solid" rule-thickness="1pt"></fo:leader> p. 4
+    rule-style = "double" <fo:leader leader-pattern="rule" rule-style="double" rule-thickness="1pt"></fo:leader> p. 5
+    rule-style = "groove" <fo:leader leader-pattern="rule" rule-style="groove" rule-thickness="1pt"></fo:leader> p. 6
+    rule-style = "ridge" <fo:leader leader-pattern="rule" rule-style="ridge" rule-thickness="1pt"></fo:leader> p. 7
+   </fo:block>
+
+   <fo:block space-before="0.5em" font-weight="bold">
+    rule-thickness = 2pt
+   </fo:block>
+   <fo:block linefeed-treatment="preserve" text-align-last="justify" space-before="-1.2em" background-color="#CCCCCC"> 
+    rule-style = "dotted" <fo:leader leader-pattern="rule" rule-style="dotted" rule-thickness="2pt"></fo:leader> p. 2
+    rule-style = "dashed" <fo:leader leader-pattern="rule" rule-style="dashed" rule-thickness="2pt"></fo:leader> p. 3
+    rule-style = "solid" <fo:leader leader-pattern="rule" rule-style="solid" rule-thickness="2pt"></fo:leader> p. 4
+    rule-style = "double" <fo:leader leader-pattern="rule" rule-style="double" rule-thickness="2pt"></fo:leader> p. 5
+    rule-style = "groove" <fo:leader leader-pattern="rule" rule-style="groove" rule-thickness="2pt"></fo:leader> p. 6
+    rule-style = "ridge" <fo:leader leader-pattern="rule" rule-style="ridge" rule-thickness="2pt"></fo:leader> p. 7
+   </fo:block>
+
+   <fo:block space-before="0.5em" font-weight="bold">
+    rule-thickness = 4pt
+   </fo:block>
+   <fo:block linefeed-treatment="preserve" text-align-last="justify" space-before="-1.2em" background-color="#CCCCCC"> 
+    rule-style = "dotted" <fo:leader leader-pattern="rule" rule-style="dotted" rule-thickness="4pt"></fo:leader> p. 2
+    rule-style = "dashed" <fo:leader leader-pattern="rule" rule-style="dashed" rule-thickness="4pt"></fo:leader> p. 3
+    rule-style = "solid" <fo:leader leader-pattern="rule" rule-style="solid" rule-thickness="4pt"></fo:leader> p. 4
+    rule-style = "double" <fo:leader leader-pattern="rule" rule-style="double" rule-thickness="4pt"></fo:leader> p. 5
+    rule-style = "groove" <fo:leader leader-pattern="rule" rule-style="groove" rule-thickness="4pt"></fo:leader> p. 6
+    rule-style = "ridge" <fo:leader leader-pattern="rule" rule-style="ridge" rule-thickness="4pt"></fo:leader> p. 7
+   </fo:block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>

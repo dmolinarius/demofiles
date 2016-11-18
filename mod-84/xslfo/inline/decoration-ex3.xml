@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 16:13
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="12pt">
+
+   <fo:block font-family="Courier New" font-weight="bold" space-before="1em">
+    <fo:block>
+     <fo:inline color="#440000">#440000</fo:inline>    
+     <fo:inline color="#880000">#880000</fo:inline>    
+     <fo:inline color="#BB0000">#BB0000</fo:inline>    
+     <fo:inline color="#DD0000">#DD0000</fo:inline>    
+     <fo:inline color="#FF0000">#FF0000</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#441111">#441111</fo:inline>    
+     <fo:inline color="#882222">#882222</fo:inline>    
+     <fo:inline color="#BB3333">#BB3333</fo:inline>    
+     <fo:inline color="#DD3B3B">#DD3B3B</fo:inline>    
+     <fo:inline color="#FF4444">#FF4444</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#442222">#442222</fo:inline>    
+     <fo:inline color="#884444">#884444</fo:inline>    
+     <fo:inline color="#BB6666">#BB6666</fo:inline>    
+     <fo:inline color="#DD7777">#DD7777</fo:inline>    
+     <fo:inline color="#FF8888">#FF8888</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#443333">#443333</fo:inline>    
+     <fo:inline color="#886666">#886666</fo:inline>    
+     <fo:inline color="#BB9999">#BB9999</fo:inline>    
+     <fo:inline color="#DDAAAA">#DDAAAA</fo:inline>    
+     <fo:inline color="#FFBBBB">#FFBBBB</fo:inline>
+    </fo:block>
+
+    <fo:block> </fo:block>
+
+    <fo:block>
+     <fo:inline color="#004400">#004400</fo:inline>    
+     <fo:inline color="#008800">#008800</fo:inline>    
+     <fo:inline color="#00BB00">#00BB00</fo:inline>    
+     <fo:inline color="#00DD00">#00DD00</fo:inline>    
+     <fo:inline color="#00FF00">#00FF00</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#114411">#114411</fo:inline>    
+     <fo:inline color="#228822">#228822</fo:inline>    
+     <fo:inline color="#33BB33">#33BB33</fo:inline>    
+     <fo:inline color="#3BDD3B">#3BDD3B</fo:inline>    
+     <fo:inline color="#44FF44">#44FF44</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#224422">#224422</fo:inline>    
+     <fo:inline color="#448844">#448844</fo:inline>    
+     <fo:inline color="#66BB66">#66BB66</fo:inline>    
+     <fo:inline color="#77DD77">#77DD77</fo:inline>    
+     <fo:inline color="#88FF88">#88FF88</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#334433">#334433</fo:inline>    
+     <fo:inline color="#668866">#668866</fo:inline>    
+     <fo:inline color="#99BB99">#99BB99</fo:inline>    
+     <fo:inline color="#AADDAA">#AADDAA</fo:inline>    
+     <fo:inline color="#BBFFBB">#BBFFBB</fo:inline>
+    </fo:block>
+
+    <fo:block> </fo:block>
+
+    <fo:block>
+     <fo:inline color="#000044">#000044</fo:inline>    
+     <fo:inline color="#000088">#000088</fo:inline>    
+     <fo:inline color="#0000BB">#0000BB</fo:inline>    
+     <fo:inline color="#0000DD">#0000DD</fo:inline>    
+     <fo:inline color="#0000FF">#0000FF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#111144">#111144</fo:inline>    
+     <fo:inline color="#222288">#222288</fo:inline>    
+     <fo:inline color="#3333BB">#3333BB</fo:inline>    
+     <fo:inline color="#3B3BDD">#3B3BDD</fo:inline>    
+     <fo:inline color="#4444FF">#4444FF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#222244">#222244</fo:inline>    
+     <fo:inline color="#444488">#444488</fo:inline>    
+     <fo:inline color="#6666BB">#6666BB</fo:inline>    
+     <fo:inline color="#7777DD">#7777DD</fo:inline>    
+     <fo:inline color="#8888FF">#8888FF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#333344">#333344</fo:inline>    
+     <fo:inline color="#666688">#666688</fo:inline>    
+     <fo:inline color="#9999BB">#9999BB</fo:inline>    
+     <fo:inline color="#AAAADD">#AAAADD</fo:inline>    
+     <fo:inline color="#BBBBFF">#BBBBFF</fo:inline>
+    </fo:block>
+
+    <fo:block> </fo:block>
+
+    <fo:block>
+     <fo:inline color="#444400">#444400</fo:inline>    
+     <fo:inline color="#888800">#888800</fo:inline>    
+     <fo:inline color="#BBBB00">#BBBB00</fo:inline>    
+     <fo:inline color="#DDDD00">#DDDD00</fo:inline>    
+     <fo:inline color="#FFFF00">#FFFF00</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#444411">#444411</fo:inline>    
+     <fo:inline color="#888822">#888822</fo:inline>    
+     <fo:inline color="#BBBB33">#BBBB33</fo:inline>    
+     <fo:inline color="#DDDD3B">#DDDD3B</fo:inline>    
+     <fo:inline color="#FFFF44">#FFFF44</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#444422">#444422</fo:inline>    
+     <fo:inline color="#888844">#888844</fo:inline>    
+     <fo:inline color="#BBBB66">#BBBB66</fo:inline>    
+     <fo:inline color="#DDDD77">#DDDD77</fo:inline>    
+     <fo:inline color="#FFFF88">#FFFF88</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#444433">#444433</fo:inline>    
+     <fo:inline color="#888866">#888866</fo:inline>    
+     <fo:inline color="#BBBB99">#BBBB99</fo:inline>    
+     <fo:inline color="#DDDDAA">#DDDDAA</fo:inline>    
+     <fo:inline color="#FFFFBB">#FFFFBB</fo:inline>
+    </fo:block>
+
+    <fo:block> </fo:block>
+
+    <fo:block>
+     <fo:inline color="#004444">#004444</fo:inline>    
+     <fo:inline color="#008888">#008888</fo:inline>    
+     <fo:inline color="#00BBBB">#00BBBB</fo:inline>    
+     <fo:inline color="#00DDDD">#00DDDD</fo:inline>    
+     <fo:inline color="#00FFFF">#00FFFF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#114444">#114444</fo:inline>    
+     <fo:inline color="#228888">#228888</fo:inline>    
+     <fo:inline color="#33BBBB">#33BBBB</fo:inline>    
+     <fo:inline color="#3BDDDD">#3BDDDD</fo:inline>    
+     <fo:inline color="#44FFFF">#44FFFF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#224444">#224444</fo:inline>    
+     <fo:inline color="#448888">#448888</fo:inline>    
+     <fo:inline color="#66BBBB">#66BBBB</fo:inline>    
+     <fo:inline color="#77DDDD">#77DDDD</fo:inline>    
+     <fo:inline color="#88FFFF">#88FFFF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#334444">#334444</fo:inline>    
+     <fo:inline color="#668888">#668888</fo:inline>    
+     <fo:inline color="#99BBBB">#99BBBB</fo:inline>    
+     <fo:inline color="#AADDDD">#AADDDD</fo:inline>    
+     <fo:inline color="#BBFFFF">#BBFFFF</fo:inline>
+    </fo:block>
+
+    <fo:block> </fo:block>
+
+    <fo:block>
+     <fo:inline color="#440044">#440044</fo:inline>    
+     <fo:inline color="#880088">#880088</fo:inline>    
+     <fo:inline color="#BB00BB">#BB00BB</fo:inline>    
+     <fo:inline color="#DD00DD">#DD00DD</fo:inline>    
+     <fo:inline color="#FF00FF">#FF00FF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#441144">#441144</fo:inline>    
+     <fo:inline color="#882288">#882288</fo:inline>    
+     <fo:inline color="#BB33BB">#BB33BB</fo:inline>    
+     <fo:inline color="#DD3BDD">#DD3BDD</fo:inline>    
+     <fo:inline color="#FF44FF">#FF44FF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#442244">#442244</fo:inline>    
+     <fo:inline color="#884488">#884488</fo:inline>    
+     <fo:inline color="#BB66BB">#BB66BB</fo:inline>    
+     <fo:inline color="#DD77DD">#DD77DD</fo:inline>    
+     <fo:inline color="#FF88FF">#FF88FF</fo:inline>
+    </fo:block>
+    <fo:block>
+     <fo:inline color="#443344">#443344</fo:inline>    
+     <fo:inline color="#886688">#886688</fo:inline>    
+     <fo:inline color="#BB99BB">#BB99BB</fo:inline>    
+     <fo:inline color="#DDAADD">#DDAADD</fo:inline>    
+     <fo:inline color="#FFBBFF">#FFBBFF</fo:inline>
+    </fo:block>
+
+    <fo:block> </fo:block>
+
+    <fo:block>
+     <fo:inline color="#444444">#444444</fo:inline>    
+     <fo:inline color="#888888">#888888</fo:inline>    
+     <fo:inline color="#BBBBBB">#BBBBBB</fo:inline>    
+     <fo:inline color="#DDDDDD">#DDDDDD</fo:inline>    
+     <fo:inline color="#FFFFFF">#FFFFFF</fo:inline>
+    </fo:block>
+   </fo:block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>

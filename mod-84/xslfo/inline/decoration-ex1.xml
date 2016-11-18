@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 16:13
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="12pt">
+
+   <fo:block font-family="Haettenschweiler" space-before="1em">
+    Essai de police Haettenschweiler / letter-spacing = normal
+   </fo:block>
+   <fo:block font-family="Haettenschweiler" space-before="1em" letter-spacing="0.1em">
+    Essai de police Haettenschweiler / letter-spacing = 0.1em
+   </fo:block>
+   <fo:block font-family="Haettenschweiler" space-before="1em" letter-spacing="0.2em">
+    Essai de police Haettenschweiler / letter-spacing = 0.2em
+   </fo:block>
+   <fo:block font-family="Haettenschweiler" space-before="1em" letter-spacing="0.3em">
+    Essai de police Haettenschweiler / letter-spacing = 0.3em
+   </fo:block>
+   <fo:block font-family="Haettenschweiler" space-before="1em" letter-spacing="0.4em">
+    Essai de police Haettenschweiler / letter-spacing = 0.4em
+   </fo:block>
+   <fo:block font-family="Haettenschweiler" space-before="1em" letter-spacing="0.5em">
+    Police Haettenschweiler / letter-spacing = 0.5em
+   </fo:block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>

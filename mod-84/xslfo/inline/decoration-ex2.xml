@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 16:13
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="12pt">
+
+   <fo:block text-decoration="none" space-before="1em">
+    Ceci est un paragraphe de texte avec la propriété text-decoration = none.
+   </fo:block>
+   <fo:block text-decoration="underline" space-before="1em">
+    Ceci est un paragraphe de texte avec la propriété text-decoration = underline.
+   </fo:block>
+   <fo:block text-decoration="overline" space-before="1em">
+    Ceci est un paragraphe de texte avec la propriété text-decoration = overline.
+   </fo:block>
+   <fo:block text-decoration="line-through" space-before="1em">
+    Ceci est un paragraphe de texte avec la propriété text-decoration = line-through.
+   </fo:block>
+   <fo:block space-before="1em">
+    Ces propriétés peuvent notamment êtres mises à profit pour l'écriture de quelques
+    équations simples comme :
+   </fo:block>
+   <fo:block text-align="center" font-style="italic">
+    A et B = <fo:inline text-decoration="overline">A</fo:inline> ou <fo:inline text-decoration="overline">B</fo:inline>
+   </fo:block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>

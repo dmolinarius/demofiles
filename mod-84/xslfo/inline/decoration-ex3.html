@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="decoration-ex3.xml">source</a>]</div>
+  <div class="toggle">[<a href="decoration-ex3.pdf">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+ &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                         <font color="#009900">page-height</font>="<font color="#990000">29.7cm</font>"
+                         <font color="#009900">page-width</font>="<font color="#990000">21cm</font>"
+                         <font color="#009900">margin-top</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-bottom</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-left</font>="<font color="#990000">2.5cm</font>"
+                         <font color="#009900">margin-right</font>="<font color="#990000">1cm</font>"&gt;
+   &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">1.6cm</font>"
+                   <font color="#009900">margin-bottom</font>="<font color="#990000">1.6cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-body</font>&gt;
+   &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-before</font>&gt;
+   &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-after</font>&gt;
+ &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+ &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+ &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"
+                   <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"&gt; 
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"&gt;<b>
+    Exemple de document XSL-FO
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">1em</font>"&gt;<b>
+    Document XSL-FO </b><b>©</b><b> Daniel Muller
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Derni</b><b>ère modification le </b><font color="#FF0000">18/11/2016 16:13</font>
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+           <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"&gt;
+
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-family</font>="<font color="#990000">Courier New</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">1em</font>"&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#440000</font>"&gt;<b>#440000</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;<b>#880000</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB0000</font>"&gt;<b>#BB0000</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DD0000</font>"&gt;<b>#DD0000</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FF0000</font>"&gt;<b>#FF0000</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#441111</font>"&gt;<b>#441111</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#882222</font>"&gt;<b>#882222</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB3333</font>"&gt;<b>#BB3333</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DD3B3B</font>"&gt;<b>#DD3B3B</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FF4444</font>"&gt;<b>#FF4444</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#442222</font>"&gt;<b>#442222</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#884444</font>"&gt;<b>#884444</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB6666</font>"&gt;<b>#BB6666</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DD7777</font>"&gt;<b>#DD7777</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FF8888</font>"&gt;<b>#FF8888</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#443333</font>"&gt;<b>#443333</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#886666</font>"&gt;<b>#886666</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB9999</font>"&gt;<b>#BB9999</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DDAAAA</font>"&gt;<b>#DDAAAA</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;<b> </b>   
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FFBBBB</font>"&gt;<b>#FFBBBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt; &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#004400</font>"&gt;<b>#004400</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#008800</font>"&gt;<b>#008800</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#00BB00</font>"&gt;<b>#00BB00</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#00DD00</font>"&gt;<b>#00DD00</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#00FF00</font>"&gt;<b>#00FF00</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#114411</font>"&gt;<b>#114411</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#228822</font>"&gt;<b>#228822</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#33BB33</font>"&gt;<b>#33BB33</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#3BDD3B</font>"&gt;<b>#3BDD3B</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#44FF44</font>"&gt;<b>#44FF44</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#224422</font>"&gt;<b>#224422</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#448844</font>"&gt;<b>#448844</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#66BB66</font>"&gt;<b>#66BB66</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#77DD77</font>"&gt;<b>#77DD77</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#88FF88</font>"&gt;<b>#88FF88</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#334433</font>"&gt;<b>#334433</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#668866</font>"&gt;<b>#668866</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#99BB99</font>"&gt;<b>#99BB99</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#AADDAA</font>"&gt;<b>#AADDAA</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBFFBB</font>"&gt;<b>#BBFFBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt; &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#000044</font>"&gt;<b>#000044</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#000088</font>"&gt;<b>#000088</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#0000BB</font>"&gt;<b>#0000BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#0000DD</font>"&gt;<b>#0000DD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#0000FF</font>"&gt;<b>#0000FF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#111144</font>"&gt;<b>#111144</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#222288</font>"&gt;<b>#222288</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#3333BB</font>"&gt;<b>#3333BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#3B3BDD</font>"&gt;<b>#3B3BDD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#4444FF</font>"&gt;<b>#4444FF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#222244</font>"&gt;<b>#222244</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#444488</font>"&gt;<b>#444488</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#6666BB</font>"&gt;<b>#6666BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#7777DD</font>"&gt;<b>#7777DD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#8888FF</font>"&gt;<b>#8888FF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#333344</font>"&gt;<b>#333344</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#666688</font>"&gt;<b>#666688</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#9999BB</font>"&gt;<b>#9999BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#AAAADD</font>"&gt;<b>#AAAADD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBBBFF</font>"&gt;<b>#BBBBFF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt; &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#444400</font>"&gt;<b>#444400</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#888800</font>"&gt;<b>#888800</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBBB00</font>"&gt;<b>#BBBB00</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DDDD00</font>"&gt;<b>#DDDD00</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FFFF00</font>"&gt;<b>#FFFF00</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#444411</font>"&gt;<b>#444411</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#888822</font>"&gt;<b>#888822</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBBB33</font>"&gt;<b>#BBBB33</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DDDD3B</font>"&gt;<b>#DDDD3B</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FFFF44</font>"&gt;<b>#FFFF44</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#444422</font>"&gt;<b>#444422</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#888844</font>"&gt;<b>#888844</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBBB66</font>"&gt;<b>#BBBB66</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DDDD77</font>"&gt;<b>#DDDD77</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FFFF88</font>"&gt;<b>#FFFF88</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#444433</font>"&gt;<b>#444433</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#888866</font>"&gt;<b>#888866</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBBB99</font>"&gt;<b>#BBBB99</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DDDDAA</font>"&gt;<b>#DDDDAA</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FFFFBB</font>"&gt;<b>#FFFFBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt; &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#004444</font>"&gt;<b>#004444</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#008888</font>"&gt;<b>#008888</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#00BBBB</font>"&gt;<b>#00BBBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#00DDDD</font>"&gt;<b>#00DDDD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#00FFFF</font>"&gt;<b>#00FFFF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#114444</font>"&gt;<b>#114444</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#228888</font>"&gt;<b>#228888</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#33BBBB</font>"&gt;<b>#33BBBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#3BDDDD</font>"&gt;<b>#3BDDDD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#44FFFF</font>"&gt;<b>#44FFFF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#224444</font>"&gt;<b>#224444</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#448888</font>"&gt;<b>#448888</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#66BBBB</font>"&gt;<b>#66BBBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#77DDDD</font>"&gt;<b>#77DDDD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#88FFFF</font>"&gt;<b>#88FFFF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#334444</font>"&gt;<b>#334444</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#668888</font>"&gt;<b>#668888</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#99BBBB</font>"&gt;<b>#99BBBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#AADDDD</font>"&gt;<b>#AADDDD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBFFFF</font>"&gt;<b>#BBFFFF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt; &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#440044</font>"&gt;<b>#440044</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#880088</font>"&gt;<b>#880088</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB00BB</font>"&gt;<b>#BB00BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DD00DD</font>"&gt;<b>#DD00DD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FF00FF</font>"&gt;<b>#FF00FF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#441144</font>"&gt;<b>#441144</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#882288</font>"&gt;<b>#882288</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB33BB</font>"&gt;<b>#BB33BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DD3BDD</font>"&gt;<b>#DD3BDD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FF44FF</font>"&gt;<b>#FF44FF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#442244</font>"&gt;<b>#442244</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#884488</font>"&gt;<b>#884488</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB66BB</font>"&gt;<b>#BB66BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DD77DD</font>"&gt;<b>#DD77DD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FF88FF</font>"&gt;<b>#FF88FF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#443344</font>"&gt;<b>#443344</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#886688</font>"&gt;<b>#886688</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BB99BB</font>"&gt;<b>#BB99BB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DDAADD</font>"&gt;<b>#DDAADD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FFBBFF</font>"&gt;<b>#FFBBFF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt; &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+    &lt;<font color="#0000cc">fo:block</font>&gt;
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#444444</font>"&gt;<b>#444444</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#888888</font>"&gt;<b>#888888</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#BBBBBB</font>"&gt;<b>#BBBBBB</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#DDDDDD</font>"&gt;<b>#DDDDDD</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;    
+     &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">color</font>="<font color="#990000">#FFFFFF</font>"&gt;<b>#FFFFFF</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+    &lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+
+  &lt;/<font color="#0000cc">fo:flow</font>&gt;
+ &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161118
+        </span></div></td></tr></table></body></html>
