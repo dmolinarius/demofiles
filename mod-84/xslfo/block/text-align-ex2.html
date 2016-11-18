@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="text-align-ex2.xml">source</a>]</div>
+  <div class="toggle">[<a href="text-align-ex2.pdf">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+ &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                         <font color="#009900">page-height</font>="<font color="#990000">29.7cm</font>"
+                         <font color="#009900">page-width</font>="<font color="#990000">21cm</font>"
+                         <font color="#009900">margin-top</font>="<font color="#990000">1.5cm</font>"
+                         <font color="#009900">margin-bottom</font>="<font color="#990000">2cm</font>"
+                         <font color="#009900">margin-left</font>="<font color="#990000">2.5cm</font>"
+                         <font color="#009900">margin-right</font>="<font color="#990000">1cm</font>"&gt;
+   &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">1.6cm</font>"
+                   <font color="#009900">margin-bottom</font>="<font color="#990000">1.6cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-body</font>&gt;
+   &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-before</font>&gt;
+   &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-after</font>&gt;
+ &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+ &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+ &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"
+             <font color="#009900">background-color</font>="<font color="#990000">#FFCC00</font>"
+             <font color="#009900">line-height</font>="<font color="#990000">2em</font>"&gt;<b>
+    Exemple de document XSL-FO
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+    Document XSL-FO </b><b>©</b><b> Daniel Muller
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Derni</b><b>ère modification le </b><font color="#FF0000">18/11/2016 15:01</font>
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+           <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"
+           <font color="#009900">text-align</font>="<font color="#990000">justify</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+             <font color="#009900">space-after</font>="<font color="#990000">1em</font>"&gt;<b>L'enfance de Z</b><b>éphyrin.</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+    C'est le 1er janvier, </b><b>à minuit une seconde sexagésimale de temps moyen,
+    que le jeune Brioché poussa ses premiers vagissements. A son baptême,
+    il reçut les prénoms harmonieux, poétiques et distingués de Pancrace,
+    Eusèbe, Zéphyrin, ce dont il parut se soucier comme un cloporte d'un ophicléide.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+    Consult</b><b>ée à son sujet, une somnambule extralucide, phrénologue distinguée,
+    pédicure de nombreuses têtes couronnées, lui découvrit la bosse du mouvement
+    perpétuel. D'où elle conclut logiquement qu'il serait un grand voyageur ou un
+    grand mathématicien, à moins qu'il ne fût affligé d</b><b>e la danse de Saint-Guy.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+    Conform</b><b>ément à la prédiction de la somnambule, Zéphyrin montra, dès sa plus
+    tendre enfance, des dispositions étonnantes pour les sciences expérimentales.
+    Livré à lui-même, il s'ingéniait avec beaucoup de persévérance à résoudre
+    les problèmes les plus compliqués.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+             <font color="#009900">font-style</font>="<font color="#990000">italic</font>"&gt;<b>
+    Extrait de : </b>&lt;<font color="#0000cc">fo:inline</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>l'id</b><b>ée fixe du Savant Cosinus</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;<b>.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:flow</font>&gt;
+ &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161118
+        </span></div></td></tr></table></body></html>

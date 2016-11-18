@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="1.5cm" margin-bottom="2cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body background-color="#CCCCCC" margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before background-color="#FFCCCC" extent="1.5cm"></fo:region-before>
+   <fo:region-after background-color="#FFCCCC" extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique">
+
+  <fo:static-content flow-name="xsl-region-before">
+   <fo:block text-align="center" space-before="0.5em" font-weight="bold" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="0.5em">
+    Document XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 14:49
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" text-align="justify" start-indent="5pt" end-indent="5pt">
+   <fo:block font-weight="bold">L'enfance de Zéphyrin.</fo:block>
+   <fo:block space-before="0.5em">
+    C'est le 1er janvier, à minuit une seconde sexagésimale de temps moyen,
+    que le jeune Brioché poussa ses premiers vagissements. A son baptême,
+    il reçut les prénoms harmonieux, poétiques et distingués de Pancrace,
+    Eusèbe, Zéphyrin, ce dont il parut se soucier comme un cloporte d'un ophicléide.
+   </fo:block>
+   <fo:block space-before="0.5em">
+    Consultée à son sujet, une somnambule extralucide, phrénologue distinguée,
+    pédicure de nombreuses têtes couronnées, lui découvrit la bosse du mouvement
+    perpétuel. D'où elle conclut logiquement qu'il serait un grand voyageur ou un
+    grand mathématicien, à moins qu'il ne fût affligé de la danse de Saint-Guy.
+   </fo:block>
+   <fo:block space-before="0.5em">
+    Conformément à la prédiction de la somnambule, Zéphyrin montra, dès sa plus
+    tendre enfance, des dispositions étonnantes pour les sciences expérimentales.
+    Livré à lui-même, il s'ingéniait avec beaucoup de persévérance à résoudre
+    les problèmes les plus compliqués.
+   </fo:block>
+   <fo:block space-before="0.5em" font-style="italic">
+    Extrait de : l'idée fixe du Savant Cosinus.
+   </fo:block>
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>
