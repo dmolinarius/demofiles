@@ -20,7 +20,7 @@
     Document XSL-FO © Daniel Muller
    </fo:block>
    <fo:block>
-    Dernière modification le 18/11/2016 17:39
+    Dernière modification le 18/11/2016 18:03
    </fo:block>
   </fo:static-content>
 
@@ -46,7 +46,8 @@
 
    <fo:block space-before="0.5em">
     <fo:inline font-weight="bold">N.B.</fo:inline>
-     La différence entre les deux valeurs ci-dessus ne se distingue bien qu'à l'aide d'un bon zoom...
+     Il n'y pas de différence entre les deux exemples ci-dessus, car FOP n'implémente plus l'attribut
+     leader-alignment.
    </fo:block>
 
   </fo:flow>
