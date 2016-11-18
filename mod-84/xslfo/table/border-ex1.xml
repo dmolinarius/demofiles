@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia" background-color="#FFFFCC" color="#000088">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-weight="bold" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document source XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 18/11/2016 23:35
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
+
+   <fo:block font-style="normal" font-weight="bold" color="#880000">
+    table : border="0.5pt solid #000088"
+   </fo:block>
+   <fo:table table-layout="fixed" text-align="center" space-before="1em" border="0.5pt solid #000088">
+    <fo:table-column column-width="3.3cm" number-columns-repeated="3"></fo:table-column>
+    <fo:table-body>
+     <fo:table-row>
+      <fo:table-cell>
+       <fo:block>Nom</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>Contenance</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>Bouteilles</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Quart</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,25</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Bouteille</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>1</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Magnum</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>1,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>2</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Jéroboam</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>3,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>4</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Mathusalem</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+      <fo:block>6,4 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>8</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Salmanazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>9,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>12</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Balthazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>12,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>16</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left"> 
+       <fo:block>Nabuchodonosor</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>16 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>20</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+   <fo:block font-style="normal" font-weight="bold" space-before="2em" color="#880000">
+    table : border="0.5pt solid #000088" padding="5pt"
+   </fo:block>
+   <fo:table table-layout="fixed" width="9.9cm" text-align="center" space-before="1em" border="0.5pt solid #000088" border-collapse="separate" padding="5pt">
+    <fo:table-column column-width="3.3cm" number-columns-repeated="3"></fo:table-column>
+    <fo:table-body>
+     <fo:table-row>
+      <fo:table-cell>
+       <fo:block>Nom</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>Contenance</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>Bouteilles</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Quart</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,25</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Bouteille</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>1</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Magnum</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>1,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>2</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Jéroboam</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>3,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>4</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Mathusalem</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+      <fo:block>6,4 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>8</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Salmanazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>9,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>12</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Balthazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>12,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>16</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Nabuchodonosor</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>16 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>20</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+   <fo:block font-style="normal" font-weight="bold" space-before="2em" color="#880000">
+    table : border="0.5pt solid #000088" padding="5pt"
+   </fo:block>
+   <fo:block font-style="normal" font-weight="bold" color="#880000">
+    cell : border-bottom="0.5pt solid #000088"
+   </fo:block>
+   <fo:table table-layout="fixed" width="9.9cm" text-align="center" space-before="1em" border="0.5pt solid #000088" border-collapse="separate" padding="5pt">
+    <fo:table-column column-width="3.3cm" number-columns-repeated="3"></fo:table-column>
+    <fo:table-body>
+     <fo:table-row>
+      <fo:table-cell border-bottom="0.5pt solid #000088">
+       <fo:block>Nom</fo:block>
+      </fo:table-cell>
+      <fo:table-cell border-bottom="0.5pt solid #000088">
+       <fo:block>Contenance</fo:block>
+      </fo:table-cell>
+      <fo:table-cell border-bottom="0.5pt solid #000088">
+       <fo:block>Bouteilles</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Quart</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,25</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Bouteille</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>0,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>1</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Magnum</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>1,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>2</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Jéroboam</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>3,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>4</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Mathusalem</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+      <fo:block>6,4 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>8</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Salmanazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>9,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>12</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Balthazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>12,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>16</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left">
+       <fo:block>Nabuchodonosor</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>16 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell>
+       <fo:block>20</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+   <fo:block font-style="normal" font-weight="bold" space-before="2em" color="#880000">
+    table : border="0.5pt solid #000088"
+   </fo:block>
+   <fo:block font-style="normal" font-weight="bold" color="#880000">
+    cell : border-bottom="0.5pt solid #000088" padding="2pt 5pt"
+   </fo:block>
+   <fo:table space-before="1em" table-layout="fixed" text-align="center" border="0.5pt solid #000088">
+    <fo:table-column column-width="3.3cm" number-columns-repeated="3"></fo:table-column>
+    <fo:table-body>
+     <fo:table-row>
+      <fo:table-cell border-bottom="0.5pt solid #000088" padding="2pt 5pt">
+       <fo:block>Nom</fo:block>
+      </fo:table-cell>
+      <fo:table-cell border-bottom="0.5pt solid #000088" padding="2pt 5pt">
+       <fo:block>Contenance</fo:block>
+      </fo:table-cell>
+      <fo:table-cell border-bottom="0.5pt solid #000088" padding="2pt 5pt">
+       <fo:block>Bouteilles</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Quart</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>0,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>0,25</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Bouteille</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>0,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>1</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Magnum</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>1,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>2</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Jéroboam</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>3,2 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>4</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Mathusalem</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+      <fo:block>6,4 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>8</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Salmanazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>9,6 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>12</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Balthazar</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>12,8 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>16</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+     <fo:table-row>
+      <fo:table-cell text-align="left" padding="2pt 5pt">
+       <fo:block>Nabuchodonosor</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>16 litres</fo:block>
+      </fo:table-cell>
+      <fo:table-cell padding="2pt 5pt">
+       <fo:block>20</fo:block>
+      </fo:table-cell>
+     </fo:table-row>
+    </fo:table-body>
+   </fo:table>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>
