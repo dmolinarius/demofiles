@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
  <fo:layout-master-set>
   <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="1.5cm" margin-bottom="2cm" margin-left="2.5cm" margin-right="1cm">
@@ -16,35 +17,35 @@
 
   <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
    <fo:block space-before="0.5em">
-    Document XSL-FO © Daniel Muller
+    Document XSL-FO Â© Daniel Muller
    </fo:block>
    <fo:block>
-    Dernière modification le 18/11/2016 15:01
+    DerniÃ¨re modification le 18/11/2016 15:01
    </fo:block>
   </fo:static-content>
 
   <fo:flow flow-name="xsl-region-body" font-size="10pt" text-align="justify">
-   <fo:block font-weight="bold" space-before="1em" space-after="1em">L'enfance de Zéphyrin.</fo:block>
+   <fo:block font-weight="bold" space-before="1em" space-after="1em">L'enfance de ZÃ©phyrin.</fo:block>
    <fo:block space-before="0.5em">
-    C'est le 1er janvier, à minuit une seconde sexagésimale de temps moyen,
-    que le jeune Brioché poussa ses premiers vagissements. A son baptême,
-    il reçut les prénoms harmonieux, poétiques et distingués de Pancrace,
-    Eusèbe, Zéphyrin, ce dont il parut se soucier comme un cloporte d'un ophicléide.
+    C'est le 1er janvier, Ã  minuit une seconde sexagÃ©simale de temps moyen,
+    que le jeune BriochÃ© poussa ses premiers vagissements. A son baptÃªme,
+    il reÃ§ut les prÃ©noms harmonieux, poÃ©tiques et distinguÃ©s de Pancrace,
+    EusÃ¨be, ZÃ©phyrin, ce dont il parut se soucier comme un cloporte d'un ophiclÃ©ide.
    </fo:block>
    <fo:block space-before="0.5em">
-    Consultée à son sujet, une somnambule extralucide, phrénologue distinguée,
-    pédicure de nombreuses têtes couronnées, lui découvrit la bosse du mouvement
-    perpétuel. D'où elle conclut logiquement qu'il serait un grand voyageur ou un
-    grand mathématicien, à moins qu'il ne fût affligé de la danse de Saint-Guy.
+    ConsultÃ©e Ã  son sujet, une somnambule extralucide, phrÃ©nologue distinguÃ©e,
+    pÃ©dicure de nombreuses tÃªtes couronnÃ©es, lui dÃ©couvrit la bosse du mouvement
+    perpÃ©tuel. D'oÃ¹ elle conclut logiquement qu'il serait un grand voyageur ou un
+    grand mathÃ©maticien, Ã  moins qu'il ne fÃ»t affligÃ© de la danse de Saint-Guy.
    </fo:block>
    <fo:block space-before="0.5em">
-    Conformément à la prédiction de la somnambule, Zéphyrin montra, dès sa plus
-    tendre enfance, des dispositions étonnantes pour les sciences expérimentales.
-    Livré à lui-même, il s'ingéniait avec beaucoup de persévérance à résoudre
-    les problèmes les plus compliqués.
+    ConformÃ©ment Ã  la prÃ©diction de la somnambule, ZÃ©phyrin montra, dÃ¨s sa plus
+    tendre enfance, des dispositions Ã©tonnantes pour les sciences expÃ©rimentales.
+    LivrÃ© Ã  lui-mÃªme, il s'ingÃ©niait avec beaucoup de persÃ©vÃ©rance Ã  rÃ©soudre
+    les problÃ¨mes les plus compliquÃ©s.
    </fo:block>
    <fo:block space-before="1em" font-style="italic">
-    Extrait de : <fo:inline font-weight="bold">l'idée fixe du Savant Cosinus</fo:inline>.
+    Extrait de : <fo:inline font-weight="bold">l'idÃ©e fixe du Savant Cosinus</fo:inline>.
    </fo:block>
   </fo:flow>
  </fo:page-sequence>
