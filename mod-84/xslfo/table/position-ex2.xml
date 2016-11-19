@@ -20,138 +20,121 @@
     Document source XSL-FO © Daniel Muller
    </fo:block>
    <fo:block>
-    Dernière modification le 19/11/2016 14:16
+    Dernière modification le 19/11/2016 13:54
    </fo:block>
   </fo:static-content>
 
-  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic">
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
 
-   <fo:block text-align="center">
+   <fo:block>
     Contenance des bouteilles de champagne :
    </fo:block>
-
-   <fo:table table-layout="fixed" width="100%">
-    <fo:table-column column-width="proportional-column-width(1)"></fo:table-column>
-    <fo:table-column column-width="9cm"></fo:table-column>
-    <fo:table-column column-width="proportional-column-width(1)"></fo:table-column>
-    <fo:table-body>
-     <fo:table-row>
-      <fo:table-cell><fo:block></fo:block></fo:table-cell>
-      <fo:table-cell>
-
-   <fo:table table-layout="fixed" text-align="center" space-before="1em" border="1px solid">
+   <fo:table table-layout="fixed" text-align="center" space-before="1em" margin-left="5cm" width="9cm" border="1px solid">
     <fo:table-column column-width="3cm"></fo:table-column>
     <fo:table-column column-width="3cm"></fo:table-column>
     <fo:table-column column-width="3cm"></fo:table-column>
     <fo:table-body>
      <fo:table-row>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>Nom</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>Contenance</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>Bouteilles</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Quart</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>0,2 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>0,25</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Bouteille</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>0,8 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>1</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Magnum</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>1,6 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>2</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Jéroboam</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>3,2 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>4</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Mathusalem</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
       <fo:block>6,4 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>8</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Salmanazar</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>9,6 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>12</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Balthazar</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>12,8 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>16</fo:block>
       </fo:table-cell>
      </fo:table-row>
      <fo:table-row>
-      <fo:table-cell text-align="left">
+      <fo:table-cell text-align="left" margin-left="0">
        <fo:block>Nabuchodonosor</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>16 litres</fo:block>
       </fo:table-cell>
-      <fo:table-cell>
+      <fo:table-cell margin-left="0">
        <fo:block>20</fo:block>
       </fo:table-cell>
      </fo:table-row>
     </fo:table-body>
    </fo:table>
-
-      </fo:table-cell>
-      <fo:table-cell><fo:block></fo:block></fo:table-cell>
-     </fo:table-row>
-    </fo:table-body>
-   </fo:table>
-
 
   </fo:flow>
  </fo:page-sequence>
