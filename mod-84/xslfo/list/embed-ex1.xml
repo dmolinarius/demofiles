@@ -20,7 +20,7 @@
     Document source XSL-FO © Daniel Muller
    </fo:block>
    <fo:block>
-    Dernière modification le 18/11/2016 19:01
+    Dernière modification le 19/11/2016 18:15
    </fo:block>
   </fo:static-content>
 
@@ -232,7 +232,7 @@
    </fo:block>
 
    <fo:block font-style="italic" font-size="8pt">
-    Editions Flammarion - Paul Bocuse à la carte
+    "Bocuse à la carte - Menus pour la table familiale", Flammarion, 1986
    </fo:block>
 
   </fo:flow>
