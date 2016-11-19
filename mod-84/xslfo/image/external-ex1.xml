@@ -17,10 +17,10 @@
 
   <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
    <fo:block space-before="1em">
-    Document source XSL-FO © Daniel Muller
+    Document source XSL-FO Â© Daniel Muller
    </fo:block>
    <fo:block>
-    Dernière modification le 19/11/2016 18:54
+    DerniÃ¨re modification le 19/11/2016 18:54
    </fo:block>
   </fo:static-content>
 
@@ -30,14 +30,14 @@
     Exemple d'image au format jpeg incluse sous forme externe.
    </fo:block>
    <fo:block space-before="0.5cm">
-    La taille obtenue correspond à la définition par défaut utilisée par le processeur d'impression FOP.
-    Comme elle est supérieure à la taille de la page, FOP la passe en page suivante.
+    La taille obtenue correspond Ã  la dÃ©finition par dÃ©faut utilisÃ©e par le processeur d'impression FOP.
+    Comme elle est supÃ©rieure Ã  la taille de la page, FOP la passe en page suivante.
    </fo:block>
    <fo:block text-align-last="justify" start-indent="-1em" space-after="0" space-before="2.66em">
     <fo:leader leader-pattern="rule" rule-style="solid" rule-thickness="1pt" color="#AAAACC"></fo:leader>
    </fo:block>
    <fo:block font-style="italic" font-size="8pt">
-    Photo © Classiccardinal (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons
+    Photo Â© Classiccardinal (Own work) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons
    </fo:block>
 
    <fo:block text-align="center" space-before="2cm">
