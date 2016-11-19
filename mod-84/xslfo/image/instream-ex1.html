@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="instream-ex1.xml">source</a>]</div>
+  <div class="toggle">[<a href="instream-ex1.pdf">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+ &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                         <font color="#009900">page-height</font>="<font color="#990000">29.7cm</font>"
+                         <font color="#009900">page-width</font>="<font color="#990000">21cm</font>"
+                         <font color="#009900">margin-top</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-bottom</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-left</font>="<font color="#990000">2.5cm</font>"
+                         <font color="#009900">margin-right</font>="<font color="#990000">1cm</font>"&gt;
+   &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">1.6cm</font>"
+                   <font color="#009900">margin-bottom</font>="<font color="#990000">1.6cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-body</font>&gt;
+   &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-before</font>&gt;
+   &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-after</font>&gt;
+ &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+ &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+ &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"
+                   <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+                   <font color="#009900">background-color</font>="<font color="#990000">#FFFFCC</font>"
+                   <font color="#009900">color</font>="<font color="#990000">#000088</font>"&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"&gt; 
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"&gt;<b>
+    Exemple de document XSL-FO
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">1em</font>"&gt;<b>
+    Document source XSL-FO </b><b>©</b><b> Daniel Muller
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Derni</b><b>ère modification le </b><font color="#FF0000">19/11/2016 21:20</font>
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+           <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"
+           <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+           <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+           <font color="#009900">text-align</font>="<font color="#990000">justify</font>"&gt;
+
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">1cm</font>"&gt;<b>
+    Exemple de graphique </b>&lt;<font color="#0000cc">fo:inline</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>SVG</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;<b> dont le code source a </b><b>été directement
+    inclus dans le document </b>&lt;<font color="#0000cc">fo:inline</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>XSL-FO</b>&lt;/<font color="#0000cc">fo:inline</font>&gt; <b>à l'aide d'un élément
+    "fo:instream-foreign-object".
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">5em</font>"&gt;
+    &lt;<font color="#0000cc">fo:instream-foreign-object</font> <font color="#009900">width</font>="<font color="#990000">15cm</font>"&gt;
+     <b>&lt;svg xmlns="http://www.w3.org/2000/svg"
+          width="15cm"
+          height="6cm"
+          viewBox="250 0 500 200"&gt;</b>
+      <b>&lt;defs&gt;</b>
+       <b>&lt;style type="text/css"&gt;</b><b>
+         rect.background { fill:#FFFFFF; }
+         circle { stroke:gold; stroke-width:5; fill:lavender; }
+         text { font-family:serif; text-anchor:middle; stroke:black; }
+         #heures { stroke:none; fill:black; } 
+         #minutes { stroke:none; fill:#slategrey; } 
+         #secondes { stroke:red; fill:none; stroke-width:1;} 
+         text.exemple { font-family:sans-serif; font-size:20; stroke:none; fill:black; text-anchor:start; }
+        </b><b>&lt;/style&gt;</b>
+      <b>&lt;/defs&gt;</b>
+      
+      <b>&lt;rect class="background"
+            x="0"
+            y="-100"
+            width="1000"
+            height="400"&gt;</b><b>&lt;/rect&gt;</b>
+      
+      <b>&lt;g transform="translate(0,-20)"&gt;</b>
+       <b>&lt;circle cx="500"
+               cy="100"
+               r="75"&gt;</b><b>&lt;/circle&gt;</b>
+       <b>&lt;text x="500"
+             y="40"&gt;</b><b>XII</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(30,500,100)"&gt;</b><b>I</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(60,500,100)"&gt;</b><b>II</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(90,500,100)"&gt;</b><b>III</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(120,500,100)"&gt;</b><b>IV</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(150,500,100)"&gt;</b><b>V</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(180,500,100)"&gt;</b><b>VI</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(210,500,100)"&gt;</b><b>VII</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(240,500,100)"&gt;</b><b>VIII</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(270,500,100)"&gt;</b><b>IX</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(300,500,100)"&gt;</b><b>X</b><b>&lt;/text&gt;</b>
+       <b>&lt;text x="500"
+             y="40"
+             transform="rotate(330,500,100)"&gt;</b><b>XI</b><b>&lt;/text&gt;</b>
+      
+      
+       <b>&lt;g transform="translate(500,100)"&gt;</b>
+        <font color="#FF0000">&lt;g id="heures" transform="rotate(550.5)"&gt;
+         &lt;polygon points="0,0 10,5 45,0 10,-5"/&gt;
+        &lt;/g&gt;
+        &lt;g id="minutes" transform="rotate(39.6)"&gt;
+         &lt;polygon points="0,0 15,5 60,0 15,-5"/&gt;
+        &lt;/g&gt;
+        &lt;g id="secondes" transform="rotate(126)"&gt;
+         &lt;polyline points="0,0 70,0"/&gt;
+        &lt;/g&gt;</font>
+       <b>&lt;/g&gt;</b>
+      
+      <b>&lt;/g&gt;</b>
+     <b>&lt;/svg&gt;</b>
+    &lt;/<font color="#0000cc">fo:instream-foreign-object</font>&gt;
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"&gt;<b>
+    Heure de cr</b><b>éation de ce document
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+
+  &lt;/<font color="#0000cc">fo:flow</font>&gt;
+ &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161119
+        </span></div></td></tr></table></body></html>

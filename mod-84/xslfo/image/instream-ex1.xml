@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia" background-color="#FFFFCC" color="#000088">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-weight="bold" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document source XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 19/11/2016 21:20
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
+
+   <fo:block space-before="1cm">
+    Exemple de graphique <fo:inline font-weight="bold">SVG</fo:inline> dont le code source a été directement
+    inclus dans le document <fo:inline font-weight="bold">XSL-FO</fo:inline> à l'aide d'un élément
+    "fo:instream-foreign-object".
+   </fo:block>
+   <fo:block text-align="center" space-before="5em">
+    <fo:instream-foreign-object width="15cm">
+     <svg xmlns="http://www.w3.org/2000/svg" width="15cm" height="6cm" viewBox="250 0 500 200">
+      <defs>
+       <style type="text/css">
+         rect.background { fill:#FFFFFF; }
+         circle { stroke:gold; stroke-width:5; fill:lavender; }
+         text { font-family:serif; text-anchor:middle; stroke:black; }
+         #heures { stroke:none; fill:black; } 
+         #minutes { stroke:none; fill:#slategrey; } 
+         #secondes { stroke:red; fill:none; stroke-width:1;} 
+         text.exemple { font-family:sans-serif; font-size:20; stroke:none; fill:black; text-anchor:start; }
+        </style>
+      </defs>
+      
+      <rect class="background" x="0" y="-100" width="1000" height="400"></rect>
+      
+      <g transform="translate(0,-20)">
+       <circle cx="500" cy="100" r="75"></circle>
+       <text x="500" y="40">XII</text>
+       <text x="500" y="40" transform="rotate(30,500,100)">I</text>
+       <text x="500" y="40" transform="rotate(60,500,100)">II</text>
+       <text x="500" y="40" transform="rotate(90,500,100)">III</text>
+       <text x="500" y="40" transform="rotate(120,500,100)">IV</text>
+       <text x="500" y="40" transform="rotate(150,500,100)">V</text>
+       <text x="500" y="40" transform="rotate(180,500,100)">VI</text>
+       <text x="500" y="40" transform="rotate(210,500,100)">VII</text>
+       <text x="500" y="40" transform="rotate(240,500,100)">VIII</text>
+       <text x="500" y="40" transform="rotate(270,500,100)">IX</text>
+       <text x="500" y="40" transform="rotate(300,500,100)">X</text>
+       <text x="500" y="40" transform="rotate(330,500,100)">XI</text>
+      
+      
+       <g transform="translate(500,100)">
+        <g id="heures" transform="rotate(550.5)">
+         <polygon points="0,0 10,5 45,0 10,-5"/>
+        </g>
+        <g id="minutes" transform="rotate(39.8)">
+         <polygon points="0,0 15,5 60,0 15,-5"/>
+        </g>
+        <g id="secondes" transform="rotate(138)">
+         <polyline points="0,0 70,0"/>
+        </g>
+       </g>
+      
+      </g>
+     </svg>
+    </fo:instream-foreign-object>
+   </fo:block>
+   <fo:block text-align="center">
+    Heure de création de ce document
+   </fo:block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>

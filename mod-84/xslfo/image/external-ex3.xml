@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm"></fo:region-body>
+   <fo:region-before extent="1.5cm"></fo:region-before>
+   <fo:region-after extent="1.5cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Georgia" background-color="#FFFFCC" color="#000088">
+
+  <fo:static-content flow-name="xsl-region-before"> 
+   <fo:block text-align="center" font-weight="bold" font-size="12pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block space-before="1em">
+    Document source XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 19/11/2016 20:20
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic">
+
+   <fo:list-block provisional-distance-between-starts="1.5em" space-after="0.5em">
+    <fo:list-item space-after="0.25em">
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block margin-top="-0.33em">
+       <fo:external-graphic content-height="1.5em" src="url(purple-bullet.gif)">
+       </fo:external-graphic>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       Un item de liste qui bénéficie d'une puce obtenue à l'aide d'une image au format gif.
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+    <fo:list-item space-after="0.25em">
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block margin-top="-0.33em">
+       <fo:external-graphic content-height="1.5em" src="url(green-bullet.gif)">
+       </fo:external-graphic>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       Un deuxième item de liste qui bénéficie d'une puce de couleur différente.
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+    <fo:list-item space-after="0.25em">
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block margin-top="-0.2em">
+       <fo:external-graphic content-height="1.2em" src="url(logo-tic.gif)"></fo:external-graphic>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+       La puce de cet item est un logo !
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+   </fo:list-block>
+
+   <fo:list-block provisional-distance-between-starts="3.0em" space-after="0.5em">
+    <fo:list-item space-after="0.25em">
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block padding-top="0.3em">
+       <fo:external-graphic content-height="3em" src="url(logo-tic.gif)"></fo:external-graphic>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block margin-left="1.33em" margin-top="1.5em">
+       La même en plus grand ...
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+   </fo:list-block>
+
+   <fo:block space-before="2em">
+    <fo:inline font-weight="bold">N.B.</fo:inline>
+    Les images ne servent pas uniquement de puces. Elles peuvent s'insérer  
+    <fo:external-graphic content-height="1em" alignment-baseline="mathematical" src="url(triangle-right.gif)"></fo:external-graphic>n'importe
+    où<fo:external-graphic content-height="1em" alignment-baseline="mathematical" src="url(triangle-left.gif)"></fo:external-graphic>
+      dans le texte !
+   </fo:block>
+
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>
