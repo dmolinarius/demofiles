@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="/~muller/cours/style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="http://localhost/xmlraw/~muller/cours/xslfo/table/position-ex4.xml">source</a>]</div>
+  <div class="toggle">[<a href="http://localhost/fop/null.xml?FO=/~muller/cours/xslfo/table/position-ex4.xml">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+ &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                         <font color="#009900">page-height</font>="<font color="#990000">29.7cm</font>"
+                         <font color="#009900">page-width</font>="<font color="#990000">21cm</font>"
+                         <font color="#009900">margin-top</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-bottom</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-left</font>="<font color="#990000">2.5cm</font>"
+                         <font color="#009900">margin-right</font>="<font color="#990000">1cm</font>"&gt;
+   &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">1.6cm</font>"
+                   <font color="#009900">margin-bottom</font>="<font color="#990000">1.6cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-body</font>&gt;
+   &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-before</font>&gt;
+   &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-after</font>&gt;
+ &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+ &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+ &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"
+                   <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+                   <font color="#009900">background-color</font>="<font color="#990000">#FFFFCC</font>"
+                   <font color="#009900">color</font>="<font color="#990000">#000088</font>"&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"&gt; 
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"&gt;<b>
+    Exemple de document XSL-FO
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">1em</font>"&gt;<b>
+    Document source XSL-FO </b><b>©</b><b> Daniel Muller
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Derni</b><b>ère modification le </b><font color="#FF0000">19/11/2016 15:30</font>
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+           <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"
+           <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+           <font color="#009900">font-style</font>="<font color="#990000">italic</font>"&gt;
+
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"&gt;<b>
+    Contenance des bouteilles de champagne :
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+
+   &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+             <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+    &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">2cm</font>"&gt;&lt;/<font color="#0000cc">fo:table-column</font>&gt;
+    &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">from-parent(width)-4cm</font>"&gt;&lt;/<font color="#0000cc">fo:table-column</font>&gt;
+    &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">2cm</font>"&gt;&lt;/<font color="#0000cc">fo:table-column</font>&gt;
+    &lt;<font color="#0000cc">fo:table-body</font>&gt;
+     &lt;<font color="#0000cc">fo:table-row</font>&gt;
+      &lt;<font color="#0000cc">fo:table-cell</font>&gt;&lt;<font color="#0000cc">fo:block</font>&gt;&lt;/<font color="#0000cc">fo:block</font>&gt;&lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+      &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+
+       &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                 <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                 <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                 <font color="#009900">border</font>="<font color="#990000">1px solid</font>"
+                 <font color="#009900">padding</font>="<font color="#990000">0.5em</font>"
+                 <font color="#009900">border-collapse</font>="<font color="#990000">separate</font>"
+                 <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;&lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;&lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;&lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Nom</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Contenance</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Bouteilles</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Quart</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>0,2 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>0,25</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Bouteille</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>0,8 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>1</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Magnum</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>1,6 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>2</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>J</b><b>éroboam</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>3,2 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>4</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mathusalem</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:block</font>&gt;<b>6,4 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>8</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Salmanazar</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>9,6 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>12</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Balthazar</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>12,8 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>16</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+         &lt;<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">text-align</font>="<font color="#990000">left</font>"&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>Nabuchodonosor</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>16 litres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;<font color="#0000cc">fo:table-cell</font>&gt;
+           &lt;<font color="#0000cc">fo:block</font>&gt;<b>20</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+         &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+       &lt;/<font color="#0000cc">fo:table</font>&gt;
+
+      &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+      &lt;<font color="#0000cc">fo:table-cell</font>&gt;&lt;<font color="#0000cc">fo:block</font>&gt;&lt;/<font color="#0000cc">fo:block</font>&gt;&lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+     &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+    &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+   &lt;/<font color="#0000cc">fo:table</font>&gt;
+
+
+  &lt;/<font color="#0000cc">fo:flow</font>&gt;
+ &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161118
+        </span></div></td></tr></table></body></html>

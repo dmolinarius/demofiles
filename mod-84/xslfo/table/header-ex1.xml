@@ -1,0 +1,1457 @@
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="page-unique" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+      <fo:region-body margin-top="1.6cm" margin-bottom="1.6cm">
+      </fo:region-body>
+      <fo:region-before extent="1.5cm">
+      </fo:region-before>
+      <fo:region-after extent="1.5cm">
+      </fo:region-after>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  <fo:page-sequence master-reference="page-unique" font-family="Georgia" background-color="#FFFFCC" color="#000088">
+    <fo:static-content flow-name="xsl-region-before">
+      <fo:block text-align="center" font-weight="bold" font-size="12pt">Exemple de document XSL-FO
+      </fo:block>
+    </fo:static-content>
+    <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+      <fo:block space-before="1em">Documents sources XSL © Daniel Muller
+      </fo:block>
+      <fo:block>Dernière modification le 19/11/2016 15:46
+      </fo:block>
+    </fo:static-content>
+    <fo:flow flow-name="xsl-region-body" font-size="12pt" font-family="Georgia" font-style="italic" text-align="justify">
+      <fo:block color="#008800" font-size="14pt" font-style="normal" text-align="center">XML, Standards et Applications</fo:block>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>Introduction à XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Eléments d'histoire</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>A l'origine était SGML...               </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>De SGML à XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>La solution XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="10" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>XML en 10 points</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Une méthode pour structurer des données</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML ressemble à HTML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML : du texte pas forcément lu... par des humains</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML est verbeux, mais ce n'est pas un problème</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML est une famille de technologies</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML est une technologie récente, mais éprouvée</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML fait passer HTML à XHTML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML est modulaire</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML est le fondement de RDF et du Web Sémantique</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XML est libre de droits, indépendant des plates-formes et correctement supporté</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>Eléments de syntaxe</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="6" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Généralités</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments, balises et contenu</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments vides</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sensibilité à la casse</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Arbre XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>La famille de l'élément courant</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Structure d'un document XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="4" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Eléments et attributs</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Contenu des éléments</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments à contenu mixte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Attributs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments ou attributs ?</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Entités</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Principe des entités prédéfinies</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Les entités prédéfinies</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Entités caractères</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="4" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Autres sections</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Données caractères</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Commentaires</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Instructions de traitement</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Déclaration XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Vers des documents bien formés</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Noms autorisés</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Noms autorisés ?</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Documents bien formés</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>Standards et applications</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="12" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Un survol des standards</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Définition de Type de Document</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Espaces de Noms</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Schémas XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Feuilles de style CSS</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Feuilles de style XSL</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Transformations XSLT</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>XSL Formatting Objects</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sélecteurs XPath</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Développement SAX / DOM</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Pointeurs XPointeur</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Liens XLink</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Avertissement</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="5" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Espaces de Noms</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Fiche d'identité</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Pourquoi les espaces de Noms</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Identifiants d'espaces de Noms</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Préfixes d'espaces de Noms</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Espace de Noms par défaut</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="8" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Exemples d'applications</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Format graphique X3D</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Format graphique SVG</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Format multimédia SMIL</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Format d'échange WebDAV</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Format d'échange XML RPC</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Formats d'échange ebXML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>L'organisation OASIS</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Autres formats d'échange</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="4" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>XHTML</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Une reformulation de HTML 4.0 en XML 1.0</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Différences avec HTML 4.0</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Problème des éléments SCRIPT et STYLE</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Problème des attributs NAME et ID</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>Définition de Type de Document</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="4" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Déclaration de Type de Document</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Déclaration système</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Déclaration publique</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Déclaration interne</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Déclaration standalone</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="1" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Principe d'une DTD</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Principe d'une DTD</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Déclaration de type d'élément</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Déclaration de type d'élément</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de contenu élémentaire</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de contenu mixte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="6" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Déclaration de liste d'attributs</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Déclaration de liste d'attributs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Liste d'attributs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Types d'attributs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Identifiants uniques</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Valeur par défaut</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Exemples de déclarations d'attributs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="4" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Déclarations d'entités</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Entité générale</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Entité générale externe analysée</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Entité paramètre</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Entité paramètre externe</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="1" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Espaces de noms</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Espaces de noms</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="1" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Validation</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Validation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>Schémas XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="5" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Introduction</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Pourqoi des schémas XML ?</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Les spécifications XML Schema</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Fiche d'identite</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Associer un schéma à un document</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>A quoi sert un schéma XML ?</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="9" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Principes</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Exemple de schéma XML</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de contenu courants</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de contenu courants</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de contenu courants</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de contenu courants</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de contenu courants</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Création de types par dérivation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Définitions locales</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments fonction du contexte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="7" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Types simples prédéfinis</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Introduction</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Chaînes brutes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Chaînes de caractères</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Identifiants uniques</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Types spéciaux</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Nombres</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Nombres à virgule flottante</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="10" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Création de types simples</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Principe des dérivations</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Dérivation par restriction</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Facette xs:pattern</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Facette xs:enumeration</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Facettes xs:length et al.               </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Facettes min et max</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Facettes de digits</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Restrictions multiples</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Dérivation par liste</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Dérivation par union</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="12" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Création de types complexes</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Introduction</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Création de type complexe à contenu simple</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Dérivation de type complexe à contenu simple</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Restriction de type complexe à contenu simple</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Création de type complexe à contenu complexe</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Contrôle du nombre d'occurences</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Alternatives avec xs:choice</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Groupes de particules avec xs:group</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Quid des attributs ?</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Dérivation de type complexe à contenu complexe</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Type complexe à contenus mixtes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Type complexe à contenus vides</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="1" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Validation</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Validation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>XPath</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="5" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Introduction</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Fiche d'identité</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments de contexte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Expressions XPath</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Chemin de localisation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Exemples de chemins de localisation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="4" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Chemins de localisation</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Chemins de localisation absolus</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sélection des descendants</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Chemins de localisation relatifs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sélection des attributs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="8" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Sélecteurs, axes et prédicats</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sélecteurs de noeuds</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Principe des prédicats</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Exemples de prédicats</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Etapes de localisation non abrégées</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Axes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Récapitulatif des axes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Syntaxe généralisée des étapes de localisation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Chemins composés</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Expressions générales</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Opérateurs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Fonctions XPath</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Quelques exemples</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>Transformations XSLT</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Introduction</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Spécifications</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments de contexte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Transformation et sérialisation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="6" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Mise en place d'une feuille de style</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Associer une feuille de style à un document</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Première feuille de style</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles récursifs</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Comportement par défaut</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles implicites</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Validité d'une feuille de style</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="4" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Méthodes de sérialisation</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Contrôle de la sérialisation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sérialisation au format texte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sérialisation au format html</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Sérialisation au format xml</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Ordre de traitement des éléments</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Traitement récursif ou procédural</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèle local</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Tri</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Modes et modèles</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Construction d'une table des matières</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles de mise en page</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Table des matières</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Traitement conditionnel</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Condition unique</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Conditions multiples</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Numérotation</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>L'élément XSL number</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>La fonction XPath count</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="3" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Modèles nommés, paramètres et constantes</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèles réutilisables</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Paramètres</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Constantes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="8" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Construction de l'arbre de sortie</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'un élément</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'un attribut</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'un noeud texte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'une instruction de traitement</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'un commentaire</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'une valeur textuelle</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'un noeud</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Insertion d'un ensemble de noeuds</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="1" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Combinaison de feuilles de style</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Inclusion d'éléments de style</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+      <fo:table table-layout="fixed" text-align="center" space-before="1em" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)">
+        </fo:table-column>
+        <fo:table-column column-width="proportional-column-width(3)">
+        </fo:table-column>
+        <fo:table-header>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" color="#880000">
+              <fo:block>XSL Formatting Objects</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-header>
+        <fo:table-footer>
+          <fo:table-row>
+            <fo:table-cell number-columns-spanned="2" padding="2pt" color="#000088" font-size="8pt">
+              <fo:block>Cours "XML, Standards et Applications" © 2004 Daniel Muller</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-footer>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="2" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Introduction</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Présentation</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Principes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="6" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Les éléments d'un document XSL-FO</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Document XSL-FO</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Structure d'un document XSL-FO</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèle de page</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Contenu informationnel</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Blocs de texte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Eléments texte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="5" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Présentation des blocs</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Alignement du texte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Bordures</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Couleur et motif du fond</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Marges internes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Blocs inclus</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="6" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Présentation du texte</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Polices de caractères</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Rendu des caractères</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Alignement du texte</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Alignement vertical</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Traitement des espaces</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Ligne de caractères</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="5" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Listes</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèle des listes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Liste à puce</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Liste ordonnée</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Liste descriptive</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Listes imbriquées</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell number-rows-spanned="5" border="0.5pt solid #CCCCCC" padding="2pt" display-align="center">
+              <fo:block>Tables</fo:block>
+            </fo:table-cell>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Modèle des tables</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Visualisation des tables</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Position horizontale d'une table</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Tables complexes</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row>
+            <fo:table-cell border="0.5pt solid #CCCCCC" padding="2pt">
+              <fo:block>Entête et bas de table</fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>

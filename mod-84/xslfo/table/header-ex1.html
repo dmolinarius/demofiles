@@ -1,0 +1,1915 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="/~muller/cours/style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="http://localhost/xmlraw/~muller/cours/xslfo/table/header-ex1.xml">source</a>]</div>
+  <div class="toggle">[<a href="http://localhost/fop/null.xml?FO=/~muller/cours/xslfo/table/header-ex1.xml">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+  &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+    &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                           <font color="#009900">page-height</font>="<font color="#990000">29.7cm</font>"
+                           <font color="#009900">page-width</font>="<font color="#990000">21cm</font>"
+                           <font color="#009900">margin-top</font>="<font color="#990000">0.5cm</font>"
+                           <font color="#009900">margin-bottom</font>="<font color="#990000">0.5cm</font>"
+                           <font color="#009900">margin-left</font>="<font color="#990000">2.5cm</font>"
+                           <font color="#009900">margin-right</font>="<font color="#990000">1cm</font>"&gt;
+      &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">1.6cm</font>"
+                      <font color="#009900">margin-bottom</font>="<font color="#990000">1.6cm</font>"&gt;
+      &lt;/<font color="#0000cc">fo:region-body</font>&gt;
+      &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;
+      &lt;/<font color="#0000cc">fo:region-before</font>&gt;
+      &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;
+      &lt;/<font color="#0000cc">fo:region-after</font>&gt;
+    &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+  &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"
+                    <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+                    <font color="#009900">background-color</font>="<font color="#990000">#FFFFCC</font>"
+                    <font color="#009900">color</font>="<font color="#990000">#000088</font>"&gt;
+    &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+                <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"&gt;<b>Exemple de document XSL-FO
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+    &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                       <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                       <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                       <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">1em</font>"&gt;<b>Documents sources XSL </b><b>© Daniel Muller
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+      &lt;<font color="#0000cc">fo:block</font>&gt;<b>Derni</b><b>ère modification le 19/11/2016 15:46
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+    &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+    &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"
+             <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+             <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+             <font color="#009900">text-align</font>="<font color="#990000">justify</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">color</font>="<font color="#990000">#008800</font>"
+                <font color="#009900">font-size</font>="<font color="#990000">14pt</font>"
+                <font color="#009900">font-style</font>="<font color="#990000">normal</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"&gt;<b>XML, Standards et Applications</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Introduction </b><b>à XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments d'histoire</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>A l'origine </b><b>était SGML...               </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>De SGML </b><b>à XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>La solution XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">10</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML en 10 points</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Une m</b><b>éthode pour structurer des données</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML ressemble </b><b>à HTML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML : du texte pas forc</b><b>ément lu... par des humains</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML est verbeux, mais ce n'est pas un probl</b><b>ème</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML est une famille de technologies</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML est une technologie r</b><b>écente, mais éprouvée</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML fait passer HTML </b><b>à XHTML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML est modulaire</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML est le fondement de RDF et du Web S</b><b>émantique</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XML est libre de droits, ind</b><b>épendant des plates-formes et correctement supporté</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments de syntaxe</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">6</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>G</b><b>énéralités</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments, balises et contenu</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments vides</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Sensibilit</b><b>é à la casse</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Arbre XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>La famille de l'</b><b>élément courant</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Structure d'un document XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">4</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments et attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Contenu des </b><b>éléments</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments à contenu mixte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments ou attributs ?</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Entit</b><b>és</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Principe des entit</b><b>és prédéfinies</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Les entit</b><b>és prédéfinies</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Entit</b><b>és caractères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">4</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Autres sections</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Donn</b><b>ées caractères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Commentaires</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Instructions de traitement</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Vers des documents bien form</b><b>és</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Noms autoris</b><b>és</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Noms autoris</b><b>és ?</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Documents bien form</b><b>és</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Standards et applications</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">12</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Un survol des standards</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éfinition de Type de Document</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Espaces de Noms</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Sch</b><b>émas XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Feuilles de style CSS</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Feuilles de style XSL</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Transformations XSLT</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XSL Formatting Objects</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>électeurs XPath</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éveloppement SAX / DOM</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Pointeurs XPointeur</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Liens XLink</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Avertissement</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">5</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Espaces de Noms</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Fiche d'identit</b><b>é</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Pourquoi les espaces de Noms</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Identifiants d'espaces de Noms</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Pr</b><b>éfixes d'espaces de Noms</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Espace de Noms par d</b><b>éfaut</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">8</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Exemples d'applications</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Format graphique X3D</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Format graphique SVG</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Format multim</b><b>édia SMIL</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Format d'</b><b>échange WebDAV</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Format d'</b><b>échange XML RPC</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Formats d'</b><b>échange ebXML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>L'organisation OASIS</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Autres formats d'</b><b>échange</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">4</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XHTML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Une reformulation de HTML 4.0 en XML 1.0</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Diff</b><b>érences avec HTML 4.0</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Probl</b><b>ème des éléments SCRIPT et STYLE</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Probl</b><b>ème des attributs NAME et ID</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éfinition de Type de Document</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">4</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration de Type de Document</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration système</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration publique</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration interne</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration standalone</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">1</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Principe d'une DTD</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Principe d'une DTD</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration de type d'élément</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration de type d'élément</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de contenu élémentaire</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de contenu mixte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">6</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration de liste d'attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclaration de liste d'attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Liste d'attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Types d'attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Identifiants uniques</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Valeur par d</b><b>éfaut</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Exemples de d</b><b>éclarations d'attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">4</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éclarations d'entités</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Entit</b><b>é générale</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Entit</b><b>é générale externe analysée</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Entit</b><b>é paramètre</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Entit</b><b>é paramètre externe</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">1</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Espaces de noms</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Espaces de noms</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">1</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Validation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Validation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Sch</b><b>émas XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">5</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Introduction</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Pourqoi des sch</b><b>émas XML ?</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Les sp</b><b>écifications XML Schema</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Fiche d'identite</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Associer un sch</b><b>éma à un document</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>A quoi sert un sch</b><b>éma XML ?</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">9</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Principes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Exemple de sch</b><b>éma XML</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de contenu courants</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de contenu courants</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de contenu courants</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de contenu courants</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de contenu courants</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cr</b><b>éation de types par dérivation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>éfinitions locales</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments fonction du contexte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">7</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Types simples pr</b><b>édéfinis</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Introduction</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cha</b><b>înes brutes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cha</b><b>înes de caractères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Identifiants uniques</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Types sp</b><b>éciaux</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Nombres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Nombres </b><b>à virgule flottante</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">10</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cr</b><b>éation de types simples</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Principe des d</b><b>érivations</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>érivation par restriction</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Facette xs:pattern</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Facette xs:enumeration</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Facettes xs:length et al.               </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Facettes min et max</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Facettes de digits</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Restrictions multiples</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>érivation par liste</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>érivation par union</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">12</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cr</b><b>éation de types complexes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Introduction</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cr</b><b>éation de type complexe à contenu simple</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>érivation de type complexe à contenu simple</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Restriction de type complexe </b><b>à contenu simple</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cr</b><b>éation de type complexe à contenu complexe</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Contr</b><b>ôle du nombre d'occurences</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Alternatives avec xs:choice</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Groupes de particules avec xs:group</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Quid des attributs ?</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>D</b><b>érivation de type complexe à contenu complexe</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Type complexe </b><b>à contenus mixtes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Type complexe </b><b>à contenus vides</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">1</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Validation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Validation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XPath</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">5</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Introduction</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Fiche d'identit</b><b>é</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments de contexte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Expressions XPath</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Chemin de localisation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Exemples de chemins de localisation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">4</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Chemins de localisation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Chemins de localisation absolus</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>élection des descendants</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Chemins de localisation relatifs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>élection des attributs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">8</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>électeurs, axes et prédicats</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>électeurs de noeuds</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Principe des pr</b><b>édicats</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Exemples de pr</b><b>édicats</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Etapes de localisation non abr</b><b>égées</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Axes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>R</b><b>écapitulatif des axes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Syntaxe g</b><b>énéralisée des étapes de localisation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Chemins compos</b><b>és</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Expressions g</b><b>énérales</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Op</b><b>érateurs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Fonctions XPath</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Quelques exemples</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Transformations XSLT</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Introduction</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Sp</b><b>écifications</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments de contexte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Transformation et s</b><b>érialisation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">6</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mise en place d'une feuille de style</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Associer une feuille de style </b><b>à un document</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Premi</b><b>ère feuille de style</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles récursifs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Comportement par d</b><b>éfaut</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles implicites</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Validit</b><b>é d'une feuille de style</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">4</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>M</b><b>éthodes de sérialisation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Contr</b><b>ôle de la sérialisation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>érialisation au format texte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>érialisation au format html</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>S</b><b>érialisation au format xml</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Ordre de traitement des </b><b>éléments</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Traitement r</b><b>écursif ou procédural</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èle local</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Tri</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Modes et mod</b><b>èles</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Construction d'une table des mati</b><b>ères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles de mise en page</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Table des mati</b><b>ères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Traitement conditionnel</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Condition unique</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Conditions multiples</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Num</b><b>érotation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>L'</b><b>élément XSL number</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>La fonction XPath count</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">3</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles nommés, paramètres et constantes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èles réutilisables</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Param</b><b>ètres</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Constantes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">8</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Construction de l'arbre de sortie</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'un </b><b>élément</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'un attribut</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'un noeud texte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'une instruction de traitement</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'un commentaire</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'une valeur textuelle</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'un noeud</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Insertion d'un ensemble de noeuds</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">1</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Combinaison de feuilles de style</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Inclusion d'</b><b>éléments de style</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+      &lt;<font color="#0000cc">fo:table</font> <font color="#009900">table-layout</font>="<font color="#990000">fixed</font>"
+                <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+                <font color="#009900">width</font>="<font color="#990000">100%</font>"&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(1)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-column</font> <font color="#009900">column-width</font>="<font color="#990000">proportional-column-width(3)</font>"&gt;
+        &lt;/<font color="#0000cc">fo:table-column</font>&gt;
+        &lt;<font color="#0000cc">fo:table-header</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>XSL Formatting Objects</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-header</font>&gt;
+        &lt;<font color="#0000cc">fo:table-footer</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-columns-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">color</font>="<font color="#990000">#000088</font>"
+                           <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Cours "XML, Standards et Applications" </b><b>© 2004 Daniel Muller</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-footer</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">2</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Introduction</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Pr</b><b>ésentation</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Principes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">6</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Les </b><b>éléments d'un document XSL-FO</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Document XSL-FO</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Structure d'un document XSL-FO</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èle de page</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Contenu informationnel</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Blocs de texte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>El</b><b>éments texte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">5</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Pr</b><b>ésentation des blocs</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Alignement du texte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Bordures</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Couleur et motif du fond</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Marges internes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Blocs inclus</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">6</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Pr</b><b>ésentation du texte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Polices de caract</b><b>ères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Rendu des caract</b><b>ères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Alignement du texte</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Alignement vertical</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Traitement des espaces</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Ligne de caract</b><b>ères</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">5</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Listes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èle des listes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Liste </b><b>à puce</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Liste ordonn</b><b>ée</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Liste descriptive</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Listes imbriqu</b><b>ées</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+        &lt;<font color="#0000cc">fo:table-body</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">number-rows-spanned</font>="<font color="#990000">5</font>"
+                           <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"
+                           <font color="#009900">display-align</font>="<font color="#990000">center</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Tables</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Mod</b><b>èle des tables</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Visualisation des tables</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Position horizontale d'une table</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Tables complexes</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+          &lt;<font color="#0000cc">fo:table-row</font>&gt;
+            &lt;<font color="#0000cc">fo:table-cell</font> <font color="#009900">border</font>="<font color="#990000">0.5pt solid #CCCCCC</font>"
+                           <font color="#009900">padding</font>="<font color="#990000">2pt</font>"&gt;
+              &lt;<font color="#0000cc">fo:block</font>&gt;<b>Ent</b><b>ête et bas de table</b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+            &lt;/<font color="#0000cc">fo:table-cell</font>&gt;
+          &lt;/<font color="#0000cc">fo:table-row</font>&gt;
+        &lt;/<font color="#0000cc">fo:table-body</font>&gt;
+      &lt;/<font color="#0000cc">fo:table</font>&gt;
+    &lt;/<font color="#0000cc">fo:flow</font>&gt;
+  &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161119
+        </span></div></td></tr></table></body></html>
