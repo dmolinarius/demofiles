@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+
+  <fo:simple-page-master master-name="premiere-page" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="3cm" margin-right="3cm">
+   <fo:region-body margin-top="10cm" margin-bottom="2.1cm"></fo:region-body>
+  </fo:simple-page-master>
+
+  <fo:simple-page-master master-name="page-impaire" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="2.5cm" margin-right="1cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="2.5cm" column-count="2" column-gap="1.5cm"></fo:region-body>
+   <fo:region-before extent="1.5cm" region-name="haut-impair"></fo:region-before>
+   <fo:region-after extent="2cm"></fo:region-after>
+  </fo:simple-page-master>
+
+  <fo:simple-page-master master-name="page-paire" page-height="29.7cm" page-width="21cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="1cm" margin-right="2.5cm">
+   <fo:region-body margin-top="1.6cm" margin-bottom="2.5cm" column-count="2" column-gap="1.5cm"></fo:region-body>
+   <fo:region-before extent="1.5cm" region-name="haut-pair"></fo:region-before>
+   <fo:region-after extent="2cm"></fo:region-after>
+  </fo:simple-page-master>
+
+  <fo:page-sequence-master master-name="document">
+   <fo:repeatable-page-master-alternatives>
+    <fo:conditional-page-master-reference master-reference="premiere-page" page-position="first"></fo:conditional-page-master-reference>
+    <fo:conditional-page-master-reference master-reference="page-paire" odd-or-even="even" page-position="rest"></fo:conditional-page-master-reference>
+    <fo:conditional-page-master-reference master-reference="page-impaire" odd-or-even="odd" page-position="rest"></fo:conditional-page-master-reference>
+   </fo:repeatable-page-master-alternatives>
+  </fo:page-sequence-master>
+
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="document" font-family="Georgia" background-color="#FFFFCC" color="#000088" initial-page-number="auto-odd">
+
+  <fo:static-content flow-name="haut-impair"> 
+   <fo:block text-align="right" font-weight="bold" font-size="8pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="haut-pair"> 
+   <fo:block text-align="left" font-weight="bold" font-size="8pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block font-weight="bold">
+    - Page <fo:page-number></fo:page-number> -
+   </fo:block>
+   <fo:block>
+    Document source XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 21/11/2016 09:41
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
+
+   <fo:block font-family="Times Roman" font-weight="bold" font-style="normal" font-size="24pt" text-align="center">
+   XML, Standards et Applications
+   </fo:block>
+   <fo:block space-before="4em" color="#880000">
+    <fo:inline font-weight="bold">Avertissement :</fo:inline>
+    La seule raison d'être du texte qui suit est de remplir un espace supérieur à une page de texte, de manière à
+    illustrer le fonctionnement des éléments <fo:inline font-weight="bold">XSL-FO</fo:inline>
+    et de certaines de leurs propriétés.
+    </fo:block>
+   <fo:block break-after="page"></fo:block>
+
+   <fo:block space-before="0.5em" font-weight="bold">
+3. Introduction to Formatting
+   </fo:block>
+   <fo:block space-before="0.5em">
+The aim of this section is to describe the general process of formatting, enough to read the area model and the formatting object descriptions and properties and to understand the process of refinement.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Formatting is the process of turning the result of an XSL transformation into a tangible form for the reader or listener. This process comprises several steps, some of which depend on others in a non-sequential way. Our model for formatting will be the construction of an area tree, which is an ordered tree containing geometric information for the placement of every glyph, shape, and image in the document, together with information embodying spacing constraints and other rendering information; this information is referred to under the rubric of traits, which are to areas what properties are to formatting objects and attributes are to XML elements. [4 Area Model] will describe the area tree and define the default placement-constraints on stacked areas. However, this is an abstract model which need not be actually implemented in this way in a formatter, so long as the resulting tangible form obeys the implied constraints. Constraints might conflict to the point where it is impossible to satisfy them all. In that case, it is implementation-defined which constraints should be relaxed and in what order to satisfy the others.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Formatting objects are elements in the formatting object tree, whose names are from the XSL namespace; a formatting object belongs to a class of formatting objects identified by its element name. The formatting behavior of each class of formatting objects is described in terms of what areas are created by a formatting object of that class, how the traits of the areas are established, and how the areas are structured hierarchically with respect to areas created by other formatting objects. [6 Formatting Objects] and [7 Formatting Properties] describe formatting objects and their properties.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Some formatting objects are block-level and others are inline-level. This refers to the types of areas which they generate, which in turn refer to their default placement method. Inline-areas (for example, glyph-areas) are collected into lines and the direction in which they are stacked is the inline-progression-direction. Lines are a type of block-area and these are stacked in a direction perpendicular to the inline-progression-direction, called the block-progression-direction. See [4 Area Model] for detailed decriptions of these area types and directions.
+   </fo:block>
+   <fo:block space-before="0.5em">
+In Western writing systems, the block-progression-direction is "top-to-bottom" and the inline-progression-direction is "left-to-right". This specification treats other writing systems as well and introduces the terms "block" and "inline" instead of using absolute indicators like "vertical" and "horizontal". Similarly this specification tries to give relatively-specified directions ("before" and "after" in the block-progression-direction, "start" and "end" in the inline-progression-direction) where appropriate, either in addition to or in place of absolutely-specified directions such as "top", "bottom", "left", and "right". These are interpreted according to the value of the writing-mode property.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Central to this model of formatting is refinement. This is a computational process which finalizes the specification of properties based on the attribute values in the XML result tree. Though the XML result tree and the formatting object tree have very similar structure, it is helpful to think of them as separate conceptual entities. Refinement involves
+   </fo:block>
+   <fo:list-block space-before="0.5em" provisional-distance-between-starts="12pt" provisional-label-separation="2pt">
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block>
+       <fo:inline font-size="300%" vertical-align="sub">·</fo:inline>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+propagating the various inherited values of properties (both implicitly and those with an attribute value of "inherit"),
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block>
+       <fo:inline font-size="300%" vertical-align="sub">·</fo:inline>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+      evaluating expressions in property value specifications into actual values, which are then used to determine the value of the properties,
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block>
+       <fo:inline font-size="300%" vertical-align="sub">·</fo:inline>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+      converting relative numerics to absolute numerics,
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+    <fo:list-item>
+     <fo:list-item-label end-indent="label-end()">
+      <fo:block>
+       <fo:inline font-size="300%" vertical-align="sub">·</fo:inline>
+      </fo:block>
+     </fo:list-item-label>
+     <fo:list-item-body start-indent="body-start()">
+      <fo:block>
+      constructing some composite properties from more than one attribute
+      </fo:block>
+     </fo:list-item-body>
+    </fo:list-item>
+   </fo:list-block>
+   <fo:block space-before="0.5em">
+Some of these operations (particularly evaluating expressions) depend on knowledge of the area tree. Thus refinement is not necessarily a straightforward, sequential procedure, but may involve look-ahead, back-tracking, or control-splicing with other processes in the formatter. Refinement is described more fully in [5 Property Refinement / Resolution].
+   </fo:block>
+   <fo:block space-before="0.5em">
+To summarize, formatting proceeds by constructing an area tree (containing areas and their traits) which satisfies constraints based on information contained in the XML result tree (containing element nodes and their attributes). Conceptually, there are intermediate steps of constructing a formatting object tree (containing formatting objects and their properties) and refinement; these steps may proceed in an interleaved fashion during the construction of the area tree.
+   </fo:block>
+   <fo:block space-before="0.5em" font-weight="bold">
+3.1 Conceptual Procedure
+   </fo:block>
+   <fo:block space-before="0.5em">
+This subsection contains a conceptual description of how formatting could work. This conceptual procedure does not mandate any particular algorithms or data structures as long as the result obeys the implied constraints.
+   </fo:block>
+   <fo:block space-before="0.5em">
+The procedure works by processing formatting objects. Each object, while being processed, may initiate processing in other objects. While the objects are hierarchically structured, the processing is not; processing of a given object is rather like a co-routine which may pass control to other processes, but pick up again later where it left off. The procedure starts by initiating the processing of the fo:root formatting object.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Unless otherwise specified, processing a formatting object creates areas and returns them to its parent to be placed in the area tree. Like a co-routine, it resumes control later and initiates formatting of its own children (if any), or some subset of them. The formatting object supplies parameters to its children based on the traits of areas already in the area tree, possibly including areas generated by the formatting object or its ancestors. It then disposes of the areas returned by its formatting object children. It might simply return such an area to its parent (and will always do this if it does not generate areas itself), or alternatively it might arrange the area in the area tree according to the semantics of the formatting object; this may involve changing its geometric position. It terminates processing when all its children have terminated processing (if initiated) and it is finished generating areas.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Some formatting objects do not themselves generate areas; instead these formatting objects simply return the areas returned to them by their children. Alternatively, a formatting object may continue to generate (and return) areas based on information discovered while formatting its own children; for example, the fo:page-sequence formatting object will continue generating pages as long as it contains a flow with unprocessed descendants.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Areas returned to an fo:root formatting object are page-viewport-areas, and are simply placed as children of the area tree root in the order in which they are returned, with no geometrical implications.
+   </fo:block>
+   <fo:block space-before="0.5em">
+As a general rule, the order of the area tree parallels the order of the formatting object tree. That is, if one formatting object precedes another in the depth-first traversal of the formatting object tree, with neither containing the other, then all the areas generated by the first will precede all the areas generated by the second in the depth-first traversal of the area tree, unless otherwise specified. Typical exceptions to this rule would be things like side floats, before floats, and footnotes.
+   </fo:block>
+   <fo:block space-before="0.5em">
+At the end of the procedure, the areas and their traits have been constructed, and they are required to satisfy constraints described in the definitions of their associated formatting objects, and in the area model section. In particular, size and position of the areas will be subject to the placement and spacing constraints described in the area model, unless the formatting object definition indicates otherwise.
+   </fo:block>
+   <fo:block space-before="0.5em">
+The formatting object definitions, property descriptions, and area model are not algorithms. Thus, the formatting object semantics do not specify how the line-breaking algorithm must work in collecting characters into words, positioning words within lines, shifting lines within a container, etc. Rather this specification assumes that the formatter has done these things and describes the constraints which the result is supposed to satisfy.
+   </fo:block>
+  </fo:flow>
+ </fo:page-sequence>
+ <fo:page-sequence master-reference="document" font-family="Georgia" background-color="#FFFFCC" color="#000088" initial-page-number="auto-odd">
+
+  <fo:static-content flow-name="haut-impair"> 
+   <fo:block text-align="right" font-weight="bold" font-size="8pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="haut-pair"> 
+   <fo:block text-align="left" font-weight="bold" font-size="8pt">
+    Exemple de document XSL-FO
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="10pt">
+   <fo:block font-weight="bold">
+    - Page <fo:page-number></fo:page-number> -
+   </fo:block>
+   <fo:block>
+    Document source XSL-FO © Daniel Muller
+   </fo:block>
+   <fo:block>
+    Dernière modification le 21/11/2016 09:41
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" font-family="Georgia" font-style="italic" text-align="justify">
+
+   <fo:block font-family="Times Roman" font-weight="bold" font-style="normal" font-size="32pt" text-align="center">
+   Annexes
+   </fo:block>
+   <fo:block break-after="page"></fo:block>
+   <fo:block space-before="0.5em" font-weight="bold">
+4. Area Model
+   </fo:block>
+   <fo:block space-before="0.5em">
+In XSL, one creates a tree of formatting objects that serve as inputs or specifications to a formatter. The formatter generates a hierarchical arrangement of areas which comprise the formatted result. This section defines the general model of areas and how they interact. The purpose is to present an abstract framework which is used in describing the semantics of formatting objects. It should be seen as describing a series of constraints for conforming implementations, and not as prescribing particular algorithms.
+   </fo:block>
+   <fo:block space-before="0.5em" font-weight="bold">
+4.1 Introduction
+   </fo:block>
+   <fo:block space-before="0.5em">
+The formatter generates an ordered tree, the area tree, which describes a geometric structuring of the output medium. The terms child, sibling, parent, descendant, and ancestor refer to this tree structure. The tree has a root node.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Each area tree node other than the root is called an area and is associated to a rectangular portion of the output medium. Areas are not formatting objects; rather, a formatting object generates zero or more rectangular areas, and normally each area is generated by a unique object in the formatting object tree.
+   </fo:block>
+   <fo:block space-before="0.5em" font-weight="bold">
+NOTE:
+   </fo:block>
+   <fo:block space-before="0.5em">
+The only exceptions are when several leaf nodes of the formatting object tree are combined to generate a single area, for example when several characters in sequence generate a single ligature glyph. In all such cases, relevant properties such as font-family and font-size are the same for all the generating formatting objects (see section [4.7.2 Line-building]).
+   </fo:block>
+   <fo:block space-before="0.5em">
+An area has a content-rectangle, the portion in which its child areas are assigned, and optional padding and border. The diagram shows how these portions are related to one another. The outer bound of the border is called the border-rectangle, and the outer bound of the padding is called the padding-rectangle.
+   </fo:block>
+   <fo:block space-before="0.5em">
+Each area has a set of traits, a mapping of names to values, in the way elements have attributes and formatting objects have properties. Individual traits are used either for rendering the area or for defining constraints on the result of formatting, or both. Traits used strictly for formatting purposes or for defining constraints may be called formatting traits, and traits used for rendering may be called rendering traits. Traits whose values are copied or derived from a property of the same or a corresponding name are listed in [C Property Summary] and [5 Property Refinement / Resolution]; other traits are listed below.
+   </fo:block>
+   <fo:block space-before="0.5em" font-weight="bold">
+NOTE:
+   </fo:block>
+   <fo:block space-before="0.5em">
+Traits are also associated with FOs during the process of refinement. Some traits are assigned during formatting, while others are already present after refinement.
+   </fo:block>
+   <fo:block space-before="0.5em">
+The semantics of each type of formatting object that generates areas are given in terms of which areas it generates and their place in the area-tree hierarchy. This may be further modified by interactions between the various types of formatting objects. The properties of the formatting object determine what areas are generated and how the formatting object's content is distributed among them. (For example, a word that is not to be hyphenated may not have its glyphs distributed into areas on two separate line-areas.)
+   </fo:block>
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>
