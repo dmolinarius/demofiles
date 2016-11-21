@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+ <fo:layout-master-set>
+  <fo:simple-page-master master-name="page-unique" page-height="10cm" page-width="15cm" margin-top="0.5cm" margin-bottom="0.5cm" margin-left="1.5cm" margin-right="1.5cm">
+   <fo:region-body margin-top="0.8cm" margin-bottom="0.8cm"></fo:region-body>
+   <fo:region-before extent="0.7cm"></fo:region-before>
+   <fo:region-after extent="0.7cm"></fo:region-after>
+ </fo:simple-page-master>
+ </fo:layout-master-set>
+ <fo:page-sequence master-reference="page-unique" font-family="Arial" background-color="#FFFFCC" color="#000">
+
+  <fo:static-content flow-name="xsl-region-before" text-align="center" font-size="8pt"> 
+   <fo:block font-weight="bold">
+    La famille Fenouillard
+   </fo:block>
+   <fo:block font-style="italic">
+    Christophe
+   </fo:block>
+  </fo:static-content>
+
+  <fo:static-content flow-name="xsl-region-after" text-align="center" font-style="italic" font-size="8pt">
+   <fo:block>
+    - Page <fo:page-number></fo:page-number> -
+   </fo:block>
+   <fo:block>
+    Imprimé le 20/11/2016 18:49
+   </fo:block>
+  </fo:static-content>
+
+  <fo:flow flow-name="xsl-region-body" font-size="10pt" text-align="justify">
+   <fo:block font-weight="bold" space-before="1.33em" text-align="center">
+Prologue
+   </fo:block>
+   <fo:block font-style="italic" space-before="0.6em">
+Histoire aussi véridique que vraisemblable des voyages de la famille Fenouillard, où l'on verra comme quoi, à la suite de plusieurs crises gouvernementales et intestines, M. Fenouillard perdit successivement de nombreux chapeaux, mais conserva son parapluie. – Ouvrage destiné à donner à la jeunesse française le goût des voyages.
+   </fo:block>
+   <fo:block font-weight="bold" space-before="1em" text-align="center">
+Les Débuts d'Artémise et de Cunégonde.
+   </fo:block>
+   <fo:block space-before="0.6em">
+Les Fenouillard, bonnetiers de père en fils, à l'enseigne d'<fo:inline font-style="italic">Autant ici qu'ailleurs,</fo:inline> faisaient à Saint-Remy-sur-Deule (Somme-Inférieure), depuis les temps préhistoriques, le commerce des bonnets imperméables et des bas antinévralgiques (articles spéciaux pour célibataires des deux sexes).
+   </fo:block>
+   <fo:block space-before="0.6em">
+Le dernier représentant de cette antique famille, M. Agénor, ayant épousé Mlle Léocadie, fille majeure de Jean Bonneau, les deux époux reçurent du ciel comme fruit de leur union, deux filles qui, dès leur tendre jeunesse, montrèrent qu'elles étaient destinées à faire du bruit dans le monde.
+   </fo:block>
+   <fo:block space-before="0.6em">
+L'aînée, Mlle Artémise, personne très indépendante, ayant méprisé les recommandations maternelles, tomba un jour par la fenêtre et décrivit une trajectoire parabolique d'un mouvement uniformément accéléré, selon la très connue loi de la chute des corps.
+   </fo:block>
+   <fo:block space-before="0.4em">
+Encouragée par un si bel exemple, Cunégonde s'empressa, le même jour, de tomber dans un puits. On l'avait cependant bien prévenue  « Quand on se penche sur un puits, lui répétait sans cesse M. Fenouillard, et qu'on perd l'équilibre, on tombe dedans. »
+   </fo:block>
+   <fo:block space-before="0.4em">
+Heureusement pour Artémise, un fumier épais et moelleux se trouvait sous la fenêtre et quand sa famille éplorée accourut pour ramasser au moins ses morceaux, elle la trouva suçant son pouce avec une parfaite insouciance.
+   </fo:block>
+   <fo:block space-before="0.4em">
+Quant à Cunégonde, arrêtée dans sa chute par un clou providentiel, elle attira l'un des seaux et se mit à barboter avec une satisfaction peu dissimulée. M. Fenouillard conclut de ces événements que ses filles avaient une âme fortement trempée.
+   </fo:block>
+   <fo:block font-weight="bold" space-before="0.4em" text-align="center" keep-with-next.within-page="1">
+Calme précurseur d'événements orageux.
+   </fo:block>
+   <fo:block space-before="0.6em">
+C'est au milieu d'événements semblables que ces demoiselles grandirent en sagesse et en arts d'agrément, et régulièrement, chaque soir, M. Fenouillard, retiré des affaires, disait à ses demoiselles : « Allons mes filles, un peu de musique ! vous savez bien, cet air qui est si joli ; ça va d'abord lentement, ta-ta-ta, et puis ensuite très vite, tra la la la ra zim boum ! »
+   </fo:block>
+   <fo:block>
+Mesdemoiselles Artémise et Cunégonde, dressées, comme on a déjà pu le constater, à la plus stricte obéissance, s'exécutaient et M. Fenouillard était réjoui dans son cŒur.
+   </fo:block>
+   <fo:block font-weight="bold" space-before="1em" text-align="center">
+Premier départ.
+   </fo:block>
+   <fo:block space-before="0.6em">
+Mais voilà qu'un soir, Mme Fenouillard se lève brusquement et s'écrie : « C'est pas tout ça ! mais nous devenons de vrais mollusques ! J'entends que, dès demain, nous partions en voyage ! – Oh ! veine ! » s'écrièrent ces demoiselles avec la correction de langage qui leur était habituelle.
+   </fo:block>
+  </fo:flow>
+ </fo:page-sequence>
+</fo:root>

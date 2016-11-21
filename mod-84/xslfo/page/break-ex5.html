@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="break-ex5.xml">source</a>]</div>
+  <div class="toggle">[<a href="break-ex5.pdf">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+ &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                         <font color="#009900">page-height</font>="<font color="#990000">10cm</font>"
+                         <font color="#009900">page-width</font>="<font color="#990000">15cm</font>"
+                         <font color="#009900">margin-top</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-bottom</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-left</font>="<font color="#990000">1.5cm</font>"
+                         <font color="#009900">margin-right</font>="<font color="#990000">1.5cm</font>"&gt;
+   &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">0.8cm</font>"
+                   <font color="#009900">margin-bottom</font>="<font color="#990000">0.8cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-body</font>&gt;
+   &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">0.7cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-before</font>&gt;
+   &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">0.7cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-after</font>&gt;
+ &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+ &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+ &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"
+                   <font color="#009900">font-family</font>="<font color="#990000">Arial</font>"
+                   <font color="#009900">background-color</font>="<font color="#990000">#FFFFCC</font>"
+                   <font color="#009900">color</font>="<font color="#990000">#000</font>"&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt; 
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+    La famille Fenouillard
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-style</font>="<font color="#990000">italic</font>"&gt;<b>
+    Christophe
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">8pt</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    - Page </b>&lt;<font color="#0000cc">fo:page-number</font>&gt;&lt;/<font color="#0000cc">fo:page-number</font>&gt;<b> -
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Imprim</b><b>é le </b><font color="#FF0000">20/11/2016 18:41</font>
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+           <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"
+           <font color="#009900">text-align</font>="<font color="#990000">justify</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">1.33em</font>"
+             <font color="#009900">text-align</font>="<font color="#990000">center</font>"&gt;<b>
+Prologue
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">0.6em</font>"&gt;<b>
+Histoire aussi v</b><b>éridique que vraisemblable des voyages de la famille Fenouillard, où l'on verra comme quoi, à la suite de plusieurs crises gouvernementales et intestines, M. Fenouillard perdit successivement de nombreux chapeaux, mais conserva son parapluie. </b><b>?</b><b> Ouvrage destin</b><b>é à donner à la jeunesse française le goût des voyages.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+             <font color="#009900">text-align</font>="<font color="#990000">center</font>"&gt;<b>
+Les D</b><b>ébuts d'Artémise et de Cunégonde.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.6em</font>"&gt;<b>
+Les Fenouillard, bonnetiers de p</b><b>ère en fils, à l'enseigne d'</b>&lt;<font color="#0000cc">fo:inline</font> <font color="#009900">font-style</font>="<font color="#990000">italic</font>"&gt;<b>Autant ici qu'ailleurs,</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;<b> faisaient </b><b>à Saint-Remy-sur-Deule (Somme-Inférieure), depuis les temps préhistoriques, le commerce des bonnets imperméables et des bas antinévralgiques (articles spéciaux pour célibataires des deux sexes).
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.6em</font>"&gt;<b>
+Le dernier repr</b><b>ésentant de cette antique famille, M. Agénor, ayant épousé Mlle Léocadie, fille majeure de Jean Bonneau, les deux époux reçurent du ciel comme fruit de leur union, deux filles qui, dès leur tendre jeunesse, montrèrent qu'elles étaient destinées à faire du bruit dans le monde.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.6em</font>"&gt;<b>
+L'a</b><b>înée, Mlle Artémise, personne très indépendante, ayant méprisé les recommandations maternelles, tomba un jour par la fenêtre et décrivit une trajectoire parabolique d'un mouvement uniformément accéléré, selon la très connue loi de la chute des corps.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.4em</font>"&gt;<b>
+Encourag</b><b>ée par un si bel exemple, Cunégonde s'empressa, le même jour, de tomber dans un puits. On l'avait cependant bien prévenue</b>  <b>«</b> <b>Quand on se penche sur un puits, lui r</b><b>épétait sans cesse M. Fenouillard, et qu'on perd l'équilibre, on tombe dedans.</b> <b>»
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.4em</font>"&gt;<b>
+Heureusement pour Art</b><b>émise, un fumier épais et moelleux se trouvait sous la fenêtre et quand sa famille éplorée accourut pour ramasser au moins ses morceaux, elle la trouva suçant son pouce avec une parfaite insouciance.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.4em</font>"&gt;<b>
+Quant </b><b>à Cunégonde, arrêtée dans sa chute par un clou providentiel, elle attira l'un des seaux et se mit à barboter avec une satisfaction peu dissimulée. M. Fenouillard conclut de ces événements que ses filles avaient une âme fortement trempée.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">0.4em</font>"
+             <font color="#009900">text-align</font>="<font color="#990000">center</font>"&gt;<b>
+Calme pr</b><b>écurseur d'événements orageux.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.6em</font>"&gt;<b>
+C'est au milieu d'</b><b>événements semblables que ces demoiselles grandirent en sagesse et en arts d'agrément, et régulièrement, chaque soir, M. Fenouillard, retiré des affaires, disait à ses demoiselles</b> <b>: </b><b>«</b> <b>Allons mes filles, un peu de musique</b> <b>! vous savez bien, cet air qui est si joli</b> <b>; </b><b>ça va d'abord lentement, ta-ta-ta, et puis ensuite très vite, tra la la la ra zim boum</b> <b>!</b> <b>»
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+Mesdemoiselles Art</b><b>émise et Cunégonde, dressées, comme on a déjà pu le constater, à la plus stricte obéissance, s'exécutaient et M. Fenouillard était réjoui dans son c</b><b>?</b><b>ur.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">space-before</font>="<font color="#990000">1em</font>"
+             <font color="#009900">text-align</font>="<font color="#990000">center</font>"&gt;<b>
+Premier d</b><b>épart.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.6em</font>"&gt;<b>
+Mais voil</b><b>à qu'un soir, Mme Fenouillard se lève brusquement et s'écrie</b> <b>: </b><b>«</b> <b>C'est pas tout </b><b>ça</b> <b>! mais nous devenons de vrais mollusques</b> <b>! J'entends que, d</b><b>ès demain, nous partions en voyage</b> <b>! </b><b>?</b><b> Oh</b> <b>! veine</b> <b>!</b> <b>» s'écrièrent ces demoiselles avec la correction de langage qui leur était habituelle.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:flow</font>&gt;
+ &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161119
+        </span></div></td></tr></table></body></html>

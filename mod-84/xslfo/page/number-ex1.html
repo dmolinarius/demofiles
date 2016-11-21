@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Feuilles de style XSL -
+     Document XSL-FO</title><link rel="stylesheet" href="../../style/s5.css" type="text/css" /></head><body><h1>Feuilles de style XSL</h1><hr />
+ <style scoped="scoped">
+    h2 { float: left; clear: left; }
+    pre { clear: left; overflow:auto}
+    .toggle { color: rgb(255,127,0); float: left; margin-top: 1.63em; margin-left: 1em; cursor: pointer;}
+    a, a:visited { text-decoration: none; color: rgb(255,127,0); }
+  </style>
+  <h2>Document XSL-FO</h2>
+
+  
+
+  <div class="toggle">[<a href="number-ex1.xml">source</a>]</div>
+  <div class="toggle">[<a href="number-ex1.pdf">pdf</a>]</div>
+  <pre class="grey frame">&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;<font color="#0000cc">fo:root</font> <font color="#009900">xmlns:fo</font>="<font color="#990000">http://www.w3.org/1999/XSL/Format</font>"&gt;
+ &lt;<font color="#0000cc">fo:layout-master-set</font>&gt;
+  &lt;<font color="#0000cc">fo:simple-page-master</font> <font color="#009900">master-name</font>="<font color="#990000">page-unique</font>"
+                         <font color="#009900">page-height</font>="<font color="#990000">29.7cm</font>"
+                         <font color="#009900">page-width</font>="<font color="#990000">21cm</font>"
+                         <font color="#009900">margin-top</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-bottom</font>="<font color="#990000">0.5cm</font>"
+                         <font color="#009900">margin-left</font>="<font color="#990000">2.5cm</font>"
+                         <font color="#009900">margin-right</font>="<font color="#990000">1cm</font>"&gt;
+   &lt;<font color="#0000cc">fo:region-body</font> <font color="#009900">margin-top</font>="<font color="#990000">1.6cm</font>"
+                   <font color="#009900">margin-bottom</font>="<font color="#990000">2.1cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-body</font>&gt;
+   &lt;<font color="#0000cc">fo:region-before</font> <font color="#009900">extent</font>="<font color="#990000">1.5cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-before</font>&gt;
+   &lt;<font color="#0000cc">fo:region-after</font> <font color="#009900">extent</font>="<font color="#990000">2cm</font>"&gt;&lt;/<font color="#0000cc">fo:region-after</font>&gt;
+ &lt;/<font color="#0000cc">fo:simple-page-master</font>&gt;
+ &lt;/<font color="#0000cc">fo:layout-master-set</font>&gt;
+ &lt;<font color="#0000cc">fo:page-sequence</font> <font color="#009900">master-reference</font>="<font color="#990000">page-unique</font>"
+                   <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+                   <font color="#009900">background-color</font>="<font color="#990000">#FFFFCC</font>"
+                   <font color="#009900">color</font>="<font color="#990000">#000088</font>"&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-before</font>"&gt; 
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">font-size</font>="<font color="#990000">12pt</font>"&gt;<b>
+    Exemple de document XSL-FO
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:static-content</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-after</font>"
+                     <font color="#009900">text-align</font>="<font color="#990000">center</font>"
+                     <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+                     <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"
+             <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;<b>
+    - Page </b>&lt;<font color="#0000cc">fo:page-number</font>&gt;&lt;/<font color="#0000cc">fo:page-number</font>&gt;<b> -
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Document source XSL-FO </b><b>©</b><b> Daniel Muller
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+    Derni</b><b>ère modification le </b><font color="#FF0000">19/11/2016 22:10</font>
+   &lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:static-content</font>&gt;
+
+  &lt;<font color="#0000cc">fo:flow</font> <font color="#009900">flow-name</font>="<font color="#990000">xsl-region-body</font>"
+           <font color="#009900">font-size</font>="<font color="#990000">10pt</font>"
+           <font color="#009900">font-family</font>="<font color="#990000">Georgia</font>"
+           <font color="#009900">font-style</font>="<font color="#990000">italic</font>"
+           <font color="#009900">text-align</font>="<font color="#990000">justify</font>"&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">2em</font>"
+             <font color="#009900">space-after</font>="<font color="#990000">2em</font>"
+             <font color="#009900">color</font>="<font color="#990000">#880000</font>"&gt;
+    &lt;<font color="#0000cc">fo:inline</font> <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>Avertissement :</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;<b>
+    La seule raison d'</b><b>être du texte qui suit est de remplir un espace supérieur à une page de texte, de manière à
+    illustrer le fonctionnement de l'élément "fo:page-number" utilisé en bas de page ...
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+3. Introduction to Formatting
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+The aim of this section is to describe the general process of formatting, enough to read the area model and the formatting object descriptions and properties and to understand the process of refinement.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Formatting is the process of turning the result of an XSL transformation into a tangible form for the reader or listener. This process comprises several steps, some of which depend on others in a non-sequential way. Our model for formatting will be the construction of an area tree, which is an ordered tree containing geometric information for the placement of every glyph, shape, and image in the document, together with information embodying spacing constraints and other rendering information; this information is referred to under the rubric of traits, which are to areas what properties are to formatting objects and attributes are to XML elements. [4 Area Model] will describe the area tree and define the default placement-constraints on stacked areas. However, this is an abstract model which need not be actually implemented in this way in a formatter, so long as the resulting tangible form obeys the implied constraints. Constraints might conflict to the point where it is impossible to satisfy them all. In that case, it is implementation-defined which constraints should be relaxed and in what order to satisfy the others.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Formatting objects are elements in the formatting object tree, whose names are from the XSL namespace; a formatting object belongs to a class of formatting objects identified by its element name. The formatting behavior of each class of formatting objects is described in terms of what areas are created by a formatting object of that class, how the traits of the areas are established, and how the areas are structured hierarchically with respect to areas created by other formatting objects. [6 Formatting Objects] and [7 Formatting Properties] describe formatting objects and their properties.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Some formatting objects are block-level and others are inline-level. This refers to the types of areas which they generate, which in turn refer to their default placement method. Inline-areas (for example, glyph-areas) are collected into lines and the direction in which they are stacked is the inline-progression-direction. Lines are a type of block-area and these are stacked in a direction perpendicular to the inline-progression-direction, called the block-progression-direction. See [4 Area Model] for detailed decriptions of these area types and directions.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+In Western writing systems, the block-progression-direction is "top-to-bottom" and the inline-progression-direction is "left-to-right". This specification treats other writing systems as well and introduces the terms "block" and "inline" instead of using absolute indicators like "vertical" and "horizontal". Similarly this specification tries to give relatively-specified directions ("before" and "after" in the block-progression-direction, "start" and "end" in the inline-progression-direction) where appropriate, either in addition to or in place of absolutely-specified directions such as "top", "bottom", "left", and "right". These are interpreted according to the value of the writing-mode property.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Central to this model of formatting is refinement. This is a computational process which finalizes the specification of properties based on the attribute values in the XML result tree. Though the XML result tree and the formatting object tree have very similar structure, it is helpful to think of them as separate conceptual entities. Refinement involves
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:list-block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+                  <font color="#009900">provisional-distance-between-starts</font>="<font color="#990000">12pt</font>"
+                  <font color="#009900">provisional-label-separation</font>="<font color="#990000">2pt</font>"&gt;
+    &lt;<font color="#0000cc">fo:list-item</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+       &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+      &lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+propagating the various inherited values of properties (both implicitly and those with an attribute value of "inherit"),
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+    &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+    &lt;<font color="#0000cc">fo:list-item</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+       &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+      &lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+      evaluating expressions in property value specifications into actual values, which are then used to determine the value of the properties,
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+    &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+    &lt;<font color="#0000cc">fo:list-item</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+       &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+      &lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+      converting relative numerics to absolute numerics,
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+    &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+    &lt;<font color="#0000cc">fo:list-item</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-label</font> <font color="#009900">end-indent</font>="<font color="#990000">label-end()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font> <font color="#009900">font-size</font>="<font color="#990000">300%</font>"
+                <font color="#009900">line-height</font>="<font color="#990000">12pt</font>"&gt;
+       &lt;<font color="#0000cc">fo:inline</font>&gt;<b>·</b>&lt;/<font color="#0000cc">fo:inline</font>&gt;
+      &lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-label</font>&gt;
+     &lt;<font color="#0000cc">fo:list-item-body</font> <font color="#009900">start-indent</font>="<font color="#990000">body-start()</font>"&gt;
+      &lt;<font color="#0000cc">fo:block</font>&gt;<b>
+      constructing some composite properties from more than one attribute
+      </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+     &lt;/<font color="#0000cc">fo:list-item-body</font>&gt;
+    &lt;/<font color="#0000cc">fo:list-item</font>&gt;
+   &lt;/<font color="#0000cc">fo:list-block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Some of these operations (particularly evaluating expressions) depend on knowledge of the area tree. Thus refinement is not necessarily a straightforward, sequential procedure, but may involve look-ahead, back-tracking, or control-splicing with other processes in the formatter. Refinement is described more fully in [5 Property Refinement / Resolution].
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+To summarize, formatting proceeds by constructing an area tree (containing areas and their traits) which satisfies constraints based on information contained in the XML result tree (containing element nodes and their attributes). Conceptually, there are intermediate steps of constructing a formatting object tree (containing formatting objects and their properties) and refinement; these steps may proceed in an interleaved fashion during the construction of the area tree.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"
+             <font color="#009900">font-weight</font>="<font color="#990000">bold</font>"&gt;<b>
+3.1 Conceptual Procedure
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+This subsection contains a conceptual description of how formatting could work. This conceptual procedure does not mandate any particular algorithms or data structures as long as the result obeys the implied constraints.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+The procedure works by processing formatting objects. Each object, while being processed, may initiate processing in other objects. While the objects are hierarchically structured, the processing is not; processing of a given object is rather like a co-routine which may pass control to other processes, but pick up again later where it left off. The procedure starts by initiating the processing of the fo:root formatting object.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Unless otherwise specified, processing a formatting object creates areas and returns them to its parent to be placed in the area tree. Like a co-routine, it resumes control later and initiates formatting of its own children (if any), or some subset of them. The formatting object supplies parameters to its children based on the traits of areas already in the area tree, possibly including areas generated by the formatting object or its ancestors. It then disposes of the areas returned by its formatting object children. It might simply return such an area to its parent (and will always do this if it does not generate areas itself), or alternatively it might arrange the area in the area tree according to the semantics of the formatting object; this may involve changing its geometric position. It terminates processing when all its children have terminated processing (if initiated) and it is finished generating areas.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Some formatting objects do not themselves generate areas; instead these formatting objects simply return the areas returned to them by their children. Alternatively, a formatting object may continue to generate (and return) areas based on information discovered while formatting its own children; for example, the fo:page-sequence formatting object will continue generating pages as long as it contains a flow with unprocessed descendants.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+Areas returned to an fo:root formatting object are page-viewport-areas, and are simply placed as children of the area tree root in the order in which they are returned, with no geometrical implications.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+As a general rule, the order of the area tree parallels the order of the formatting object tree. That is, if one formatting object precedes another in the depth-first traversal of the formatting object tree, with neither containing the other, then all the areas generated by the first will precede all the areas generated by the second in the depth-first traversal of the area tree, unless otherwise specified. Typical exceptions to this rule would be things like side floats, before floats, and footnotes.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+At the end of the procedure, the areas and their traits have been constructed, and they are required to satisfy constraints described in the definitions of their associated formatting objects, and in the area model section. In particular, size and position of the areas will be subject to the placement and spacing constraints described in the area model, unless the formatting object definition indicates otherwise.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+   &lt;<font color="#0000cc">fo:block</font> <font color="#009900">space-before</font>="<font color="#990000">0.5em</font>"&gt;<b>
+The formatting object definitions, property descriptions, and area model are not algorithms. Thus, the formatting object semantics do not specify how the line-breaking algorithm must work in collecting characters into words, positioning words within lines, shifting lines within a container, etc. Rather this specification assumes that the formatter has done these things and describes the constraints which the result is supposed to satisfy.
+   </b>&lt;/<font color="#0000cc">fo:block</font>&gt;
+  &lt;/<font color="#0000cc">fo:flow</font>&gt;
+ &lt;/<font color="#0000cc">fo:page-sequence</font>&gt;
+&lt;/<font color="#0000cc">fo:root</font>&gt;</pre>
+
+
+<hr class="bottom" /><table width="100%"><tr><td align="left"><address>Copyright : Daniel Muller</address></td><td align="right"><div class="date"><span id="last_modified">
+         161119
+        </span></div></td></tr></table></body></html>
