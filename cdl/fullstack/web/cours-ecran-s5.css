@@ -1,0 +1,223 @@
+/* **********************************************
+** color stuff
+** *********************************************/
+
+body {
+	background-color: #B0B0CA;
+}
+
+h1, hr.top {
+	color: rgb(0,100,50);
+}
+h2 {
+	color: rgb(0,63,127);
+}
+b {
+	color: #880000;
+}
+
+p, ul, td, th, h2.discret {
+	color: black;
+}
+
+#footer, #footer td, .footer, .address, i {
+	color: rgb(0,100,50);
+}
+
+a, em {
+	color: rgb(125,64,0);
+}
+
+code {
+	color: #444444;
+}
+code b {
+	color: black;
+}
+
+.code {
+	background-color: #CCCCCC;
+	border-color: black;
+}
+
+.table th {
+	background-color: #CCCCFF;
+}
+.table td {
+	background-color: #CCCCCC;
+}
+
+/* **********************************************
+** fonts
+** *********************************************/
+
+h1 {
+	font-family: Haettenschweiler;
+	letter-spacing: 0.2em;
+}
+
+p, h2, ul, td, th, .toc, .bigtoc {
+	font-family: Times New Roman;
+}
+
+#footer td {
+	font-family: Arial;
+}
+
+
+/* **********************************************
+** font size
+** *********************************************/
+
+body {
+	font-size: 180%;
+}
+
+h1, h2, .toc, .bigtoc {
+	font-size: 120%;
+}
+
+h2.discret {
+	font-size: 100%;
+}
+
+table {
+	font-size: 100%;
+}
+
+#footer {
+	font-size: 50%;
+}
+
+address, .address, .date {
+	font-size: 70%;
+}
+
+i {
+	font-size: 80%;
+}
+
+.code {
+	font-size: 80%;
+}
+
+
+
+/* **********************************************
+** layout and style
+** *********************************************/
+
+h1 {
+	text-align: center;
+	font-weight: normal;
+}
+
+p {
+	margin-top: 0em;
+	margin-left: 1em;
+	margin-right: 1em;
+	text-align: justify;
+}
+
+table {
+	margin-top: 0em;
+	margin-bottom: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+a {
+	text-decoration: none;
+}
+
+hr.top {
+	margin-bottom: 1em;
+	height: 5;
+}
+
+hr.bottom {
+	margin-top: 1em;
+}
+
+#footer {
+	font-style: italic;
+	margin-left: 0em;
+	margin-right: 0em;
+}
+
+.address {
+	font-style: italic;
+	margin-top: 2em;
+        text-align: center;
+}
+
+h2 {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	font-weight: normal;
+}
+
+.toc {
+        text-align: center;
+	margin-bottom: 0.2em;
+}
+.bigtoc {
+        text-align: center;
+	margin-bottom: -0.5em;
+}
+
+b {
+	font-weight: normal;
+}
+
+em {
+	font-style: normal;
+}
+
+i {
+	font-style: italic;
+}
+
+li {
+	margin-bottom: 0.5em;
+	margin-right: 1em;
+	text-align: justify;
+}
+
+.code {
+	margin-left: 1em;
+	border-width: 1px;
+	border-style: solid;
+	margin-bottom: 1em;
+}
+.code td {
+	padding: 0.5em;
+}
+
+table.table  {
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+.table td, .table th {
+	font-weight: normal;
+	border-style:solid;
+	border-width: 1px;
+	padding: 0.2em 0.4em;
+	white-space: nowrap;
+}
+
+.filename td {
+	font-family: courier, monospace;
+	background-color: #323232;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	color: #AAAAAA;
+}
+
+.date {
+	float: right;
+	font-style: italic;
+}

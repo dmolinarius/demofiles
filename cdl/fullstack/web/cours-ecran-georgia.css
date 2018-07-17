@@ -1,0 +1,251 @@
+/* **********************************************
+** color stuff
+** *********************************************/
+
+body {
+	background-image: url(georgia-background.jpg);
+	background-attachment: fixed;
+}
+
+h1 {
+	color: #000077;
+}
+h2 {
+	color: #004400;
+}
+b {
+	color: #775500;
+}
+
+p, ul, td, th, h2.discret {
+	color: #775500;
+	text-align: justify;
+	font-family: Georgia;
+}
+
+#footer, #footer td, .footer, .address, i {
+	color: #004400;
+	font-family: Georgia;
+}
+em {
+	color: #AA8833;
+}
+A:visited, A:link, A:active {
+	color: #AA8833;
+	text-decoration: none;
+}
+A:hover {
+	font-weight: bold;
+	/* text-decoration: underline; */
+}
+P:first-letter {
+	font-size: 200%;
+	margin-right: 0.1em;
+}
+
+code {
+	color: #004400;
+}
+code b {
+	font-weight: bold;
+}
+
+.code {
+	font-size: 100%;
+	background-color: #E0E0C8;
+	border-style: groove;
+}
+.table {
+	background-color: #EEEEEE;
+	margin-top: 2ex;
+	border-style: outset;
+	border-width: 3px;
+	border-spacing: 5px;
+}
+.table th {
+	background-color: #EEEEEE;
+}
+.table td {
+	background-color: #E0E0C8;
+	border-style: inset;
+	border-width: 2px;
+	padding: 5px 1em 5px 1em;
+}
+
+/* **********************************************
+** fonts
+** *********************************************/
+
+h1 {
+	font-family: Times New Roman;
+	letter-spacing: 0.2em;
+}
+
+p, h2, ul, td, th, .toc, .bigtoc {
+	font-family: Georgia;
+}
+
+#footer td {
+	font-family: Georgia;
+}
+
+
+/* **********************************************
+** font size
+** *********************************************/
+
+body {
+	font-size: 160%;
+}
+
+h1 {
+	font-size: 120%;
+}
+h2, .toc, .bigtoc {
+	font-size: 100%;
+}
+
+h2.discret {
+	font-size: 80%;
+}
+
+table {
+	font-size: 80%;
+}
+
+#footer {
+	font-size: 35%;
+}
+
+address, .address, .date {
+	font-size: 70%;
+}
+
+i {
+	font-size: 70%;
+}
+
+.code {
+	font-size: 70%;
+}
+
+
+
+/* **********************************************
+** layout and style
+** *********************************************/
+
+h1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+p {
+	margin-top: 0em;
+	margin-left: 1em;
+	margin-right: 1em;
+	text-align: justify;
+}
+
+table {
+	margin-top: 0em;
+	margin-bottom: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+a {
+	text-decoration: none;
+}
+
+hr.top {
+	margin-bottom: 1em;
+	height: 5;
+}
+
+hr.bottom {
+	margin-top: 1em;
+}
+
+#footer {
+	font-style: italic;
+	margin-left: 0em;
+	margin-right: 0em;
+}
+
+.address {
+	font-style: italic;
+	margin-top: 2em;
+        text-align: center;
+}
+
+h2 {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	font-weight: normal;
+}
+
+.toc {
+        text-align: center;
+	margin-bottom: 0.2em;
+}
+.bigtoc {
+        text-align: center;
+	margin-bottom: -0.5em;
+}
+
+b {
+	font-weight: bold;
+}
+
+em {
+	font-style: normal;
+}
+
+i {
+	font-style: italic;
+}
+
+li {
+	margin-bottom: 0.5em;
+	margin-right: 1em;
+	text-align: justify;
+}
+
+.code {
+	margin-left: 1em;
+	border-width: 1px;
+	border-style: solid;
+	margin-bottom: 1em;
+}
+.code td {
+	padding: 0.5em;
+}
+
+table.table  {
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+.table td, .table th {
+	font-weight: normal;
+	border-style:solid;
+	border-width: 1px;
+	padding: 0.2em 0.4em;
+	white-space: nowrap;
+}
+
+.filename td {
+	font-family: courier, monospace;
+	background-color: #323232;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	color: #AAAAAA;
+}
+
+.date {
+	float: right;
+	font-style: italic;
+}
