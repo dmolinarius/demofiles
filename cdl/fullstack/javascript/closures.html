@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<title>Clôtures Javascript</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>ClÃ´tures Javascript</title>
+<meta charset=UTF-8>
 <link rel="stylesheet" type="text/css" href="style.css">
 <style type="text/css">
   #t2 { border: 2px outset; margin: 0.2em auto 1em; background-color: #F0F0EA; }
@@ -26,16 +26,16 @@
 </script>
 
 <script type="text/javascript" id="js_staticvar">
- var incr = function() { // renvoie la fonction d'incrément, sert de clôture
+ var incr = function() { // renvoie la fonction d'incrÃ©ment, sert de clÃ´ture
    var value = 0;        // variable "statique"
-   return function() {   // fonction d'incrément
+   return function() {   // fonction d'incrÃ©ment
      return value += 1;
    }
- }(); // noter les (), incr = fonction d'incrément
+ }(); // noter les (), incr = fonction d'incrÃ©ment
 </script>
 
 <script type="text/javascript" id="js_staticv2">
- var cpt = function() { // renvoie une objet avec quatre clôtures
+ var cpt = function() { // renvoie une objet avec quatre clÃ´tures
    var value = 0;        // variable "statique"
    return {
      inc: function() { ++value; },
@@ -48,32 +48,32 @@
 
 <script type="text/javascript" id="js_calculator">
  /*
- ** cette fonction encapsule toutes les fonctionnalités de la calculatrice
- ** et sert de clôture pour les variables utilisées par les fonctions de rappel
+ ** cette fonction encapsule toutes les fonctionnalitÃ©s de la calculatrice
+ ** et sert de clÃ´ture pour les variables utilisÃ©es par les fonctions de rappel
  **
- ** N.B. Il s'agit d'une illustration d'un usage possible des clôtures.
- ** Cette fonctionnalité pourrait également être réalisée via un objet.
+ ** N.B. Il s'agit d'une illustration d'un usage possible des clÃ´tures.
+ ** Cette fonctionnalitÃ© pourrait Ã©galement Ãªtre rÃ©alisÃ©e via un objet.
  */
  function calculator(calc) {                        // calc est la table HTML qui contient la calculatrice
   var t = calc.getElementsByTagName('TD');          // cellules de la table (touches et afficheur)
   var aff = document.getElementsByTagName('TH')[1]; // afficheur
   var acc = aff.innerHTML;  // accumulateur (valeur en attente)
-  var cop = '';             // opération en attente
-  var wait = true;          // effacement de l'affichage à la prochaine frappe
+  var cop = '';             // opÃ©ration en attente
+  var wait = true;          // effacement de l'affichage Ã  la prochaine frappe
 
   // configuration des cellules
   for ( var n=-1, s = t.length; ++n < s; ) {
     var btn = t[n];
 
     /*
-    ** mouvement "touche enfoncée"
+    ** mouvement "touche enfoncÃ©e"
     */
     btn.onmousedown = function() {
       this.style.borderStyle = 'inset';
     }; 
 
     /*
-    ** mouvement "touche relâchée"
+    ** mouvement "touche relÃ¢chÃ©e"
     */
     btn.onmouseup = t[n].onmouseout = function() {
       this.style.borderStyle = 'outset';
@@ -115,7 +115,7 @@
     }
 
     /*
-    ** touches opération
+    ** touches opÃ©ration
     */
     if ( btn.className == 'op' ) btn.onclick = function() {
       acc = ( cop ? eval( acc + cop + aff.innerHTML ) : aff.innerHTML);
@@ -124,7 +124,7 @@
     }
 
     /*
-    ** touches numériques
+    ** touches numÃ©riques
     */
     if ( btn.className == 'num' ) btn.onclick = function() {
       if ( this.innerHTML != '0' || aff.innerHTML != '0' ) {
@@ -138,12 +138,12 @@
 
 <!-- Corps du document -->
 
-<h1>Clôtures Javascript</h1>
+<h1>ClÃ´tures Javascript</h1>
 
 <div>
- <h3>Implémentation d'une variable statique</h3>
+ <h3>ImplÃ©mentation d'une variable statique</h3>
 
- <p>Le bouton suivant s'incrémente d'un clic ...
+ <p>Le bouton suivant s'incrÃ©mente d'un clic ...
   <button onclick="this.innerHTML = incr();">0</button>
 
  <pre class="source on" id="source_staticvar"></pre>
@@ -151,9 +151,9 @@
 </div>
 
 <div>
- <h3>Implémentation d'une variable statique partagée</h3>
+ <h3>ImplÃ©mentation d'une variable statique partagÃ©e</h3>
 
- <p>Comme les clôtures <i>font référence</i> aux variables de leur scope, si plusieurs clôtures partagent la même variable toute modification de celle-ci est vue par toutes les fonctions concernées.<br>
+ <p>Comme les clÃ´tures <i>font rÃ©fÃ©rence</i> aux variables de leur scope, si plusieurs clÃ´tures partagent la mÃªme variable toute modification de celle-ci est vue par toutes les fonctions concernÃ©es.<br>
   <span class="em" id="cpt">0</span>
   <button onclick="cpt.inc(); cpt.display.innerHTML = cpt.get();"> + + </button>
   <button onclick="cpt.dec(); cpt.display.innerHTML = cpt.get();"> - - </button>
@@ -168,12 +168,12 @@
 </div>
 
 <div>
- <h3>Clôture en relation avec des gestionnaires d'événements</h3>
+ <h3>ClÃ´ture en relation avec des gestionnaires d'Ã©vÃ©nements</h3>
 
- <p>Le fonctionnement de la calculatrice ci-dessous est assuré par des fonctions de rappel <i>(callbacks)</i>
-liées aux clics de l'utilisateur sur les "touches" <i>(i.e. cellules de tableau)</i>.
- L'implémentation est basée sur une fonction d'initialisation qui sert également de clôture pour les variables
- de fonctionnement de la calculatrice, lors de l'appel postérieur des gestionnaires d'événement.
+ <p>Le fonctionnement de la calculatrice ci-dessous est assurÃ© par des fonctions de rappel <i>(callbacks)</i>
+liÃ©es aux clics de l'utilisateur sur les "touches" <i>(i.e. cellules de tableau)</i>.
+ L'implÃ©mentation est basÃ©e sur une fonction d'initialisation qui sert Ã©galement de clÃ´ture pour les variables
+ de fonctionnement de la calculatrice, lors de l'appel postÃ©rieur des gestionnaires d'Ã©vÃ©nement.
 
 
 <div class="p">
