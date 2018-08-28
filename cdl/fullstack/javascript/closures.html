@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html lang="fr-FR">
 <title>Clôtures Javascript</title>
 <meta charset=UTF-8>
-<link rel="stylesheet" type="text/css" href="style.css">
-<style type="text/css">
+<link rel="stylesheet" href="style.css">
+<style>
   #t2 { border: 2px outset; margin: 0.2em auto 1em; background-color: #F0F0EA; }
   #t2 td { border: 2px outset; padding: 3px 0.8em; background-color: #E8E8C0;
            cursor: pointer; text-align: center; }
@@ -15,8 +16,8 @@
 
 <!-- scripts -->
 
-<script type="text/javascript" src="scripts.js"></script>
-<script type="text/javascript">
+<script src="scripts.js"></script>
+<script>
  window.onload = function() {
    cpt.display = document.getElementById('cpt');
    calculator(document.getElementById('t2'));
@@ -25,7 +26,7 @@
  };
 </script>
 
-<script type="text/javascript" id="js_staticvar">
+<script id="js_staticvar">
  var incr = function() { // renvoie la fonction d'incrément, sert de clôture
    var value = 0;        // variable "statique"
    return function() {   // fonction d'incrément
@@ -34,7 +35,7 @@
  }(); // noter les (), incr = fonction d'incrément
 </script>
 
-<script type="text/javascript" id="js_staticv2">
+<script id="js_staticv2">
  var cpt = function() { // renvoie une objet avec quatre clôtures
    var value = 0;        // variable "statique"
    return {
@@ -46,7 +47,7 @@
  }(); // noter les ()
 </script>
 
-<script type="text/javascript" id="js_calculator">
+<script id="js_calculator">
  /*
  ** cette fonction encapsule toutes les fonctionnalités de la calculatrice
  ** et sert de clôture pour les variables utilisées par les fonctions de rappel
@@ -205,7 +206,7 @@ liées aux clics de l'utilisateur sur les "touches" <i>(i.e. cellules de tableau
 <td style="text-align: right">
 <div class="date">
 Derni&egrave;re modification :
-<script type="text/javascript">
+<script>
 document.write(Date(document.lastModified).toLocaleString());
 </script>
 </div></td></tr></table>
