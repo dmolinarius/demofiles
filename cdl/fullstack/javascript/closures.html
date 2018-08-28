@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<title>Clôtures Javascript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<style type="text/css">
+  #t2 { border: 2px outset; margin: 0.2em auto 1em; background-color: #F0F0EA; }
+  #t2 td { border: 2px outset; padding: 3px 0.8em; background-color: #E8E8C0;
+           cursor: pointer; text-align: center; }
+  #t2 tr:first-child th { border: 2px outset; padding: 3px 0.8em; background-color: #F8F880; }
+  #t2 tr + tr th { border: 2px inset #E8E8C0; padding: 3px 0.8em; background-color: black;
+                   color: lime; font-family: monospace; text-align: right; }
+
+  button { background-color: #E8E8C0; padding: 3px 0.8em; font-weight: bold; }
+</style>
+
+<!-- scripts -->
+
+<script type="text/javascript" src="scripts.js"></script>
+<script type="text/javascript">
+ window.onload = function() {
+   cpt.display = document.getElementById('cpt');
+   calculator(document.getElementById('t2'));
+   init_sources();
+   init_toggles();
+ };
+</script>
+
+<script type="text/javascript" id="js_staticvar">
+ var incr = function() { // renvoie la fonction d'incrément, sert de clôture
+   var value = 0;        // variable "statique"
+   return function() {   // fonction d'incrément
+     return value += 1;
+   }
+ }(); // noter les (), incr = fonction d'incrément
+</script>
+
+<script type="text/javascript" id="js_staticv2">
+ var cpt = function() { // renvoie une objet avec quatre clôtures
+   var value = 0;        // variable "statique"
+   return {
+     inc: function() { ++value; },
+     dec: function() { --value; },
+     reset: function() { value = 0; },
+     get: function() { return value; }
+   }
+ }(); // noter les ()
+</script>
+
+<script type="text/javascript" id="js_calculator">
+ /*
+ ** cette fonction encapsule toutes les fonctionnalités de la calculatrice
+ ** et sert de clôture pour les variables utilisées par les fonctions de rappel
+ **
+ ** N.B. Il s'agit d'une illustration d'un usage possible des clôtures.
+ ** Cette fonctionnalité pourrait également être réalisée via un objet.
+ */
+ function calculator(calc) {                        // calc est la table HTML qui contient la calculatrice
+  var t = calc.getElementsByTagName('TD');          // cellules de la table (touches et afficheur)
+  var aff = document.getElementsByTagName('TH')[1]; // afficheur
+  var acc = aff.innerHTML;  // accumulateur (valeur en attente)
+  var cop = '';             // opération en attente
+  var wait = true;          // effacement de l'affichage à la prochaine frappe
+
+  // configuration des cellules
+  for ( var n=-1, s = t.length; ++n < s; ) {
+    var btn = t[n];
+
+    /*
+    ** mouvement "touche enfoncée"
+    */
+    btn.onmousedown = function() {
+      this.style.borderStyle = 'inset';
+    }; 
+
+    /*
+    ** mouvement "touche relâchée"
+    */
+    btn.onmouseup = t[n].onmouseout = function() {
+      this.style.borderStyle = 'outset';
+    }; 
+
+    /*
+    ** touche "Clear"
+    */
+    if ( btn.className == 'C' ) btn.onclick = function() {
+      acc = 0;
+      cop = '';
+      aff.innerHTML = '0';
+      wait = true;
+    }
+
+    /*
+    ** touche "="
+    */
+    if ( btn.className == 'EQ' ) btn.onclick = function() {
+      if ( cop ) {
+        aff.innerHTML = eval( acc + cop + aff.innerHTML);
+      }
+      acc = 0;
+      cop = '';
+      wait = true;
+    }
+
+    /*
+    ** touche "."
+    */
+    if ( btn.className == 'DOT' ) btn.onclick = function() {
+      if ( wait ) {
+        aff.innerHTML = '0';
+        wait = false;
+      }
+      if ( aff.innerHTML.indexOf('.') == -1 ) {
+        aff.innerHTML = aff.innerHTML + this.innerHTML;
+      }
+    }
+
+    /*
+    ** touches opération
+    */
+    if ( btn.className == 'op' ) btn.onclick = function() {
+      acc = ( cop ? eval( acc + cop + aff.innerHTML ) : aff.innerHTML);
+      cop = this.innerHTML;
+      wait = true;
+    }
+
+    /*
+    ** touches numériques
+    */
+    if ( btn.className == 'num' ) btn.onclick = function() {
+      if ( this.innerHTML != '0' || aff.innerHTML != '0' ) {
+        aff.innerHTML = ((wait) ? this.innerHTML : aff.innerHTML + this.innerHTML);
+      }
+      wait = false;
+    }
+  } 
+}
+</script>
+
+<!-- Corps du document -->
+
+<h1>Clôtures Javascript</h1>
+
+<div>
+ <h3>Implémentation d'une variable statique</h3>
+
+ <p>Le bouton suivant s'incrémente d'un clic ...
+  <button onclick="this.innerHTML = incr();">0</button>
+
+ <pre class="source on" id="source_staticvar"></pre>
+ <pre> &lt;button onclick="this.innerHTML = incr();">0&lt;/button> </pre>
+</div>
+
+<div>
+ <h3>Implémentation d'une variable statique partagée</h3>
+
+ <p>Comme les clôtures <i>font référence</i> aux variables de leur scope, si plusieurs clôtures partagent la même variable toute modification de celle-ci est vue par toutes les fonctions concernées.<br>
+  <span class="em" id="cpt">0</span>
+  <button onclick="cpt.inc(); cpt.display.innerHTML = cpt.get();"> + + </button>
+  <button onclick="cpt.dec(); cpt.display.innerHTML = cpt.get();"> - - </button>
+  <button onclick="cpt.reset(); cpt.display.innerHTML = cpt.get();"> Reset </button>
+
+ <pre class="source on" id="source_staticv2"></pre>
+ <pre> 
+  &lt;button onclick="cpt.inc(); cpt.display.innerHTML = cpt.get();"> + + &lt;/button>
+  &lt;button onclick="cpt.dec(); cpt.display.innerHTML = cpt.get();"> - - &lt;/button>
+  &lt;button onclick="cpt.reset(); cpt.display.innerHTML = cpt.get();"> Reset &lt;/button>
+ </pre>
+</div>
+
+<div>
+ <h3>Clôture en relation avec des gestionnaires d'événements</h3>
+
+ <p>Le fonctionnement de la calculatrice ci-dessous est assuré par des fonctions de rappel <i>(callbacks)</i>
+liées aux clics de l'utilisateur sur les "touches" <i>(i.e. cellules de tableau)</i>.
+ L'implémentation est basée sur une fonction d'initialisation qui sert également de clôture pour les variables
+ de fonctionnement de la calculatrice, lors de l'appel postérieur des gestionnaires d'événement.
+
+
+<div class="p">
+<table id="t2">
+<tr><th colspan="4">Calculatrice</th></tr>
+
+<tr><th colspan="4" class="aff">3.141592</th></tr>
+<tr><td class="C">C</td><td class="op">/</td><td class="op">*</td><td class="op">-</td></tr>
+<tr><td class="num">7</td><td class="num">8</td><td class="num">9</td><td rowspan="2" class="op">+</td></tr>
+<tr><td class="num">4</td><td class="num">5</td><td class="num">6</td></tr>
+<tr><td class="num">1</td><td class="num">2</td><td class="num">3</td><td rowspan="2" class="EQ">=</td></tr>
+
+<tr><td class="num" colspan="2">0</td><td class="DOT">.</td></tr>
+</table>
+
+</div>
+
+<pre class="source" id="source_calculator"></pre>
+
+</div>
+
+<!-- Fin du document -->
+
+<p>
+<hr class="bottom">
+
+<table class="bottom"><tr>
+<td style="text-align: left"><address>Copyright : Daniel Muller</address></td>
+<td style="text-align: right">
+<div class="date">
+Derni&egrave;re modification :
+<script type="text/javascript">
+document.write(Date(document.lastModified).toLocaleString());
+</script>
+</div></td></tr></table>
