@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<title>Interface Node - Parcours de l'arbre</title>
+<meta charset='utf-8'>
+<style>
+body {
+  padding: 0 1em;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #808080;
+  cursor: default;
+}
+pre {
+  padding: 0.5em;
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+}
+.tiny {
+  font-size: 0.7em;
+  color: #404040;
+}
+hr {
+  margin-bottom: 0.2em;
+}
+
+#tree { padding: 0.667em 0; white-space: pre; }
+#tree div { padding: 0 0.667em; margin: 0; border: none; white-space: pre; }
+#tree .text { font-style: italic; color: #888; }
+
+</style>
+<script src="script.js"></script>
+<script>
+  window.onload = function() {
+    init_footer();
+    display_tree(document,tree);
+    init_toggles();
+  }
+</script>
+
+<h1>DOM Core - Exemple</h1>
+<h2>Interface Node - Parcours de l'arbre</h2>
+<p>Ce document affiche l'arborescence des éléments dont il est lui-même constitué.
+<script>
+
+var nodeTypes = [ '',
+    "ELEMENT_NODE",
+    "ATTRIBUTE_NODE",
+    "TEXT_NODE",
+    "CDATA_SECTION_NODE",
+    "ENTITY_REFERENCE_NODE",
+    "ENTITY_NODE",
+    "PROCESSING_INSTRUCTION_NODE",
+    "COMMENT_NODE",
+    "DOCUMENT_NODE",
+    "DOCUMENT_TYPE_NODE",
+    "DOCUMENT_FRAGMENT_NODE",
+    "NOTATION_NODE"
+  ];
+
+function type_name(i) {
+     var t = nodeTypes[i];
+     return t.charAt(0)+t.substring(1,t.length-5).toLowerCase();
+ }
+
+var tree_depth = 0;
+function display_tree(elt,parent_div) {
+  var frag = document.createDocumentFragment()
+    , children = elt.childNodes
+    , n, child, info, div, span
+  ;
+  tree_depth++;
+  for ( n = 0; n < children.length; n++ ) {
+    child = children[n];
+    if ( child.nodeType == 1 ) { // ELEMENT_NODE
+      info = ' ' + type_name(child.nodeType) + ' ' + child.nodeName +
+        (child.id ? '#' + child.id : '') +
+        (child.className ? '.' + child.className : '' );
+      div = document.createElement('div');
+      span = document.createElement('span');
+      span.className='toggle';
+      span.appendChild(document.createTextNode('-'));
+      div.appendChild(span);
+      div.appendChild(document.createTextNode(info));
+      if ( tree_depth < 20 ) { // safeguard
+        display_tree(child,div);
+      }
+      frag.appendChild(div);
+    }
+    else if ( child.nodeType == 3 ) { // TEXT_NODE
+      div = document.createElement('div');
+      span = document.createElement('span');
+      span.className='toggle';
+      span.appendChild(document.createTextNode('-'));
+      div.appendChild(span);
+      div.appendChild(document.createTextNode(' Text : '));
+      span = document.createElement('span');
+      span.className='text';
+      span.appendChild(document.createTextNode(child.nodeValue));
+      div.appendChild(span);
+      frag.appendChild(div);
+    }
+  }
+  parent_div.appendChild(frag);
+  tree_depth--;
+}
+
+</script>
+<div style="margin-bottom: 1.33em;"><span class="toggle">+</span> Cliquer pour ouvrir / fermer...
+<pre id="tree"></pre>
+</div>
+
+ <p>
+  S'il s'agit de la
+  <a href="http://dmolinarius.github.io/demofiles/cdl/fullstack/javascript/nodetree.html">version en ligne</a>,
+  la conformité de ce document au standard HTML peut être
+  contrôlée grâce au lien porté par l'icône ci-dessous.
