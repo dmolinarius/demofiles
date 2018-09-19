@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<!--
+15-puzzle.html V0.0
+
+Jeu de taquin (15-puzzle game)
+
+-->
+<title>jeu de taquin</title>
+<style> 
+
+/* viewport properties */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* board size, position and border */
+#board {
+  position: absolute;
+  width: 80vmin;
+  height: 80vmin;
+  left: calc(50vw - 40vmin);
+  top: calc(50vh - 40vmin);
+  border: 5px solid #400;
+  box-shadow: 1vw 1vh 1vmax #420;
+  border-radius: 3px;
+  background-color: #844;
+}
+
+/* cell size, background and border */
+.cell {
+  position: absolute;
+  width: 20vmin;
+  height: 20vmin;
+  border: 1px solid grey;
+  box-shadow: inset 0 0 10px grey;
+  border-radius: 3px;
+  background-color:white;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 20vmin;
+}
+
+</style>
+
+<div id="container">
+
+<div id="board">
+</div>
+
+</div>
+<script>
+for (let l=0; l < 4; l++) {
+  for (let c=0; c < (l < 3 ? 4 : 3); c++) {
+    let n = 1 + c + l*4
+    let cell = document.createElement('div');
+    let label = document.createTextNode(n);
+    cell.id = 'cell' + ('0'+n).slice(-2);
+    cell.className = 'cell';
+    cell.style.left = (20*c)+'vmin';
+    cell.style.top = (20*l)+'vmin';
+    cell.appendChild(label);
+    cell.addEventListener('click',move);
+    window.board.appendChild(cell);
+  }
+}
+function move() {
+  console.log(this);
+}
+</script>
