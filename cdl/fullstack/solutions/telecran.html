@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <meta charset='utf-8'>
-<title>Interface télécran</title>
+<title>Télécran</title>
 <style>
 #boitier {
   margin-left: auto;
@@ -79,6 +79,92 @@
  </div>
  <div id="gauche" title="haut / bas"></div>
  <div id="droite" title="gauche / droite"></div>
- <div id="logo" title="effacer">CSS Design</div>
+ <div id="logo" title="effacer">Javascript Powered</div>
 </div>
+
+<script>
+
+ // variables globales
+ var cursor_style = window.getComputedStyle(curseur)
+   , screen_style = window.getComputedStyle(ecran)
+   , boundaries = {
+       top: { min: 0, max: parseInt(screen_style.height,10)-2 },
+       left: { min: 0, max: parseInt(screen_style.width,10)-2 }
+     }
+   , timer = null
+ ;
+
+ // gestionnaires d'événements */
+ gauche.addEventListener('mousedown',moveUpOrDown);
+ gauche.addEventListener('mouseout',stopDrawing);
+ gauche.addEventListener('mouseup',stopDrawing);
+ droite.addEventListener('mousedown',moveLeftOrRight);
+ droite.addEventListener('mouseout',stopDrawing);
+ droite.addEventListener('mouseup',stopDrawing);
+ window.addEventListener('keydown',moveKey,true);
+ window.addEventListener('keyup',stopDrawing);
+ logo.addEventListener('click',erase);
+
+ // effacement de l'écran
+ function erase() {
+   while (ecran.firstChild.id != 'curseur') ecran.removeChild(ecran.firstChild);
+ }
+
+ // déplacement via une touche
+ function moveKey(e) {
+   e.stopPropagation(); // change slide
+   e.preventDefault();  // scroll
+   if ( e.keyCode == 37 || e.keyCode == 39 ) { // left / right
+     move(2,e.keyCode-38,'left');
+   }
+   else if ( e.keyCode == 38 || e.keyCode == 40 ) { // up / down
+     move(2,e.keyCode-39,'top');
+   }
+   else if ( e.keyCode == 46 ) { // Suppr
+     erase();
+   }
+ }
+ // déplacement vertical
+ function moveUpOrDown(e) {
+   var rect = this.getBoundingClientRect()
+     , top = e.clientY - rect.top - e.currentTarget.clientTop + e.currentTarget.scrollTop
+     , delta = top - rect.height/2
+     , dist = Math.abs(delta)
+     , dir = (delta > 0) ? 1 : -1
+   ;
+   move(dist,dir,'top');
+ }
+ // déplacement horizontal
+ function moveLeftOrRight(e) {
+   var rect = this.getBoundingClientRect()
+     , left = e.clientX - rect.left - e.currentTarget.clientLeft + e.currentTarget.scrollLeft
+     , delta = left - rect.width/2
+     , dist = Math.abs(delta)
+     , dir = (delta > 0) ? 1 : -1
+   ;
+   move(dist,dir,'left');
+ }
+
+ // déplacement générique (prop vaut 'top' ou 'left')
+ function move(dist,dir,prop) {
+   var n, dot, pos;
+   for ( n = 0; n < dist; n += 2 ) {
+     pos = (parseInt(cursor_style[prop],10) + 2 * dir);
+     if ( pos > boundaries[prop].max || pos < boundaries[prop].min ) break;
+     dot = document.createElement('div');
+     dot.className = 'trace';
+     dot.style.top = cursor_style.top;
+     dot.style.left = cursor_style.left;
+     ecran.insertBefore(dot,curseur);
+     curseur.style[prop] = pos + 'px';
+   }
+   // on continue ?
+   if ( timer ) clearTimeout(timer);
+   timer = setTimeout(move,100,dist,dir,prop);
+ }
+ function stopDrawing() {
+   if ( timer ) clearTimeout(timer);
+   timer = null;
+ }
+</script>
 
