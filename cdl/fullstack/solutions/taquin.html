@@ -20,10 +20,10 @@ html, body {
 /* board size, position and border */
 #board {
   position: absolute;
-  width: 80vmin;
-  height: 80vmin;
-  left: calc(50vw - 40vmin);
-  top: calc(50vh - 40vmin);
+  width: 70vmin;
+  height: 70vmin;
+  top: calc(45vh - 35vmin);
+  left: calc(50vw - 35vmin);
   border: 5px solid #400;
   box-shadow: 1vw 1vh 1vmax #420;
   border-radius: 3px;
@@ -33,27 +33,72 @@ html, body {
 /* cell size, background and border */
 .cell {
   position: absolute;
-  width: 20vmin;
-  height: 20vmin;
+  width: 17.5vmin;
+  height: 17.5vmin;
   border: 1px solid grey;
   box-shadow: inset 0 0 10px grey;
   border-radius: 3px;
   background-color:white;
   box-sizing: border-box;
   text-align: center;
-  line-height: 20vmin;
+  line-height: 17.5vmin;
 }
+
+/* empy cell */
 #cell16 {
   visibility: hidden;
 }
 
+/* toolbar */
+#toolbar {
+  margin-top: 87.5vmin;
+  text-align: center;
+}
+
+/* reset button */
+#reset {
+  display: inline;
+  border: 2px outset;
+  background-color: #eee;
+  padding: 3px 0.5em;
+  border-radius: 1px;
+  box-shadow: inset 0 0 4px grey, 3px 3px 4px grey;
+  left: 9vmin;
+}
+#reset:active {
+  box-shadow: inset 0 0 4px grey;
+  margin-top: 3px;
+  margin-left: 3px;
+}
+
+/* count display */
+#count {
+  display: inline;
+  margin-left: 15vmin;
+}
+#congrat {
+  display: inline;
+  color: red;
+  visibility: hidden;
+  margin-left: 15vmin;
+}
+
 </style>
 
-<div id="container">
- <div id="board"></div>
+<div id="board"></div>
+<div id="toolbar">
+ <div id="reset">Randomize</div>
+ <div id="count">Count : <span class="value">0</span></div>
+ <div id="congrat">GAME WON !</div>
 </div>
 
 <script>
+const count_value = document.querySelector('#count .value');
+let count = 0;
+
+// cell size
+const cell_size = 17.5;
+const cell_unit = 'vmin';
 
 // list of cells at initial positions
 const cells = [];
@@ -96,26 +141,23 @@ cells.forEach( cell => {
 // display cells
 function display_cells() {
   cells.forEach( cell => {
-    cell.div.style.left = (20*(cell.col-1))+'vmin';
-    cell.div.style.top = (20*(cell.row-1))+'vmin';
+    cell.div.style.left = (cell_size*(cell.col-1)) + cell_unit;
+    cell.div.style.top = (cell_size*(cell.row-1)) + cell_unit;
   });
+  count_value.innerHTML = count;
+  window.congrat.style.visibility = (count && done()) ? 'visible' : 'hidden';
 }
 display_cells();
 
 // move a cell
 function move() {
   let cell = this['data-cell'];
-  let check = [
-    board[cell.row-1][cell.col],
-    board[cell.row+1][cell.col],
-    board[cell.row][cell.col-1],
-    board[cell.row][cell.col+1]
-  ];
-  check.forEach( c => {
+  neighbours(cell).forEach( c => {
     if ( c == empty ) {
       let {row,col} = cell;
       board[empty.row][empty.col] = cell;
       board[cell.row][cell.col] = empty;
+      count++;
     }
   });
   board.forEach( (line,row) => {
@@ -126,6 +168,39 @@ function move() {
     });
   });
   display_cells();
+}
+
+// return list of given cell neighbours
+function neighbours(cell) {
+  return [
+    board[cell.row-1][cell.col],
+    board[cell.row+1][cell.col],
+    board[cell.row][cell.col-1],
+    board[cell.row][cell.col+1]
+  ];
+}
+
+// randomize cells
+window.reset.addEventListener('click',randomize);
+function randomize() {
+  for (let n=0; n < 100; n++ ) {
+    let target = neighbours(empty)[Math.floor(Math.random()*4)];
+    if ( target ) {
+      count = -1;
+      move.call({ 'data-cell': target });
+    }
+  }
+}
+
+// check if player has won
+function done() {
+  let ok = true;
+  cells.forEach( cell => {
+    if ( cell.id != cell.col + (cell.row-1)*4) {
+      ok = false;
+    }
+  });
+  return ok;
 }
 
 </script>
