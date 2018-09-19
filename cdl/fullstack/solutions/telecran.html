@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<meta charset='utf-8'>
+<title>Interface télécran</title>
+<style>
+#boitier {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 700px;
+  height: 500px;
+  background-color: #E00;
+  box-shadow:
+    inset 10px 10px 10px 10px rgba(255,192,192,0.7),
+    inset -10px -10px 10px 10px rgba(192,0,0,0.8),
+    10px 10px 5px 5px rgba(255,229,229,0.5);
+  position: relative;
+  border-radius: 12px;
+  font-size: 24px;
+  font-family: Georgia, serif;
+}
+#ecran {
+  width: 550px;
+  height: 325px;
+  position: absolute;
+  left: 75px;
+  top: 75px;
+  background-color: #880;
+  box-shadow:
+      -5px -5px 5px 5px rgba(192,0,0,0.8),
+      5px 5px 5px 5px rgba(255,192,192,0.7);
+  border-radius: 3px;
+}
+#curseur, .trace {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  background-color: black;
+}
+#curseur {
+  left: 275px;
+  top: 162px;
+  background-color: #AAA;
+}
+#gauche, #droite {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 25px;
+  border-radius: 25px;
+  background-color: black;
+  box-shadow: 2px 2px 3px 3px rgb(156,0,0),
+    inset 1px 1px 2px 2px #444;
+  cursor: pointer;
+}
+#gauche {
+  left: 70px;
+}
+#droite {
+  right: 70px;
+}
+#logo {
+  font-size: 120%;
+  font-variant: small-caps;
+  color: #880;
+  text-align: center;
+  position: absolute;
+  top: 425px;
+  width: 300px;
+  left: 200px;
+  text-shadow: 2px 2px 2px rgba(255,127,127,0.7), -2px -2px 2px rgba(127,80,80,0.7);
+  cursor: pointer;
+}
+</style>
+
+<div id="boitier">
+ <div id="ecran">
+  <div id="curseur" class="trace"></div>
+ </div>
+ <div id="gauche" title="haut / bas"></div>
+ <div id="droite" title="gauche / droite"></div>
+ <div id="logo" title="effacer">CSS Design</div>
+</div>
+
