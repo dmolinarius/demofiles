@@ -35,13 +35,14 @@ html, body {
   position: absolute;
   width: 17.5vmin;
   height: 17.5vmin;
-  border: 1px solid grey;
-  box-shadow: inset 0 0 10px grey;
+  border: 1px solid #888;
+  box-shadow: inset 0 0 10px rgba(127,127,127,0.75);
   border-radius: 3px;
   background-color:white;
   box-sizing: border-box;
   text-align: center;
   line-height: 17.5vmin;
+  background-repeat: no-repeat;
 }
 
 /* empy cell */
@@ -51,36 +52,52 @@ html, body {
 
 /* toolbar */
 #toolbar {
-  margin-top: 87.5vmin;
-  text-align: center;
+  position: absolute;
+  width: 70vmin;
+  left: calc(50vw - 35vmin);
+  top: 87.5vmin;
+  min-width: 22em;
 }
 
-/* reset button */
-#reset {
-  display: inline;
+#reset, #cheat {
+  display: inline-block;
+  position: relative;
   border: 2px outset;
   background-color: #eee;
   padding: 3px 0.5em;
   border-radius: 1px;
   box-shadow: inset 0 0 4px grey, 3px 3px 4px grey;
-  left: 9vmin;
+  margin-right: 7.5vmin;
+  text-align: center;
+  cursor: pointer;
 }
-#reset:active {
+#reset:active, #cheat:active {
   box-shadow: inset 0 0 4px grey;
-  margin-top: 3px;
-  margin-left: 3px;
+  top: 3px;
+  left: 3px;
 }
-
-/* count display */
+#cheat {
+  width: 3.7em;
+}
 #count {
   display: inline;
-  margin-left: 15vmin;
 }
 #congrat {
-  display: inline;
-  color: red;
-  visibility: hidden;
-  margin-left: 15vmin;
+  position: absolute;
+  visibility: visible;
+  top: calc(45vh - 2em);
+  left: calc(50vw - 5em);
+  width: 10em;
+  border: 3px solid #420;
+  border-radius: 5px;
+  box-shadow: 5px 5px 7px rgba(64,32,0,0.75);
+  background-color: rgba(127,64,0,0.75);
+  padding: 0.5em;
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-size: 5vmin;
 }
 
 </style>
@@ -88,13 +105,22 @@ html, body {
 <div id="board"></div>
 <div id="toolbar">
  <div id="reset">Randomize</div>
+ <div id="cheat"><span>Show</span><span>Hide</span> ids</div>
  <div id="count">Count : <span class="value">0</span></div>
- <div id="congrat">GAME WON !</div>
 </div>
+<div id="congrat">Congratulations,<br>You won !</div>
 
 <script>
+// By Charles J Sharp - Own work, from Sharp Photography, sharpphotography, CC BY-SA 4.0,
+// https://commons.wikimedia.org/w/index.php?curid=47563138
+const bgimage = 'duck-head.jpg';
+
+// number of draws
 const count_value = document.querySelector('#count .value');
 let count = 0;
+
+// show cell numbers
+let show_ids = true;
 
 // cell size
 const cell_size = 17.5;
@@ -119,7 +145,7 @@ for (let l=0; l < 6; l++) {
   }
 }
 
-// populate board
+// populate board model
 const empty = cells[15];
 cells.forEach( cell => {
   board[cell.row][cell.col] = cell;
@@ -128,26 +154,40 @@ cells.forEach( cell => {
 // create cell DOM elements
 cells.forEach( cell => {
   let div = document.createElement('div');
+  let span = document.createElement('span');
   let label = document.createTextNode(cell.id);
+  span.appendChild(label);
   div.id = 'cell' + ('0'+cell.id).slice(-2);
   div.className = 'cell';
-  div.appendChild(label);
+  div.appendChild(span);
   div.addEventListener('click',move);
   window.board.appendChild(div);
   div['data-cell'] = cell;
   cell.div = div;
+  cell.span = span;
 });
 
-// display cells
-function display_cells() {
+// place cells
+function display() {
   cells.forEach( cell => {
     cell.div.style.left = (cell_size*(cell.col-1)) + cell_unit;
     cell.div.style.top = (cell_size*(cell.row-1)) + cell_unit;
+    cell.div.firstChild.style.visibility = (cell != empty && show_ids) ? 'visible' : 'hidden';
   });
   count_value.innerHTML = count;
+  window.cheat.children[0].style.display = show_ids ? 'inline' : 'none';
+  window.cheat.children[1].style.display = show_ids ? 'none' : 'inline';
   window.congrat.style.visibility = (count && done()) ? 'visible' : 'hidden';
 }
-display_cells();
+display();
+
+// configure toolbar button event handlers
+window.reset.addEventListener('click',randomize);
+window.cheat.addEventListener('click',() => {
+  show_ids = !show_ids;
+  display();
+  console.log('hello from cheat button', show_ids);
+});
 
 // move a cell
 function move() {
@@ -167,21 +207,10 @@ function move() {
       }
     });
   });
-  display_cells();
-}
-
-// return list of given cell neighbours
-function neighbours(cell) {
-  return [
-    board[cell.row-1][cell.col],
-    board[cell.row+1][cell.col],
-    board[cell.row][cell.col-1],
-    board[cell.row][cell.col+1]
-  ];
+  display();
 }
 
 // randomize cells
-window.reset.addEventListener('click',randomize);
 function randomize() {
   for (let n=0; n < 100; n++ ) {
     let target = neighbours(empty)[Math.floor(Math.random()*4)];
@@ -203,4 +232,41 @@ function done() {
   return ok;
 }
 
+// return list of given cell neighbours
+function neighbours(cell) {
+  return [
+    board[cell.row-1][cell.col],
+    board[cell.row+1][cell.col],
+    board[cell.row][cell.col-1],
+    board[cell.row][cell.col+1]
+  ];
+}
+
+// load image to get acces to dimensions
+let img = document.createElement('img');
+img.src = bgimage;
+img.onload = function() {
+  count = 0;
+  resize();
+  display();
+};
+
+function resize() {
+  let elt = document.getElementById('board');
+  let size = elt.offsetWidth;
+  if ( img.width > img.height ) {
+    size = size * img.width / img.height;
+  }
+  let cell_size = elt.offsetWidth/4;
+  cells.forEach( (cell,n) => {
+    let row = 1 + parseInt(n/4,10);
+    let col = 1 + n%4;
+    cell.div.style.backgroundImage = 'url('+bgimage+')';
+    cell.div.style.backgroundSize = size+'px';
+    cell.div.style.backgroundPosition = '-'+cell_size*(col-1) +'px '+ '-'+cell_size*(row-1) + 'px';
+  });
+}
+window.onresize = resize;
+resize();
+// ajouter de quoi choisir une image
 </script>
