@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-
+<html lang="fr">
+<meta charset="utf-8">
 <title>Fibonacci</title>
 
-<style type="text/css">
+<style>
  body { font-family: Consolas, monospace; }
- h1 { size: 120%; color: #80c0ff; font-family: Calibri, sans-serif;}
+ h1 { font-size: 120%; color: #80c0ff; font-family: Calibri, sans-serif;}
  b { color: orange; }
  table.hsl {
   width: auto;
@@ -45,15 +46,15 @@
  }
 </style>
 
-<script type="text/javascript">
+<script>
  var n, fibo = [0, 1];
 
- // ici, remplir le tableau fibo avec les 25 premières valeurs
+ // ici, remplir le tableau fibo avec les 25 premiÃ¨res valeurs
  for (n = 3; n < 25; n++) {
   fibo[n-1] = fibo[n-2] + fibo[n-3];
  }
 
- // ici, afficher le contenu du tableau à l'aide de console.log
+ // ici, afficher le contenu du tableau Ã  l'aide de console.log
  console.log(fibo.toString());
 
 </script>
@@ -62,10 +63,10 @@
 
  <h1>1.2 - document.write</h1>
  <div>
-  <script type="text/javascript">
+  <script>
    var str = ''; // str sera global, car je ne suis pas dans une fonction
 
-   // ici, afficher le contenu du tableau à l'aide de document.write
+   // ici, afficher le contenu du tableau Ã  l'aide de document.write
    for (n = 0; n < 24; n++) {
     str += '<b>' + fibo[n] + '</b>';
     if ( n < 23 ) str += ', ';
@@ -76,23 +77,23 @@
 
  <h1>1.3 - innerHTML</h1>
  <div id="dropzone"></div>
- <script type="text/javascript">
-  // ici afficher le contenu du tableau dans le div nommé dropzone
-  // à l'aide de la propriété innerHTML
+ <script>
+  // ici afficher le contenu du tableau dans le div nommÃ© dropzone
+  // Ã  l'aide de la propriÃ©tÃ© innerHTML
 
   window.document.getElementById('dropzone').innerHTML = str;
   // ou (HTML5)
   window.dropzone.innerHTML = str;
-  // voire même
+  // voire mÃªme
   dropzone.innerHTML = str;
 
  </script>
 
  <h1>1.4 - element.appendChild</h1>
  <div id="container"></div>
- <script type="text/javascript">
-  // ici afficher le contenu du tableau dans le div nommé container
-  // à l'aide des fonctions du DOM
+ <script>
+  // ici afficher le contenu du tableau dans le div nommÃ© container
+  // Ã  l'aide des fonctions du DOM
   var frag = document.createDocumentFragment();
   var value, b, comma;
   for (n = 0; n < 24; n++) {
@@ -134,10 +135,10 @@
   <tr><td>12.5%</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
   <tr><td>0%</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
  </table>
- <script type="text/javascript">
+ <script>
    // ici initialiser le couleur des cellules du tableau
-   // à l'aide de la propriété CSS background-color
-   // afin d'obtenir le résultat approprié...
+   // Ã  l'aide de la propriÃ©tÃ© CSS background-color
+   // afin d'obtenir le rÃ©sultat appropriÃ©...
    function paintTable(table,hue) {
      var rows = table.getElementsByTagName('tr');
      var row, cells, cell, lum, sat, hsl;
@@ -171,11 +172,11 @@
   <tr><td>12.5%</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
   <tr><td>0%</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
  </table>
- <script type="text/javascript">
-  // ici, prévoir une fonction modifiant les couleurs du tableau 2
-  // en fonction du déplacement de la souris
+ <script>
+  // ici, prÃ©voir une fonction modifiant les couleurs du tableau 2
+  // en fonction du dÃ©placement de la souris
   document.body.addEventListener('mousemove', function(e) {
-    // avec une petite approximation dûe aux marges...
+    // avec une petite approximation dÃ»e aux marges...
     var hue = e.clientX * 360 / e.currentTarget.clientWidth;
     paintTable(hsl2,hue);
   });
@@ -198,7 +199,7 @@
   <!-- curseur  -->
   <tr class="ignore">
    <td>hue</td>
-   <td style="background-color: transparent"><span>0</span>°</td>
+   <td style="background-color: transparent"><span>0</span>Â°</td>
    <td colspan="4" style="background-color: transparent; padding-top: 1em;">
     <input type="range" min="0" max="360" value="0" id="slider" style="margin: 0; inline-size: 100%"/>
    </td>
@@ -207,7 +208,7 @@
  </table>
 
  <!-- gestion du curseur -->
- <script type="text/javascript">
+ <script>
   slider.addEventListener('input', function(e) {
     var hue = e.currentTarget.value;
     e.currentTarget            // input
