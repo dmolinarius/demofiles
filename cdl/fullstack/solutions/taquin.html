@@ -14,7 +14,7 @@ Jeu de taquin (15-puzzle game)
 html, body {
   padding: 0;
   margin: 0;
-  height: 100%;
+  font-family: Consolas;
 }
 
 /* board size, position and border */
@@ -23,7 +23,7 @@ html, body {
   width: 70vmin;
   height: 70vmin;
   top: calc(45vh - 35vmin);
-  left: calc(50vw - 35vmin);
+  left: calc(50vw - 35vmin - 2.5px);
   border: 5px solid #400;
   box-shadow: 1vw 1vh 1vmax #420;
   border-radius: 3px;
@@ -43,6 +43,7 @@ html, body {
   text-align: center;
   line-height: 17.5vmin;
   background-repeat: no-repeat;
+  text-shadow: 0 0 2px white, 0 0 2px white;
 }
 
 /* empy cell */
@@ -52,35 +53,34 @@ html, body {
 
 /* toolbar */
 #toolbar {
-  position: absolute;
-  width: 70vmin;
-  left: calc(50vw - 35vmin);
-  top: 87.5vmin;
-  min-width: 22em;
+  display: flex;
+  justify-content: center;
+  margin-top: 87.5vmin;
 }
 
-#reset, #cheat {
-  display: inline-block;
+#file, #rndom, #cheat {
   position: relative;
   border: 2px outset;
   background-color: #eee;
   padding: 3px 0.5em;
   border-radius: 1px;
   box-shadow: inset 0 0 4px grey, 3px 3px 4px grey;
-  margin-right: 7.5vmin;
   text-align: center;
   cursor: pointer;
+  margin-right: 7.4vmin;
 }
-#reset:active, #cheat:active {
+#file span:active, #rndom:active, #cheat:active {
   box-shadow: inset 0 0 4px grey;
   top: 3px;
   left: 3px;
 }
 #cheat {
-  width: 3.7em;
+  width: 4.4em;
+  white-space: pre;
 }
 #count {
-  display: inline;
+  position: relative;
+  top: 5px;
 }
 #congrat {
   position: absolute;
@@ -99,21 +99,35 @@ html, body {
   letter-spacing: 0.1em;
   font-size: 5vmin;
 }
+#file input[type='file'] {
+  position: absolute;
+  filter:alpha(opacity: 0);
+  opacity: 0;
+  cursor: pointer;
+  width: 7.5em;
+  border: 1px solid red;
+  width: calc(100% + 2px);
+  left: -2px;
+  height: calc(100% + 2px);
+  top: -2px;
+}
+#file span {
+  width: 7.5em;
+}
 
 </style>
 
 <div id="board"></div>
 <div id="toolbar">
- <div id="reset">Randomize</div>
+ <div id="file"><input type="file" fileread="xx" id="reader"></input><span>Select image</span></div>
+ <div id="rndom">Randomize</div>
  <div id="cheat"><span>Show</span><span>Hide</span> ids</div>
  <div id="count">Count : <span class="value">0</span></div>
 </div>
 <div id="congrat">Congratulations,<br>You won !</div>
 
 <script>
-// By Charles J Sharp - Own work, from Sharp Photography, sharpphotography, CC BY-SA 4.0,
-// https://commons.wikimedia.org/w/index.php?curid=47563138
-const bgimage = 'duck-head.jpg';
+let bgimage = '';
 
 // number of draws
 const count_value = document.querySelector('#count .value');
@@ -136,7 +150,8 @@ for (let n=0; n < 16; n++ ) {
   })
 }
 
-// board model
+// board model - Note that we add empty lines and columns all around board
+// at row and column coordinates 0 and 5 to ease search of cell neighbours
 const board = [];
 for (let l=0; l < 6; l++) {
   board[l] = [];
@@ -179,14 +194,17 @@ function display() {
   window.cheat.children[1].style.display = show_ids ? 'none' : 'inline';
   window.congrat.style.visibility = (count && done()) ? 'visible' : 'hidden';
 }
-display();
 
-// configure toolbar button event handlers
-window.reset.addEventListener('click',randomize);
+// configure event handlers
+window.rndom.addEventListener('click',randomize);
 window.cheat.addEventListener('click',() => {
   show_ids = !show_ids;
   display();
-  console.log('hello from cheat button', show_ids);
+});
+window.reader.addEventListener('change', fread);
+window.congrat.addEventListener('click',() => {
+  count=0;
+  display();
 });
 
 // move a cell
@@ -247,6 +265,7 @@ let img = document.createElement('img');
 img.src = bgimage;
 img.onload = function() {
   count = 0;
+  //reset();
   resize();
   display();
 };
@@ -267,6 +286,30 @@ function resize() {
   });
 }
 window.onresize = resize;
+window.onload = resize;
+
+// read image file
+function fread(changeEvent) {
+  let reader = new FileReader();
+  reader.onload = function (loadEvent) {
+    img.src = bgimage = loadEvent.target.result;
+  };
+  reader.readAsDataURL(changeEvent.target.files[0]);
+}
+
+// reset layout
+function reset() {
+  for (let n=0; n < 16; n++ ) {
+    let cell = cells[n];
+    let row = 1 + parseInt(n/4,10);
+    let col = 1 + n%4;
+    Object.assign(cell, {row, col});
+    board[row][col] = cell;
+  }
+}
+
+// initial vue update
 resize();
-// ajouter de quoi choisir une image
+display();
+
 </script>
