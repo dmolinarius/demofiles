@@ -43,31 +43,89 @@ html, body {
   text-align: center;
   line-height: 20vmin;
 }
+#cell16 {
+  visibility: hidden;
+}
 
 </style>
 
 <div id="container">
-
-<div id="board">
+ <div id="board"></div>
 </div>
 
-</div>
 <script>
-for (let l=0; l < 4; l++) {
-  for (let c=0; c < (l < 3 ? 4 : 3); c++) {
-    let n = 1 + c + l*4
-    let cell = document.createElement('div');
-    let label = document.createTextNode(n);
-    cell.id = 'cell' + ('0'+n).slice(-2);
-    cell.className = 'cell';
-    cell.style.left = (20*c)+'vmin';
-    cell.style.top = (20*l)+'vmin';
-    cell.appendChild(label);
-    cell.addEventListener('click',move);
-    window.board.appendChild(cell);
+
+// list of cells at initial positions
+const cells = [];
+for (let n=0; n < 16; n++ ) {
+  cells.push({
+    id: n+1,
+    col: 1 + n%4,
+    row: 1 + parseInt(n/4,10)
+  })
+}
+
+// board model
+const board = [];
+for (let l=0; l < 6; l++) {
+  board[l] = [];
+  for (let c=0; c < 6; c++) {
+    board[l][c] = undefined;
   }
 }
-function move() {
-  console.log(this);
+
+// populate board
+const empty = cells[15];
+cells.forEach( cell => {
+  board[cell.row][cell.col] = cell;
+});
+
+// create cell DOM elements
+cells.forEach( cell => {
+  let div = document.createElement('div');
+  let label = document.createTextNode(cell.id);
+  div.id = 'cell' + ('0'+cell.id).slice(-2);
+  div.className = 'cell';
+  div.appendChild(label);
+  div.addEventListener('click',move);
+  window.board.appendChild(div);
+  div['data-cell'] = cell;
+  cell.div = div;
+});
+
+// display cells
+function display_cells() {
+  cells.forEach( cell => {
+    cell.div.style.left = (20*(cell.col-1))+'vmin';
+    cell.div.style.top = (20*(cell.row-1))+'vmin';
+  });
 }
+display_cells();
+
+// move a cell
+function move() {
+  let cell = this['data-cell'];
+  let check = [
+    board[cell.row-1][cell.col],
+    board[cell.row+1][cell.col],
+    board[cell.row][cell.col-1],
+    board[cell.row][cell.col+1]
+  ];
+  check.forEach( c => {
+    if ( c == empty ) {
+      let {row,col} = cell;
+      board[empty.row][empty.col] = cell;
+      board[cell.row][cell.col] = empty;
+    }
+  });
+  board.forEach( (line,row) => {
+    line.forEach( (cell,col) => {
+      if ( cell ) {
+        Object.assign(cell,{row,col});
+      }
+    });
+  });
+  display_cells();
+}
+
 </script>
