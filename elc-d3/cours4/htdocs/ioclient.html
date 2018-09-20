@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>socket.io test page</title>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+  var socket = io.connect('http://localhost:8080'); // émission 'connection'
+  socket.on('hello', function (data) {              // réception 'hello'
+    dropzone.textContent =
+     'le serveur me dit : '+JSON.stringify(data);
+  });
+</script>
+
+<div id="dropzone"></div>
