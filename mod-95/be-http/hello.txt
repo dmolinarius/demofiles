@@ -2,5 +2,5 @@
 <html lang="fr">
 <meta charset="utf-8">
 <title>Exemple HTML</title>
-<h1>Exemple</h1>
+<h1 style="margin-top:0">Exemple</h1>
 <div>Hello, ceci est un exemple de fichier HTML</div>
