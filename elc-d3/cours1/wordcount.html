@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Le compte est bon !</title>
+<style>
+body { margin:0; padding: 0.5em; }
+h1 { text-align: center; }
+#main { column-count:4;}
+.results { font-family: monospace; }
+.results span { font-weight: bold; }
+#main + .results { margin-top: 1.33em; }
+</style>
+<h1>Le compte est bon !</h1>
+<div id="main">
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet sodales velit, in porttitor urna. Nam sagittis nisl purus, vitae dictum ligula fermentum vel. Nam ultricies quam eu pretium luctus. Curabitur suscipit justo eu ipsum malesuada scelerisque. Pellentesque in laoreet ipsum, eu suscipit lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean vehicula hendrerit tortor, non hendrerit neque ultrices in. Maecenas interdum lacus vitae orci congue commodo. Nullam sollicitudin, risus sed ullamcorper posuere, dui augue ullamcorper neque, vitae lobortis justo metus eu erat. Aenean eu enim vel tortor iaculis bibendum. Fusce suscipit augue arcu, a suscipit est laoreet ut.
+</p>
+
+<p>
+Etiam vitae leo rhoncus, consequat dui eu, ullamcorper lectus. Quisque convallis lectus dolor, et aliquam mi lacinia quis. Nam condimentum egestas eros, sit amet blandit ipsum. In congue sed turpis ac tristique. Vivamus vel tincidunt leo, sit amet ultricies quam. Vivamus rutrum commodo urna, non gravida magna dignissim at. Integer tempor cursus urna ac aliquet. In bibendum mollis erat vitae fringilla. Phasellus ornare mauris nunc, sed bibendum mi porta ac. Nam non quam consectetur, dictum lorem vel, tincidunt turpis. Nullam ultricies massa nec tristique molestie. Sed sed porttitor ex, sed suscipit felis. Vestibulum pulvinar vulputate consectetur. Ut varius venenatis finibus. Etiam non tincidunt justo. Mauris in lacus lacus.
+</p>
+
+<p>
+Integer sollicitudin iaculis nisl, eu finibus lectus sodales nec. Cras ullamcorper nibh sit amet magna rhoncus scelerisque. Suspendisse varius in nisl quis pellentesque. Morbi fringilla, dui sit amet consectetur tristique, mauris nibh aliquet magna, eget laoreet augue dolor vel lacus. Proin eleifend metus quis neque malesuada, at porta enim fringilla. Proin venenatis, ante eu facilisis congue, nisl quam pretium leo, sed eleifend ex massa sed felis. Curabitur congue tellus at facilisis lacinia. Vestibulum et justo et velit lacinia vulputate. Sed tellus sapien, molestie nec erat ut, gravida consectetur ligula. Vivamus hendrerit urna at velit varius, ut suscipit felis sollicitudin. Mauris feugiat purus dolor, id sollicitudin ligula tincidunt ut. Vestibulum tellus diam, convallis vel luctus sed, finibus sed quam.
+</p>
+
+<p>
+Mauris accumsan erat vel aliquam ornare. Curabitur nibh lorem, ullamcorper sed arcu ultricies, vulputate ornare est. Nullam vitae orci lacinia, facilisis diam et, convallis nisl. Donec blandit accumsan augue eu finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ornare molestie dolor in tristique. Curabitur enim odio, tempor eget auctor cursus, tincidunt ac mauris. Nullam varius sapien semper tortor finibus, vitae scelerisque nibh ultrices. Quisque malesuada nisi sed sapien interdum dapibus. Quisque porta, purus vitae finibus faucibus, erat ante pulvinar quam, nec convallis dolor mauris eu eros. Pellentesque elit mauris, dignissim nec velit non, porttitor porttitor libero. Cras a mi id risus placerat ornare ac ut risus. Curabitur est urna, dignissim at mattis nec, tristique non massa.
+</p>
+</div>
+<hr>
+<div class="results">Nombre de caractères dans l'ensemble des paragraphes : <span id="total"></span></div>
+<div class="results">En supprimant les espaces en début et en fin des paragraphes : <span id="normal"></span></div>
+<div class="results">Nombre de caractères de ponctuation : <span id="ponctuation"></span></div>
+<div class="results">Nombre d'espaces : <span id="espaces"></span></div>
+<div class="results">Nombre de lettres: <span id="lettres"></span></div>
+<div class="results">Nombre de consonnes : <span id="consonnes"></span></div>
+<div class="results">Nombre de voyelles : <span id="voyelles"></span></div>
+<script>
+var text = main.textContent;
+total.textContent = main.textContent.length;
+var normalized = [...document.getElementsByTagName('p')].reduce(
+  (n,p) => n + ' ' + p.textContent.trim(),
+  ''
+).trim();
+normal.textContent = normalized.length;
+ponctuation.textContent = [...normalized].reduce((n,c) => n + (c.match(/[\.,;]/) ? 1 : 0),0);
+espaces.textContent = [...normalized].reduce((n,c) => n + (c.match(/ /) ? 1 : 0),0);
+lettres.textContent = [...normalized].reduce((n,c) => n + (c.toLowerCase().match(/[a-z]/) ? 1 : 0),0);
+console.log(parseInt(ponctuation.textContent,10) + parseInt(espaces.textContent,10) + parseInt(lettres.textContent,10));
+//console.log( [...normalized].reduce((n,c) => n + (c.match(/[\.,;A-Za-z ]/) ? '' : c),''));
+consonnes.textContent = [...normalized].reduce((n,c) => n + (c.toLowerCase().match(/[bcdfghjklmnpqrstvwxz]/) ? 1 : 0),0); 
+voyelles.textContent = [...normalized].reduce((n,c) => n + (c.toLowerCase().match(/[aeiouy]/) ? 1 : 0),0); 
+
+</script>
