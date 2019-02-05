@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<meta charset="utf-8">
+<title>Fibonacci, premiers et pi</title>
+
+<style>
+body {
+  font-family: consolas, monospace;
+  color: #666;
+}
+h1 {
+  font-weight: normal;
+  border-bottom: 1px solid #666;
+  display: inline-block;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.number {
+  padding: 0 0.25em;
+  font-weight:bold;
+  width: 8.5%;
+  font-size: 1.7vw;
+  text-align:right;
+  display: inline-box;
+}
+.number:not(.container)::after {
+  content: ",";
+  color: #aaa;
+}
+</style>
+
+
+<script type="text/javascript">
+
+// nombres de Fibonacci
+fibo = (function(nb) {
+  var n, fibo = [0, 1];
+  for ( n = 1; n < nb; n++ ) {
+   fibo[n+1] = fibo[n-1] + fibo[n];
+  }
+  return fibo;
+})(39);
+
+//  nombres premiers
+let max_prime = 1024;
+primes = (function(max) {
+   var n, primes=[1];
+
+   // vérifie si p divise n (renvoie true ou false)
+   function divides (p) { return ( p!=1 && !(n % p) ); }
+
+   // on remplit le tableau des nombres premiers
+   for ( n = 2; n < max; n++ ) {
+     if ( ! primes.some(divides) ) primes.push(n);
+   }
+   return primes;
+})(max_prime);
+
+// PI avec la formule de Leibniz-Gregory
+let nb_pi = 5;
+pi = (function(nb) {
+  var n = 0, pi = [4];
+  do {
+    n = n+1;
+    pi[n] = pi[n-1] + Math.pow(-1,n)*4/(2*n+1) 
+  } while(pi[n].toFixed(nb) !== pi[n-1].toFixed(nb));
+  console.log(pi[n-1],pi[n],' => ',pi[n].toFixed(nb),pi[n-1].toFixed(nb));
+  return pi;
+})(nb_pi);
+
+// PI avec la formule de Nilakantha
+nilakantha = function(nb) {
+  var n = 0, pi = [3];
+  do {
+    n = n+1;
+    n2 = n*2;
+    pi[n] = pi[n-1] + Math.pow(-1,n+1)*4/(n2*(n2+1)*(n2+2))
+  } while(pi[n].toFixed(nb) !== pi[n-1].toFixed(nb));
+  return pi;
+};
+nila_pi = nilakantha(nb_pi);
+
+nb_nilakantha = 13;
+nilakantha_pi = nilakantha(nb_nilakantha);
+
+
+</script>
+<main>
+
+<h1>Nombres de Fibonacci</h1>
+<div id="fibo_container" class="container">
+</div>
+<script>
+ fibo.forEach(n => {
+   let s = document.createElement('span');
+   s.className = 'number';
+   s.textContent = n;
+   fibo_container.appendChild(s);
+ });
+</script>
+
+<h1>Nombres premiers</h1>
+<div id="prime_container" class="container"></div>
+<p>Il y a <span id="nb_primes"></span> nombres premiers avant <span id="max_prime_value"></span></p>
+<script>
+ primes.forEach(n => {
+   let s = document.createElement('span');
+   s.className = 'number';
+   s.textContent = n;
+   prime_container.appendChild(s);
+ });
+nb_primes.textContent = primes.length;
+max_prime_value.textContent = max_prime;
+</script>
+
+<h1>Le nombre PI</h1>
+<div id="pi_container" class="number container"></div>
+<p>Il faut <span id="nb_iter_pi"></span> iterations pour trouver les <span id="nb_pi_value"></span>
+premières décimales de pi avec la formule de Leibniz-Gregory.
+<script>
+pi_container.textContent = pi[pi.length-1].toFixed(nb_pi);
+nb_iter_pi.textContent = pi.length;
+nb_pi_value.textContent = nb_pi;
+</script>
+
+<div id="nila_pi_container" class="number container"></div>
+<p>Il faut <span id="nb_iter_nila_pi"></span> iterations pour trouver les <span id="nb_nila_pi_value"></span>
+premières décimales de pi avec la formule de Nilakantha.
+<script>
+nila_pi_container.textContent = nila_pi[nila_pi.length-1].toFixed(nb_pi);
+nb_iter_nila_pi.textContent = nila_pi.length;
+nb_nila_pi_value.textContent = nb_pi;
+</script>
+
+<div id="nilakantha_container" class="number container"></div>
+<p>Il faut <span id="nb_iter_nilakantha"></span> iterations pour trouver les <span id="nb_nilakantha_value"></span>
+premières décimales de pi avec la formule de Nilakantha.</p>
+<p><b>N.B.</b>
+Il n'est pas utile de poursuivre le calcul plus loin, car le cumul des approximations dues à la représentation des nombres utilisée par javascript (ainsi que par d'autres langages) fait que les décimales suivantes trouvées par cette méthode sont fausses...
+<script>
+nilakantha_container.textContent = nilakantha_pi[nilakantha_pi.length-1].toFixed(nb_nilakantha);
+nb_iter_nilakantha.textContent = nilakantha_pi.length;
+nb_nilakantha_value.textContent = nb_nilakantha;
+</script>
+</main>
