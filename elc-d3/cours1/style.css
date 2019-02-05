@@ -1,0 +1,23 @@
+  body { font-family: Calibri, helvetica, sans-serif;
+         background-color: white; color: black; padding-left: 1em; }
+  h1 { font-size: 120%; color: rgb(189,10,38); }
+  img { border: none; }
+  pre { background-color: #DDD; padding:0.5em;
+        border-radius: 5px; box-shadow: 5px 5px 5px #ccc; }
+  h3 { margin-top: 0; }
+
+  span.toggle { font-weight: bold; cursor: pointer; margin-left: 0.5em; font-family: monospace; }
+  div { padding: 1em; border: solid 2px #CCC; margin-top: 0.5em; }
+  div.toggled { padding: 0 1em 0.5em 0; }
+  div.toggled div { border: none; padding: 0; }
+  div.borderless { border: none; padding: 0; }
+
+  div.date {  border: none; margin: 0; padding: 0; }
+  table.bottom { width: 100%; padding: 0; border-collapse: collapse; border-spacing: 0;}
+  hr.bottom { margin-bottom: 0; }
+  .bottom .date, .bottom address { font-size: 80%; font-style: italic; }
+
+  .em { background-color: #CFC; padding: 2px 0.5em; }
+
+  .button { padding: 1px 0.5em; border: 2px outset;
+    background-color: #FD8; color: #630; cursor: pointer; }
