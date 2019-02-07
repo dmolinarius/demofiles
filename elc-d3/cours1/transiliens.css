@@ -1,0 +1,66 @@
+html {
+  padding: 20px;
+  font: menu;
+  background: linear-gradient(0deg, silver, black);
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-weight: normal;
+  font-family: Arial;
+  font-size: 20pt;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 1px #a84;
+  padding: 20px 60px;
+  color: rgba(255,90,0,0.9);
+  margin: -20px -20px 40px;
+  background: linear-gradient(90deg,
+    rgba(100,100,100,0.2),
+    rgba(100,100,100,0.8),
+    rgba(100,100,100,0.2)
+  );
+  border-bottom: 3px solid rgba(255,90,0,0.5);
+}
+
+h2 {
+  clear: left;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 0 #444;
+  color: silver;
+}
+table {
+  float: left;
+  margin-bottom: 1.33em;
+  border-collapse: collapse;
+  margin-right: 20px;
+}
+th[colspan] {
+  background-color: silver;
+  padding: 0.5em;
+  color: black;
+  background: linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,0.6), rgba(255,255,255,0));
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
+  border-width: 2px 1px;
+  border-style: solid;
+}
+th {
+  background-color: black;
+  color: white;
+  padding: 5px 0.5em;
+  border: 1px solid black;
+}
+td {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px 0.5em;
+  background-color: #eee;
+}
+td:first-of-type {
+  text-align: right;
+}
