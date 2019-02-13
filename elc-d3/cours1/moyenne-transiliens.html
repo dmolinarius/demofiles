@@ -2241,7 +2241,7 @@
   function ponctualite(selector,node=document) {
     let cells = node.querySelectorAll(selector)
       , data = [...cells].reduce((d,v) => {
-          let val = parseInt(v.textContent,10) ;
+          let val = parseFloat(v.textContent) ;
           return isNaN(val) ? d : {n:d.n+1, v:d.v+val};
         },{n:0, v:0})
     ;
