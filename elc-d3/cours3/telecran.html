@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<meta charset='utf-8'>
+<title>Télécran</title>
+<style>
+#boitier {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 700px;
+  height: 500px;
+  background-color: #E00;
+  box-shadow:
+    inset 10px 10px 10px 10px rgba(255,192,192,0.7),
+    inset -10px -10px 10px 10px rgba(192,0,0,0.8),
+    10px 10px 5px 5px rgba(255,229,229,0.5);
+  position: relative;
+  border-radius: 12px;
+  font-size: 24px;
+  font-family: Georgia, serif;
+}
+#ecran {
+  width: 550px;
+  height: 325px;
+  position: absolute;
+  left: 75px;
+  top: 75px;
+  background-color: #880;
+  box-shadow:
+      -5px -5px 5px 5px rgba(192,0,0,0.8),
+      5px 5px 5px 5px rgba(255,192,192,0.7);
+  border-radius: 3px;
+}
+#curseur, .trace {
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  background-color: black;
+}
+#curseur {
+  left: 275px;
+  top: 162px;
+  background-color: #AAA;
+}
+#gauche, #droite {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 25px;
+  border-radius: 25px;
+  background-color: black;
+  box-shadow: 2px 2px 3px 3px rgb(156,0,0),
+    inset 1px 1px 2px 2px #444;
+  cursor: pointer;
+}
+#gauche {
+  left: 70px;
+}
+#droite {
+  right: 70px;
+}
+#logo {
+  font-size: 120%;
+  font-variant: small-caps;
+  color: #880;
+  text-align: center;
+  position: absolute;
+  top: 425px;
+  width: 300px;
+  left: 200px;
+  text-shadow: 2px 2px 2px rgba(255,127,127,0.7), -2px -2px 2px rgba(127,80,80,0.7);
+  cursor: pointer;
+}
+</style>
+
+<div id="boitier">
+ <div id="ecran">
+  <div id="curseur" class="trace"></div>
+ </div>
+ <div id="gauche" title="haut / bas"></div>
+ <div id="droite" title="gauche / droite"></div>
+ <div id="logo" title="effacer">Javascript Powered</div>
+</div>
+
+<script>
+
+ // variables globales
+ var cursor_style = window.getComputedStyle(curseur)
+   , screen_style = window.getComputedStyle(ecran)
+   , boundaries = {
+       top: { min: 0, max: parseInt(screen_style.height,10)-2 },
+       left: { min: 0, max: parseInt(screen_style.width,10)-2 }
+     }
+   , timer = null
+ ;
+
+ // gestionnaires d'événements */
+ gauche.addEventListener('mousedown',moveUpOrDown);
+ gauche.addEventListener('mouseout',stopDrawing);
+ gauche.addEventListener('mouseup',stopDrawing);
+ droite.addEventListener('mousedown',moveLeftOrRight);
+ droite.addEventListener('mouseout',stopDrawing);
+ droite.addEventListener('mouseup',stopDrawing);
+ window.addEventListener('keydown',moveKey,true);
+ window.addEventListener('keyup',stopDrawing);
+ logo.addEventListener('click',erase);
+
+ // effacement de l'écran
+ function erase() {
+   while (ecran.firstChild.id != 'curseur') ecran.removeChild(ecran.firstChild);
+ }
+
+ // déplacement via une touche
+ function moveKey(e) {
+   e.stopPropagation(); // change slide
+   e.preventDefault();  // scroll
+   if ( e.keyCode == 37 || e.keyCode == 39 ) { // left / right
+     move(2,e.keyCode-38,'left');
+   }
+   else if ( e.keyCode == 38 || e.keyCode == 40 ) { // up / down
+     move(2,e.keyCode-39,'top');
+   }
+   else if ( e.keyCode == 46 ) { // Suppr
+     erase();
+   }
+ }
+ // déplacement vertical
+ function moveUpOrDown(e) {
+   var rect = this.getBoundingClientRect()
+     , top = e.clientY - rect.top - e.currentTarget.clientTop + e.currentTarget.scrollTop
+     , delta = top - rect.height/2
+     , dist = Math.abs(delta)
+     , dir = (delta > 0) ? 1 : -1
+   ;
+   move(dist,dir,'top');
+ }
+ // déplacement horizontal
+ function moveLeftOrRight(e) {
+   var rect = this.getBoundingClientRect()
+     , left = e.clientX - rect.left - e.currentTarget.clientLeft + e.currentTarget.scrollLeft
+     , delta = left - rect.width/2
+     , dist = Math.abs(delta)
+     , dir = (delta > 0) ? 1 : -1
+   ;
+   move(dist,dir,'left');
+ }
+
+ // déplacement générique (prop vaut 'top' ou 'left')
+ function move(dist,dir,prop) {
+   var n, dot, pos;
+   for ( n = 0; n < dist; n += 2 ) {
+     pos = (parseInt(cursor_style[prop],10) + 2 * dir);
+     if ( pos > boundaries[prop].max || pos < boundaries[prop].min ) break;
+     dot = document.createElement('div');
+     dot.className = 'trace';
+     dot.style.top = cursor_style.top;
+     dot.style.left = cursor_style.left;
+     ecran.insertBefore(dot,curseur);
+     curseur.style[prop] = pos + 'px';
+   }
+   // on continue ?
+   if ( timer ) clearTimeout(timer);
+   timer = setTimeout(move,100,dist,dir,prop);
+ }
+ function stopDrawing() {
+   if ( timer ) clearTimeout(timer);
+   timer = null;
+ }
+</script>
+

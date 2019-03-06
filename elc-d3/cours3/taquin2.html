@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<!--
+15-puzzle.html V0.0
+
+Jeu de taquin (15-puzzle game)
+
+-->
+<title>jeu de taquin</title>
+<style>
+
+/* viewport properties */
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: Consolas;
+}
+
+/* board size, position and border */
+#board {
+  position: absolute;
+  width: 70vmin;
+  height: 70vmin;
+  top: calc(45vh - 35vmin);
+  left: calc(50vw - 35vmin - 2.5px);
+  border: 5px solid #400;
+  box-shadow: 1vw 1vh 1vmax #420;
+  border-radius: 3px;
+  background-color: #844;
+}
+
+/* cell size, background and border */
+.cell {
+  position: absolute;
+  width: 17.5vmin;
+  height: 17.5vmin;
+  background-color:white;
+  box-sizing: border-box;
+  line-height: 17.5vmin;
+  overflow: hidden;
+}
+.cell img {
+}
+.cell span {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #888;
+  box-shadow: inset 0 0 10px rgba(127,127,127,0.75);
+  text-shadow: 0 0 2px white, 0 0 2px white;
+}
+
+/* empy cell */
+#cell16 {
+  visibility: hidden;
+}
+
+/* toolbar */
+#toolbar {
+  display: flex;
+  justify-content: center;
+  margin-top: 87.5vmin;
+}
+
+#file, #rndom, #cheat {
+  position: relative;
+  border: 2px outset;
+  background-color: #eee;
+  padding: 3px 0.5em;
+  border-radius: 1px;
+  box-shadow: inset 0 0 4px grey, 3px 3px 4px grey;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 7.4vmin;
+}
+#file span:active, #rndom:active, #cheat:active {
+  box-shadow: inset 0 0 4px grey;
+  top: 3px;
+  left: 3px;
+}
+#cheat {
+  width: 4.4em;
+  white-space: pre;
+}
+#count {
+  position: relative;
+  top: 5px;
+}
+#congrat {
+  position: absolute;
+  visibility: visible;
+  top: calc(45vh - 2em);
+  left: calc(50vw - 5em);
+  width: 10em;
+  border: 3px solid #420;
+  border-radius: 5px;
+  box-shadow: 5px 5px 7px rgba(64,32,0,0.75);
+  background-color: rgba(127,64,0,0.75);
+  padding: 0.5em;
+  text-align: center;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-size: 5vmin;
+}
+#file input[type='file'] {
+  position: absolute;
+  filter:alpha(opacity: 0);
+  opacity: 0;
+  cursor: pointer;
+  width: 7.5em;
+  border: 1px solid red;
+  width: calc(100% + 2px);
+  left: -2px;
+  height: calc(100% + 2px);
+  top: -2px;
+}
+#file span {
+  width: 7.5em;
+}
+
+</style>
+
+<div id="board"></div>
+<div id="toolbar">
+ <div id="file"><input type="file" fileread="xx" id="reader"></input><span>Select image</span></div>
+ <div id="rndom">Randomize</div>
+ <div id="cheat"><span>Show</span><span>Hide</span> ids</div>
+ <div id="count">Count : <span class="value">0</span></div>
+</div>
+<div id="congrat">Congratulations,<br>You won !</div>
+
+<script>
+// ultimately holds image data url
+let bgimage = '';
+
+// number of draws
+const count_value = document.querySelector('#count .value');
+let count = 0;
+
+// show cell numbers
+let show_ids = true;
+
+// cell size
+const cell_size = 17.5;
+const cell_unit = 'vmin';
+
+// list of cells at initial positions
+const cells = [];
+for (let n=0; n < 16; n++ ) {
+  cells.push({
+    id: n+1,
+    col: 1 + n%4,
+    row: 1 + parseInt(n/4,10)
+  })
+}
+
+// board model - Note that we add empty lines and columns all around board
+// at row and column coordinates 0 and 5 to ease search of cell neighbours
+const board = [];
+for (let l=0; l < 6; l++) {
+  board[l] = [];
+  for (let c=0; c < 6; c++) {
+    board[l][c] = undefined;
+  }
+}
+
+// populate board model
+const empty = cells[15];
+cells.forEach( cell => {
+  board[cell.row][cell.col] = cell;
+});
+
+// create cell DOM elements
+cells.forEach( cell => {
+  let div = document.createElement('div');
+  let span = document.createElement('span');
+  let label = document.createTextNode(cell.id);
+  span.appendChild(label);
+  div.id = 'cell' + ('0'+cell.id).slice(-2);
+  div.className = 'cell';
+  div.appendChild(span);
+  div.addEventListener('click',move);
+  window.board.appendChild(div);
+  div['data-cell'] = cell;
+  cell.div = div;
+  cell.span = span;
+});
+
+// place cells
+function display() {
+  cells.forEach( cell => {
+    cell.div.style.left = (cell_size*(cell.col-1)) + cell_unit;
+    cell.div.style.top = (cell_size*(cell.row-1)) + cell_unit;
+    cell.span.textContent = (cell != empty && show_ids) ? cell.id : '';
+  });
+  count_value.innerHTML = count;
+  window.cheat.children[0].style.display = show_ids ? 'none' : 'inline';
+  window.cheat.children[1].style.display = show_ids ? 'inline' : 'none';
+  window.congrat.style.visibility = (count && done()) ? 'visible' : 'hidden';
+}
+
+// configure event handlers
+window.rndom.addEventListener('click',randomize);
+window.cheat.addEventListener('click',() => {
+  show_ids = !show_ids;
+  display();
+});
+window.reader.addEventListener('change', fread);
+window.congrat.addEventListener('click',() => {
+  count=0;
+  display();
+});
+
+// move a cell
+function move() {
+  let cell = this['data-cell'];
+  neighbours(cell).forEach( c => {
+    if ( c == empty ) {
+      let {row,col} = cell;
+      board[empty.row][empty.col] = cell;
+      board[cell.row][cell.col] = empty;
+      count++;
+    }
+  });
+  board.forEach( (line,row) => {
+    line.forEach( (cell,col) => {
+      if ( cell ) {
+        Object.assign(cell,{row,col});
+      }
+    });
+  });
+  display();
+}
+
+// randomize cells
+function randomize() {
+  for (let n=0; n < 100; n++ ) {
+    let target = neighbours(empty)[Math.floor(Math.random()*4)];
+    if ( target ) {
+      count = -1;
+      move.call({ 'data-cell': target });
+    }
+  }
+}
+
+// check if player has won
+function done() {
+  let ok = true;
+  cells.forEach( cell => {
+    if ( cell.id != cell.col + (cell.row-1)*4) {
+      ok = false;
+    }
+  });
+  return ok;
+}
+
+// return list of given cell neighbours
+function neighbours(cell) {
+  return [
+    board[cell.row-1][cell.col],
+    board[cell.row+1][cell.col],
+    board[cell.row][cell.col-1],
+    board[cell.row][cell.col+1]
+  ];
+}
+
+// image reference, not itself displayed
+let img = document.createElement('img');
+img.src = bgimage;
+img.onload = function() {
+  count = 0;
+  update();
+  resize();
+  display();
+};
+
+// update display afer image load
+function update() {
+  let css = exif2css(img.orientation);
+  cells.forEach( cell => {
+    if ( !cell.img ) {
+      cell.img = document.createElement('img');
+      cell.div.insertBefore(cell.img,cell.div.firstChild);
+    }
+    cell.img.src = img.src;
+    cell.img.style.transform = css.transform;
+    cell.img.style['transform-origin'] = css['transform-origin'];
+  });
+}
+
+// update display after board resize
+function resize() {
+  let elt = document.getElementById('board');
+  let size = elt.offsetWidth;
+  if ( img.width > img.height ) {
+    size = size * img.width / img.height;
+  }
+  let cell_size = elt.offsetWidth/4;
+  if ( cells[0].img ) {
+    cells.forEach( (cell,n) => {
+      let row = 1 + parseInt(n/4,10);
+      let col = 1 + n%4;
+      if ( img.width > img.height ) {
+        cell.img.style.width = size + 'px';
+        cell.img.style.height = 'auto';
+      }
+      else {
+        cell.img.style.width = 'auto';
+        cell.img.style.height = size + 'px';
+      }
+      cell.img.style.marginLeft = '-'+cell_size*(col-1) +'px ';
+      cell.img.style.marginTop = '-'+cell_size*(row-1) + 'px';
+    });
+  }
+}
+window.onresize = resize;
+window.onload = resize;
+
+// read image file
+function fread(changeEvent) {
+  var file = changeEvent.target.files[0];
+
+  getOrientation( file, function(orientation) {
+    let reader = new FileReader();
+    reader.onload = function (loadEvent) {
+      img.orientation = orientation;
+      img.src = bgimage = loadEvent.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// reset layout
+function reset() {
+  for (let n=0; n < 16; n++ ) {
+    let cell = cells[n];
+    let row = 1 + parseInt(n/4,10);
+    let col = 1 + n%4;
+    Object.assign(cell, {row, col});
+    board[row][col] = cell;
+  }
+}
+
+// initial vue update
+resize();
+display();
+
+/*
+** get jpeg orientation - see :
+** https://stackoverflow.com/questions/7584794/accessing-jpeg-exif-rotation-data-in-javascript-on-the-client-side
+*/
+function getOrientation(file, callback) {
+  var reader = new FileReader();
+  reader.onload = function(e) {
+
+    var view = new DataView(e.target.result);
+    if (view.getUint16(0, false) != 0xFFD8) {
+      return callback(-2);
+    }
+    var length = view.byteLength, offset = 2;
+    while (offset < length) {
+      if (view.getUint16(offset+2, false) <= 8) return callback(-1);
+      var marker = view.getUint16(offset, false);
+      offset += 2;
+      if (marker == 0xFFE1) {
+        if (view.getUint32(offset += 2, false) != 0x45786966) {
+          return callback(-1);
+        }
+
+        var little = view.getUint16(offset += 6, false) == 0x4949;
+        offset += view.getUint32(offset + 4, little);
+        var tags = view.getUint16(offset, little);
+        offset += 2;
+        for (var i = 0; i < tags; i++) {
+          if (view.getUint16(offset + (i * 12), little) == 0x0112) {
+            return callback(view.getUint16(offset + (i * 12) + 8, little));
+          }
+        }
+      }
+      else if ((marker & 0xFF00) != 0xFF00) {
+        break;
+      }
+      else {
+        offset += view.getUint16(offset, false);
+      }
+    }
+    return callback(-1);
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+/*
+** exif2css - freely adapted from :
+** https://github.com/Sobesednik/exif2css
+*/
+var propMap = { r: 'rotate', ry: 'rotateY', t: 'translateX', ty: 'translateY' }
+  , transformOriginMap = { '5':'top left', '6':'bottom left', '7':'bottom right', '8':'top right' }
+  , transformsMap = {
+      '2': { ry: 180 },
+      '3': { r: 180 },
+      '4': { r: 180, ry: 180 },
+      '5': { r: 270, ry: 180 },
+      '6': { ty: -1, r: 90 },
+      '7': { ty: -1, t: -1, r: 90, ry: 180 },
+      '8': { t: -1, r: 270 }
+    }
+;
+
+function getValue(prop, value) {
+  return (prop === 'r' || prop === 'ry') ? value+'deg' : value*100+'%'
+}
+
+function expandTransform(transforms) {
+  var a = []
+  for (let prop in transforms) {
+    let ep = propMap[prop]
+    a.push(ep + '(' + getValue(prop, transforms[prop]) + ')')
+  }
+  return a.length ? a.join(' ') : null
+}
+
+function exif2css(orientation) {
+  var s = String(orientation)
+    , transform = expandTransform(transformsMap[s])
+    , transformOrigin = transformOriginMap[s]
+  ;
+  return {
+    transform: transform || 'none',
+    'transform-origin': transformOrigin || 'initial'
+  }
+}
+
+</script>
