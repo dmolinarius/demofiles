@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Le livre dont vous êtes le héros</title>
+<style>
+p {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid black;
+    font-family: Consolas;
+}
+a {
+    margin-left: 20px;
+    padding: 0.5em;
+    border: 2px outset;
+    background-color: #ccccff;
+    font-family: Consolas;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em;
+}
+h1 {
+    font-family: Haettenschweiler;
+    letter-spacing: 0.1em;
+}
+</style>
+<h1>Le livre dont vous êtes le héros</h1>
+<main id="main"></main>
+<script>
+
+/*
+** contiendra chacune des étapes franchies par le joueur
+*/
+var data = [];
+
+/*
+** l'identifiant de fragment décrit le cheminement du joueur
+** et permet d'afficher l'histoire
+*/
+window.onhashchange = display_story;
+
+/*
+** fonction principale, affiche l'histoire
+*/
+function display_story() {
+
+    // liste des étapes extraite de l'identifiant de fragment
+    var chapters = window.location.hash.substring(1).split('-')
+
+      // étapes actuellement affichées
+      , displayed = document.querySelectorAll('.chapter')
+
+      // identifiant de fragment en cours de construction pour la prochaine étape
+      , hash = ''
+    ;
+
+    // boucle sur les étapes à afficher
+    chapters.forEach((c,n) => {
+        hash += (n ? '-' : '#') + c;
+
+        // si l'étape affichée ne correspond pas à l'étape courante
+        // on la supprime avec toutes les suivantes
+        if ( displayed[n] && displayed[n].id !== 'chapter-' + c ) {
+            while( displayed[n].nextSibling ) displayed[n].nextSibling.remove();
+            displayed[n].remove();
+            display_chapter(hash,c);
+        }
+
+        // s'il n'y a pas d'étape affichée à ce stade, on affiche l'étape courante
+        else if ( !displayed[n] ) {
+            display_chapter(hash,c);
+        }
+    });
+    // s'il reste des étapes affichées après l'étape courante, on les supprime
+    if ( displayed.length > chapters.length ) {
+        let d = displayed[chapters.length-1];
+        while( d.nextSibling ) d.nextSibling.remove();
+    }
+}
+
+/*
+** récupération et affichage d'une étape
+** hash est l'état actuel de l'identifiant de fragment
+** n est le n° de l'étape à afficher
+*/
+function display_chapter(hash,n) {
+
+    // préparation d'une requête AJAX
+    var req = new XMLHttpRequest()
+
+      // url de l'étape à récupérer
+      , url = 'livre/chapitre'+n+'.json'
+    ;
+    req.open("GET", url);
+    req.onerror = () => console.log("Failed to load "+url);
+    req.onload = () => {
+      if (req.status === 200) {
+          let data = JSON.parse(req.responseText)
+            /*
+            ** <div id="chapter-%n" class="chapter"><p>%txt</p>...</div>
+            */
+            , div = document.createElement('div')
+            , p = document.createElement('p')
+          ;
+          div.id = 'chapter-' + n;
+          div.className = 'chapter';
+          p.textContent = data.txt;
+          div.appendChild(p);
+
+          data.links.forEach(l => {
+            /*
+            ** <a href="%hash-%link">%txt</a>
+            */
+            let a = document.createElement('a');
+            a.href = hash + '-' + l.link.substring(1);
+            a.textContent = l.txt;
+            div.appendChild(a);
+          });
+          main.appendChild(div);
+      }
+      else {
+        text.textContent = req.status;
+      }
+    };
+    req.send();
+}
+
+/*
+** si on arrive avec déjà un hash, on affiche l'histoire
+*/
+if ( window.location.hash ) display_story();
+
+/*
+** sinon on démarre au chapitre 1
+*/
+else window.location.hash = '#1';
+
+</script>
