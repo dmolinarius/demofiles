@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+   <meta charset="utf-8"/>
+   <title>Interface calculatrice</title>
+   <style>
+table {
+  margin: 100px;
+  border: 2px solid #888;
+  border-radius: 5px; 
+  background-color: #ddd;
+  border-spacing:5px;
+}
+th, td {
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 5px 1em;
+  font-family: consolas, monospace;
+  text-align: center;
+  color: #222;
+  background: linear-gradient(to bottom, white, #ddd);
+}
+td.down {
+  background: linear-gradient(to top, white, #ddd);
+}
+th {
+  background: rgb(173,216,230);
+  text-align: right;
+}
+   </style>
+ </head>
+ <body>
+  <table>
+   <tr><th colspan="4" id="afficheur">0</th></tr>
+   <tr><td>1</td><td>2</td><td>3</td><td>+</td></tr>
+   <tr><td>4</td><td>5</td><td>6</td><td>-</td></tr>
+   <tr><td>7</td><td>8</td><td>9</td><td>x</td></tr>
+   <tr><td>0</td><td>(</td><td>)</td><td>&#247;</td></tr>
+   <tr><td>←</td><td>.</td><td colspan="2">=</td></tr>
+  </table>
+
+ <script>
+  var body = document.querySelector('body');
+
+  body.addEventListener('mousedown', button_down, true);
+  body.addEventListener('mouseup', button_up, true);
+  body.addEventListener('mouseout', button_up, true);
+  body.addEventListener('click', button_click, true);
+
+  function button_down(e) {
+    if ( e.target.tagName == 'TD' ) e.target.classList.add('down');
+  }
+  function button_up(e) {
+    if ( e.target.tagName == 'TD' ) e.target.classList.remove('down');
+  }
+
+  var operateurs = { '+':'+', '-':'-', 'x':'*', '÷':'/' };
+  var afficheur = document.querySelector('#afficheur');
+  var operande = 0;
+  var operateur = '';
+  var a_effacer = true;
+  function button_click(e) {
+    if ( e.target.tagName != 'TD' ) return;
+
+    var label = e.target.firstChild.nodeValue;
+    if ( label.match(/[0-9]/) ) {
+      if ( a_effacer ) afficheur.innerHTML = '';
+      afficheur.innerHTML = '' + afficheur.innerHTML + label;
+      a_effacer = false;
+    }
+    else if ( label == '.' ) {
+      if ( a_effacer ) afficheur.innerHTML = '';
+      afficheur.innerHTML = '' + (afficheur.innerHTML || '0') + label;
+      a_effacer = false;
+    }
+    else if ( label == '←' ) {
+      afficheur.innerHTML = '0';
+      operande = '';
+      operateur = '';
+      a_effacer = true;
+    }
+    else if ( label == '+' || label == 'x' || label == '÷' || label == '-' ) {
+      operande = calcul();
+      afficheur.innerHTML = operande;
+      operateur = operateurs[label];
+      a_effacer = true;
+    }
+    else if ( label == '=' ) {
+      operande = calcul();
+      afficheur.innerHTML = operande;
+      operateur = '';
+      a_effacer = true;
+    }
+  }
+  function calcul() {
+    console.log (operateur ? (operande + operateur + afficheur.innerHTML) : afficheur.innerHTML);
+    return operateur ? eval(operande + operateur + afficheur.innerHTML) : afficheur.innerHTML;
+  }
+ </script>
+
+<div style="clear:both"></div><hr style="margin-top: 2.66em;">
+<p style="margin-top:1.33em; text-align: center;">
+ <a href="https://validator.w3.org/check?uri=referer"><img
+    src="html5-badge-h-solo.png"
+    title="Valid HTML 5"
+    alt="Valid HTML 5"></a>
+</p>
+ </body>
+</html>
