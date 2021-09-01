@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>Interface Node - Propriétés d'introspection</title>
+<meta charset='utf-8'>
+<style>
+body {
+  margin: 0;
+  padding: 0 1em;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #808080;
+  cursor: default;
+}
+.property-name {
+  display: inline-block;
+  width: 6em;
+  text-align: right;
+  font-style: italic;
+}
+.property-name, .property-name + span {
+  padding: 2px 0.25em;
+}
+pre {
+  padding: 0.5em;
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+  height: 10em;
+  overflow-y: scroll;
+}
+.tiny {
+  font-size: 0.7em;
+  color: #404040;
+}
+hr {
+  margin-bottom: 0.2em;
+}
+</style>
+
+<script src="script.js"></script>
+<script>
+  window.onload = function() {
+    init_footer();
+  }
+</script>
+
+ <h1>DOM Core - Exemple</h1>
+ <h2>Interface Node - Propriétés d'introspection</h2>
+ <p>
+  Ce document est outillé pour afficher les propriétés de l'élément survolé par le curseur.<br>
+  A noter : les codes les plus couramment rencontrés pour nodeType sont :
+  1 &#8658; Element,   3 &#8658; Text,   9 &#8658; Document.
+ 
+ <div><span class="property-name">nodeName :</span><span id="nodeName"> </span></div>
+ <div><span class="property-name">nodeValue :</span><span id="nodeValue"> </span></div>
+ <div><span class="property-name">nodeType :</span><span id="nodeType"> </span></div>
+ <div><span class="property-name">attributes :</span><span id="attributes"> </span></div>
+
+ <div><span class="property-name">textContent :</span>
+  <pre id="textContent">
+  </pre>
+ </div>
+
+ <script>
+  nodeTypes = [ '', 'ELEMENT_NODE', 'ATTRIBUTE_NODE', 'TEXT_NODE', 'CDATA_SECTION_NODE',
+   'ENTITY_REFERENCE_NODE', 'ENTITY_NODE', 'PROCESSING_INSTRUCTION_NODE', 'COMMENT_NODE',
+   'DOCUMENT_NODE', 'DOCUMENT_TYPE_NODE', 'DOCUMENT_FRAGMENT_NODE', 'NOTATION_NODE'
+  ];
+
+  window.addEventListener('mouseover',function(e) {
+    var attributes = e.target.attributes
+      , attributes_string = ''
+      , text_string = ''
+      , n
+    ;
+    ['nodeName','nodeValue','nodeType'].forEach( function(prop) {
+      window[prop].firstChild.nodeValue = e.target[prop];
+      if ( prop == 'nodeType' ) window[prop].firstChild.nodeValue +=
+        ' ['+nodeTypes[e.target[prop]]+']';
+    });
+  
+    for ( n=0; n < attributes.length; n++ ) {
+      attributes_string += attributes[n].nodeName + '="' + attributes[n].value + '"';
+      if ( n < attributes.length-1 ) attributes_string += ', ';
+    }
+    window.attributes.firstChild.nodeValue = attributes_string
+    
+    textContent.textContent = e.target.textContent;
+  });
+ </script>
+
+ <p>
+  S'il s'agit de la
+  <a href="http://dmolinarius.github.io/demofiles/elc-d3/cours3/introspection.html">version en ligne</a>,
+  la conformité de ce document au standard HTML peut être
+  contrôlée grâce au lien porté par l'icône ci-dessous.
+<div id="std-footer"></div>

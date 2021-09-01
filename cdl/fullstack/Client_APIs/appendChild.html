@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>Interface Document - appendChild et al.</title>
+<meta charset='utf-8'>
+<style>
+body {
+  padding: 0 1em;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #808080;
+  cursor: default;
+}
+pre {
+  padding: 0.5em;
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+}
+.tiny {
+  font-size: 0.7em;
+  color: #404040;
+}
+hr {
+  margin-bottom: 0.2em;
+}
+table {
+  margin: auto;
+}
+td {
+  border: 1px solid #808080;
+  padding: 5px 0.5em;
+  text-align: center;
+}
+</style>
+<script src="script.js"></script>
+<script>
+  window.onload = function() {
+    init_footer();
+  }
+</script>
+
+<h1>DOM Core - Exemple</h1>
+<h2>Interface Document - Modification dynamique de l'arbre</h2>
+
+<p>La table ci-dessous a été entièrement générée par programme à l'aide des
+méthodes <em>appendChild()</em> et <em>insertBefore()</em> :
+
+<p id="p2">Le code javascript pour arriver à ce résultat :
+
+<pre id="js_drop"></pre> 
+
+<script class="show"> var n, tr, i, td, txt                       // variables locales
+   , table = document.createElement('table') // création de la table
+ ;
+ for ( n = 0; n < 3; n++ ) {                 // boucle sur les lignes
+   tr = document.createElement('tr');        // création d'un élément tr
+   for ( i = 0; i < 3; i++ ) {               // boucle sur les cellules
+     td = document.createElement('td');      // création d'un élément td
+     txt = document.createTextNode(1+i+n*3); // création d'un noeud texte
+     td.appendChild(txt);                    // ajout du texte au contenu de la cellule
+     tr.appendChild(td);                     // ajout de la cellule au contenu de la ligne
+   }                                         // fin de la boucle sur les cellules
+   table.appendChild(tr);                    // ajout de la ligne au contenu de la table
+ }                                           // fin de la boucle sur les lignes
+ p2.parentNode.insertBefore(table,p2);       // ajout de la table au contenu du document
+</script>
+<script>
+  // affichage du code source du script
+  var script = document.querySelector('script.show');
+  js_drop.innerHTML = script.textContent;
+</script>
+<p>A noter que la création et l'ajout d'un noeud texte peut se faire indiféremment sous l'une des deux formes ci-dessous :
+<pre>
+ // méthode préconisée par [DOM1]
+ txt = document.createTextNode(1+i+n*3); // création d'un noeud texte
+ td.appendChild(txt);                    // ajout du texte au contenu de la cellule
+
+ // méthode introduite par [DOM3]
+ td.textContent = 1 + i + n*3;           // ajout du texte au contenu de la cellule
+</pre>
+
+ <p>
+  S'il s'agit de la
+  <a href="http://dmolinarius.github.io/demofiles/elc-d3/cours3/appendChild.html">version en ligne</a>,
+  la conformité de ce document au standard HTML peut être
+  contrôlée grâce au lien porté par l'icône ci-dessous.
+<div id="std-footer"></div>

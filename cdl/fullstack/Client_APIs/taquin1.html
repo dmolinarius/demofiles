@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<!--
+15-puzzle.html V0.0
+
+Jeu de taquin (15-puzzle game)
+
+-->
+<title>jeu de taquin</title>
+<style> 
+
+/* viewport properties */
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+/* board size, position and border */
+#board {
+  position: absolute;
+  width: 80vmin;
+  height: 80vmin;
+  left: calc(50vw - 40vmin);
+  top: calc(50vh - 40vmin);
+  border: 5px solid #400;
+  box-shadow: 1vw 1vh 1vmax #420;
+  border-radius: 3px;
+  background-color: #844;
+}
+
+/* cell size, background and border */
+.cell {
+  position: absolute;
+  width: 20vmin;
+  height: 20vmin;
+  border: 1px solid grey;
+  box-shadow: inset 0 0 10px grey;
+  border-radius: 3px;
+  background-color:white;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 20vmin;
+}
+#cell16 {
+  visibility: hidden;
+}
+
+</style>
+
+<div id="container">
+ <div id="board"></div>
+</div>
+
+<script>
+
+// list of cells at initial positions
+const cells = [];
+for (let n=0; n < 16; n++ ) {
+  cells.push({
+    id: n+1,
+    col: 1 + n%4,
+    row: 1 + parseInt(n/4,10)
+  })
+}
+
+// board model
+const board = [];
+for (let l=0; l < 6; l++) {
+  board[l] = [];
+  for (let c=0; c < 6; c++) {
+    board[l][c] = undefined;
+  }
+}
+
+// populate board
+const empty = cells[15];
+cells.forEach( cell => {
+  board[cell.row][cell.col] = cell;
+});
+
+// create cell DOM elements
+cells.forEach( cell => {
+  let div = document.createElement('div');
+  let label = document.createTextNode(cell.id);
+  div.id = 'cell' + ('0'+cell.id).slice(-2);
+  div.className = 'cell';
+  div.appendChild(label);
+  div.addEventListener('click',move);
+  window.board.appendChild(div);
+  div['data-cell'] = cell;
+  cell.div = div;
+});
+
+// display cells
+function display_cells() {
+  cells.forEach( cell => {
+    cell.div.style.left = (20*(cell.col-1))+'vmin';
+    cell.div.style.top = (20*(cell.row-1))+'vmin';
+  });
+}
+display_cells();
+
+// move a cell
+function move() {
+  let cell = this['data-cell'];
+  let check = [
+    board[cell.row-1][cell.col],
+    board[cell.row+1][cell.col],
+    board[cell.row][cell.col-1],
+    board[cell.row][cell.col+1]
+  ];
+  check.forEach( c => {
+    if ( c == empty ) {
+      let {row,col} = cell;
+      board[empty.row][empty.col] = cell;
+      board[cell.row][cell.col] = empty;
+    }
+  });
+  board.forEach( (line,row) => {
+    line.forEach( (cell,col) => {
+      if ( cell ) {
+        Object.assign(cell,{row,col});
+      }
+    });
+  });
+  display_cells();
+}
+
+</script>

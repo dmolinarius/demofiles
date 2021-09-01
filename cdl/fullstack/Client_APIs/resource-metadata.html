@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>document de test</title>
+<meta charset='utf-8'>
+<style>
+body {
+  padding: 0 1em;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #808080;
+  cursor: default;
+}
+pre {
+  padding: 0.5em;
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+  overflow: auto;
+}
+.tiny {
+  font-size: 0.7em;
+  color: #404040;
+}
+hr {
+  margin-bottom: 0.2em;
+}
+#js_drop {
+  clear: left;
+}
+</style>
+<script src="script.js"></script>
+<script>
+  window.onload = function() {
+    init_footer();
+  }
+</script>
+
+<h1>DOM HTML - Exemple</h1>
+<h2>Interface HTMLDocument</h2>
+
+<p id="p1">Métadonnées de la ressource via les propriétés de window.document :
+
+<pre id="p2"></pre>
+
+<p>Le code javascript de cette page :
+
+<pre id="js_drop"></pre> 
+
+<script class="show">p2.textContent += 'URL = "'+document.URL+"\"\n";
+p2.textContent += 'location = "'+document.location+"\"\n";
+p2.textContent += 'referrer = "'+document.referrer+"\"\n";
+p2.textContent += 'domain = "'+document.domain+"\"\n";
+p2.textContent += 'lastModified = "'+document.lastModified+"\"\n";
+p2.textContent += 'cookie = "'+document.cookie+"\"\n";
+
+console.log(document.location);
+</script>
+<script>
+  // affichage du code source du script
+  var script = document.querySelector('script.show');
+  js_drop.innerHTML = script.textContent;
+</script>
+
+ <p>
+  S'il s'agit de la
+<a href="http://dmolinarius.github.io/demofiles/elc-d3/cours3/resource-metadata.html">version en ligne</a>,
+  la conformité de ce document au standard HTML peut être
+  contrôlée grâce au lien porté par l'icône ci-dessous.
+<div id="std-footer"></div>

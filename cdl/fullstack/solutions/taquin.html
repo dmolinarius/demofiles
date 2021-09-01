@@ -189,8 +189,8 @@ function display() {
     cell.div.firstChild.style.visibility = (cell != empty && show_ids) ? 'visible' : 'hidden';
   });
   count_value.innerHTML = count;
-  window.cheat.children[0].style.display = show_ids ? 'inline' : 'none';
-  window.cheat.children[1].style.display = show_ids ? 'none' : 'inline';
+  window.cheat.children[1].style.display = show_ids ? 'inline' : 'none';
+  window.cheat.children[0].style.display = show_ids ? 'none' : 'inline';
   window.congrat.style.visibility = (count && done()) ? 'visible' : 'hidden';
 }
 

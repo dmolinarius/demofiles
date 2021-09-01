@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>example1</title>
+<meta charset="utf-8">
+<style>
+body, html {
+  margin: 0;
+  padding: 0; 
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: rgb(102, 102, 102);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+}
+ul {
+  margin-left: -1.33em;
+}
+ul li {
+  cursor: pointer;
+}
+#dropzone {
+  position: absolute;
+  border: 1px solid rgb(192,192,192);
+  width: 535px;
+  height: calc(100% - 12px);
+  left: 230px;
+  padding: 5px;
+  font-size:12px;
+  line-height: 15px;
+  text-align: justify;
+}
+#dropzone p:first-child {
+  margin-top: 0;
+}
+#dropzone p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+</style>
+
+<div id="example1">
+
+<ul style="float: left">
+ <li id="li-HTML">HTML
+ <li id="li-CSS">CSS
+ <li id="li-Javascript">Javascript
+ <li id="li-DOM">DOM
+ <li id="li-XMLHttpRequest">XMLHttpRequest
+</ul>
+
+<div id="dropzone">&nbsp;</div>
+</div>
+
+<script>
+var current_li = null
+  , li_listener = function (e) {
+    var request;
+    if ( e.target !== current_li ) {
+      current_li = e.target;
+      request = new XMLHttpRequest();
+      request.onload = function() {
+        dropzone.innerHTML = this.responseText;
+        console.log(this.status);
+      };
+      request.onerror = function(e) {
+        dropzone.innerHTML = 'Erreur de transmission...';
+      };
+      console.log("example1_"+current_li.id.substring(3)+".html");
+      request.open("GET", "example1_"+current_li.id.substring(3)+".html", true);
+      request.send();
+    }
+  }
+;
+Array.prototype.slice.call(document.querySelectorAll("#example1 li")).forEach( function(li) {
+  li.addEventListener('mouseover', li_listener);
+});
+</script>

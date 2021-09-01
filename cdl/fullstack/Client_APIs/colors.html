@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr"> 
+<title>Couleurs nommées</title>
+<meta charset="utf-8">
+
+<style>
+body {
+ padding-left: 1em;
+ font-family: Calibri, helvetica, sans-serif;
+ background-color: white;
+ color: black;
+}
+h1 {
+ font-size: 120%;
+ color: rgb(189,10,38);
+}
+header {
+ padding: 0 1em;
+ border: solid 2px #CCC;
+ margin-top: 0.5em;
+}
+main {
+  margin-top: 1.33em;
+}
+address {
+  font-size: 80%;
+  margin-top: 0;
+}
+</style>
+
+<h1>Liste des couleurs X11 / SVG (CSS3)</h1>
+<header>
+<p>
+La première case est générée avec la couleur nommée,
+la seconde est  affichée à partir du code <b>rgb</b> et sert de référence.
+Toute différence entre les deux cases indiquera donc que votre navigateur ne reconnait pas la couleur nommée.
+</p>
+
+<p>
+Le bouton sert à modifier l'affichage du code obtenu lorsque le curseur survole les cases en couleur.
+</p>
+</header>
+
+<main></main>
+
+<footer>
+<hr/>
+<address>Copyright : Daniel Muller</address>
+</footer>
+
+<!-- hidden iframe to load json file without AJAX -->
+<iframe id="cheatframe" src="named_colors.json" style="position:absolute; top:-1000px;"></iframe>
+
+<script>
+  // color display mode
+  mode = "rgb";
+
+// load hidden iframe
+cheatframe.onload = function() {
+  var text = this.contentDocument.body;
+  while ( text.nodeType != 3 ) { // look for Text Node
+    text = text.firstChild;
+  }
+  colors = JSON.parse(text.nodeValue);
+  init_tree();
+}
+
+// create element tree
+function init_tree() {
+    fontwidth = 14;
+    doc = window.document;
+    main = doc.querySelector('main');
+    main.style.fontSize = fontwidth+"px";
+
+//  create switch button
+    button = doc.createElement("button");
+    s = button.style;
+    s.position = "absolute";
+    s.left = "0";
+    s.top = "0em";
+    s.backgroundColor = "rgb(100%,75%,79%)";
+    s.fontFamily = "consolas, monospace";
+    s.fontWeight = "bold";
+    s.padding = "5px 1em";
+    button.onclick = switch_mode;
+    main.appendChild(button);
+
+    button_text = doc.createTextNode('mode '+mode);
+    button.appendChild(button_text);
+
+//  create popup window
+    win = doc.createElement("div");
+    s = win.style;
+    s.visibility = "hidden";
+    s.position = "absolute";
+    s.width = "30px";
+    s.height = fontwidth+"px";
+    s.backgroundImage = 'url("line.png")';
+    s.backgroundRepeat = "no-repeat";
+    s.backgroundPosition = "0 0";
+    s.zIndex = 1;
+    win.onmouseout = hide_popup;
+    main.appendChild(win);
+
+    popbox = doc.createElement("span");
+    s = popbox.style;
+    s.position = "absolute";
+    s.left = "30px";
+    s.top = "-20px";
+    s.width = "8em";
+    s.padding = "7px";
+    s.backgroundColor = "#FFDD88";
+    s.borderColor = "#CC0000";
+    s.borderWidth = "1px";
+    s.borderStyle = "solid";
+    s.fontFamily = "monospace";
+    s.fontWeight = "bold";
+    s.color = "#CC0000";
+    s.zIndex = 1;
+    win.appendChild(popbox);
+
+    rgb_text = doc.createTextNode("rgb(xxx,xxx,xxx)");
+    popbox.appendChild(rgb_text);
+
+//  loop through colors
+    nc = 4; w = 65*fontwidth; cw = w/nc;
+    for ( n = 0; n < colors.length; n++ ) {
+      c = n%nc;
+
+//    create first color box
+      box = doc.createElement("span");
+      s = box.style;
+      s.width = "1em";
+      s.height = "1em";
+      s.position = "absolute";
+      s.left = (0+cw*c)/fontwidth+"em";
+      s.top = (50+30*(n-c)/nc)+"px";
+      try { // IE fails if unknown color name
+        s.backgroundColor = colors[n].name;
+      } catch(e) { }
+      s.borderWidth = "1px";
+      s.borderStyle = "solid";
+      s.borderColor = "black";
+      box.onmouseover = function(n){return function(){show_popup(1,n);};}(n);
+      box.onmouseout = hide_popup;
+      main.appendChild(box);
+
+//    create second color box
+      box = doc.createElement("span");
+      s = box.style;
+      s.width = "1em";
+      s.height = "1em";
+      s.position = "absolute";
+      s.left = (0+25+cw*c)/fontwidth+"em";
+      s.top = (50+30*(n-c)/nc)+"px";
+      s.backgroundColor = "rgb("+colors[n].r+","+colors[n].g+","+colors[n].b+")";
+      s.borderWidth = "1px";
+      s.borderStyle = "solid";
+      s.borderColor = "black";
+      box.onmouseover = function(n){return function(){show_popup(2,n);};}(n);
+      box.onmouseout = hide_popup;
+      main.appendChild(box);
+
+//    create color name text
+      cname = doc.createElement("span");
+      s = cname.style;
+      s.position = "absolute";
+      s.left = (0+50+cw*c)/fontwidth+"em";
+      s.top = (50+30*(n-c)/nc)+"px";
+      s.fontFamily = "consolas, monospace";
+      main.appendChild(cname);
+
+      name_text = doc.createTextNode(colors[n].name);
+      cname.appendChild(name_text);
+    }
+    main.style.height = (50+5+30*((n-c)/nc+1))+"px";
+    main.style.position = "relative";
+  }
+  function show_popup(i,n) {
+    c = n%nc;
+    if ( i == 1 ) {
+      str = colors[n].name;
+      win.style.left = (0+10+cw*c)/fontwidth+"em";
+    }
+    else if ( mode == 'rgb' ) {
+      str = "rgb("+colors[n].r+","+colors[n].g+","+colors[n].b+")";
+      win.style.left = (0+35+cw*c)/fontwidth+"em";
+    }
+    else if ( mode == 'hex' ) {
+      str = "#"+hex(colors[n].r)+hex(colors[n].g)+hex(colors[n].b);
+      win.style.left = (0+35+cw*c)/fontwidth+"em";
+    }
+    else {
+      str = "rgb("+pc(colors[n].r)+","+pc(colors[n].g)+","+pc(colors[n].b)+")";
+      win.style.left = (0+35+cw*c)/fontwidth+"em";
+    }
+    popbox.style.width = (0.6*str.length)+"em";
+    rgb_text.data = str;
+    win.style.top = (50-5+30*(n-c)/nc)+"px";
+    win.style.visibility = "visible";
+  }
+  function hide_popup(e) {
+    if ( e.relatedTarget != win ) {
+      win.style.visibility = "hidden";
+    }
+  }
+  function switch_mode() {
+    if ( mode == 'rgb' ) {
+      mode = 'hex';
+      button_text.data = 'mode '+mode;
+    }
+    else if ( mode == 'hex' ) {
+      mode = 'rgb%';
+      button_text.data = 'mode '+mode;
+    }
+    else {
+      mode = 'rgb';
+      button_text.data = 'mode '+mode;
+    }
+  }
+  function hex(n) {
+    h = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' ];
+    return ( h[(n-n%16)/16]+h[n%16] );
+  }
+  function pc(n) {
+    return parseInt(100*n/255)+'%';
+  }
+</script>
