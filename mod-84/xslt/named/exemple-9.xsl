@@ -14,7 +14,7 @@
     <style type="text/css">
 body { font-family: sans-serif; }
 h1,h2 { margin-bottom: 0; border-bottom: 1px solid #888; font-family: serif;}
-h3 { margin-bottom: 0; }
+h3 { margin-bottom: 0; padding-left:1.5em; }
 .sommaire { background-color: #ddd; display: inline-block; padding: 1em; border: 1px solid #888; line-height: 1.5em;}
 .blocs { margin-left: 2em; }
     </style>
@@ -34,6 +34,7 @@ h3 { margin-bottom: 0; }
  <!-- traitement des éléments paragraphe en mode normal -->
  <xsl:template match="paragraphe">
   <h2>
+   <xsl:number/>&#160;
    <xsl:call-template name="ancre">
     <xsl:with-param name="nom" select="concat('paragraphe-',count(preceding::paragraphe[@titre])+1)"/>
    </xsl:call-template>
@@ -46,6 +47,8 @@ h3 { margin-bottom: 0; }
   <xsl:choose>
    <xsl:when test="@titre">
     <h3>
+     <xsl:number count="paragraphe"/>.
+     <xsl:value-of select="count(preceding-sibling::bloc[@titre])+1"/>&#160;
      <xsl:call-template name="ancre">
       <xsl:with-param name="nom" select="concat('bloc-',count(preceding::bloc[@titre])+1)"/>
      </xsl:call-template>

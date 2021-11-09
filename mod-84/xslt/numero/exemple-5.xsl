@@ -34,7 +34,10 @@ h3 { margin-bottom: 0; }
 
  <!-- traitement des éléments paragraphe en mode normal -->
  <xsl:template match="paragraphe">
-  <h2><xsl:value-of select="@titre"/></h2>
+  <h2>
+   <xsl:number/>&#160;
+   <xsl:value-of select="@titre"/>
+  </h2>
   <xsl:apply-templates/>
  </xsl:template>
 
