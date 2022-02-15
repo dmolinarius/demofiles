@@ -16,7 +16,7 @@ function init_footer() {
   div.style.position = 'absolute';
   div.style.right = '2em';
   div.className = 'tiny';
-  div.textContent = 'Dernière modification : '+date.toLocaleDateString();
+  div.textContent = 'Dernière modification : '+date.toLocaleDateString('fr-FR');
   body.appendChild(div);
 
   img = document.createElement('img');
@@ -26,7 +26,8 @@ function init_footer() {
   img.alt = img.title = 'HTML5 Powered';
 
   a = document.createElement('a');
-  a.href = 'http://validator.w3.org/check?uri=referer';
+  online = document.getElementById('online');
+  a.href = 'http://validator.w3.org/' + (online ? 'nu/?doc='+ online.href : 'check?uri=referer');
   a.appendChild(img);
 
   div = document.createElement('div');
