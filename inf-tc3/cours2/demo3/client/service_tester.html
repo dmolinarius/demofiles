@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<title>Testeur de service Web</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body > h1 {
+  background-color: #444;
+  padding: 5px 0.5em;
+  color: #ddd;
+  text-shadow: #000 -2px -2px 0;
+}
+body > p {
+  margin-left: 1em;
+}
+.label {
+  display: inline-block;
+  width: 10em;
+  text-align: right;
+  padding: 5px 0.5em;
+}
+.button.item {
+  height: 4em;
+}
+.button.item label {
+  margin-top: 0.5em;
+  display: inline-block;
+}
+.button input {
+  width: auto;
+  margin-left: 11.5em;
+} 
+#bypass {
+  margin-top: calc(1em + 2px);
+}
+#button {
+  border: 3px outset #444;
+  background-color: #444;
+  padding: 5px 0.5em;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 1em 0px;
+  position: absolute;
+  color: #ddd;
+  text-shadow: #000 -1px -1px 0;
+  right: calc(100% - 10.5em );
+}
+#dropzone {
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #eee;
+  font-family: monospace;
+}
+input, textarea {
+  font-family: monospace;
+  padding: 2px 0.5em;
+  width: 20em;
+  font-size: 1.2em;
+  line-height: 1.33em;
+  color: #666;
+  margin-top: 5px;
+}
+#headers {
+  white-space: pre;
+  padding-left: 1em;
+  font-family: monospace;
+}
+</style>
+
+<h1>Testeur de service Web</h1>
+
+<form id="form">
+<div class="item">
+<label>
+<span class="label">Méthode HTTP</span>
+<input name="method" value="HEAD">
+</label>
+</div>
+<div class="item">
+<label>
+<span class="label">Chemin</span>
+<input name="path" value="/welcome.html">
+</label>
+</div>
+<div class="item">
+<label>
+<span class="label">Chaîne de requête</span>
+<input name="query_string">
+</label>
+</div>
+<div class="item">
+<label>
+<span class="label">Type de contenu</span>
+<input name="content_type">
+</label>
+</div>
+<div class="item">
+<label>
+<span class="label">Corps de la requête</span>
+<textarea name="body"></textarea>
+</label>
+</div>
+<div class="button item">
+<span class="button" id="button">Envoi</span>
+<label>
+<input type="checkbox"  id="bypass"> Contourner le cache (chaîne de requête aléatoire)
+</label>
+</div>
+</form>
+<p>Réponse <span id="http_status"></span></p>
+<div id="headers"> </div>
+<div id="dropzone"> </div>
+
+<script>
+form.addEventListener('send', function(e) {
+  e.preventDefault();
+  return false;
+});
+button.addEventListener('click',function(e) {
+  var request = new XMLHttpRequest()
+    , method = form[0].value
+    , url = form[1].value +
+        (qs ? '?' + qs : '') + (bypass.checked ? (qs ? '&' : '?') +
+          (Math.random()+'').substring(2) : '')
+    , qs = form[2].value
+    , content_type = form[3].value
+    , body = form[4].value
+  ;
+  request.onload = function() {
+    http_status.innerHTML = '- ' + this.status + ' ' + this.statusText;
+    // HEAD requests show up with a non-empty responseText if browser uses cache
+    dropzone.innerHTML = ((method == 'HEAD') ? '' : this.responseText);
+    headers.innerHTML = this.getAllResponseHeaders();
+    console.log(this.getAllResponseHeaders());
+  };
+  request.open(method,url, true);
+  if ( content_type ) {
+    request.setRequestHeader('Content-Type',content_type);
+  }
+  request.send(body);
+});
+</script>
