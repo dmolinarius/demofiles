@@ -28,17 +28,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
       # on traite la requête via la classe parent
       http.server.SimpleHTTPRequestHandler.do_GET(self)
 
-  # traitement des requêtes POST
-  def do_POST(self):
-    self.init_params()
-    if self.path_info[0] == 'service':
-      response = '<!DOCTYPE html><title>hello</title>' + \
-        '<meta charset="utf-8"><p>Bonjour {} {}</p>' \
-        .format(self.params['Prenom'][0],self.params['Nom'][0])
-      self.send(response)
-    else:
-      self.send_error(405)
-
   # envoi d'une réponse
   def send(self,body):
      self.send_response(200)
@@ -54,13 +43,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     self.query_string = info.query
     self.params = parse_qs(info.query)
 
-    # récupération du corps
-    length = self.headers.get('Content-Length')
-    ctype = self.headers.get('Content-Type')
-    if length:
-      self.body = str(self.rfile.read(int(length)),'utf-8')
-      if ctype == 'application/x-www-form-urlencoded' : 
-        self.params = parse_qs(self.body)
 
 # instanciation et lancement du serveur
 httpd = socketserver.TCPServer(("", 8080), RequestHandler)
