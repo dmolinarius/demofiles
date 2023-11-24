@@ -2,14 +2,21 @@ import http.server
 import socketserver
 from urllib.parse import urlparse, parse_qs
 
+# numéro du port TCP utilisé par le serveur
+server_port = 8080
+
 # définition du nouveau handler
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
   # nom du serveur
-  server_version = "demo3/serveur_fpost"
+  server_version = "demo3/serveur_fpost/0.2"
 
   # sous-répertoire racine des documents statiques
-  static_dir = '/client'
+  static_dir = 'client'
+
+  # surcharge du constructeur pour imposer 'client' comme sous-répertoire racine
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, directory=self.static_dir, **kwargs)
 
   # traitement des requêtes GET
   def do_GET(self):
@@ -22,11 +29,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
       self.send(response)
 
     else:
-      # on modifie le chemin d'accès en insérant un répertoire préfixe
-      self.path = self.static_dir + self.path
-
       # on traite la requête via la classe parent
-      http.server.SimpleHTTPRequestHandler.do_GET(self)
+      super().do_GET()
 
   # traitement des requêtes POST
   def do_POST(self):
@@ -63,5 +67,5 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         self.params = parse_qs(self.body)
 
 # instanciation et lancement du serveur
-httpd = socketserver.TCPServer(("", 8080), RequestHandler)
+httpd = socketserver.TCPServer(("", server_port), RequestHandler)
 httpd.serve_forever()

@@ -1,23 +1,24 @@
-# Q3-1.py
+# demo2/serveur.py
 
 import http.server
 import socketserver
 
-# définition du nouveau handler
+# numéro du port TCP utilisé par le serveur
+server_port = 8080
+
+# Classe dérivée pour traiter les requêtes entrantes du serveur
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
+  # nom du serveur
+  server_version = "demo2/serveur/0.2"
+
   # sous-répertoire racine des documents statiques
-  static_dir = '/client'
-
-  # on surcharge la méthode qui traite les requêtes GET
-  def do_GET(self):
-
-    # on modifie le chemin d'accès en insérant un répertoire préfixe
-    self.path = self.static_dir + self.path
-
-    # on traite la requête via la classe parent
-    http.server.SimpleHTTPRequestHandler.do_GET(self)
+  static_dir = 'client'
+  
+  # surcharge du constructeur pour imposer 'client' comme sous-répertoire racine
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, directory=self.static_dir, **kwargs)
 
 # instanciation et lancement du serveur
-httpd = socketserver.TCPServer(("", 8080), RequestHandler)
+httpd = socketserver.TCPServer(("", server_port), RequestHandler)
 httpd.serve_forever()
